@@ -25,7 +25,7 @@ namespace CapaPresentacion
             this.ttmensaje.SetToolTip(this.cboestado, "Seleccione el estado del Producto");
             this.txtcod_pro.Visible = false;
             this.txttrabajador.ReadOnly = true;
-            this.LlenarCombo_Categoria();
+            this.LlenarComboCategoria();
         }
         //Mostrar Mensaje de Confirmacion
         private void MensajeOK(string mensaje)
@@ -133,7 +133,7 @@ namespace CapaPresentacion
             this.IsEditar = false;
         }
 
-        private void LlenarCombo_Categoria()
+        private void LlenarComboCategoria()
         {
             cbocategoria.DataSource = NCategoria.Mostrar();
             cbocategoria.ValueMember = "cod_cat";
