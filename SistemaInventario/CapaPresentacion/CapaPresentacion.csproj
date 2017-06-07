@@ -61,6 +61,12 @@
     <Compile Include="FrmProducto.Designer.cs">
       <DependentUpon>FrmProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVistaTrabajador-Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVistaTrabajador-Producto.Designer.cs">
+      <DependentUpon>FrmVistaTrabajador-Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,10 +90,16 @@
     <EmbeddedResource Include="FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVistaTrabajador-Producto.resx">
+      <DependentUpon>FrmVistaTrabajador-Producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img-transpa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
