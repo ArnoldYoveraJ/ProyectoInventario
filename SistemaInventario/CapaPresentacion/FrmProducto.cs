@@ -21,11 +21,11 @@ namespace CapaPresentacion
             InitializeComponent();
             this.ttmensaje.SetToolTip(this.txtnom, "Ingrese el Nombre del Producto");
             this.ttmensaje.SetToolTip(this.pxImagen, "Seleccione la Imagen del Producto");
-            this.ttmensaje.SetToolTip(this.cbotrabajador, "Seleccione el Trabajador");
+            this.ttmensaje.SetToolTip(this.cbocategoria, "Seleccione el Trabajador");
             this.ttmensaje.SetToolTip(this.cboestado, "Seleccione el estado del Producto");
             this.txtcod_pro.Visible = false;
-            this.txtcategoria.ReadOnly = true;
-            this.LlenarCombo();
+            this.txttrabajador.ReadOnly = true;
+            this.LlenarComboCategoria();
         }
         //Mostrar Mensaje de Confirmacion
         private void MensajeOK(string mensaje)
@@ -50,7 +50,7 @@ namespace CapaPresentacion
             this.txtram.Text=string.Empty;
             this.txtdesc.Text=string.Empty;
             this.txtserie.Text=string.Empty;
-            this.pxImagen.Image = global::CapaPresentacion.Properties.Resources;
+            this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
         }
 
         //Activar botones
@@ -68,9 +68,9 @@ namespace CapaPresentacion
             this.txtdesc.ReadOnly = !valor;
             this.txtserie.ReadOnly = !valor;
             this.cboestado.Enabled = valor;
-            this.txtcategoria.ReadOnly = !valor;
-            this.txtcodcat.ReadOnly = !valor;
-            this.cbotrabajador.Enabled = valor;
+            this.txttrabajador.ReadOnly = !valor;
+            this.txtcodtra.ReadOnly = !valor;
+            this.cbocategoria.Enabled = valor;
             this.btnagregar.Enabled = valor;
             btnCargar.Enabled = valor;
             btnLimpiar.Enabled = valor;
@@ -133,11 +133,11 @@ namespace CapaPresentacion
             this.IsEditar = false;
         }
 
-        private void LlenarCombo()
+        private void LlenarComboCategoria()
         {
-            cbotrabajador.DataSource = NProducto.Mostrar();
-            cbotrabajador.ValueMember = "idproducto";
-            cbotrabajador.DisplayMember = "nom_producto";
+            cbocategoria.DataSource = NCategoria.Mostrar();
+            cbocategoria.ValueMember = "cod_cat";
+            cbocategoria.DisplayMember = "nom_cat";
         }
 
         private void pxImagen_Click(object sender, EventArgs e)
@@ -169,14 +169,14 @@ namespace CapaPresentacion
             if(result== DialogResult.OK)
             {
                 this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//Adecua el Tamaño de la imagen al picturebox
-                this.pxImagen.Image = Image.FromFile(dialog.FileName);
+                this.pxImagen.Image = Image.FromFile(dialog.FileName);//obtiene un archivo de FRomfile. yu lo envia al dialog 
             }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
-            //this.pxImagen.Image bajar una imagen .pgn transparente
+            this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)
@@ -204,23 +204,31 @@ namespace CapaPresentacion
             string rpta;
             try
             {
-                if (this.txtnom.Text == string.Empty || this.txtcodcat.Text == string.Empty) //si la caja de texto está vacía
+                if (this.txtnom.Text == string.Empty || this.txtcodtra.Text == string.Empty) //si la caja de texto está vacía
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(txtnom, "Ingrese un Valor");
-                    erroricono.SetError(txtcodcat, "Ingrese un Valor");
+                    erroricono.SetError(txtcodtra, "Ingrese un Valor");
                 }
                 else
                 {
+                    System.IO.MemoryStream ms= new System.IO.MemoryStream();
+                    this.pxImagen.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
+
+                    byte[] imagen= ms.GetBuffer();
 
                     if (this.IsNuevo)
                     {
-                        rpta = NCategoria.Insertar(this.txtnom.Text.Trim());// borra espacios y convierte en mayuscula
-                        MensajeOK("Se inserto Correctamente");
+                        rpta = NProducto.Insertar(this.txtnom.Text.Trim(),this.txtmarca.Text.Trim(),this.txtmodeloplaca.Text.Trim(),this.txtserie.Text.Trim(),
+                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), this.txtso.Text.Trim(), imagen,
+                           Convert.ToInt16(this.cboestado.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));// borra espacios y convierte en mayuscula
+                        MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
-                        rpta = NCategoria.Editar(Convert.ToInt32(this.txtcod_cat.Text), this.txtnom.Text.Trim().ToUpper());
+                        rpta = NProducto.Editar(Convert.ToInt16(this.txtcod_pro.Text.Trim()), this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
+                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), this.txtso.Text.Trim(), imagen,
+                           Convert.ToInt16(this.cboestado.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -237,6 +245,107 @@ namespace CapaPresentacion
 
                 throw;
             }
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            if (!this.txtcod_pro.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.Botones();
+                this.habilitar(true);
+            }
+            else
+            {
+                this.MensajeError("Seleccione primero un registro");
+            }
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            this.LimpiarBotones();
+            this.habilitar(false);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult opcion;
+                opcion = MessageBox.Show("Realmente desea Eliminar los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (opcion == DialogResult.OK) //SI usuario dice OK
+                {
+                    string cod, rpta = "";
+                    foreach (DataGridViewRow row in dgvlistado.Rows)//Recorre todas las filas del DataGridView
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value)) //Revisa si la fila está activada
+                        {
+                            cod = Convert.ToString(row.Cells[1].Value);
+                            rpta = NProducto.Eliminar(Convert.ToInt32(cod));
+
+                            if (rpta.Equals("OK"))
+                            {
+                                this.MensajeOK("Se Eliminó correctamente el Registro");
+                            }
+                            else
+                            {
+                                this.MensajeError(rpta);
+                            }
+                        }
+                    }
+                    this.mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.StackTrace);
+            }
+        }
+
+        private void chkeliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkeliminar.Checked)
+                this.dgvlistado.Columns[0].Visible = true;
+            else
+                this.dgvlistado.Columns[0].Visible = false;
+        }
+
+        private void dgvlistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvlistado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dgvlistado.Rows[e.RowIndex].Cells["Eliminar"];
+                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+            }
+        }
+
+        private void dgvlistado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtcod_pro.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_pro"].Value);//Current ROw: fila actual
+            this.txtnom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_producto"].Value);
+            this.txtmarca.Text=Convert.ToString(this.dgvlistado.CurrentRow.Cells["marca"].Value);
+            this.txtmodeloplaca.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["modelo_placa"].Value);
+            this.txtserie.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["serie"].Value);
+            byte[] imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
+            this.pxImagen.Image = Image.FromStream(ms);
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            this.txtprocesador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["procesador"].Value);
+            this.txtdd.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dd"].Value);
+            this.txtram.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["ram"].Value);
+            this.cboestado.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["estado"].Value);
+            this.txtdesc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["descripcion"].Value);
+            this.txtso.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["so"].Value);
+
+            this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_tra"].Value);//Current ROw: fila actual
+            this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual
+            this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
+            this.tabControl1.SelectedIndex = 1;
         }
     }
 }

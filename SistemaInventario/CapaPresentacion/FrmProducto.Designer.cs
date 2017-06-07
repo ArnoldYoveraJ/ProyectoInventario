@@ -50,9 +50,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnagregar = new System.Windows.Forms.Button();
-            this.cbotrabajador = new System.Windows.Forms.ComboBox();
-            this.txtcategoria = new System.Windows.Forms.TextBox();
-            this.txtcodcat = new System.Windows.Forms.TextBox();
+            this.cbocategoria = new System.Windows.Forms.ComboBox();
+            this.txttrabajador = new System.Windows.Forms.TextBox();
+            this.txtcodtra = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -127,6 +127,8 @@
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvlistado.Size = new System.Drawing.Size(750, 150);
             this.dgvlistado.TabIndex = 7;
+            this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
+            this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -152,6 +154,7 @@
             this.chkeliminar.TabIndex = 5;
             this.chkeliminar.Text = "Eliminar";
             this.chkeliminar.UseVisualStyleBackColor = true;
+            this.chkeliminar.CheckedChanged += new System.EventHandler(this.chkeliminar_CheckedChanged);
             // 
             // btnimprimir
             // 
@@ -170,6 +173,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnbuscar
             // 
@@ -206,6 +210,7 @@
             this.btncancelar.TabIndex = 9;
             this.btncancelar.Text = "&Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btneditar
             // 
@@ -215,6 +220,7 @@
             this.btneditar.TabIndex = 8;
             this.btneditar.Text = "E&ditar";
             this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnguardar
             // 
@@ -273,9 +279,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnagregar);
-            this.groupBox1.Controls.Add(this.cbotrabajador);
-            this.groupBox1.Controls.Add(this.txtcategoria);
-            this.groupBox1.Controls.Add(this.txtcodcat);
+            this.groupBox1.Controls.Add(this.cbocategoria);
+            this.groupBox1.Controls.Add(this.txttrabajador);
+            this.groupBox1.Controls.Add(this.txtcodtra);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
@@ -324,45 +330,45 @@
             this.btnagregar.Text = "+";
             this.btnagregar.UseVisualStyleBackColor = true;
             // 
-            // cbotrabajador
+            // cbocategoria
             // 
-            this.cbotrabajador.FormattingEnabled = true;
-            this.cbotrabajador.Location = new System.Drawing.Point(555, 242);
-            this.cbotrabajador.Name = "cbotrabajador";
-            this.cbotrabajador.Size = new System.Drawing.Size(121, 21);
-            this.cbotrabajador.TabIndex = 36;
+            this.cbocategoria.FormattingEnabled = true;
+            this.cbocategoria.Location = new System.Drawing.Point(555, 242);
+            this.cbocategoria.Name = "cbocategoria";
+            this.cbocategoria.Size = new System.Drawing.Size(121, 21);
+            this.cbocategoria.TabIndex = 36;
             // 
-            // txtcategoria
+            // txttrabajador
             // 
-            this.txtcategoria.Location = new System.Drawing.Point(555, 216);
-            this.txtcategoria.Name = "txtcategoria";
-            this.txtcategoria.Size = new System.Drawing.Size(121, 20);
-            this.txtcategoria.TabIndex = 35;
+            this.txttrabajador.Location = new System.Drawing.Point(555, 216);
+            this.txttrabajador.Name = "txttrabajador";
+            this.txttrabajador.Size = new System.Drawing.Size(121, 20);
+            this.txttrabajador.TabIndex = 35;
             // 
-            // txtcodcat
+            // txtcodtra
             // 
-            this.txtcodcat.Location = new System.Drawing.Point(555, 190);
-            this.txtcodcat.Name = "txtcodcat";
-            this.txtcodcat.Size = new System.Drawing.Size(75, 20);
-            this.txtcodcat.TabIndex = 34;
+            this.txtcodtra.Location = new System.Drawing.Point(555, 190);
+            this.txtcodtra.Name = "txtcodtra";
+            this.txtcodtra.Size = new System.Drawing.Size(75, 20);
+            this.txtcodtra.TabIndex = 34;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(473, 220);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 13);
+            this.label15.Size = new System.Drawing.Size(58, 13);
             this.label15.TabIndex = 33;
-            this.label15.Text = "Categoria";
+            this.label15.Text = "Trabajador";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(473, 245);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(52, 13);
             this.label14.TabIndex = 32;
-            this.label14.Text = "Trabajador";
+            this.label14.Text = "Categoria";
             // 
             // label13
             // 
@@ -543,6 +549,7 @@
             // 
             // pxImagen
             // 
+            this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
             this.pxImagen.Location = new System.Drawing.Point(576, 19);
             this.pxImagen.Name = "pxImagen";
             this.pxImagen.Size = new System.Drawing.Size(100, 106);
@@ -658,9 +665,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtdesc;
         private System.Windows.Forms.Button btnagregar;
-        private System.Windows.Forms.ComboBox cbotrabajador;
-        private System.Windows.Forms.TextBox txtcategoria;
-        private System.Windows.Forms.TextBox txtcodcat;
+        private System.Windows.Forms.ComboBox cbocategoria;
+        private System.Windows.Forms.TextBox txttrabajador;
+        private System.Windows.Forms.TextBox txtcodtra;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
