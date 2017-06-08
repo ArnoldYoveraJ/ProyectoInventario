@@ -37,7 +37,7 @@ namespace CapaPresentacion
         private void LimpiarBotones()
         {
            this.txtnom.Text=string.Empty;
-           this.txtcod_cat.Text=string.Empty;
+           this.txtcod_cat.Text=string.Empty;//Empty:vacío
         }
 
         //Activar botones
