@@ -12,16 +12,31 @@ namespace CapaNegocio
     public class NTrabajador
     {
         //Verificar en caso error: Insertar es INT y Editar static string 
-        public int Insertar(DTrabajador trabajador)
+        public static string Insertar(string nom,string ape, string dni,string email,string anexo,int cod_area,int cod_emp)
         {
             DTrabajador dt = new DTrabajador();
-            return Convert.ToInt32(dt.Insertar_Trabajador(trabajador));
+            dt.Nombres = nom;
+            dt.Apellidos = ape;
+            dt.DNI = dni;
+            dt.Email = email;
+            dt.Anexo = anexo;
+            dt.Cod_Area = cod_area;
+            dt.Cod_Empresa = cod_emp;
+            return dt.Insertar_Trabajador(dt);
         }
 
-        public static string Editar(DTrabajador trabajador)
+        public static string Editar(int cod_tra,string nom, string ape, string dni, string email, string anexo, int cod_area, int cod_emp)
         {
             DTrabajador objt = new DTrabajador();
-            return objt.Editar_Trabajador(trabajador);
+            objt.Cod_Trabajador = cod_tra;
+            objt.Nombres = nom;
+            objt.Apellidos = ape;
+            objt.DNI = dni;
+            objt.Email = email;
+            objt.Anexo = anexo;
+            objt.Cod_Area = cod_area;
+            objt.Cod_Empresa = cod_emp;
+            return objt.Editar_Trabajador(objt);
         }
 
         public static string Eliminar(int cod_tra)

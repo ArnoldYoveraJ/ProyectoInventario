@@ -110,6 +110,8 @@
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvlistado.Size = new System.Drawing.Size(528, 180);
             this.dgvlistado.TabIndex = 7;
+            this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
+            this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -143,6 +145,7 @@
             this.chkeliminar.TabIndex = 5;
             this.chkeliminar.Text = "Eliminar";
             this.chkeliminar.UseVisualStyleBackColor = true;
+            this.chkeliminar.CheckedChanged += new System.EventHandler(this.chkeliminar_CheckedChanged);
             // 
             // btnimprimir
             // 
@@ -161,6 +164,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnbuscar
             // 
@@ -170,6 +174,7 @@
             this.btnbuscar.TabIndex = 2;
             this.btnbuscar.Text = "&Buscar";
             this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtbuscar
             // 
@@ -177,6 +182,7 @@
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(125, 20);
             this.txtbuscar.TabIndex = 1;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // btneditar
             // 
@@ -186,6 +192,7 @@
             this.btneditar.TabIndex = 8;
             this.btneditar.Text = "E&ditar";
             this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnguardar
             // 
@@ -195,6 +202,7 @@
             this.btnguardar.TabIndex = 7;
             this.btnguardar.Text = "&Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnnuevo
             // 
@@ -204,6 +212,7 @@
             this.btnnuevo.TabIndex = 6;
             this.btnnuevo.Text = "&Nuevo";
             this.btnnuevo.UseVisualStyleBackColor = true;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // txtnom
             // 
@@ -271,6 +280,9 @@
             // cboempresa
             // 
             this.cboempresa.FormattingEnabled = true;
+            this.cboempresa.Items.AddRange(new object[] {
+            "IMP",
+            "CMP"});
             this.cboempresa.Location = new System.Drawing.Point(315, 141);
             this.cboempresa.Name = "cboempresa";
             this.cboempresa.Size = new System.Drawing.Size(121, 21);
@@ -279,6 +291,15 @@
             // cboarea
             // 
             this.cboarea.FormattingEnabled = true;
+            this.cboarea.Items.AddRange(new object[] {
+            "Sistemas",
+            "Legal",
+            "Tesoreria",
+            "Contabilidad",
+            "Gerencia",
+            "Creditos",
+            "Atención al Cliente",
+            "Recursos Humanos"});
             this.cboarea.Location = new System.Drawing.Point(84, 141);
             this.cboarea.Name = "cboarea";
             this.cboarea.Size = new System.Drawing.Size(121, 21);
@@ -361,6 +382,7 @@
             this.btncancelar.TabIndex = 9;
             this.btncancelar.Text = "&Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // tabPage2
             // 
