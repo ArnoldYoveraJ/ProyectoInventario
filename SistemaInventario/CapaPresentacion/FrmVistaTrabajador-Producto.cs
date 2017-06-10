@@ -43,5 +43,31 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            buscar_nombre();
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            buscar_nombre();
+        }
+
+        private void dgvlistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvlistado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dgvlistado.Rows[e.RowIndex].Cells["Eliminar"];
+                chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+            }
+        }
+
+        private void dgvlistado_DoubleClick(object sender, EventArgs e)
+        {
+            FrmProducto frm = new FrmProducto();
+
+            frm.Show();
+        }
     }
 }

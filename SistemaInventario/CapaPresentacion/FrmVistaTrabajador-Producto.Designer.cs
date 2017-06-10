@@ -80,6 +80,8 @@
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvlistado.Size = new System.Drawing.Size(428, 134);
             this.dgvlistado.TabIndex = 7;
+            this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
+            this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -95,6 +97,7 @@
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(132, 20);
             this.txtbuscar.TabIndex = 6;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // btnbuscar
             // 
@@ -104,6 +107,7 @@
             this.btnbuscar.TabIndex = 3;
             this.btnbuscar.Text = "&Buscar";
             this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // lbltotal
             // 
@@ -128,7 +132,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 42);
+            this.label4.Location = new System.Drawing.Point(21, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 25);
             this.label4.TabIndex = 3;
@@ -141,7 +145,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(39, 74);
+            this.tabControl1.Location = new System.Drawing.Point(22, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(479, 264);
@@ -151,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 381);
+            this.ClientSize = new System.Drawing.Size(520, 336);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
