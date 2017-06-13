@@ -123,8 +123,8 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
+            this.dgvlistado.Columns[12].Visible = false;
             this.dgvlistado.Columns[14].Visible = false;
-            //this.dgvlistado.Columns[15].Visible = false;
             //corregir el procedimiento almacenado para traer el nombre la categoria y el nombre del trabajador. 
         }
 
