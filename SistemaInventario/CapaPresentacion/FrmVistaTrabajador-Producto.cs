@@ -13,6 +13,10 @@ namespace CapaPresentacion
 {
     public partial class FrmVistaTrabajador_Producto : Form
     {
+       /* private bool IsNuevo = false;
+        private bool IsEditar = false;*/
+
+        
         public FrmVistaTrabajador_Producto()
         {
             InitializeComponent();
@@ -27,7 +31,7 @@ namespace CapaPresentacion
         //Mostrar
         private void mostrar()
         {
-            this.dgvlistado.DataSource = NCategoria.Mostrar();
+            this.dgvlistado.DataSource = NTrabajador.Mostrar();
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }
@@ -35,7 +39,7 @@ namespace CapaPresentacion
         //Buscar Categoria por nombre
         private void buscar_nombre()
         {
-            this.dgvlistado.DataSource = NCategoria.BuscarNombre(this.txtbuscar.Text);
+            this.dgvlistado.DataSource = NTrabajador.Buscar(this.txtbuscar.Text);
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }
@@ -65,9 +69,14 @@ namespace CapaPresentacion
 
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
-            FrmProducto frm = new FrmProducto();
+            //codigo Nuevo
+            FrmProducto frm = FrmProducto.GetInstancia();
+            string p1, p2;
 
-            frm.Show();
+            p1 = Convert.ToString(this.dgvlistado.CurrentRow.Cells["COD_TRABAJADOR"].Value);
+            p2 = Convert.ToString(this.dgvlistado.CurrentRow.Cells["NOMBRES"].Value);
+            frm.setTrabajador(p1, p2);
+            this.Hide();//para ocultar este formulario
         }
     }
 }

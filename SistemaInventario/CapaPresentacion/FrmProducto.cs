@@ -16,6 +16,25 @@ namespace CapaPresentacion
         private bool IsNuevo = false;
         private bool IsEditar = false;
 
+        private static FrmProducto _Instancia;
+
+
+        //código Nuevo
+        public static FrmProducto GetInstancia()
+        { 
+            if(_Instancia==null)
+            {
+                _Instancia = new FrmProducto();
+            }
+            return _Instancia;
+        }
+        //código Nuevo
+        public void setTrabajador(string cod_tra,string nom_tra)
+        {
+            this.txtcodtra.Text = cod_tra;
+            this.txttrabajador.Text = nom_tra;
+        }
+
         public FrmProducto()
         {
             InitializeComponent();
@@ -333,7 +352,7 @@ namespace CapaPresentacion
             byte[] imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
             System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
             this.pxImagen.Image = Image.FromStream(ms);
-            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//para que la img se adeque al tamaño de toda la pantalla
 
             this.txtprocesador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["procesador"].Value);
             this.txtdd.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dd"].Value);
@@ -346,6 +365,13 @@ namespace CapaPresentacion
             this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual
             this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
             this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void btnagregar_Click(object sender, EventArgs e)
+        {
+            //código Nuevo. 
+            FrmVistaTrabajador_Producto form = new FrmVistaTrabajador_Producto();
+            form.ShowDialog();
         }
     }
 }
