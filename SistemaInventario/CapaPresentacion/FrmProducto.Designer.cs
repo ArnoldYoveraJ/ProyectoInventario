@@ -329,6 +329,7 @@
             this.btnagregar.TabIndex = 37;
             this.btnagregar.Text = "+";
             this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // cbocategoria
             // 
