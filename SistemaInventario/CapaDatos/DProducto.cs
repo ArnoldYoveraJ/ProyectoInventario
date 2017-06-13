@@ -421,7 +421,7 @@ namespace CapaDatos
         //Metodo para mostrar
         public DataTable Mostrar()
         {
-            DataTable dt = new DataTable("productos");
+            DataTable dt = new DataTable("PRODUCTOS");
             SqlConnection sqlcon = new SqlConnection();
             try
             {

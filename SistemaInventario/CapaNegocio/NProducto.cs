@@ -60,8 +60,10 @@ namespace CapaNegocio
 
         public static DataTable Mostrar()
         { //agregar static
-            DProducto obj1= new DProducto();
+           /* DProducto obj1= new DProducto();
             return obj1.Mostrar();
+            */
+            return new DProducto().Mostrar();
         }
 
         public static DataTable Buscar_Nombre(string texto)//agregar static

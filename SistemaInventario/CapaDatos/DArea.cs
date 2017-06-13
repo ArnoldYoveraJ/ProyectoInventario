@@ -167,7 +167,7 @@ namespace CapaDatos
                 sql1.CommandText = "spmostrar_area";
                 sql1.CommandType = CommandType.StoredProcedure;
 
-                SqlDataAdapter da = new SqlDataAdapter();
+                SqlDataAdapter da = new SqlDataAdapter(sql1);
                 da.Fill(dt);
             }
             catch (Exception e)

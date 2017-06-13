@@ -12,7 +12,7 @@ namespace CapaNegocio
     public class NTrabajador
     {
         //Verificar en caso error: Insertar es INT y Editar static string 
-        public static string Insertar(string nom,string ape, string dni,string email,string anexo,int cod_area,int cod_emp)
+        public static string Insertar(string nom, string ape, string dni, string email, string anexo, int cod_area, int cod_emp)
         {
             DTrabajador dt = new DTrabajador();
             dt.Nombres = nom;
@@ -48,8 +48,9 @@ namespace CapaNegocio
 
         public static DataTable Mostrar()
         {
-            DTrabajador objt = new DTrabajador();
-            return objt.Mostrar();
+            /*DTrabajador objt = new DTrabajador();
+            return objt.Mostrar();*/
+            return new DTrabajador().Mostrar();
         }
 
         public static DataTable Buscar(string textob)

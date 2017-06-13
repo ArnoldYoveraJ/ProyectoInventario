@@ -60,7 +60,7 @@ namespace CapaPresentacion
             this.txtcod_pro.ReadOnly = !valor;
             this.txtnom.ReadOnly = !valor; //ReadOnly:para hacerla de solo lectura
             this.txtmarca.ReadOnly = !valor;
-            this.txtmodeloplaca.ReadOnly=
+            this.txtmodeloplaca.ReadOnly=!valor;
             this.txtserie.ReadOnly = !valor;
             this.txtprocesador.ReadOnly = !valor;
             this.txtdd.ReadOnly = !valor;
@@ -68,10 +68,12 @@ namespace CapaPresentacion
             this.txtdesc.ReadOnly = !valor;
             this.txtserie.ReadOnly = !valor;
             this.cboestado.Enabled = valor;
+            this.txtso.ReadOnly = !valor;
             this.txttrabajador.ReadOnly = !valor;
             this.txtcodtra.ReadOnly = !valor;
             this.cbocategoria.Enabled = valor;
             this.btnagregar.Enabled = valor;
+
             btnCargar.Enabled = valor;
             btnLimpiar.Enabled = valor;
         }

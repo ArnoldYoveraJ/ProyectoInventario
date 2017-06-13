@@ -123,8 +123,8 @@ namespace CapaPresentacion
                 {
                     if(this.isnuevo)
                     {
-                        rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text.Trim(),this.txtemail.Text.Trim(),
-                        this.txtanexo.Text.Trim(),Convert.ToInt32(this.cboarea.SelectedValue),Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
+                        rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text,this.txtemail.Text.Trim(),
+                        this.txtanexo.Text,Convert.ToInt32(this.cboarea.SelectedValue),Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
                         MensajeOK("Se inserto Correctamente");
                     }
                     else
@@ -193,14 +193,14 @@ namespace CapaPresentacion
 
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
-            this.txtcod_tra.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["cod_tra"].Value);
-            this.txtnom.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["nom"].Value);
-            this.txtape.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["ape"].Value);
+            this.txtcod_tra.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);
+            this.txtnom.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["nombres"].Value);
+            this.txtape.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["apellidos"].Value);
             this.txtdni.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["dni"].Value);
             this.txtemail.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["email"].Value);
             this.txtanexo.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["anexo"].Value);
-            this.cboarea.SelectedText=Convert.ToString(dgvlistado.CurrentRow.Cells["area"].Value);
-            this.cboempresa.SelectedText=Convert.ToString(dgvlistado.CurrentRow.Cells["empresa"].Value);
+            this.cboarea.SelectedText=Convert.ToString(dgvlistado.CurrentRow.Cells["cod_area"].Value);
+            this.cboempresa.SelectedText=Convert.ToString(dgvlistado.CurrentRow.Cells["cod_empresa"].Value);
             this.tabControl1.SelectedIndex=1;
         }
 

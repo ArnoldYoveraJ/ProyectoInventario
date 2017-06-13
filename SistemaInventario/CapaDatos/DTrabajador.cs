@@ -74,7 +74,7 @@ namespace CapaDatos
             set { _Cod_Empresa = value; }
         }
        public DTrabajador(){ }
-       public DTrabajador(int cod,string nom,string ape,string dni, string email,string anexo,int cod_area,int cod_empresa) {
+       public DTrabajador(int cod,string nom,string ape,string dni, string email,string anexo,int cod_area,int cod_empresa,string texto) {
            this.Cod_Trabajador = cod;
            this.Nombres= nom;
            this.Apellidos = ape;
@@ -83,6 +83,7 @@ namespace CapaDatos
            this.Anexo = anexo;
            this.Cod_Area = cod_area;
            this.Cod_Empresa = cod_empresa;
+           this.Textobuscar = texto;
        }
 
        public DTrabajador(int cod)
@@ -102,14 +103,21 @@ namespace CapaDatos
                 sql1.Connection = con;
                 sql1.CommandText = "spinsertar_trabajador";
                 sql1.CommandType = CommandType.StoredProcedure;
-               // sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);
-                sql1.Parameters.AddWithValue("@nom", Nombres);
-                sql1.Parameters.AddWithValue("@ape", Apellidos);
-                sql1.Parameters.AddWithValue("@dni", DNI);
-                sql1.Parameters.AddWithValue("@email", Email);
-                sql1.Parameters.AddWithValue("@anexo", Anexo);
-                sql1.Parameters.AddWithValue("@cod_area", _Cod_Area);
-                sql1.Parameters.AddWithValue("@cod_emp", Cod_Empresa);
+
+               /* SqlParameter parcod_tra = new SqlParameter();
+                parcod_tra.ParameterName = "@cod_tra";
+                parcod_tra.SqlDbType = SqlDbType.Int;
+                parcod_tra.Direction = ParameterDirection.Output;
+                sql1.Parameters.Add(parcod_tra);*/
+
+                //sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);
+                sql1.Parameters.AddWithValue("@nom",Trabajador.Nombres);
+                sql1.Parameters.AddWithValue("@ape", Trabajador.Apellidos);
+                sql1.Parameters.AddWithValue("@dni", Trabajador.DNI);
+                sql1.Parameters.AddWithValue("@email", Trabajador.Email);
+                sql1.Parameters.AddWithValue("@anexo", Trabajador.Anexo);
+                sql1.Parameters.AddWithValue("@cod_area", Trabajador.Cod_Area);
+                sql1.Parameters.AddWithValue("@cod_emp", Trabajador.Cod_Empresa);
 
                 rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro";
             }
@@ -133,18 +141,19 @@ namespace CapaDatos
                con.Open();
 
                SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = con;
                sql1.CommandText = "speditar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
               // SqlParameter par = new SqlParameter();
-               sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);
-               sql1.Parameters.AddWithValue("@nom", Nombres);
-               sql1.Parameters.AddWithValue("@ape", Apellidos);
-               sql1.Parameters.AddWithValue("@dni", DNI);
-               sql1.Parameters.AddWithValue("@email", Email);
-               sql1.Parameters.AddWithValue("@anexo", Anexo);
-               sql1.Parameters.AddWithValue("@cod_area", _Cod_Area);
-               sql1.Parameters.AddWithValue("@cod_emp", Cod_Empresa);
+               sql1.Parameters.AddWithValue("@cod_tra", Trab.Cod_Trabajador);
+               sql1.Parameters.AddWithValue("@nom", Trab.Nombres);
+               sql1.Parameters.AddWithValue("@ape", Trab.Apellidos);
+               sql1.Parameters.AddWithValue("@dni", Trab.DNI);
+               sql1.Parameters.AddWithValue("@email", Trab.Email);
+               sql1.Parameters.AddWithValue("@anexo", Trab.Anexo);
+               sql1.Parameters.AddWithValue("@cod_area", Trab.Cod_Area);
+               sql1.Parameters.AddWithValue("@cod_emp", Trab.Cod_Empresa);
 
               respuesta = sql1.ExecuteNonQuery() == 1? "OK" : "No se Edito el Registro";
 	         }
@@ -154,7 +163,7 @@ namespace CapaDatos
 	        }
            finally
            {
-               if (con.State == ConnectionState.Open) { con.Open(); }
+               if (con.State == ConnectionState.Open) { con.Close(); }
            }
 
            return respuesta;
@@ -170,11 +179,12 @@ namespace CapaDatos
                con.Open();
 
                SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = con;
                sql1.CommandText = "speliminar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
                // SqlParameter par = new SqlParameter();
-               sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);
+               sql1.Parameters.AddWithValue("@cod", Cod_Trabajador);
 
                respuesta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Elimino el Registro";
            }
@@ -184,7 +194,7 @@ namespace CapaDatos
            }
            finally
            {
-               if (con.State == ConnectionState.Open) { con.Open(); }
+               if (con.State == ConnectionState.Open) { con.Close(); }
            }
 
            return respuesta;
@@ -192,14 +202,14 @@ namespace CapaDatos
 
        public DataTable Mostrar()
        {
-           DataTable dt=new DataTable();
+           DataTable dt=new DataTable("TRABAJADOR");
            SqlConnection con = new SqlConnection();
            
            try
            {
                con.ConnectionString = Conexion.Cn;
-               con.Open();
                SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = con;
                sql1.CommandText = "spmostrar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
@@ -215,7 +225,7 @@ namespace CapaDatos
 
        public DataTable Buscar(DTrabajador trabajador) //Modificar string textobuscar por DTrabajador trabajador
        {
-           DataTable dt = new DataTable();
+           DataTable dt = new DataTable("TRABAJADOR");
            SqlConnection con = new SqlConnection();
 
            try
