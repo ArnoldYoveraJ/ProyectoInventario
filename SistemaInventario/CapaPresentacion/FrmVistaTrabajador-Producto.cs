@@ -45,7 +45,7 @@ namespace CapaPresentacion
         }
         private void FrmVistaTrabajador_Producto_Load(object sender, EventArgs e)
         {
-
+            mostrar();
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)

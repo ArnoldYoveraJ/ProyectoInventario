@@ -150,7 +150,7 @@ namespace CapaDatos
                 sqlcon.Open();
                 SqlCommand sqlcoma = new SqlCommand();
                 sqlcoma.Connection = sqlcon;
-                sqlcoma.CommandText = "spinsertar_producto";
+                sqlcoma.CommandText = "spinsertar_productos";
                 sqlcoma.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter par = new SqlParameter();
@@ -216,11 +216,11 @@ namespace CapaDatos
                 sqlcoma.Parameters.Add(par8);
 
                 SqlParameter par9 = new SqlParameter();
-                par8.ParameterName = "@imagen";
-                par8.SqlDbType = SqlDbType.Image;
+                par9.ParameterName = "@imagen";
+                par9.SqlDbType = SqlDbType.Image;
                // par8.Size = 30;
-                par8.SqlValue = producto.Imagen;
-                sqlcoma.Parameters.Add(par8);
+                par9.SqlValue = producto.Imagen;
+                sqlcoma.Parameters.Add(par9);
 
                 SqlParameter par10 = new SqlParameter();
                 par10.ParameterName = "@estado";
@@ -339,11 +339,11 @@ namespace CapaDatos
                 sqlcoma.Parameters.Add(par8);
 
                 SqlParameter par9 = new SqlParameter();
-                par8.ParameterName = "@imagen";
-                par8.SqlDbType = SqlDbType.Image;
+                par9.ParameterName = "@imagen";
+                par9.SqlDbType = SqlDbType.Image;
                 // par8.Size = 30;
-                par8.SqlValue = producto.Imagen;
-                sqlcoma.Parameters.Add(par8);
+                par9.SqlValue = producto.Imagen;
+                sqlcoma.Parameters.Add(par9);
 
                 SqlParameter par10 = new SqlParameter();
                 par10.ParameterName = "@estado";
@@ -399,7 +399,7 @@ namespace CapaDatos
                 sqlcoma.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter par = new SqlParameter();
-                par.ParameterName = "@cod_producto";
+                par.ParameterName = "@COD_PROD";
                 par.SqlDbType = SqlDbType.Int;
                 par.SqlValue = producto._Cod_producto;
                 sqlcoma.Parameters.Add(par);

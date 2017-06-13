@@ -392,6 +392,9 @@
             // cboestado
             // 
             this.cboestado.FormattingEnabled = true;
+            this.cboestado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
             this.cboestado.Location = new System.Drawing.Point(85, 117);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(102, 21);
@@ -564,7 +567,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(785, 300);
+            this.tabPage2.Size = new System.Drawing.Size(849, 300);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;

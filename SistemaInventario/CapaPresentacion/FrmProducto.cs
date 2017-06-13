@@ -123,8 +123,8 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
-            this.dgvlistado.Columns[12].Visible = false;
             this.dgvlistado.Columns[14].Visible = false;
+            //this.dgvlistado.Columns[15].Visible = false;
             //corregir el procedimiento almacenado para traer el nombre la categoria y el nombre del trabajador. 
         }
 
@@ -181,6 +181,7 @@ namespace CapaPresentacion
             this.habilitar(false);
             this.IsNuevo = false;
             this.IsEditar = false;
+            this.txtcodtra.Visible = false;
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -346,7 +347,7 @@ namespace CapaPresentacion
 
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
-            this.txtcod_pro.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_pro"].Value);//Current ROw: fila actual
+            this.txtcod_pro.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_producto"].Value);//Current ROw: fila actual
             this.txtnom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_producto"].Value);
             this.txtmarca.Text=Convert.ToString(this.dgvlistado.CurrentRow.Cells["marca"].Value);
             this.txtmodeloplaca.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["modelo_placa"].Value);
@@ -363,7 +364,7 @@ namespace CapaPresentacion
             this.txtdesc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["descripcion"].Value);
             this.txtso.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["so"].Value);
 
-            this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_tra"].Value);//Current ROw: fila actual
+            this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);//Current ROw: fila actual
             this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual
             this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
             this.tabControl1.SelectedIndex = 1;
