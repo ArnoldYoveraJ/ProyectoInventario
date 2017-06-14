@@ -308,7 +308,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmArea";
-            this.Text = "FrmArea";
+            this.Text = "Mantenimiento de Areas";
             this.Load += new System.EventHandler(this.FrmArea_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
