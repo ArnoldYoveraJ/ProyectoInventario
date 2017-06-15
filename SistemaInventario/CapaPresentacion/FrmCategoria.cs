@@ -99,6 +99,7 @@ namespace CapaPresentacion
             this.habilitar(false);
             this.IsNuevo = false;
             this.IsEditar = false;
+            this.txtcod_cat.Visible = false;
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)
@@ -172,6 +173,7 @@ namespace CapaPresentacion
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
            this.txtcod_cat.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_cat"].Value);//Current ROw: fila actual
+           this.txtcod_cat.Visible = false;//deshabilitar el código cuando edite
            this.txtnom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_cat"].Value);
            this.tabControl1.SelectedIndex = 1;
         }

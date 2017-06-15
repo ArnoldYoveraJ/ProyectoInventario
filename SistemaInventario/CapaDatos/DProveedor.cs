@@ -238,5 +238,36 @@ namespace CapaDatos
             }
             return dt;
         }
+
+        public DataTable Buscar_numdoc(DProveedor proveedor)
+        {
+            DataTable dt = new DataTable("proveedor");
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = Conexion.Cn;
+                con.Open();
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = con;
+                sql1.CommandText = "spbuscar_proveedor_numdoc";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                sql1.Parameters.AddWithValue("@texto_buscar", proveedor.Texto_buscar);
+
+                SqlDataAdapter da = new SqlDataAdapter(sql1);
+                da.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                dt = null;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+            return dt;
+        }
+
+
     }
 }

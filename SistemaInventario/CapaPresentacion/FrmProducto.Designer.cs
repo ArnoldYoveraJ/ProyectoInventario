@@ -81,6 +81,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -96,6 +97,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.dgvlistado);
             this.tabPage1.Controls.Add(this.lbltotal);
             this.tabPage1.Controls.Add(this.chkeliminar);
@@ -187,9 +189,9 @@
             // 
             // txtbuscar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(65, 20);
+            this.txtbuscar.Location = new System.Drawing.Point(209, 24);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(125, 20);
+            this.txtbuscar.Size = new System.Drawing.Size(183, 20);
             this.txtbuscar.TabIndex = 1;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
@@ -198,9 +200,9 @@
             this.Nombre.AutoSize = true;
             this.Nombre.Location = new System.Drawing.Point(15, 24);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(47, 13);
+            this.Nombre.Size = new System.Drawing.Size(61, 13);
             this.Nombre.TabIndex = 0;
-            this.Nombre.Text = "Nombre:";
+            this.Nombre.Text = "Buscar por:";
             // 
             // btncancelar
             // 
@@ -399,6 +401,7 @@
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(102, 21);
             this.cboestado.TabIndex = 29;
+            this.cboestado.Text = "Activo";
             // 
             // label12
             // 
@@ -597,6 +600,19 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Productos";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Nombre",
+            "Marca",
+            "Serie"});
+            this.comboBox1.Location = new System.Drawing.Point(82, 24);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.Text = "Nombre";
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,5 +691,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

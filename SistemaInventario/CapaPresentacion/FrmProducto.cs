@@ -226,11 +226,13 @@ namespace CapaPresentacion
             string rpta;
             try
             {
-                if (this.txtnom.Text == string.Empty || this.txtcodtra.Text == string.Empty) //si la caja de texto está vacía
+                if (this.txtnom.Text == string.Empty ||this.txtmarca.Text==string.Empty
+                   ||this.txtserie.Text==string.Empty) //si la caja de texto está vacía
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(txtnom, "Ingrese un Valor");
-                    erroricono.SetError(txtcodtra, "Ingrese un Valor");
+                    erroricono.SetError(txtmarca, "Ingrese un Valor");
+                    erroricono.SetError(txtserie, "Ingrese un Valor");
                 }
                 else
                 {

@@ -39,7 +39,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
-            this.Nombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtemail = new System.Windows.Forms.TextBox();
@@ -48,7 +47,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtdir = new System.Windows.Forms.TextBox();
             this.txtnum_doc = new System.Windows.Forms.TextBox();
-            this.txttipodoc = new System.Windows.Forms.TextBox();
             this.txtsectorc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,6 +63,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbotipodoc = new System.Windows.Forms.ComboBox();
+            this.cboelegir = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -85,6 +85,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cboelegir);
             this.tabPage1.Controls.Add(this.dgvlistado);
             this.tabPage1.Controls.Add(this.lbltotal);
             this.tabPage1.Controls.Add(this.chkeliminar);
@@ -92,7 +93,6 @@
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.btnbuscar);
             this.tabPage1.Controls.Add(this.txtbuscar);
-            this.tabPage1.Controls.Add(this.Nombre);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -100,6 +100,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // dgvlistado
             // 
@@ -116,6 +117,8 @@
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvlistado.Size = new System.Drawing.Size(605, 150);
             this.dgvlistado.TabIndex = 7;
+            this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
+            this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -141,6 +144,7 @@
             this.chkeliminar.TabIndex = 5;
             this.chkeliminar.Text = "Eliminar";
             this.chkeliminar.UseVisualStyleBackColor = true;
+            this.chkeliminar.CheckedChanged += new System.EventHandler(this.chkeliminar_CheckedChanged);
             // 
             // btnimprimir
             // 
@@ -159,6 +163,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnbuscar
             // 
@@ -168,22 +173,15 @@
             this.btnbuscar.TabIndex = 2;
             this.btnbuscar.Text = "&Buscar";
             this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtbuscar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(65, 20);
+            this.txtbuscar.Location = new System.Drawing.Point(112, 23);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(125, 20);
+            this.txtbuscar.Size = new System.Drawing.Size(146, 20);
             this.txtbuscar.TabIndex = 1;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(15, 24);
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(47, 13);
-            this.Nombre.TabIndex = 0;
-            this.Nombre.Text = "Nombre:";
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // tabPage2
             // 
@@ -198,13 +196,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbotipodoc);
             this.groupBox1.Controls.Add(this.txtemail);
             this.groupBox1.Controls.Add(this.txttel);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtdir);
             this.groupBox1.Controls.Add(this.txtnum_doc);
-            this.groupBox1.Controls.Add(this.txttipodoc);
             this.groupBox1.Controls.Add(this.txtsectorc);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -224,6 +222,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtemail
             // 
@@ -255,9 +254,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(220, 110);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 21;
-            this.label8.Text = "teléfono";
+            this.label8.Text = "Teléfono";
             // 
             // txtdir
             // 
@@ -274,14 +273,6 @@
             this.txtnum_doc.Name = "txtnum_doc";
             this.txtnum_doc.Size = new System.Drawing.Size(126, 20);
             this.txtnum_doc.TabIndex = 19;
-            // 
-            // txttipodoc
-            // 
-            this.txttipodoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttipodoc.Location = new System.Drawing.Point(271, 82);
-            this.txttipodoc.Name = "txttipodoc";
-            this.txttipodoc.Size = new System.Drawing.Size(120, 20);
-            this.txttipodoc.TabIndex = 18;
             // 
             // txtsectorc
             // 
@@ -321,11 +312,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(-14, 82);
+            this.label4.Location = new System.Drawing.Point(3, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Sector Comercial";
+            this.label4.Text = "Sector Comer.";
             // 
             // btncancelar
             // 
@@ -335,6 +326,7 @@
             this.btncancelar.TabIndex = 9;
             this.btncancelar.Text = "&Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btneditar
             // 
@@ -344,6 +336,7 @@
             this.btneditar.TabIndex = 8;
             this.btneditar.Text = "E&ditar";
             this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnguardar
             // 
@@ -353,6 +346,7 @@
             this.btnguardar.TabIndex = 7;
             this.btnguardar.Text = "&Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnnuevo
             // 
@@ -362,6 +356,7 @@
             this.btnnuevo.TabIndex = 6;
             this.btnnuevo.Text = "&Nuevo";
             this.btnnuevo.UseVisualStyleBackColor = true;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // txtrazons
             // 
@@ -416,6 +411,31 @@
             // 
             this.erroricono.ContainerControl = this;
             // 
+            // cbotipodoc
+            // 
+            this.cbotipodoc.FormattingEnabled = true;
+            this.cbotipodoc.Items.AddRange(new object[] {
+            "DNI",
+            "RUC"});
+            this.cbotipodoc.Location = new System.Drawing.Point(270, 81);
+            this.cbotipodoc.Name = "cbotipodoc";
+            this.cbotipodoc.Size = new System.Drawing.Size(121, 21);
+            this.cbotipodoc.TabIndex = 25;
+            this.cbotipodoc.Text = "RUC";
+            // 
+            // cboelegir
+            // 
+            this.cboelegir.FormattingEnabled = true;
+            this.cboelegir.Items.AddRange(new object[] {
+            "Documento",
+            "Numero"});
+            this.cboelegir.Location = new System.Drawing.Point(18, 23);
+            this.cboelegir.Name = "cboelegir";
+            this.cboelegir.Size = new System.Drawing.Size(88, 21);
+            this.cboelegir.TabIndex = 8;
+            this.cboelegir.Text = "Documento";
+            this.cboelegir.SelectedIndexChanged += new System.EventHandler(this.cboelegir_SelectedIndexChanged);
+            // 
             // FrmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,6 +445,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmProveedores";
             this.Text = "Mantenimiento de Proveedores";
+            this.Load += new System.EventHandler(this.FrmProveedores_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -450,7 +471,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtbuscar;
-        private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtemail;
@@ -459,7 +479,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtdir;
         private System.Windows.Forms.TextBox txtnum_doc;
-        private System.Windows.Forms.TextBox txttipodoc;
         private System.Windows.Forms.TextBox txtsectorc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -476,5 +495,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip ttmensaje;
         private System.Windows.Forms.ErrorProvider erroricono;
+        private System.Windows.Forms.ComboBox cbotipodoc;
+        private System.Windows.Forms.ComboBox cboelegir;
     }
 }
