@@ -307,5 +307,10 @@ namespace CapaPresentacion
             this.tabControl1.SelectedIndex = 1;
 
         }
+
+        private void txtemail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

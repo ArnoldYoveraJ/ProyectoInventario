@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cboelegir = new System.Windows.Forms.ComboBox();
             this.dgvlistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lbltotal = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbotipodoc = new System.Windows.Forms.ComboBox();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txttel = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbotipodoc = new System.Windows.Forms.ComboBox();
-            this.cboelegir = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -102,6 +102,19 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // cboelegir
+            // 
+            this.cboelegir.FormattingEnabled = true;
+            this.cboelegir.Items.AddRange(new object[] {
+            "Documento",
+            "Numero"});
+            this.cboelegir.Location = new System.Drawing.Point(18, 23);
+            this.cboelegir.Name = "cboelegir";
+            this.cboelegir.Size = new System.Drawing.Size(88, 21);
+            this.cboelegir.TabIndex = 8;
+            this.cboelegir.Text = "Documento";
+            this.cboelegir.SelectedIndexChanged += new System.EventHandler(this.cboelegir_SelectedIndexChanged);
+            // 
             // dgvlistado
             // 
             this.dgvlistado.AllowUserToAddRows = false;
@@ -129,7 +142,7 @@
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(545, 58);
+            this.lbltotal.Location = new System.Drawing.Point(507, 59);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(35, 13);
             this.lbltotal.TabIndex = 6;
@@ -221,8 +234,20 @@
             this.groupBox1.Size = new System.Drawing.Size(603, 204);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Productos";
+            this.groupBox1.Text = "Proveedores";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbotipodoc
+            // 
+            this.cbotipodoc.FormattingEnabled = true;
+            this.cbotipodoc.Items.AddRange(new object[] {
+            "DNI",
+            "RUC"});
+            this.cbotipodoc.Location = new System.Drawing.Point(270, 81);
+            this.cbotipodoc.Name = "cbotipodoc";
+            this.cbotipodoc.Size = new System.Drawing.Size(121, 21);
+            this.cbotipodoc.TabIndex = 25;
+            this.cbotipodoc.Text = "RUC";
             // 
             // txtemail
             // 
@@ -231,6 +256,7 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(307, 20);
             this.txtemail.TabIndex = 24;
+            this.txtemail.TextChanged += new System.EventHandler(this.txtemail_TextChanged);
             // 
             // txttel
             // 
@@ -410,31 +436,6 @@
             // erroricono
             // 
             this.erroricono.ContainerControl = this;
-            // 
-            // cbotipodoc
-            // 
-            this.cbotipodoc.FormattingEnabled = true;
-            this.cbotipodoc.Items.AddRange(new object[] {
-            "DNI",
-            "RUC"});
-            this.cbotipodoc.Location = new System.Drawing.Point(270, 81);
-            this.cbotipodoc.Name = "cbotipodoc";
-            this.cbotipodoc.Size = new System.Drawing.Size(121, 21);
-            this.cbotipodoc.TabIndex = 25;
-            this.cbotipodoc.Text = "RUC";
-            // 
-            // cboelegir
-            // 
-            this.cboelegir.FormattingEnabled = true;
-            this.cboelegir.Items.AddRange(new object[] {
-            "Documento",
-            "Numero"});
-            this.cboelegir.Location = new System.Drawing.Point(18, 23);
-            this.cboelegir.Name = "cboelegir";
-            this.cboelegir.Size = new System.Drawing.Size(88, 21);
-            this.cboelegir.TabIndex = 8;
-            this.cboelegir.Text = "Documento";
-            this.cboelegir.SelectedIndexChanged += new System.EventHandler(this.cboelegir_SelectedIndexChanged);
             // 
             // FrmProveedores
             // 

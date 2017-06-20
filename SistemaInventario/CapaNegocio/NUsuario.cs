@@ -33,7 +33,7 @@ namespace CapaNegocio
             return obju.Insertar(obju);
         }
 
-        public static string Eliminar(int cod, string nom, string usu, string contra, string tipo, int est)
+        public static string Eliminar(int cod)
         {
             DUsuario obju = new DUsuario();
             obju.Cod_usu = cod;
