@@ -45,6 +45,7 @@
     <Compile Include="NProducto.cs" />
     <Compile Include="NProveedor.cs" />
     <Compile Include="NTrabajador.cs" />
+    <Compile Include="NUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
