@@ -16,8 +16,8 @@ namespace SistemaInventario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new FrmTrabajador());
-            Application.Run(FrmProducto.GetInstancia());
+           Application.Run(new FrmProveedores());
+            //Application.Run(FrmProducto.GetInstancia());
         }
     }
 }

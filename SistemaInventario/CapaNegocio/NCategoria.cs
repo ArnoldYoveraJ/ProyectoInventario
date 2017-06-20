@@ -44,6 +44,8 @@ namespace CapaNegocio
             objc.TextoBuscar = textobuscar;
             return objc.Buscar(objc);
         }
+
+
     }
 
 }
