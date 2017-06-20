@@ -210,17 +210,16 @@ namespace CapaDatos
             return dt;
         }
 
-        public DataTable Buscar(DProveedor proveedor)
+        public DataTable Buscar_razon_social(DProveedor proveedor)
         {
             DataTable dt = new DataTable("proveedor");
             SqlConnection con = new SqlConnection();
             try
             {
                 con.ConnectionString = Conexion.Cn;
-                con.Open();
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = con;
-                sql1.CommandText = "spmostrar_proveedor";
+                sql1.CommandText = "spbuscar_prov_razon_social";
                 sql1.CommandType = CommandType.StoredProcedure;
 
                 sql1.Parameters.AddWithValue("@texto_buscar", proveedor.Texto_buscar);
@@ -246,7 +245,6 @@ namespace CapaDatos
             try
             {
                 con.ConnectionString = Conexion.Cn;
-                con.Open();
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = con;
                 sql1.CommandText = "spbuscar_proveedor_numdoc";

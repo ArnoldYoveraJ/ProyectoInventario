@@ -49,11 +49,11 @@ namespace CapaNegocio
             return new DProveedor().Mostrar();
         }
 
-        public static DataTable Buscar(string textob)
+        public static DataTable Buscar_razon_social(string textobu)
         {
-            DProveedor objp = new DProveedor();
-            objp.Texto_buscar = textob;
-            return objp.Buscar(objp);
+            DProveedor objpr = new DProveedor();
+            objpr.Texto_buscar = textobu;
+            return objpr.Buscar_razon_social(objpr);
         }
 
         public static DataTable Buscar_numdoc(string textob)
@@ -62,5 +62,6 @@ namespace CapaNegocio
             objdp.Texto_buscar = textob;
             return objdp.Buscar_numdoc(objdp);
         }
+
     }
 }

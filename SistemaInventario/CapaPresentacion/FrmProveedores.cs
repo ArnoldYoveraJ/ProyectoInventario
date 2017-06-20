@@ -97,21 +97,20 @@ namespace CapaPresentacion
         }
 
         //Buscar Categoria por nombre
-        private void buscar()
+        private void buscar_razon_social()
         {
             //Video 18: modificar en caso error
-            if (cboelegir.SelectedText == "Documento")
-            {
-                this.dgvlistado.DataSource = NProveedor.Buscar_numdoc(this.txtbuscar.Text);
+
+                this.dgvlistado.DataSource = NProveedor.Buscar_razon_social(this.txtbuscar.Text);
                 this.ocultarcolumnas();
                 lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
-            }
-            else
-            {
-                this.dgvlistado.DataSource = NProveedor.Buscar(this.txtbuscar.Text);
-                this.ocultarcolumnas();
-                lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
-            }  
+        }
+
+        private void buscar_num_doc()
+        {
+            this.dgvlistado.DataSource = NProveedor.Buscar_numdoc(this.txtbuscar.Text);
+            this.ocultarcolumnas();
+            lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }
 
         private void FrmProveedores_Load(object sender, EventArgs e)
@@ -137,12 +136,26 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            this.buscar();
+            if (cboelegir.Text.Equals("Documento"))
+            {
+                buscar_razon_social();
+            }
+            else if (cboelegir.Text.Equals("Numero"))
+            {
+                buscar_num_doc();
+            }  
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            this.buscar();
+            if (cboelegir.Text.Equals("Documento"))
+            {
+                buscar_razon_social();
+            }
+            else if (cboelegir.Text.Equals("Numero"))
+            {
+                buscar_num_doc();
+            }  
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
