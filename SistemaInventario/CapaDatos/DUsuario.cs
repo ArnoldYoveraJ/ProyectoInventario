@@ -246,5 +246,34 @@ namespace CapaDatos
             return dt;
         }
 
+        public DataTable Login(DUsuario usuario)
+        {
+            DataTable dt = new DataTable("usuario");
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = Conexion.Cn;
+                con.Open();
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = con;
+                sql1.CommandText = "splogear_usuario";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                sql1.Parameters.AddWithValue("@usu", usuario.Usuario);
+                sql1.Parameters.AddWithValue("@contra", usuario.Contra);
+
+                SqlDataAdapter da = new SqlDataAdapter(sql1);
+                da.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                dt = null;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+            return dt;
+        }
     }
 }

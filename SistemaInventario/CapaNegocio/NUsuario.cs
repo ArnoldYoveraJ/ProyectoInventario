@@ -58,5 +58,13 @@ namespace CapaNegocio
             obju.Textobuscar = texto;
             return obju.Buscar_usuario(obju);
         }
+
+        public static DataTable Login(string usu,string contra)
+        {
+            DUsuario obj = new DUsuario();
+            obj.Usuario = usu;
+            obj.Contra = contra;
+            return obj.Login(obj);
+        }
     }
 }
