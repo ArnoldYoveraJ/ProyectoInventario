@@ -306,6 +306,7 @@
             this.cboarea.Name = "cboarea";
             this.cboarea.Size = new System.Drawing.Size(121, 21);
             this.cboarea.TabIndex = 18;
+            this.cboarea.Text = "Sistemas";
             // 
             // label8
             // 

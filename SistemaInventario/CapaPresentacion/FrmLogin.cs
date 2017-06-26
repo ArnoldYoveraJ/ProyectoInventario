@@ -43,13 +43,19 @@ namespace CapaPresentacion
                 frm.cod_usu = datos.Rows[0][0].ToString();
                 frm.nom_com = datos.Rows[0][1].ToString();
                 frm.tipo = datos.Rows[0][2].ToString();
-                
+                frm.Show();
+                this.Hide();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //comentario
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString();
         }
     }
 }

@@ -104,7 +104,7 @@ namespace CapaDatos
                 sql1.CommandText = "spinsertar_trabajador";
                 sql1.CommandType = CommandType.StoredProcedure;
 
-               /* SqlParameter parcod_tra = new SqlParameter();
+                /*SqlParameter parcod_tra = new SqlParameter();
                 parcod_tra.ParameterName = "@cod_tra";
                 parcod_tra.SqlDbType = SqlDbType.Int;
                 parcod_tra.Direction = ParameterDirection.Output;

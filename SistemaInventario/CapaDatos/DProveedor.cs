@@ -102,6 +102,12 @@ namespace CapaDatos
                 sql1.CommandText = "spinsertar_proveedor";
                 sql1.CommandType = CommandType.StoredProcedure;
 
+               SqlParameter parcod_pro = new SqlParameter();
+               parcod_pro.ParameterName = "@cod_prov";
+               parcod_pro.SqlDbType = SqlDbType.Int;
+               parcod_pro.Direction = ParameterDirection.Output;
+               sql1.Parameters.Add(parcod_pro);
+
                 sql1.Parameters.AddWithValue("@razon_s", proveedor.Razon_social);
                 sql1.Parameters.AddWithValue("@sector", proveedor.Sector_comercial);
                 sql1.Parameters.AddWithValue("@tip_doc", proveedor.Tipo_doc);

@@ -85,6 +85,12 @@ namespace CapaDatos
                 sql1.CommandText = "spinsertar_usuario";
                 sql1.CommandType = CommandType.StoredProcedure;
 
+                SqlParameter parcod_usu = new SqlParameter();
+                parcod_usu.ParameterName = "@cod_usu";
+                parcod_usu.SqlDbType = SqlDbType.Int;
+                parcod_usu.Direction = ParameterDirection.Output;
+                sql1.Parameters.Add(parcod_usu);
+
                 sql1.Parameters.AddWithValue("@nom_com", usuario.Nom_completo);
                 sql1.Parameters.AddWithValue("@usu", usuario.Usuario);
                 sql1.Parameters.AddWithValue("@contra", usuario.Contra);
