@@ -52,11 +52,13 @@ namespace CapaPresentacion
             this.txtdni.ReadOnly=!valor;
             this.txtemail.ReadOnly=!valor;
             this.txtanexo.ReadOnly=!valor;
+            this.cboarea.Enabled = valor;
+            this.cboempresa.Enabled = valor;
         }
 
         private void Activar_botones()
         {
-            if(isnuevo || iseditar)
+            if(this.isnuevo || this.iseditar)
             {
                 this.habilitar(true);
                 this.btnnuevo.Enabled=false;
@@ -93,6 +95,7 @@ namespace CapaPresentacion
             this.Top=0;
             this.Left=0;
             this.mostrar();
+            Activar_botones();
             this.Activar_botones();
             this.habilitar(false);
             this.isnuevo = false;
@@ -129,7 +132,7 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text.Trim()),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text.Trim(),this.txtemail.Text.Trim(),
+                        rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text.Trim(),this.txtemail.Text.Trim(),
                         this.txtanexo.Text.Trim(),Convert.ToInt32(this.cboarea.SelectedValue),Convert.ToInt32(this.cboempresa.SelectedValue));
                         MensajeOK("Se Edito Correctamente");
                     }

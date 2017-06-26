@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 
-
 namespace CapaPresentacion
 {
     public partial class FrmCategoria : Form
@@ -127,10 +126,15 @@ namespace CapaPresentacion
 
         private void chkeliminar_CheckedChanged(object sender, EventArgs e)
         {
-            if ( this.chkeliminar.Checked)
+            if (chkeliminar.Checked)
+            {
                 this.dgvlistado.Columns[0].Visible = true;
-            else
-                this.dgvlistado.Columns[0].Visible = false;
+            }
+
+            else { 
+                this.dgvlistado.Columns[0].Visible = false; 
+            }
+                
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -176,6 +180,7 @@ namespace CapaPresentacion
            this.txtcod_cat.Visible = false;//deshabilitar el código cuando edite
            this.txtnom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_cat"].Value);
            this.tabControl1.SelectedIndex = 1;
+          // Botones();
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -232,7 +237,6 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, ex.StackTrace);
             }
 
@@ -257,6 +261,11 @@ namespace CapaPresentacion
         }
 
         private void btnimprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

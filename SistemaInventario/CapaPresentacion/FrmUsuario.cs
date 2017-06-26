@@ -13,8 +13,8 @@ namespace CapaPresentacion
 {
     public partial class FrmUsuario : Form
     {
-        private bool IsNuevo ;
-        private bool IsEditar ;
+        private bool IsNuevo = false;
+        private bool IsEditar = false;
         public FrmUsuario()
         {
             InitializeComponent();
@@ -50,13 +50,13 @@ namespace CapaPresentacion
 
         private void habilitar(bool valor)
         {
-            this.txtcod_usu.ReadOnly = valor;
+            this.txtcod_usu.ReadOnly = !valor;
             this.txtnomcom.ReadOnly = !valor;
             this.txtusu.ReadOnly = !valor;
             this.txtcon.ReadOnly = !valor;
-            this.cbotipousu.Enabled = !valor;
-            this.rbact.Enabled = !valor;
-            this.rbdes.Enabled = !valor;//ReadOnly:para hacerla de solo lectura
+            this.cbotipousu.Enabled = valor;
+            this.rbact.Enabled = valor;
+            this.rbdes.Enabled = valor;//ReadOnly:para hacerla de solo lectura
         }
 
         //Desactivar botones
@@ -113,13 +113,14 @@ namespace CapaPresentacion
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
-            Top = 0;
-            Left = 0;
-            mostrar();
-            habilitar(false);
-            Botones();
-            IsNuevo = false;
-            IsNuevo = false;
+            this.Top = 0;
+            this.Left = 0;
+            this.mostrar();
+            this.Botones();
+            this.habilitar(false);            
+            this.IsNuevo = false;
+            this.IsNuevo = false;
+            this.txtcod_usu.Visible = false;
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
@@ -243,7 +244,7 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {  
                         rpta = NUsuario.Insertar(this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), this.txtcon.Text.Trim(),
-                            this.cbotipousu.SelectedText.Trim(),Convert.ToInt32(act));// borra espacios 
+                            this.cbotipousu.Text,Convert.ToInt32(act));// borra espacios 
                         MensajeOK("Se inserto Correctamente el Registro");
                     }
                     else
@@ -295,6 +296,19 @@ namespace CapaPresentacion
             LimpiarBotones();
 
             
+        }
+
+        private void chkeliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkeliminar.Checked)
+            {
+                this.dgvlistado.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dgvlistado.Columns[0].Visible = false;
+            }
+
         }
     }
 }

@@ -129,5 +129,33 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frmp = new FrmProveedores();
+            frmp.MdiParent = this;
+            frmp.Show();
+        }
+
+        private void trabajadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTrabajador frmt = new FrmTrabajador();
+            frmt.MdiParent = this;
+            frmt.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmu = new FrmUsuario();
+            frmu.MdiParent = this;
+            frmu.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCategoria frmc = new FrmCategoria();
+            frmc.MdiParent = this;
+            frmc.Show();
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace CapaPresentacion
 
         private void habilitar(bool valor)
         {
-            this.txtcod_prov.ReadOnly = valor;
+            this.txtcod_prov.ReadOnly = !valor;
             this.txtrazons.ReadOnly = !valor;
             this.txtsectorc.ReadOnly = !valor;
             this.cbotipodoc.Enabled = valor;
@@ -223,14 +223,14 @@ namespace CapaPresentacion
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(this.txtrazons, "Ingrese una Razón Social");
-                    erroricono.SetError(this.txtsectorc, "Ingrese un Sector Comercial");
+                    erroricono.SetError(this.cbotipodoc, "Ingrese un Sector Comercial");
                     erroricono.SetError(this.txtnum_doc, "Ingrese un Número de Documento");
                 }
                 else
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = NProveedor.Insertar(this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), this.cbotipodoc.SelectedText.Trim(),
+                        rpta = NProveedor.Insertar(this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), this.cbotipodoc.Text,
                             this.txtnum_doc.Text.Trim(), this.txtdir.Text.Trim(), this.txttel.Text.Trim(), this.txtemail.Text.Trim());// borra espacios 
                         MensajeOK("Se inserto Correctamente el Registro");
                     }
@@ -299,7 +299,7 @@ namespace CapaPresentacion
             this.txtrazons.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["razon_social"].Value);
             this.txtsectorc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["sector_comercial"].Value);
             //probar con selecttext en el combobox.. 
-            this.cbotipodoc.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
+            this.cbotipodoc.SelectedText = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
             this.txtnum_doc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["num_doc"].Value);
             this.txtdir.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["direccion"].Value);
             this.txttel.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["telefono"].Value);

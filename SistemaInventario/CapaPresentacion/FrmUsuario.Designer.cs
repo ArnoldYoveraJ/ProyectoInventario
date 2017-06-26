@@ -34,11 +34,15 @@
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.cbotipousu = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtcon = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbdes = new System.Windows.Forms.RadioButton();
+            this.rbact = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtusu = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtcon = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
@@ -59,18 +63,14 @@
             this.btnimprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbact = new System.Windows.Forms.RadioButton();
-            this.rbdes = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // erroricono
@@ -126,13 +126,51 @@
             this.groupBox1.Text = "Usuarios";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // txtcon
+            // groupBox3
             // 
-            this.txtcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcon.Location = new System.Drawing.Point(312, 18);
-            this.txtcon.Name = "txtcon";
-            this.txtcon.Size = new System.Drawing.Size(122, 20);
-            this.txtcon.TabIndex = 20;
+            this.groupBox3.Controls.Add(this.rbdes);
+            this.groupBox3.Controls.Add(this.rbact);
+            this.groupBox3.Location = new System.Drawing.Point(251, 123);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(215, 39);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Estado";
+            // 
+            // rbdes
+            // 
+            this.rbdes.AutoSize = true;
+            this.rbdes.Location = new System.Drawing.Point(115, 16);
+            this.rbdes.Name = "rbdes";
+            this.rbdes.Size = new System.Drawing.Size(85, 17);
+            this.rbdes.TabIndex = 1;
+            this.rbdes.Text = "Desactivado";
+            this.rbdes.UseVisualStyleBackColor = true;
+            // 
+            // rbact
+            // 
+            this.rbact.AutoSize = true;
+            this.rbact.Checked = true;
+            this.rbact.Location = new System.Drawing.Point(24, 16);
+            this.rbact.Name = "rbact";
+            this.rbact.Size = new System.Drawing.Size(67, 17);
+            this.rbact.TabIndex = 0;
+            this.rbact.TabStop = true;
+            this.rbact.Text = "Activado";
+            this.rbact.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtusu);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtcon);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(17, 71);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(450, 48);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos Relevantes";
             // 
             // txtusu
             // 
@@ -141,6 +179,23 @@
             this.txtusu.Name = "txtusu";
             this.txtusu.Size = new System.Drawing.Size(123, 20);
             this.txtusu.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Usuario";
+            // 
+            // txtcon
+            // 
+            this.txtcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcon.Location = new System.Drawing.Point(312, 18);
+            this.txtcon.Name = "txtcon";
+            this.txtcon.Size = new System.Drawing.Size(122, 20);
+            this.txtcon.TabIndex = 20;
             // 
             // label7
             // 
@@ -159,15 +214,6 @@
             this.label5.Size = new System.Drawing.Size(28, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "Tipo";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Usuario";
             // 
             // btncancelar
             // 
@@ -344,6 +390,7 @@
             this.chkeliminar.TabIndex = 5;
             this.chkeliminar.Text = "Eliminar";
             this.chkeliminar.UseVisualStyleBackColor = true;
+            this.chkeliminar.CheckedChanged += new System.EventHandler(this.chkeliminar_CheckedChanged);
             // 
             // btnimprimir
             // 
@@ -374,52 +421,6 @@
             this.btnbuscar.UseVisualStyleBackColor = true;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtusu);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtcon);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(17, 71);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 48);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Relevantes";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbdes);
-            this.groupBox3.Controls.Add(this.rbact);
-            this.groupBox3.Location = new System.Drawing.Point(251, 123);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(215, 39);
-            this.groupBox3.TabIndex = 27;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Estado";
-            // 
-            // rbact
-            // 
-            this.rbact.AutoSize = true;
-            this.rbact.Checked = true;
-            this.rbact.Location = new System.Drawing.Point(24, 16);
-            this.rbact.Name = "rbact";
-            this.rbact.Size = new System.Drawing.Size(67, 17);
-            this.rbact.TabIndex = 0;
-            this.rbact.TabStop = true;
-            this.rbact.Text = "Activado";
-            this.rbact.UseVisualStyleBackColor = true;
-            // 
-            // rbdes
-            // 
-            this.rbdes.AutoSize = true;
-            this.rbdes.Location = new System.Drawing.Point(115, 16);
-            this.rbdes.Name = "rbdes";
-            this.rbdes.Size = new System.Drawing.Size(85, 17);
-            this.rbdes.TabIndex = 1;
-            this.rbdes.Text = "Desactivado";
-            this.rbdes.UseVisualStyleBackColor = true;
-            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,15 +434,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
