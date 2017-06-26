@@ -18,10 +18,9 @@ namespace CapaPresentacion
         public FrmProveedores()
         {
             InitializeComponent();
-            this.ttmensaje.SetToolTip(this.txtrazons, "Debe ingresar una Razon Social");
+            this.ttmensaje.SetToolTip(this.txtrazons, "Ingrese una Razon Social");
             this.ttmensaje.SetToolTip(this.cbotipodoc, "Debe Seleccionar un Número de Documento");
-            this.ttmensaje.SetToolTip(this.txtnum_doc, "Debe ingresar Número de Documento");
-
+            this.ttmensaje.SetToolTip(this.txtnum_doc, "Ingrese un Número de Documento");
         }
         //Mostrar Mensaje de Confirmacion
         private void MensajeOK(string mensaje)

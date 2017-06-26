@@ -127,7 +127,55 @@ namespace CapaPresentacion
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            GestionUsuario();
+        }
 
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frmpro = new FrmProveedores();
+            frmpro.MdiParent = this;
+            frmpro.Show();
+        }
+
+        private void trabajadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTrabajador frmtra = new FrmTrabajador();
+            frmtra.MdiParent = this;
+            frmtra.Show();
+
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmusu = new FrmUsuario();
+            frmusu.MdiParent = this;
+            frmusu.Show();
+        }
+
+        private void GestionUsuario()
+        {
+            if (tipo == "Administrador")
+            {
+                this.mnuconsultas.Enabled = true;
+                this.mnumantenimiento.Enabled = true;
+                this.mnuSistema.Enabled=true;
+                this.mnureportes.Enabled = true;
+                this.mnuherramientas.Enabled = true;
+            }else if(tipo == "Invitado")
+            {
+                this.mnuconsultas.Enabled = true;
+                this.mnumantenimiento.Enabled = false;
+                this.mnuSistema.Enabled = true;
+                this.mnureportes.Enabled = false;
+                this.mnuherramientas.Enabled = true;
+            }else
+            {
+                this.mnuconsultas.Enabled = false;
+                this.mnumantenimiento.Enabled = false;
+                this.mnuSistema.Enabled = false;
+                this.mnureportes.Enabled = false;
+                this.mnuherramientas.Enabled = false;
+            }
         }
     }
 }

@@ -19,10 +19,10 @@ namespace CapaPresentacion
         public FrmTrabajador()
         {
             InitializeComponent();
-            this.ttmensaje.SetToolTip(this.txtnom,"No se ingreso el Nombre");
-            this.ttmensaje.SetToolTip(this.txtdni,"No se ingreso el DNI");
+            this.ttmensaje.SetToolTip(this.txtnom,"Ingrese un Nombre de Trabajador");
+            this.ttmensaje.SetToolTip(this.txtdni,"Ingrese un DNI de Trabajador");
             this.ttmensaje.SetToolTip(this.cboarea,"Selecione un Area");
-            this.ttmensaje.SetToolTip(this.cboempresa,"Selecciones un Empresa");
+            this.ttmensaje.SetToolTip(this.cboempresa,"Seleccione una Empresa");
             this.txtcod_tra.Visible=false;
         }
 
