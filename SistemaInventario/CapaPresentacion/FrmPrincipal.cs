@@ -178,7 +178,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+       /* private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmProveedores frmp = new FrmProveedores();
             frmp.MdiParent = this;
@@ -197,13 +197,21 @@ namespace CapaPresentacion
             FrmUsuario frmu = new FrmUsuario();
             frmu.MdiParent = this;
             frmu.Show();
-        }
+        }*/
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCategoria frmc = new FrmCategoria();
             frmc.MdiParent = this;
             frmc.Show();
+        }
+
+        private void ingresoDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIngresos frm = FrmIngresos.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.cod_usu = Convert.ToInt32(this.cod_usu);
         }
     }
 }

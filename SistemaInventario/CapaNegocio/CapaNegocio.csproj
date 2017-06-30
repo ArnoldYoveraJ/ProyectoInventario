@@ -42,6 +42,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="NArea.cs" />
     <Compile Include="NCategoria.cs" />
+    <Compile Include="NOrden.cs" />
     <Compile Include="NProducto.cs" />
     <Compile Include="NProveedor.cs" />
     <Compile Include="NTrabajador.cs" />

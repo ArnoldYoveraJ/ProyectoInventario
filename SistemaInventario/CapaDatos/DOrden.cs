@@ -31,13 +31,15 @@ namespace CapaDatos
             get { return _Tipo_Comprobante; }
             set { _Tipo_Comprobante = value; }
         }
-        private int _Estado;
+        private String _Estado;
 
-        public int Estado
+        public String Estado
         {
             get { return _Estado; }
             set { _Estado = value; }
         }
+
+      
         private int _Cod_Usu;
 
         public int Cod_Usu
@@ -55,7 +57,7 @@ namespace CapaDatos
 
         public DOrden() { }
 
-        public DOrden(int cod_orden,DateTime fecha,string tip_compro,int est,int cod_usu,int cod_prov)
+        public DOrden(int cod_orden,DateTime fecha,string tip_compro,string est,int cod_usu,int cod_prov)
         {
             this.Cod_Orden = cod_orden;
             this.Fecha = fecha;
@@ -92,6 +94,7 @@ namespace CapaDatos
                 sql1.Parameters.AddWithValue("@tipo_comprobante", Orden.Tipo_Comprobante);
                 sql1.Parameters.AddWithValue("@cod_usu", Orden.Estado);
                 sql1.Parameters.AddWithValue("@cod_prov", Orden.Cod_Usu);
+                sql1.Parameters.AddWithValue("@estado", Orden.Estado);
                 rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro";
 
                 if(rpta.Equals("OK"))
