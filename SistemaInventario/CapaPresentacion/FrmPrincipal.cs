@@ -109,7 +109,8 @@ namespace CapaPresentacion
 
         private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmProducto frmp = FrmProducto.GetInstancia();
+          FrmProducto frmp = FrmProducto.GetInstancia();
+            //FrmProducto frmp = new FrmProducto();
             frmp.MdiParent = this;
             frmp.Show();
         }

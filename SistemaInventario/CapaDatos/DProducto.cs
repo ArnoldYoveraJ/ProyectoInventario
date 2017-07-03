@@ -471,5 +471,63 @@ namespace CapaDatos
             }
             return dt;
         }
+
+        public DataTable Buscar_producto_marca(DProducto Producto)
+        {
+            DataTable dt = new DataTable("PRODUCTOS");
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = sqlcon;
+                sql1.CommandText = "spbuscar_producto_marca";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter parTextobuscar = new SqlParameter();
+                parTextobuscar.ParameterName = "@buscartexto";
+                parTextobuscar.SqlDbType = SqlDbType.VarChar;
+                parTextobuscar.Size = 30;
+                parTextobuscar.Value = Producto.TextoBuscar;
+                sql1.Parameters.Add(parTextobuscar);
+
+                SqlDataAdapter sqldat = new SqlDataAdapter(sql1);
+                sqldat.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+            return dt;
+        }
+
+        public DataTable Buscar_producto_serie(DProducto Producto)
+        {
+            DataTable dt = new DataTable("PRODUCTOS");
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = sqlcon;
+                sql1.CommandText = "spbuscar_producto_serie";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter parTextobuscar = new SqlParameter();
+                parTextobuscar.ParameterName = "@buscartexto";
+                parTextobuscar.SqlDbType = SqlDbType.VarChar;
+                parTextobuscar.Size = 50;
+                parTextobuscar.Value = Producto.TextoBuscar;
+                sql1.Parameters.Add(parTextobuscar);
+
+                SqlDataAdapter sqldat = new SqlDataAdapter(sql1);
+                sqldat.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+            }
+            return dt;
+        }
     }
 }

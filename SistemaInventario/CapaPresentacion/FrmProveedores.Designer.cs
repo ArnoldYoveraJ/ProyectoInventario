@@ -106,13 +106,13 @@
             // 
             this.cboelegir.FormattingEnabled = true;
             this.cboelegir.Items.AddRange(new object[] {
-            "Documento",
+            "Razon Social",
             "Numero"});
             this.cboelegir.Location = new System.Drawing.Point(18, 23);
             this.cboelegir.Name = "cboelegir";
-            this.cboelegir.Size = new System.Drawing.Size(88, 21);
+            this.cboelegir.Size = new System.Drawing.Size(101, 21);
             this.cboelegir.TabIndex = 8;
-            this.cboelegir.Text = "Documento";
+            this.cboelegir.Text = "Razon Social";
             this.cboelegir.SelectedIndexChanged += new System.EventHandler(this.cboelegir_SelectedIndexChanged);
             // 
             // dgvlistado
@@ -190,7 +190,7 @@
             // 
             // txtbuscar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(112, 23);
+            this.txtbuscar.Location = new System.Drawing.Point(125, 23);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(146, 20);
             this.txtbuscar.TabIndex = 1;

@@ -57,5 +57,14 @@ namespace CapaPresentacion
         {
             lblhora.Text = DateTime.Now.ToString();
         }
+
+        private void txtcon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btningresar.PerformClick();
+            }
+        }
     }
 }

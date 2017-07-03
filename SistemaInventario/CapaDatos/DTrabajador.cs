@@ -110,7 +110,7 @@ namespace CapaDatos
                 parcod_tra.Direction = ParameterDirection.Output;
                 sql1.Parameters.Add(parcod_tra);*/
 
-                //sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);
+                sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);
                 sql1.Parameters.AddWithValue("@nom",Trabajador.Nombres);
                 sql1.Parameters.AddWithValue("@ape", Trabajador.Apellidos);
                 sql1.Parameters.AddWithValue("@dni", Trabajador.DNI);
@@ -233,10 +233,17 @@ namespace CapaDatos
                con.ConnectionString = Conexion.Cn;
                con.Open();
                SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = con;
                sql1.CommandText = "spbuscar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
-               sql1.Parameters.AddWithValue("@textobuscar",Textobuscar);
+              // sql1.Parameters.AddWithValue("@textobuscar",trabajador.Textobuscar);
+               SqlParameter parTextobuscar = new SqlParameter();
+               parTextobuscar.ParameterName = "@textobuscar";
+               parTextobuscar.SqlDbType = SqlDbType.VarChar;
+               parTextobuscar.Size = 50;
+               parTextobuscar.Value = trabajador.Textobuscar;
+               sql1.Parameters.Add(parTextobuscar);
 
                SqlDataAdapter da = new SqlDataAdapter(sql1);
                da.Fill(dt);

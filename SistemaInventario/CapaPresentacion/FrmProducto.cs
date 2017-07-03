@@ -123,8 +123,8 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
-            this.dgvlistado.Columns[12].Visible = false;
-            this.dgvlistado.Columns[14].Visible = false;
+           /* this.dgvlistado.Columns[12].Visible = false;
+            this.dgvlistado.Columns[14].Visible = false;*/
             //corregir el procedimiento almacenado para traer el nombre la categoria y el nombre del trabajador. 
         }
 
@@ -140,6 +140,20 @@ namespace CapaPresentacion
         private void buscar_nombre()
         {
             this.dgvlistado.DataSource = NProducto.Buscar_Nombre(this.txtbuscar.Text);
+            this.ocultarcolumnas();
+            lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
+        }
+
+        public void buscar_producto_marca()
+        {
+            this.dgvlistado.DataSource = NProducto.Buscar_Producto_Marca(this.txtbuscar.Text);
+            this.ocultarcolumnas();
+            lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
+        }
+
+        public void buscar_producto_serie()
+        {
+            this.dgvlistado.DataSource = NProducto.Buscar_Producto_Serie(this.txtbuscar.Text);
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }
@@ -203,12 +217,34 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            this.buscar_nombre();
+            if (cboelegir.Text.Equals("Nombre"))
+            {
+                buscar_nombre();
+            }
+            else if (cboelegir.Text.Equals("Marca"))
+            {
+                buscar_producto_marca();
+            }
+            else if (cboelegir.Text.Equals("Serie"))
+            {
+                buscar_producto_serie();
+            }
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            this.buscar_nombre();
+            if (cboelegir.Text.Equals("Nombre"))
+            {
+                buscar_nombre();
+            }
+            else if (cboelegir.Text.Equals("Marca"))
+            {
+                buscar_producto_marca();
+            }  
+            else if(cboelegir.Text.Equals("Serie"))
+            {
+                buscar_producto_serie();
+            }
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)

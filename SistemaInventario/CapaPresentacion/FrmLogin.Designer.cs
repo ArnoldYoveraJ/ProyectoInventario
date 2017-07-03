@@ -99,6 +99,7 @@
             this.txtcon.PasswordChar = '*';
             this.txtcon.Size = new System.Drawing.Size(167, 21);
             this.txtcon.TabIndex = 5;
+            this.txtcon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcon_KeyPress);
             // 
             // btningresar
             // 

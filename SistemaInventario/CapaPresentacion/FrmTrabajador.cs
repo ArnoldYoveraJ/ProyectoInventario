@@ -64,13 +64,13 @@ namespace CapaPresentacion
                 this.btnnuevo.Enabled=false;
                 this.btneditar.Enabled=false;
                 this.btnguardar.Enabled=true;
-                this.btnguardar.Enabled=true;
+                this.btncancelar.Enabled=true;
             }else{
                 this.habilitar(true);
                 this.btnnuevo.Enabled=true;
                 this.btneditar.Enabled=true;
                 this.btnguardar.Enabled=false;
-                this.btnguardar.Enabled=false;
+                this.btncancelar.Enabled = false;
             }
         }
 

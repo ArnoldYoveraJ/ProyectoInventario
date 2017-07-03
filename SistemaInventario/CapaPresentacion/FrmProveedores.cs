@@ -135,7 +135,7 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            if (cboelegir.Text.Equals("Documento"))
+            if (cboelegir.Text.Equals("Razon Social"))
             {
                 buscar_razon_social();
             }
@@ -147,7 +147,7 @@ namespace CapaPresentacion
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cboelegir.Text.Equals("Documento"))
+            if (cboelegir.Text.Equals("Razon Social"))
             {
                 buscar_razon_social();
             }
