@@ -72,7 +72,7 @@ namespace CapaPresentacion
             }
             else
             {
-                this.habilitar(true);
+                this.habilitar(false);
                 this.btnnuevo.Enabled = true;
                 this.btnguardar.Enabled = false;
                 this.btneditar.Enabled = true;
@@ -121,6 +121,7 @@ namespace CapaPresentacion
             this.mostrar();
             this.IsNuevo = false;
             this.IsEditar = false;
+            this.txtcod_prov.Visible = false;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -218,7 +219,7 @@ namespace CapaPresentacion
             string rpta;
             try
             {
-                if (this.txtrazons.Text == string.Empty || this.cbotipodoc.SelectedValue==string.Empty ||this.txtnum_doc.Text==string.Empty  ) //si la caja de texto está vacía--Se cambio la fila de enmedio
+                if (this.txtrazons.Text == string.Empty ||this.txtnum_doc.Text==string.Empty  ) //si la caja de texto está vacía--Se cambio la fila de enmedio
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(this.txtrazons, "Ingrese una Razón Social");
@@ -229,13 +230,13 @@ namespace CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = NProveedor.Insertar(this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), this.cbotipodoc.Text,
+                        rpta = NProveedor.Insertar(this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), Convert.ToString(this.cbotipodoc.Text),
                             this.txtnum_doc.Text.Trim(), this.txtdir.Text.Trim(), this.txttel.Text.Trim(), this.txtemail.Text.Trim());// borra espacios 
                         MensajeOK("Se inserto Correctamente el Registro");
                     }
                     else
                     {
-                        rpta = NProveedor.Editar(Convert.ToInt16(this.txtcod_prov.Text.Trim()),this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), this.cbotipodoc.SelectedText.Trim(),
+                        rpta = NProveedor.Editar(Convert.ToInt16(this.txtcod_prov.Text.Trim()),this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), this.cbotipodoc.Text,
                              this.txtnum_doc.Text.Trim(), this.txtdir.Text.Trim(), this.txttel.Text.Trim(), this.txtemail.Text.Trim());// borra espacios 
                         MensajeOK("Se edito Correctamente el Registro");
                     }

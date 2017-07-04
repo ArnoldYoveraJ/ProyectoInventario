@@ -94,11 +94,14 @@ namespace CapaPresentacion
          }
         private void FrmArea_Load(object sender, EventArgs e)
         {
-            //this.Top = 0;
-           // this.Left = 0;
+            this.Top = 0;
+            this.Left = 0;
             this.Mostrar();
-            this.Habilitar(false);
             this.Botones();
+            this.Habilitar(false);
+            IsNuevo = false;
+            IsEditar = false;
+            this.txtcod.Visible = false;
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)

@@ -202,7 +202,6 @@ namespace CapaDatos
             try
             {
                 con.ConnectionString = Conexion.Cn;
-                con.Open();
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = con;
                 sql1.CommandText = "spbuscar_nombre";
@@ -230,13 +229,12 @@ namespace CapaDatos
             try
             {
                 con.ConnectionString = Conexion.Cn;
-                con.Open();
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = con;
                 sql1.CommandText = "spbuscar_usuario";
                 sql1.CommandType = CommandType.StoredProcedure;
 
-                sql1.Parameters.AddWithValue("@texto_buscar",usuario.Textobuscar);
+                sql1.Parameters.AddWithValue("@textobuscar", usuario.Textobuscar);
 
                 SqlDataAdapter da = new SqlDataAdapter(sql1);
                 da.Fill(dt);

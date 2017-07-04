@@ -59,7 +59,7 @@ namespace CapaPresentacion
               this.btncancelar.Enabled= true;
           }else
           {
-              this.habilitar(true);
+              this.habilitar(false);
               this.btnnuevo.Enabled = true;
               this.btnguardar.Enabled = false;
               this.btneditar.Enabled = true;
@@ -162,15 +162,15 @@ namespace CapaPresentacion
                 }
                 this.IsNuevo = false;
                 this.IsEditar = false;
-                this.LimpiarBotones();
                 this.Botones();
-                this.tabControl1.SelectedIndex = 0;
+                this.LimpiarBotones();
                 this.mostrar();
+               // this.tabControl1.SelectedIndex = 0;
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
 

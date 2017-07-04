@@ -24,6 +24,7 @@ namespace CapaPresentacion
             this.ttmensaje.SetToolTip(this.cboarea,"Selecione un Area");
             this.ttmensaje.SetToolTip(this.cboempresa,"Seleccione una Empresa");
             this.txtcod_tra.Visible=false;
+            llenarComboArea();
         }
 
         private void MensajeOK(string mensaje)
@@ -66,7 +67,7 @@ namespace CapaPresentacion
                 this.btnguardar.Enabled=true;
                 this.btncancelar.Enabled=true;
             }else{
-                this.habilitar(true);
+                this.habilitar(false);
                 this.btnnuevo.Enabled=true;
                 this.btneditar.Enabled=true;
                 this.btnguardar.Enabled=false;
@@ -90,6 +91,13 @@ namespace CapaPresentacion
             this.ocultarcolumanas();
             this.lbltotal.Text="Total: " + Convert.ToString(dgvlistado.Rows.Count);
         }
+
+        private void llenarComboArea()
+        {
+            cboarea.DataSource = NArea.Mostrar();
+            cboarea.ValueMember = "cod_area";
+            cboarea.DisplayMember = "nom_area";
+        }
         private void FrmTrabajador_Load(object sender, EventArgs e)
         {
             this.Top=0;
@@ -100,6 +108,7 @@ namespace CapaPresentacion
             this.habilitar(false);
             this.isnuevo = false;
             this.iseditar = false;
+            this.txtcod_tra.Visible = false;
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)
@@ -127,13 +136,13 @@ namespace CapaPresentacion
                     if(this.isnuevo)
                     {
                         rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text,this.txtemail.Text.Trim(),
-                        this.txtanexo.Text,Convert.ToInt32(this.cboarea.SelectedValue),Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
+                        this.txtanexo.Text, Convert.ToInt32(this.cboarea.SelectedText.Trim()), Convert.ToInt32(this.cboempresa.SelectedText.Trim()));// borra espacios y convierte en mayuscula
                         MensajeOK("Se inserto Correctamente");
                     }
                     else
                     {
                         rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text.Trim(),this.txtemail.Text.Trim(),
-                        this.txtanexo.Text.Trim(),Convert.ToInt32(this.cboarea.SelectedValue),Convert.ToInt32(this.cboempresa.SelectedValue));
+                        this.txtanexo.Text.Trim(), Convert.ToInt32(this.cboarea.SelectedText.Trim()), Convert.ToInt32(this.cboempresa.SelectedText.Trim()));
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -217,6 +226,7 @@ namespace CapaPresentacion
                 dgvlistado.Columns[0].Visible = false;
             }
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {

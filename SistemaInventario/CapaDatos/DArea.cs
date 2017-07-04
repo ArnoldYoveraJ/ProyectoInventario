@@ -50,7 +50,7 @@ namespace CapaDatos
                   sqlcon.Open();
                   SqlCommand sql1= new SqlCommand();
                   sql1.Connection=sqlcon;
-                  sql1.CommandText="spingresar_area";
+                  sql1.CommandText="spinsertar_area";
                   sql1.CommandType= CommandType.StoredProcedure;
 
                   SqlParameter par_codarea= new SqlParameter();
@@ -60,13 +60,13 @@ namespace CapaDatos
                   sql1.Parameters.Add(par_codarea);
 
                   SqlParameter pas_nomarea= new SqlParameter();
-                  pas_nomarea.ParameterName="@nom_area";
+                  pas_nomarea.ParameterName="@nom";
                   pas_nomarea.SqlDbType=SqlDbType.VarChar;
                   pas_nomarea.Size=30;
-                  pas_nomarea.SqlValue = area.Nom_Area;
-                  sql1.Parameters.Add(Nom_Area);
+                  pas_nomarea.Value = area.Nom_Area;
+                  sql1.Parameters.Add(pas_nomarea);
 
-                  rpta=sql1.ExecuteNonQuery() == 1?"Ok":"No se Ingresó el registro";
+                  rpta=sql1.ExecuteNonQuery()== 1?"Ok":"No se Ingresó el registro";
 	        }
 	     catch (Exception e)
 	        {
@@ -96,15 +96,15 @@ namespace CapaDatos
                 SqlParameter par_codarea = new SqlParameter();
                 par_codarea.ParameterName = "@cod_area";
                 par_codarea.SqlDbType = SqlDbType.Int;
-                par_codarea.Direction = ParameterDirection.Output;
+                par_codarea.Value = area.Cod_Area;
                 sql1.Parameters.Add(par_codarea);
 
                 SqlParameter pas_nomarea = new SqlParameter();
-                pas_nomarea.ParameterName = "@nom_area";
+                pas_nomarea.ParameterName = "@nom";
                 pas_nomarea.SqlDbType = SqlDbType.VarChar;
                 pas_nomarea.Size = 30;
-                pas_nomarea.SqlValue = area.Nom_Area;
-                sql1.Parameters.Add(Nom_Area);
+                pas_nomarea.Value = area.Nom_Area;
+                sql1.Parameters.Add(pas_nomarea);
 
                 rpta = sql1.ExecuteNonQuery() == 1 ? "Ok" : "No se Editó el registro";
             }
@@ -136,7 +136,7 @@ namespace CapaDatos
                 SqlParameter par_codarea = new SqlParameter();
                 par_codarea.ParameterName = "@cod_area";
                 par_codarea.SqlDbType = SqlDbType.Int;
-                par_codarea.Direction = ParameterDirection.Output;
+                par_codarea.Value = area.Cod_Area;
                 sql1.Parameters.Add(par_codarea);
 
                 rpta = sql1.ExecuteNonQuery() == 1 ? "Ok" : "No se Eliminó el registro";
@@ -156,7 +156,7 @@ namespace CapaDatos
         //Metodo para Mostrar
         public DataTable  Mostrar()
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("area");
             SqlConnection sqlcon = new SqlConnection();
             try
             {
@@ -183,22 +183,23 @@ namespace CapaDatos
         {
             DataTable dt = new DataTable("Area");
             SqlConnection sqlcon = new SqlConnection();
-            sqlcon.Open();
+           
             try
             {
                 sqlcon.ConnectionString = Conexion.Cn;
+                sqlcon.Open();
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = sqlcon;
                 sql1.CommandText = "spbuscar_area";
                 sql1.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter parbuscar = new SqlParameter();
-                parbuscar.ParameterName = "@texto_buscar";
+                parbuscar.ParameterName = "@textobuscar";
                 parbuscar.SqlDbType = SqlDbType.VarChar;
                 parbuscar.Value = area.Texto_buscar;
                 sql1.Parameters.Add(parbuscar);
 
-                SqlDataAdapter da = new SqlDataAdapter(); //falta (SqlDataAdapter(sql1))
+                SqlDataAdapter da = new SqlDataAdapter(sql1); //falta (SqlDataAdapter(sql1))
                 da.Fill(dt);
                 //DataColumn dc = dt.Columns.Add("cod_area", typeof(Int16));
                 //dt.Columns.Add("nom_area", typeof(string));
