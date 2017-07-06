@@ -68,6 +68,7 @@ namespace CapaPresentacion
             this.txtdd.Text=string.Empty;
             this.txtram.Text=string.Empty;
             this.txtdesc.Text=string.Empty;
+            this.txtso.Text = string.Empty;
             this.txtserie.Text=string.Empty;
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
         }
@@ -110,7 +111,7 @@ namespace CapaPresentacion
             }
             else
             {
-                this.habilitar(true);
+                this.habilitar(false);
                 this.btnnuevo.Enabled = true;
                 this.btnguardar.Enabled = false;
                 this.btneditar.Enabled = true;

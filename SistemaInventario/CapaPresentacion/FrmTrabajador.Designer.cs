@@ -131,7 +131,7 @@
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(498, 72);
+            this.lbltotal.Location = new System.Drawing.Point(468, 74);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(35, 13);
             this.lbltotal.TabIndex = 6;
@@ -293,20 +293,10 @@
             // cboarea
             // 
             this.cboarea.FormattingEnabled = true;
-            this.cboarea.Items.AddRange(new object[] {
-            "Sistemas",
-            "Legal",
-            "Tesoreria",
-            "Contabilidad",
-            "Gerencia",
-            "Creditos",
-            "Atención al Cliente",
-            "Recursos Humanos"});
             this.cboarea.Location = new System.Drawing.Point(84, 141);
             this.cboarea.Name = "cboarea";
             this.cboarea.Size = new System.Drawing.Size(121, 21);
             this.cboarea.TabIndex = 18;
-            this.cboarea.Text = "Sistemas";
             // 
             // label8
             // 

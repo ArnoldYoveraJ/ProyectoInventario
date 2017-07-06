@@ -96,7 +96,7 @@ namespace CapaPresentacion
             }
             else
             {
-                this.habilitar(true);
+                this.habilitar(false);
                 this.btnnuevo.Enabled = true;
                 this.btnguardar.Enabled = false;
                 this.btncancelar.Enabled = false;
@@ -133,7 +133,7 @@ namespace CapaPresentacion
         }
         private void FrmIngresos_Load(object sender, EventArgs e)
         {
-
+            this.txtcod_orden.Visible = false;
         }
 
         private void FrmIngresos_FormClosing(object sender, FormClosingEventArgs e)

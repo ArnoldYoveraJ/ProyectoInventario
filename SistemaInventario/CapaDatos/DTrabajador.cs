@@ -104,13 +104,13 @@ namespace CapaDatos
                 sql1.CommandText = "spinsertar_trabajador";
                 sql1.CommandType = CommandType.StoredProcedure;
 
-                /*SqlParameter parcod_tra = new SqlParameter();
+                SqlParameter parcod_tra = new SqlParameter();
                 parcod_tra.ParameterName = "@cod_tra";
                 parcod_tra.SqlDbType = SqlDbType.Int;
                 parcod_tra.Direction = ParameterDirection.Output;
-                sql1.Parameters.Add(parcod_tra);*/
+                sql1.Parameters.Add(parcod_tra);
 
-                sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);
+               /* sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);*/
                 sql1.Parameters.AddWithValue("@nom",Trabajador.Nombres);
                 sql1.Parameters.AddWithValue("@ape", Trabajador.Apellidos);
                 sql1.Parameters.AddWithValue("@dni", Trabajador.DNI);

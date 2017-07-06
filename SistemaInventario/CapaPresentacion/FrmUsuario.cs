@@ -72,7 +72,7 @@ namespace CapaPresentacion
             }
             else
             {
-                this.habilitar(true);
+                this.habilitar(false);
                 this.btnnuevo.Enabled = true;
                 this.btnguardar.Enabled = false;
                 this.btneditar.Enabled = true;
