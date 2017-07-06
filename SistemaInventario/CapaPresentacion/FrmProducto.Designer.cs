@@ -622,6 +622,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmProducto";
             this.Text = "Mantenimiento de Productos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmProducto_FormClosing);
             this.Load += new System.EventHandler(this.FrmProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
             this.tabPage1.ResumeLayout(false);

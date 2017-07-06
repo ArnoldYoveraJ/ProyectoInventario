@@ -414,5 +414,10 @@ namespace CapaPresentacion
             FrmVistaTrabajador_Producto form = new FrmVistaTrabajador_Producto();
             form.ShowDialog();
         }
+
+        private void FrmProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;// para corregir cuando se pierde la instancia
+        }
     }
 }

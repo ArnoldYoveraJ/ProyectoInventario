@@ -218,7 +218,7 @@ namespace CapaDatos
 
         public DataTable Mostrar_Detalle_Ingreso(string textobuscar)
         {
-            DataTable dt = new DataTable("orden");
+            DataTable dt = new DataTable("orden");//detalle_ingreso
             SqlConnection con = new SqlConnection();
             try
             {
