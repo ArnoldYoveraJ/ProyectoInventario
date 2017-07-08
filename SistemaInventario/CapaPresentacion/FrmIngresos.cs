@@ -13,9 +13,9 @@ namespace CapaPresentacion
 {
     public partial class FrmIngresos : Form
     {
-        public int cod_usu;
+        public int cod_usu;//para enviar el codigo de usuario al frmprincipal
         private bool IsNuevo;
-        private DataTable dtDetalle;
+        private DataTable dtDetalle; //para almacenar todos los detalles del ingreso
 
         private static FrmIngresos _instancia;
         public static FrmIngresos GetInstancia()
@@ -56,7 +56,7 @@ namespace CapaPresentacion
             this.txtcod_orden.Text = string.Empty;
             this.txtcod_prov.Text = string.Empty;
             this.txtproveedor.Text = string.Empty;
-            
+            this.agregar_detalle();
         }
 
         private void LimpiarDetalle()
@@ -129,10 +129,26 @@ namespace CapaPresentacion
 
         private void Mostrar_Detalle()
         {
-            this.dgvlistado.DataSource = NOrden.Mostrar_Detalle(this.txtcod_orden.Text);
+            this.dgvlistadodetalle.DataSource = NOrden.Mostrar_Detalle(this.txtcod_orden.Text);
+        }
+
+        private void agregar_detalle()
+        {
+            this.dtDetalle = new DataTable("detalle");
+            this.dtDetalle.Columns.Add("cod_pro", System.Type.GetType("System.Int32"));
+            this.dtDetalle.Columns.Add("nom_pro", System.Type.GetType("System.String"));
+            this.dtDetalle.Columns.Add("stock_ini", System.Type.GetType("System.Int32"));
+            //relacionar nuestro datagrid con el datatable
+            this.dgvlistadodetalle.DataSource = dtDetalle;
         }
         private void FrmIngresos_Load(object sender, EventArgs e)
         {
+            this.Top = 0;
+            this.Left=0;
+            this.mostrar();
+            this.habilitar(false);
+            this.Botones();
+            this.agregar_detalle();
             this.txtcod_orden.Visible = false;
         }
 
@@ -155,7 +171,7 @@ namespace CapaPresentacion
         private void btnbuscar_pro_Click(object sender, EventArgs e)
         {
             FrmVistaProveedorIngreso frm = new FrmVistaProveedorIngreso();
-            frm.ShowDialog();
+            frm.ShowDialog();//aparesca como cuadro de dialogo.
         }
 
         private void btnbuscar_producto_Click(object sender, EventArgs e)
@@ -219,6 +235,65 @@ namespace CapaPresentacion
             {
                 DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dgvlistado.Rows[e.RowIndex].Cells["Eliminar"];
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
+            }
+        }
+
+        private void btnnuevo_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = true;
+            this.Botones();
+            this.LimpiarBotones();
+            this.habilitar(true);
+            this.txtcod_orden.Focus();
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.Botones();
+            this.LimpiarBotones();
+            this.habilitar(false);
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            string rpta;
+            try
+            {
+                if (this.txtproveedor.Text == string.Empty || this.txtpro.Text == string.Empty) //si la caja de texto está vacía
+                {
+                    MensajeError("Faltan Ingresar Datos");
+                    erroricono.SetError(txtproveedor, "Ingrese un Valor");
+                    erroricono.SetError(txtpro, "Ingrese un Valor");
+                }
+                else
+                {
+                    if (this.IsNuevo)
+                    {
+                        
+                        rpta =NOrden.Ingresar (dtfecha,cbotipo_compro.Text,txtco,this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
+                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), this.txtso.Text.Trim(), imagen,
+                           Convert.ToInt16(this.cboestado.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));// borra espacios y convierte en mayuscula
+                        MensajeOK("Se Inserto Correctamente");
+                    }
+                    this.MensajeError(rpta);
+                }
+                this.IsNuevo = false;
+                this.IsEditar = false;
+                this.LimpiarBotones();
+                this.Botones();
+                this.tabControl1.SelectedIndex = 0;
+                this.mostrar();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

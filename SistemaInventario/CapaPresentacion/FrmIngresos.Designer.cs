@@ -441,6 +441,7 @@
             this.btncancelar.TabIndex = 9;
             this.btncancelar.Text = "&Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btneditar
             // 
@@ -450,6 +451,7 @@
             this.btneditar.TabIndex = 8;
             this.btneditar.Text = "E&ditar";
             this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnguardar
             // 
@@ -459,6 +461,7 @@
             this.btnguardar.TabIndex = 7;
             this.btnguardar.Text = "&Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnnuevo
             // 
@@ -468,6 +471,7 @@
             this.btnnuevo.TabIndex = 6;
             this.btnnuevo.Text = "&Nuevo";
             this.btnnuevo.UseVisualStyleBackColor = true;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // txtcod_orden
             // 
