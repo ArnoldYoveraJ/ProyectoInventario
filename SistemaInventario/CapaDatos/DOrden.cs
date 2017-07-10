@@ -105,7 +105,7 @@ namespace CapaDatos
                     {
                         ord.Cod_Orden = this.Cod_Orden;
                         //llamar a metodo insertar de ddetalle_ingreso
-                        // rpta = Detalle. Insertar(ord,ref SqlCon,ref SqlTra);
+                        //rpta = Detalle. Insertar(ord,ref SqlCon,ref SqlTra);
                         rpta = ord.Insertar(ord, ref con, ref SqlTra);
                         if(rpta.Equals("OK"))
                         {

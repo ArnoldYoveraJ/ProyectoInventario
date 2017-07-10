@@ -293,6 +293,7 @@
             this.btnquitar.TabIndex = 46;
             this.btnquitar.Text = "Quitar";
             this.btnquitar.UseVisualStyleBackColor = true;
+            this.btnquitar.Click += new System.EventHandler(this.btnquitar_Click);
             // 
             // btnagre
             // 
@@ -302,6 +303,7 @@
             this.btnagre.TabIndex = 45;
             this.btnagre.Text = "Agregar";
             this.btnagre.UseVisualStyleBackColor = true;
+            this.btnagre.Click += new System.EventHandler(this.btnagre_Click);
             // 
             // txtstock
             // 

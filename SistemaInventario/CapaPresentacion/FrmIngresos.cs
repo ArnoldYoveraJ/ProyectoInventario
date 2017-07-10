@@ -56,7 +56,7 @@ namespace CapaPresentacion
             this.txtcod_orden.Text = string.Empty;
             this.txtcod_prov.Text = string.Empty;
             this.txtproveedor.Text = string.Empty;
-            this.agregar_detalle();
+            this.agregar_detalle();//para cuando limpiemos todos los botones creemos una nueva tabla
         }
 
         private void LimpiarDetalle()
@@ -245,6 +245,7 @@ namespace CapaPresentacion
             this.LimpiarBotones();
             this.habilitar(true);
             this.txtcod_orden.Focus();
+            this.LimpiarDetalle();
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
@@ -253,6 +254,7 @@ namespace CapaPresentacion
             this.Botones();
             this.LimpiarBotones();
             this.habilitar(false);
+            this.LimpiarDetalle();
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -275,16 +277,13 @@ namespace CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        
-                        rpta =NOrden.Ingresar (dtfecha,cbotipo_compro.Text,txtco,this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
-                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), this.txtso.Text.Trim(), imagen,
-                           Convert.ToInt16(this.cboestado.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));// borra espacios y convierte en mayuscula
+
+                        rpta = NOrden.Ingresar(dtfecha.Value, cbotipo_compro.Text.Trim(), cod_usu, 
+                          Convert.ToInt32(this.txtcod_prov.Text.Trim()), "Emitido",dtDetalle);// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
-                    this.MensajeError(rpta);
                 }
                 this.IsNuevo = false;
-                this.IsEditar = false;
                 this.LimpiarBotones();
                 this.Botones();
                 this.tabControl1.SelectedIndex = 0;
@@ -295,6 +294,53 @@ namespace CapaPresentacion
 
                 throw;
             }
+        }
+
+        private void btnagre_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txtcod_pro.Text == string.Empty || this.txtstock.Text == string.Empty || this.txtpro.Text == string.Empty) //si la caja de texto está vacía
+                {
+                    MensajeError("Faltan Ingresar Datos");
+                    erroricono.SetError(txtcod_pro, "Ingrese un Valor");
+                    erroricono.SetError(txtstock, "Ingrese un Valor");
+                    erroricono.SetError(txtpro, "Ingrese un Valor");
+                }
+                else
+                {
+                    bool registrar=true;
+                    foreach(DataRow row in dtDetalle.Rows)
+                    {
+                        if(Convert.ToInt32(row["cod_pro"]) == Convert.ToInt32(this.txtcod_pro.Text));
+                        {
+                            registrar = false;
+                            this.MensajeError("Ya se encuentra el producto en el detalle");
+                        }
+                        if(registrar)
+                        {
+                            DataRow row1 = this.dtDetalle.NewRow();
+                            row1["cod_pro"] = Convert.ToInt32(this.txtcod_pro.Text);
+                            row1["Producto"] = Convert.ToInt32(this.txtpro.Text);
+                            row1["stock_inicial"] = Convert.ToInt32(this.txtstock.Text);
+                            this.dtDetalle.Rows.Add(row1);
+                            this.LimpiarDetalle();
+
+
+                        }
+                    }
+                } 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnquitar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
