@@ -267,11 +267,10 @@ namespace CapaPresentacion
             string rpta;
             try
             {
-                if (this.txtproveedor.Text == string.Empty || this.txtpro.Text == string.Empty) //si la caja de texto está vacía
+                if (this.txtcod_prov.Text == string.Empty) //si la caja de texto está vacía
                 {
                     MensajeError("Faltan Ingresar Datos");
-                    erroricono.SetError(txtproveedor, "Ingrese un Valor");
-                    erroricono.SetError(txtpro, "Ingrese un Valor");
+                    erroricono.SetError(txtcod_prov, "Ingrese un Valor");
                 }
                 else
                 {
@@ -312,23 +311,22 @@ namespace CapaPresentacion
                     bool registrar=true;
                     foreach(DataRow row in dtDetalle.Rows)
                     {
-                        if(Convert.ToInt32(row["cod_pro"]) == Convert.ToInt32(this.txtcod_pro.Text));
+                        if(Convert.ToInt32(row["cod_pro"]) == Convert.ToInt32(this.txtcod_pro.Text))
                         {
                             registrar = false;
                             this.MensajeError("Ya se encuentra el producto en el detalle");
                         }
+
+                    }
                         if(registrar)
                         {
-                            DataRow row1 = this.dtDetalle.NewRow();
-                            row1["cod_pro"] = Convert.ToInt32(this.txtcod_pro.Text);
-                            row1["Producto"] = Convert.ToInt32(this.txtpro.Text);
-                            row1["stock_inicial"] = Convert.ToInt32(this.txtstock.Text);
-                            this.dtDetalle.Rows.Add(row1);
+                            DataRow row = this.dtDetalle.NewRow();
+                            row["cod_pro"] = Convert.ToInt32(this.txtcod_pro.Text);
+                            row["nom_pro"] = (this.txtpro.Text);
+                            row["stock_ini"] = Convert.ToInt32(this.txtstock.Text);
+                            this.dtDetalle.Rows.Add(row);
                             this.LimpiarDetalle();
-
-
                         }
-                    }
                 } 
             }
             catch (Exception)
@@ -341,6 +339,21 @@ namespace CapaPresentacion
         private void btnquitar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvlistado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtcod_orden.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_orden"].Value);
+            this.txtcod_prov.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_prov"].Value);
+            this.txtproveedor.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["proveedor"].Value);
+            this.cbotipo_compro.SelectedValue = Convert.ToString(dgvlistado.CurrentRow.Cells["tipo_com"].Value);
+            this.dtfecha.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["fecha"].Value);
+            //detalle 
+            this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_prod"].Value);
+            this.txtpro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["producto"].Value);
+            this.txtstock.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["stock"].Value);
+            Mostrar_Detalle();
+            this.tabControl1.SelectedIndex = 1;
         }
     }
 }
