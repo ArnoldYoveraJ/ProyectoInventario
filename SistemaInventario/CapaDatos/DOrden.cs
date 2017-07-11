@@ -39,7 +39,6 @@ namespace CapaDatos
             set { _Estado = value; }
         }
 
-      
         private int _Cod_Usu;
 
         public int Cod_Usu
@@ -89,6 +88,7 @@ namespace CapaDatos
                 parcod_orden.SqlDbType = SqlDbType.Int;
                 parcod_orden.Direction = ParameterDirection.Output;
                 sql1.Parameters.Add(parcod_orden);
+                //VERIFICAR EL PROCEDIMIENTO ALMACENADO DE INSERTAR ORDEN. COD Y ESTADO.
 
                 sql1.Parameters.AddWithValue("@fecha", Orden.Fecha);
                 sql1.Parameters.AddWithValue("@tipo_comprobante", Orden.Tipo_Comprobante);
