@@ -49,10 +49,10 @@ namespace CapaNegocio
             return objo.Buscar_orden_ingreso_porfecha(fecha1, fecha2);
         }
 
-        public static DataTable Mostrar_Detalle(string fecha1)
+        public static DataTable Mostrar_Detalle(string texto)
         {
             DOrden objo = new DOrden();
-            return objo.Mostrar_Detalle_Ingreso(fecha1);
+            return objo.Mostrar_Detalle_Ingreso(texto);
         }
     }
 }

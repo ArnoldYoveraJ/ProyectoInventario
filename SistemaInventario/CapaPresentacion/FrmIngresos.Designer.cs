@@ -268,6 +268,7 @@
             this.dgvlistadodetalle.Name = "dgvlistadodetalle";
             this.dgvlistadodetalle.Size = new System.Drawing.Size(567, 94);
             this.dgvlistadodetalle.TabIndex = 40;
+            this.dgvlistadodetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistadodetalle_CellContentClick);
             // 
             // groupBox2
             // 

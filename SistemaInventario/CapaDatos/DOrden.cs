@@ -56,14 +56,14 @@ namespace CapaDatos
 
         public DOrden() { }
 
-        public DOrden(int cod_orden,DateTime fecha,string tip_compro,string est,int cod_usu,int cod_prov)
+        public DOrden(int cod_orden, DateTime fecha, string tip_compro, int cod_usu, int cod_prov, string est)
         {
             this.Cod_Orden = cod_orden;
             this.Fecha = fecha;
             this.Tipo_Comprobante = tip_compro;
-            this.Estado = est;
             this.Cod_Usu = cod_usu;
             this.Cod_Prov = cod_prov;
+            this.Estado = est;
         }
 
         public string Insertar(DOrden Orden,List<DDetalle_Orden> Detalle)
@@ -92,35 +92,37 @@ namespace CapaDatos
 
                 sql1.Parameters.AddWithValue("@fecha", Orden.Fecha);
                 sql1.Parameters.AddWithValue("@tipo_comprobante", Orden.Tipo_Comprobante);
-                sql1.Parameters.AddWithValue("@cod_usu", Orden.Estado);
-                sql1.Parameters.AddWithValue("@cod_prov", Orden.Cod_Usu);
+                sql1.Parameters.AddWithValue("@cod_usu", Orden.Cod_Usu);
+                sql1.Parameters.AddWithValue("@cod_prov", Orden.Cod_Prov);
                 sql1.Parameters.AddWithValue("@estado", Orden.Estado);
                 rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro";
 
                 if(rpta.Equals("OK"))
                 {
                     //obtner el código del ingreso generado
-                    this.Cod_Orden = Convert.ToInt32(sql1.Parameters["cod_orden"].Value);
+                    this.Cod_Orden = Convert.ToInt32(sql1.Parameters["@cod_orden"].Value);
                     foreach (DDetalle_Orden ord in Detalle)
                     {
+                        //Establecemos el codigo del ingreso que se autogenero
                         ord.Cod_Orden = this.Cod_Orden;
                         //llamar a metodo insertar de ddetalle_ingreso
                         //rpta = Detalle. Insertar(ord,ref SqlCon,ref SqlTra);
                         rpta = ord.Insertar(ord, ref con, ref SqlTra);
-                        if(rpta.Equals("OK"))
+                        if (!rpta.Equals("OK"))
                         {
                             break;
                         }
                     }
-                    if(rpta.Equals("OK"))
-                    {
-                        SqlTra.Commit();
-                    }
-                    else
-                    {
-                        SqlTra.Rollback();
-                    }
                 }
+                if (rpta.Equals("OK"))
+                {
+                    SqlTra.Commit();
+                }
+                else
+                {
+                    SqlTra.Rollback();
+                }
+                
             }
             catch (Exception e)
             {
@@ -147,7 +149,7 @@ namespace CapaDatos
                 sql1.CommandType = CommandType.StoredProcedure;
 
                 sql1.Parameters.AddWithValue("@cod_orden", orden.Cod_Orden);
-                rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Eliminó el Registro";
+                rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Anuló el Registro";
             }
             catch (Exception e)
             {
@@ -167,7 +169,7 @@ namespace CapaDatos
             try
             {
                 con.ConnectionString = Conexion.Cn;
-                con.Open();
+                //con.Open();
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = con;
                 sql1.CommandText = "spmostrar_orden_ingreso";
@@ -218,7 +220,7 @@ namespace CapaDatos
 
         public DataTable Mostrar_Detalle_Ingreso(string textobuscar)
         {
-            DataTable dt = new DataTable("orden");//detalle_ingreso
+            DataTable dt = new DataTable("detalle_orden");//detalle_ingreso
             SqlConnection con = new SqlConnection();
             try
             {

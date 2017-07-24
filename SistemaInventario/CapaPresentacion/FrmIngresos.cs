@@ -283,8 +283,9 @@ namespace CapaPresentacion
                     }
                 }
                 this.IsNuevo = false;
-                this.LimpiarBotones();
                 this.Botones();
+                this.LimpiarBotones();
+                this.LimpiarDetalle();
                 this.tabControl1.SelectedIndex = 0;
                 this.mostrar();
             }
@@ -344,16 +345,21 @@ namespace CapaPresentacion
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
             this.txtcod_orden.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_orden"].Value);
-            this.txtcod_prov.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_prov"].Value);
+            //this.txtcod_prov.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_prov"].Value);
             this.txtproveedor.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["proveedor"].Value);
-            this.cbotipo_compro.SelectedValue = Convert.ToString(dgvlistado.CurrentRow.Cells["tipo_com"].Value);
-            this.dtfecha.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["fecha"].Value);
+            this.cbotipo_compro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["tipo_comprobante"].Value);
+            this.dtfecha.Value = Convert.ToDateTime(dgvlistado.CurrentRow.Cells["fecha"].Value);
             //detalle 
-            this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_prod"].Value);
-            this.txtpro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["producto"].Value);
-            this.txtstock.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["stock"].Value);
-            Mostrar_Detalle();
+            /*this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_prod"].Value);
+            this.txtpro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["producto"].Value);*/
+            this.txtstock.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["stock_inicial"].Value);
+            this.Mostrar_Detalle();
             this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void dgvlistadodetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
