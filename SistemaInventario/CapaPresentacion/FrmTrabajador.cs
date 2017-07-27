@@ -25,6 +25,7 @@ namespace CapaPresentacion
             this.ttmensaje.SetToolTip(this.cboempresa,"Seleccione una Empresa");
             this.txtcod_tra.Visible=false;
             llenarComboArea();
+            llenarComboEmpresa();
         }
 
         private void MensajeOK(string mensaje)
@@ -98,12 +99,18 @@ namespace CapaPresentacion
             cboarea.ValueMember = "cod_area";
             cboarea.DisplayMember = "nom_area";
         }
+
+        private void llenarComboEmpresa()
+        {
+            cboempresa.DataSource = NTrabajador.Mostar_empresa();
+            cboempresa.ValueMember = "cod_empresa";
+            cboempresa.DisplayMember = "nom_empresa";
+        }
         private void FrmTrabajador_Load(object sender, EventArgs e)
         {
             this.Top=0;
             this.Left=0;
             this.mostrar();
-            Activar_botones();
             this.Activar_botones();
             this.habilitar(false);
             this.isnuevo = false;
@@ -113,10 +120,11 @@ namespace CapaPresentacion
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            this.isnuevo=false;
-            this.iseditar=true;
+            this.isnuevo=true;
+            this.iseditar=false;
+            this.limpiar();
+            this.habilitar(false);
             this.Activar_botones();
-            this.habilitar(true);
             this.txtcod_tra.Focus();
 
         }
@@ -136,13 +144,13 @@ namespace CapaPresentacion
                     if(this.isnuevo)
                     {
                         rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text,this.txtemail.Text.Trim(),
-                        this.txtanexo.Text, Convert.ToInt32(this.cboarea.SelectedText.Trim()), Convert.ToInt32(this.cboempresa.SelectedText.Trim()));// borra espacios y convierte en mayuscula
+                        this.txtanexo.Text, Convert.ToInt32(this.cboarea.SelectedValue), Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
                         MensajeOK("Se inserto Correctamente");
                     }
                     else
                     {
-                        rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text.Trim(),this.txtemail.Text.Trim(),
-                        this.txtanexo.Text.Trim(), Convert.ToInt32(this.cboarea.SelectedText.Trim()), Convert.ToInt32(this.cboempresa.SelectedText.Trim()));
+                        rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text.Trim()),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text.Trim(),this.txtemail.Text.Trim(),
+                        this.txtanexo.Text.Trim(), Convert.ToInt16(this.cboarea.SelectedValue), Convert.ToInt16(this.cboempresa.SelectedValue));
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -211,9 +219,14 @@ namespace CapaPresentacion
             this.txtdni.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["dni"].Value);
             this.txtemail.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["email"].Value);
             this.txtanexo.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["anexo"].Value);
-            this.cboarea.SelectedText=Convert.ToString(dgvlistado.CurrentRow.Cells["cod_area"].Value);
-            this.cboempresa.SelectedText=Convert.ToString(dgvlistado.CurrentRow.Cells["cod_empresa"].Value);
+            this.cboarea.SelectedValue=Convert.ToString(dgvlistado.CurrentRow.Cells["cod_area"].Value);
+            this.cboempresa.SelectedValue = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_empresa"].Value);
             this.tabControl1.SelectedIndex=1;
+
+            /*this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);//Current ROw: fila actual
+            this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual
+            this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
+            this.tabControl1.SelectedIndex = 1;*/
         }
 
         private void chkeliminar_CheckedChanged(object sender, EventArgs e)

@@ -221,5 +221,70 @@ namespace CapaPresentacion
             frma.MdiParent = this;
             frma.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FrmProducto frmp = FrmProducto.GetInstancia();
+            //FrmProducto frmp = new FrmProducto();
+            frmp.MdiParent = this;
+            frmp.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmProducto frmp = FrmProducto.GetInstancia();
+            //FrmProducto frmp = new FrmProducto();
+            frmp.MdiParent = this;
+            frmp.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frmpro = new FrmProveedores();
+            frmpro.MdiParent = this;
+            frmpro.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmusu = new FrmUsuario();
+            frmusu.MdiParent = this;
+            frmusu.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            FrmCategoria frmc = new FrmCategoria();
+            frmc.MdiParent = this;
+            frmc.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            FrmArea frma = new FrmArea();
+            frma.MdiParent = this;
+            frma.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            string G;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmTrabajador frmtra = new FrmTrabajador();
+            frmtra.MdiParent = this;
+            frmtra.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FrmIngresos frm = FrmIngresos.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.cod_usu = Convert.ToInt32(this.cod_usu);
+        }
     }
 }

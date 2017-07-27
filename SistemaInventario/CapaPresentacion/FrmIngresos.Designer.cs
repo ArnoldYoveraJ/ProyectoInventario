@@ -90,7 +90,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 62);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(633, 416);
+            this.tabControl1.Size = new System.Drawing.Size(702, 414);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -108,7 +108,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(625, 390);
+            this.tabPage1.Size = new System.Drawing.Size(694, 388);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -151,7 +151,7 @@
             this.dgvlistado.Name = "dgvlistado";
             this.dgvlistado.ReadOnly = true;
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlistado.Size = new System.Drawing.Size(588, 254);
+            this.dgvlistado.Size = new System.Drawing.Size(657, 292);
             this.dgvlistado.TabIndex = 7;
             this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
             this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
@@ -226,7 +226,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(625, 390);
+            this.tabPage2.Size = new System.Drawing.Size(694, 388);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(17, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 357);
+            this.groupBox1.Size = new System.Drawing.Size(633, 349);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresos";
@@ -266,7 +266,7 @@
             this.dgvlistadodetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlistadodetalle.Location = new System.Drawing.Point(15, 196);
             this.dgvlistadodetalle.Name = "dgvlistadodetalle";
-            this.dgvlistadodetalle.Size = new System.Drawing.Size(567, 94);
+            this.dgvlistadodetalle.Size = new System.Drawing.Size(592, 94);
             this.dgvlistadodetalle.TabIndex = 40;
             this.dgvlistadodetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistadodetalle_CellContentClick);
             // 
@@ -282,14 +282,14 @@
             this.groupBox2.Controls.Add(this.Producto);
             this.groupBox2.Location = new System.Drawing.Point(15, 99);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(567, 91);
+            this.groupBox2.Size = new System.Drawing.Size(592, 91);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
             // 
             // btnquitar
             // 
-            this.btnquitar.Location = new System.Drawing.Point(445, 47);
+            this.btnquitar.Location = new System.Drawing.Point(498, 48);
             this.btnquitar.Name = "btnquitar";
             this.btnquitar.Size = new System.Drawing.Size(75, 23);
             this.btnquitar.TabIndex = 46;
@@ -299,7 +299,7 @@
             // 
             // btnagre
             // 
-            this.btnagre.Location = new System.Drawing.Point(445, 19);
+            this.btnagre.Location = new System.Drawing.Point(498, 21);
             this.btnagre.Name = "btnagre";
             this.btnagre.Size = new System.Drawing.Size(75, 23);
             this.btnagre.TabIndex = 45;
@@ -309,7 +309,7 @@
             // 
             // txtstock
             // 
-            this.txtstock.Location = new System.Drawing.Point(309, 46);
+            this.txtstock.Location = new System.Drawing.Point(357, 49);
             this.txtstock.Name = "txtstock";
             this.txtstock.Size = new System.Drawing.Size(121, 20);
             this.txtstock.TabIndex = 44;
@@ -317,7 +317,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(227, 50);
+            this.label5.Location = new System.Drawing.Point(263, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 43;
@@ -359,7 +359,7 @@
             // dtfecha
             // 
             this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtfecha.Location = new System.Drawing.Point(489, 26);
+            this.dtfecha.Location = new System.Drawing.Point(513, 26);
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(94, 20);
             this.dtfecha.TabIndex = 38;
@@ -488,7 +488,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(434, 26);
+            this.label3.Location = new System.Drawing.Point(457, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 1;
@@ -526,7 +526,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 472);
+            this.ClientSize = new System.Drawing.Size(726, 478);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "FrmIngresos";

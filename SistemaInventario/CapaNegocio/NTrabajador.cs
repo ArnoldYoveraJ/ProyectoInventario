@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Data;
 using CapaDatos;
 
@@ -58,6 +58,11 @@ namespace CapaNegocio
             DTrabajador objt = new DTrabajador();
             objt.Textobuscar=textob;
             return objt.Buscar(objt);
+        }
+
+        public static DataTable Mostar_empresa()
+        {
+            return new DTrabajador().Mostrar_Empresa();
         }
     }
 }

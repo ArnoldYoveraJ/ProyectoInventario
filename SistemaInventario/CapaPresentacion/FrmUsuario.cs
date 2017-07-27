@@ -232,14 +232,14 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                        string act="";
+                        int act=0;
                         if (rbact.Checked)
                         {
-                            act = this.rbact.Text.Trim();
+                            act = 1;
                         }
                         else if (rbdes.Checked)
                         {
-                            act = this.rbdes.Text.Trim();
+                            act = 0;
                         }
                     if (this.IsNuevo)
                     {  
@@ -250,7 +250,7 @@ namespace CapaPresentacion
                     else
                     {
                         rpta = NUsuario.Editar(Convert.ToInt32(this.txtcod_usu.Text.Trim()),this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), 
-                            this.txtcon.Text.Trim(),this.cbotipousu.SelectedText.Trim(), Convert.ToInt32(act));// borra espacios 
+                            this.txtcon.Text.Trim(),this.cbotipousu.Text, Convert.ToInt32(act));// borra espacios 
                         MensajeOK("Se edito Correctamente el Registro");
                     }
                     this.MensajeError(rpta);

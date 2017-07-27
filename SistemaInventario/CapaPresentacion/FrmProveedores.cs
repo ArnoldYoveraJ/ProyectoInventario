@@ -211,7 +211,6 @@ namespace CapaPresentacion
             this.habilitar(false);
             this.Botones();
             this.txtcod_prov.Focus();
-
         }
 
         private void btnguardar_Click(object sender, EventArgs e)

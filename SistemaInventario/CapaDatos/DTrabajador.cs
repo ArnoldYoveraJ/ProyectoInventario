@@ -86,10 +86,10 @@ namespace CapaDatos
            this.Textobuscar = texto;
        }
 
-       public DTrabajador(int cod)
+      /* public DTrabajador(int cod)
        {
            this.Cod_Trabajador = cod;
-       }
+       }*/
 
        public string Insertar_Trabajador(DTrabajador Trabajador)
         {
@@ -98,7 +98,6 @@ namespace CapaDatos
             try {
                 con.ConnectionString = Conexion.Cn;
                 con.Open();
-
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = con;
                 sql1.CommandText = "spinsertar_trabajador";
@@ -139,14 +138,13 @@ namespace CapaDatos
 	        {	        
 		       con.ConnectionString = Conexion.Cn;
                con.Open();
-
                SqlCommand sql1 = new SqlCommand();
                sql1.Connection = con;
                sql1.CommandText = "speditar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
               // SqlParameter par = new SqlParameter();
-               sql1.Parameters.AddWithValue("@cod_tra", Trab.Cod_Trabajador);
+               sql1.Parameters.AddWithValue("@cod_tra", Trab._Cod_Trabajador);
                sql1.Parameters.AddWithValue("@nom", Trab.Nombres);
                sql1.Parameters.AddWithValue("@ape", Trab.Apellidos);
                sql1.Parameters.AddWithValue("@dni", Trab.DNI);
@@ -253,6 +251,30 @@ namespace CapaDatos
                dt = null;
            }
            return dt;
+       }
+
+       public DataTable Mostrar_Empresa()
+       {
+           DataTable dt = new DataTable("empresa");
+           SqlConnection sqlcon = new SqlConnection();
+           try
+           {
+               sqlcon.ConnectionString = Conexion.Cn;
+               sqlcon.Open();
+               SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = sqlcon;
+               sql1.CommandText = "spmostrar_empresa";
+               sql1.CommandType = CommandType.StoredProcedure;
+
+               SqlDataAdapter da = new SqlDataAdapter(sql1);
+               da.Fill(dt);
+           }
+           catch (Exception e)
+           {
+               dt = null;
+           }
+           return dt;
+
        }
 
     }
