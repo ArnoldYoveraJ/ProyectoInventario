@@ -82,6 +82,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.cboso = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -293,6 +294,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboso);
             this.groupBox1.Controls.Add(this.btnagregar);
             this.groupBox1.Controls.Add(this.cbocategoria);
             this.groupBox1.Controls.Add(this.txttrabajador);
@@ -613,6 +615,28 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Productos";
             // 
+            // cboso
+            // 
+            this.cboso.FormattingEnabled = true;
+            this.cboso.Items.AddRange(new object[] {
+            "Windows XP (32 Bits)",
+            "Windows Vista (32 Bits)",
+            "Windows Vista (64 Bits)",
+            "Windows 7 (32 Bits)",
+            "Windows 7 (64 Bits)",
+            "Windows 8 (32 Bits)",
+            "Windows 8 (64 Bits)",
+            "Windows 8.1 (32 Bits)",
+            "Windows 8.1 (64 Bits)",
+            "Windows 10(32 Bits)",
+            "Windows 10 (64 Bits)",
+            "Windows Server"});
+            this.cboso.Location = new System.Drawing.Point(84, 177);
+            this.cboso.Name = "cboso";
+            this.cboso.Size = new System.Drawing.Size(178, 21);
+            this.cboso.TabIndex = 38;
+            this.cboso.Text = "Windows 7 (64 Bits)";
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -693,5 +717,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cboelegir;
+        private System.Windows.Forms.ComboBox cboso;
     }
 }
