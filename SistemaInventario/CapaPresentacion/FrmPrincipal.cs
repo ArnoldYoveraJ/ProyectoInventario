@@ -286,5 +286,12 @@ namespace CapaPresentacion
             frm.Show();
             frm.cod_usu = Convert.ToInt32(this.cod_usu);
         }
+
+        private void registroDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMovimiento frmmov = new FrmMovimiento();
+            frmmov.MdiParent = this;
+            frmmov.Show();
+        }
     }
 }
