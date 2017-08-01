@@ -23,35 +23,30 @@ namespace CapaDatos
             set { _Cod_mov = value; }
         }
         
-
         public DateTime Fecha
         {
             get { return _Fecha; }
             set { _Fecha = value; }
         }
         
-
         public String Condicion
         {
             get { return _Condicion; }
             set { _Condicion = value; }
         }
         
-
         public int Cod_usu
         {
             get { return _Cod_usu; }
             set { _Cod_usu = value; }
         }
         
-
         public int Cod_trabajador
         {
             get { return _Cod_trabajador; }
             set { _Cod_trabajador = value; }
         }
         
-
         public int Cod_producto
         {
             get { return _Cod_producto; }

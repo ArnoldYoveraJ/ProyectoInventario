@@ -59,20 +59,20 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.btnbuscar_trabajador = new System.Windows.Forms.Button();
-            this.txttrabajador = new System.Windows.Forms.TextBox();
-            this.txtcod_tra = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dgvlistadomov = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtcondicion = new System.Windows.Forms.TextBox();
             this.btnbuscar_producto = new System.Windows.Forms.Button();
             this.txtproducto = new System.Windows.Forms.TextBox();
             this.txtcod_pro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtcondicion = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dgvlistadomov = new System.Windows.Forms.DataGridView();
+            this.btnbuscar_trabajador = new System.Windows.Forms.Button();
+            this.txttrabajador = new System.Windows.Forms.TextBox();
+            this.txtcod_tra = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -140,6 +140,7 @@
             this.btncancelar.TabIndex = 9;
             this.btncancelar.Text = "&Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btneditar
             // 
@@ -149,6 +150,7 @@
             this.btneditar.TabIndex = 8;
             this.btneditar.Text = "E&ditar";
             this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnguardar
             // 
@@ -158,6 +160,7 @@
             this.btnguardar.TabIndex = 7;
             this.btnguardar.Text = "&Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnnuevo
             // 
@@ -167,6 +170,7 @@
             this.btnnuevo.TabIndex = 6;
             this.btnnuevo.Text = "&Nuevo";
             this.btnnuevo.UseVisualStyleBackColor = true;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // txtcod_mov
             // 
@@ -279,6 +283,8 @@
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvlistado.Size = new System.Drawing.Size(657, 286);
             this.dgvlistado.TabIndex = 7;
+            this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
+            this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
             // 
             // Eliminar
             // 
@@ -304,6 +310,7 @@
             this.chkeliminar.TabIndex = 5;
             this.chkeliminar.Text = "Eliminar";
             this.chkeliminar.UseVisualStyleBackColor = true;
+            this.chkeliminar.CheckedChanged += new System.EventHandler(this.chkeliminar_CheckedChanged);
             // 
             // btnimprimir
             // 
@@ -322,6 +329,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnbuscar
             // 
@@ -331,6 +339,7 @@
             this.btnbuscar.TabIndex = 2;
             this.btnbuscar.Text = "&Buscar";
             this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // Nombre
             // 
@@ -387,50 +396,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Movientos";
             // 
-            // ttmensaje
+            // dgvlistadomov
             // 
-            this.ttmensaje.IsBalloon = true;
+            this.dgvlistadomov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlistadomov.Location = new System.Drawing.Point(15, 181);
+            this.dgvlistadomov.Name = "dgvlistadomov";
+            this.dgvlistadomov.Size = new System.Drawing.Size(602, 128);
+            this.dgvlistadomov.TabIndex = 53;
+            this.dgvlistadomov.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistadomov_CellContentClick);
             // 
-            // btnbuscar_trabajador
+            // label8
             // 
-            this.btnbuscar_trabajador.Location = new System.Drawing.Point(367, 60);
-            this.btnbuscar_trabajador.Name = "btnbuscar_trabajador";
-            this.btnbuscar_trabajador.Size = new System.Drawing.Size(40, 23);
-            this.btnbuscar_trabajador.TabIndex = 45;
-            this.btnbuscar_trabajador.Text = "+";
-            this.btnbuscar_trabajador.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 124);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Condición";
             // 
-            // txttrabajador
+            // txtcondicion
             // 
-            this.txttrabajador.Location = new System.Drawing.Point(286, 88);
-            this.txttrabajador.Name = "txttrabajador";
-            this.txttrabajador.Size = new System.Drawing.Size(121, 20);
-            this.txttrabajador.TabIndex = 44;
-            // 
-            // txtcod_tra
-            // 
-            this.txtcod_tra.Location = new System.Drawing.Point(286, 62);
-            this.txtcod_tra.Name = "txtcod_tra";
-            this.txtcod_tra.Size = new System.Drawing.Size(75, 20);
-            this.txtcod_tra.TabIndex = 43;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(219, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Trabajador";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(221, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Código";
+            this.txtcondicion.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.txtcondicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcondicion.Location = new System.Drawing.Point(77, 118);
+            this.txtcondicion.Multiline = true;
+            this.txtcondicion.Name = "txtcondicion";
+            this.txtcondicion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtcondicion.Size = new System.Drawing.Size(330, 57);
+            this.txtcondicion.TabIndex = 51;
             // 
             // btnbuscar_producto
             // 
@@ -440,6 +433,7 @@
             this.btnbuscar_producto.TabIndex = 50;
             this.btnbuscar_producto.Text = "+";
             this.btnbuscar_producto.UseVisualStyleBackColor = true;
+            this.btnbuscar_producto.Click += new System.EventHandler(this.btnbuscar_producto_Click);
             // 
             // txtproducto
             // 
@@ -473,33 +467,51 @@
             this.label7.TabIndex = 46;
             this.label7.Text = "Código";
             // 
-            // txtcondicion
+            // btnbuscar_trabajador
             // 
-            this.txtcondicion.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.txtcondicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcondicion.Location = new System.Drawing.Point(77, 118);
-            this.txtcondicion.Multiline = true;
-            this.txtcondicion.Name = "txtcondicion";
-            this.txtcondicion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtcondicion.Size = new System.Drawing.Size(330, 57);
-            this.txtcondicion.TabIndex = 51;
+            this.btnbuscar_trabajador.Location = new System.Drawing.Point(367, 60);
+            this.btnbuscar_trabajador.Name = "btnbuscar_trabajador";
+            this.btnbuscar_trabajador.Size = new System.Drawing.Size(40, 23);
+            this.btnbuscar_trabajador.TabIndex = 45;
+            this.btnbuscar_trabajador.Text = "+";
+            this.btnbuscar_trabajador.UseVisualStyleBackColor = true;
+            this.btnbuscar_trabajador.Click += new System.EventHandler(this.btnbuscar_trabajador_Click);
             // 
-            // label8
+            // txttrabajador
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 52;
-            this.label8.Text = "Condición";
+            this.txttrabajador.Location = new System.Drawing.Point(286, 88);
+            this.txttrabajador.Name = "txttrabajador";
+            this.txttrabajador.Size = new System.Drawing.Size(121, 20);
+            this.txttrabajador.TabIndex = 44;
             // 
-            // dgvlistadomov
+            // txtcod_tra
             // 
-            this.dgvlistadomov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlistadomov.Location = new System.Drawing.Point(15, 181);
-            this.dgvlistadomov.Name = "dgvlistadomov";
-            this.dgvlistadomov.Size = new System.Drawing.Size(602, 128);
-            this.dgvlistadomov.TabIndex = 53;
+            this.txtcod_tra.Location = new System.Drawing.Point(286, 62);
+            this.txtcod_tra.Name = "txtcod_tra";
+            this.txtcod_tra.Size = new System.Drawing.Size(75, 20);
+            this.txtcod_tra.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(219, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Trabajador";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(221, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Código";
+            // 
+            // ttmensaje
+            // 
+            this.ttmensaje.IsBalloon = true;
             // 
             // FrmMovimiento
             // 
