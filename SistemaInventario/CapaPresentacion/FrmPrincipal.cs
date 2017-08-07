@@ -129,6 +129,7 @@ namespace CapaPresentacion
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             GestionUsuario();
+            usu.Text = this.cod_usu;
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -289,9 +290,20 @@ namespace CapaPresentacion
 
         private void registroDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmMovimiento frmmov = new FrmMovimiento();
+            FrmMovimiento frmmov = FrmMovimiento.GetInstancia();
             frmmov.MdiParent = this;
             frmmov.Show();
+            frmmov.cod_usu = Convert.ToInt32(this.cod_usu);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

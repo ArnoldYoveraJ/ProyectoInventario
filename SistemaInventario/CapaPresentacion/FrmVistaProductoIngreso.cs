@@ -60,6 +60,13 @@ namespace CapaPresentacion
             par2 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
             form.setProducto(par1, par2);
             this.Hide();
+
+            FrmMovimiento frmmov = FrmMovimiento.GetInstancia();
+            string a1, a2;
+            a1 = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
+            a2 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
+            frmmov.setProducto(a1, a2);
+            this.Hide();
         }
     }
 }

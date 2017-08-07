@@ -68,7 +68,7 @@ namespace CapaPresentacion
             this.txtdd.Text=string.Empty;
             this.txtram.Text=string.Empty;
             this.txtdesc.Text=string.Empty;
-            this.txtso.Text = string.Empty;
+            //this.txtso.Text = string.Empty;
             this.txtserie.Text=string.Empty;
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
         }
@@ -88,7 +88,8 @@ namespace CapaPresentacion
             this.txtdesc.ReadOnly = !valor;
             this.txtserie.ReadOnly = !valor;
             this.cboestado.Enabled = valor;
-            this.txtso.ReadOnly = !valor;
+            //this.txtso.ReadOnly = !valor;
+            this.cboso.Enabled = valor;
             this.txttrabajador.ReadOnly = !valor;
             this.txtcodtra.ReadOnly = !valor;
             this.cbocategoria.Enabled = valor;
@@ -281,14 +282,14 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         rpta = NProducto.Insertar(this.txtnom.Text.Trim(),this.txtmarca.Text.Trim(),this.txtmodeloplaca.Text.Trim(),this.txtserie.Text.Trim(),
-                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), this.txtso.Text.Trim(), imagen,
+                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen,
                            Convert.ToInt16(this.cboestado.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         rpta = NProducto.Editar(Convert.ToInt16(this.txtcod_pro.Text.Trim()), this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
-                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), this.txtso.Text.Trim(), imagen,
+                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen,
                            Convert.ToInt16(this.cboestado.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));
                         MensajeOK("Se Edito Correctamente");
                     }

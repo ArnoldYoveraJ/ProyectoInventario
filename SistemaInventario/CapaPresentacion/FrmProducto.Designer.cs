@@ -50,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboso = new System.Windows.Forms.ComboBox();
             this.btnagregar = new System.Windows.Forms.Button();
             this.cbocategoria = new System.Windows.Forms.ComboBox();
             this.txttrabajador = new System.Windows.Forms.TextBox();
@@ -82,7 +83,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.cboso = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -338,6 +338,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
             // 
+            // cboso
+            // 
+            this.cboso.FormattingEnabled = true;
+            this.cboso.Items.AddRange(new object[] {
+            "Windows XP (32 Bits)",
+            "Windows Vista (32 Bits)",
+            "Windows Vista (64 Bits)",
+            "Windows 7 (32 Bits)",
+            "Windows 7 (64 Bits)",
+            "Windows 8 (32 Bits)",
+            "Windows 8 (64 Bits)",
+            "Windows 8.1 (32 Bits)",
+            "Windows 8.1 (64 Bits)",
+            "Windows 10(32 Bits)",
+            "Windows 10 (64 Bits)",
+            "Windows Server"});
+            this.cboso.Location = new System.Drawing.Point(84, 177);
+            this.cboso.Name = "cboso";
+            this.cboso.Size = new System.Drawing.Size(178, 21);
+            this.cboso.TabIndex = 38;
+            this.cboso.Text = "Windows 7 (64 Bits)";
+            // 
             // btnagregar
             // 
             this.btnagregar.Location = new System.Drawing.Point(636, 187);
@@ -438,11 +460,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(30, 125);
+            this.label11.Location = new System.Drawing.Point(19, 125);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.Size = new System.Drawing.Size(54, 13);
             this.label11.TabIndex = 26;
-            this.label11.Text = "Estado";
+            this.label11.Text = "Condición";
             // 
             // label10
             // 
@@ -614,28 +636,6 @@
             this.label1.Size = new System.Drawing.Size(118, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Productos";
-            // 
-            // cboso
-            // 
-            this.cboso.FormattingEnabled = true;
-            this.cboso.Items.AddRange(new object[] {
-            "Windows XP (32 Bits)",
-            "Windows Vista (32 Bits)",
-            "Windows Vista (64 Bits)",
-            "Windows 7 (32 Bits)",
-            "Windows 7 (64 Bits)",
-            "Windows 8 (32 Bits)",
-            "Windows 8 (64 Bits)",
-            "Windows 8.1 (32 Bits)",
-            "Windows 8.1 (64 Bits)",
-            "Windows 10(32 Bits)",
-            "Windows 10 (64 Bits)",
-            "Windows Server"});
-            this.cboso.Location = new System.Drawing.Point(84, 177);
-            this.cboso.Name = "cboso";
-            this.cboso.Size = new System.Drawing.Size(178, 21);
-            this.cboso.TabIndex = 38;
-            this.cboso.Text = "Windows 7 (64 Bits)";
             // 
             // FrmProducto
             // 

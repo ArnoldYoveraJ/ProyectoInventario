@@ -70,13 +70,20 @@ namespace CapaPresentacion
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
             //codigo Nuevo
-            FrmProducto frm = FrmProducto.GetInstancia();
+           FrmProducto frm = FrmProducto.GetInstancia();
             string p1, p2;
 
             p1 = Convert.ToString(this.dgvlistado.CurrentRow.Cells["COD_TRABAJADOR"].Value);
             p2 = Convert.ToString(this.dgvlistado.CurrentRow.Cells["NOMBRES"].Value);
             frm.setTrabajador(p1, p2);
             this.Hide();//para ocultar este formulario
+
+            FrmMovimiento frmmov = FrmMovimiento.GetInstancia();
+            string a1, a2;
+            a1 = Convert.ToString(this.dgvlistado.CurrentRow.Cells["COD_TRABAJADOR"].Value);
+            a2 = Convert.ToString(this.dgvlistado.CurrentRow.Cells["NOMBRES"].Value);
+            frmmov.setTrabajador(a1, a2);
+            this.Hide();
         }
     }
 }

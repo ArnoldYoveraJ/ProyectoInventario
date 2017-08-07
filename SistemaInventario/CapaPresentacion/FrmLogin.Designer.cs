@@ -219,7 +219,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtusu;
         private System.Windows.Forms.TextBox txtcon;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btningresar;
@@ -228,5 +227,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox txtusu;
     }
 }

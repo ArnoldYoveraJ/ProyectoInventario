@@ -278,14 +278,13 @@ namespace CapaPresentacion
             this.txtcod_mov.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_mov"].Value);
             this.txtcod_usu.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_usu"].Value);
             this.txtusuario.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["usuario"].Value);
-            this.txtcod_tra.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_tra"].Value);
+            this.txtcod_tra.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);
             this.txttrabajador.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["trabajador"].Value);
-            this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_pro"].Value);
-            this.txtproducto.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["producto"].Value);
+            this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
+            this.txtproducto.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
             this.txtcondicion.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["condicion"].Value);
             this.dtfecha.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["fecha"].Value);
-            tabControl1.TabIndex = 1; //cambiar por selectedindex
-
+            tabControl1.SelectedIndex = 1;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -322,6 +321,11 @@ namespace CapaPresentacion
 
                 MessageBox.Show(ex.Message, ex.StackTrace);
             }
+        }
+
+        private void FrmMovimiento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
         }
     }
 }

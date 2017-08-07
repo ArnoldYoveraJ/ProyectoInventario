@@ -522,6 +522,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmMovimiento";
             this.Text = "FrmMovimiento";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMovimiento_FormClosing);
             this.Load += new System.EventHandler(this.FrmMovimiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
             this.tabControl1.ResumeLayout(false);

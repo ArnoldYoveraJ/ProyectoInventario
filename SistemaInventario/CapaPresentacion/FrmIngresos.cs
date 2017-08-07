@@ -150,6 +150,7 @@ namespace CapaPresentacion
             this.Botones();
             this.agregar_detalle();
             this.txtcod_orden.Visible = false;
+            //this.label16.Text = Convert.ToString(cod_usu);
         }
 
         private void FrmIngresos_FormClosing(object sender, FormClosingEventArgs e)

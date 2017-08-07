@@ -46,6 +46,7 @@ namespace CapaPresentacion
                 frm.Show();
                 this.Hide();
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,5 +67,6 @@ namespace CapaPresentacion
                 btningresar.PerformClick();
             }
         }
+
     }
 }
