@@ -302,6 +302,7 @@
             // 
             // txtbuscar
             // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbuscar.Location = new System.Drawing.Point(112, 23);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(146, 20);

@@ -180,16 +180,25 @@
             // 
             // btnbuscar
             // 
-            this.btnbuscar.Location = new System.Drawing.Point(386, 25);
+            this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.erroricono.SetIconAlignment(this.btnbuscar, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar1;
+            this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbuscar.Location = new System.Drawing.Point(314, 5);
             this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnbuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnbuscar.Size = new System.Drawing.Size(147, 42);
             this.btnbuscar.TabIndex = 2;
             this.btnbuscar.Text = "&Buscar";
-            this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbuscar.UseVisualStyleBackColor = false;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtbuscar
             // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbuscar.Location = new System.Drawing.Point(125, 23);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(146, 20);
@@ -470,7 +479,6 @@
         private System.Windows.Forms.CheckBox chkeliminar;
         private System.Windows.Forms.Button btnimprimir;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -498,5 +506,6 @@
         private System.Windows.Forms.ErrorProvider erroricono;
         private System.Windows.Forms.ComboBox cbotipodoc;
         private System.Windows.Forms.ComboBox cboelegir;
+        private System.Windows.Forms.Button btnbuscar;
     }
 }

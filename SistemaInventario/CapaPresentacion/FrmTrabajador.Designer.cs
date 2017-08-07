@@ -109,7 +109,7 @@
             this.dgvlistado.Name = "dgvlistado";
             this.dgvlistado.ReadOnly = true;
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlistado.Size = new System.Drawing.Size(580, 214);
+            this.dgvlistado.Size = new System.Drawing.Size(580, 197);
             this.dgvlistado.TabIndex = 7;
             this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
             this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
@@ -179,6 +179,7 @@
             // 
             // txtbuscar
             // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbuscar.Location = new System.Drawing.Point(86, 48);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(213, 20);
@@ -254,9 +255,9 @@
             this.groupBox1.Controls.Add(this.txtcod_tra);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(17, 25);
+            this.groupBox1.Location = new System.Drawing.Point(37, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(521, 227);
+            this.groupBox1.Size = new System.Drawing.Size(521, 220);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajadores";
@@ -379,7 +380,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(614, 325);
+            this.tabPage2.Size = new System.Drawing.Size(614, 260);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -402,7 +403,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(614, 325);
+            this.tabPage1.Size = new System.Drawing.Size(614, 260);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -426,7 +427,7 @@
             this.tabControl1.Location = new System.Drawing.Point(16, 48);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(622, 351);
+            this.tabControl1.Size = new System.Drawing.Size(622, 286);
             this.tabControl1.TabIndex = 3;
             // 
             // label1
@@ -444,7 +445,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 403);
+            this.ClientSize = new System.Drawing.Size(648, 340);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "FrmTrabajador";

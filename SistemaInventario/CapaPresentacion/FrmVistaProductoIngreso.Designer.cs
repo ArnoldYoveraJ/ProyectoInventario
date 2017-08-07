@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.chkprodispo = new System.Windows.Forms.CheckBox();
+            this.cboelegir = new System.Windows.Forms.ComboBox();
             this.dgvlistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lbltotal = new System.Windows.Forms.Label();
@@ -58,7 +59,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.chkprodispo);
+            this.tabPage1.Controls.Add(this.cboelegir);
             this.tabPage1.Controls.Add(this.dgvlistado);
             this.tabPage1.Controls.Add(this.lbltotal);
             this.tabPage1.Controls.Add(this.btnbuscar);
@@ -72,18 +74,29 @@
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // chkprodispo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.chkprodispo.AutoSize = true;
+            this.chkprodispo.Location = new System.Drawing.Point(18, 62);
+            this.chkprodispo.Name = "chkprodispo";
+            this.chkprodispo.Size = new System.Drawing.Size(131, 17);
+            this.chkprodispo.TabIndex = 9;
+            this.chkprodispo.Text = "Productos Disponibles";
+            this.chkprodispo.UseVisualStyleBackColor = true;
+            this.chkprodispo.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // cboelegir
+            // 
+            this.cboelegir.FormattingEnabled = true;
+            this.cboelegir.Items.AddRange(new object[] {
             "Nombre",
             "Marca",
             "Serie"});
-            this.comboBox1.Location = new System.Drawing.Point(82, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "Nombre";
+            this.cboelegir.Location = new System.Drawing.Point(82, 24);
+            this.cboelegir.Name = "cboelegir";
+            this.cboelegir.Size = new System.Drawing.Size(121, 21);
+            this.cboelegir.TabIndex = 8;
+            this.cboelegir.Text = "Nombre";
             // 
             // dgvlistado
             // 
@@ -93,12 +106,12 @@
             this.dgvlistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlistado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dgvlistado.Location = new System.Drawing.Point(18, 78);
+            this.dgvlistado.Location = new System.Drawing.Point(18, 85);
             this.dgvlistado.MultiSelect = false;
             this.dgvlistado.Name = "dgvlistado";
             this.dgvlistado.ReadOnly = true;
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlistado.Size = new System.Drawing.Size(588, 150);
+            this.dgvlistado.Size = new System.Drawing.Size(588, 198);
             this.dgvlistado.TabIndex = 7;
             this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
             // 
@@ -129,6 +142,7 @@
             // 
             // txtbuscar
             // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbuscar.Location = new System.Drawing.Point(209, 24);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(183, 20);
@@ -188,7 +202,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboelegir;
         private System.Windows.Forms.DataGridView dgvlistado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Label lbltotal;
@@ -198,5 +212,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip ttmensaje;
         private System.Windows.Forms.ErrorProvider erroricono;
+        private System.Windows.Forms.CheckBox chkprodispo;
     }
 }

@@ -128,6 +128,7 @@
             // 
             // txtbuscar
             // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbuscar.Location = new System.Drawing.Point(66, 27);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(132, 20);
@@ -251,6 +252,7 @@
             // 
             // txtnom
             // 
+            this.txtnom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnom.Location = new System.Drawing.Point(97, 71);
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(100, 20);
@@ -258,6 +260,7 @@
             // 
             // txtcod
             // 
+            this.txtcod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcod.Location = new System.Drawing.Point(97, 36);
             this.txtcod.Name = "txtcod";
             this.txtcod.Size = new System.Drawing.Size(100, 20);

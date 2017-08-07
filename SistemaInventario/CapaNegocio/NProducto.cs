@@ -11,7 +11,7 @@ namespace CapaNegocio
     public class NProducto
     {
         public static string Insertar(string nom_prod, string marca, string modelo, string serie, string procesador, string dd, 
-        string ram, string so, byte[] imagen, int estado, string desc, int cod_cat,int cod_tra)
+        string ram, string so, byte[] imagen, string estado,int condicion, string desc, int cod_cat,int cod_tra)
         {
             DProducto objp = new DProducto();
             objp.Nom_Producto = nom_prod;
@@ -24,6 +24,7 @@ namespace CapaNegocio
             objp.SO = so;
             objp.Imagen = imagen;
             objp.Estado = estado;
+            objp.Condicion = condicion;
             objp.Descripcion = desc;
             objp.Cod_Cat = cod_cat;
             objp.Cod_Trabajador = cod_tra;
@@ -31,7 +32,7 @@ namespace CapaNegocio
         }
 
         public static string Editar(int cod, string nom_prod, string marca, string modelo, string serie, string procesador, string dd,
-     string ram, string so, byte[] imagen, int estado, string desc, int cod_cat, int cod_tra)
+     string ram, string so, byte[] imagen, string estado, int condicion, string desc, int cod_cat, int cod_tra)
         {
             DProducto objp1 = new DProducto();
             objp1.Cod_producto = cod;
@@ -45,6 +46,7 @@ namespace CapaNegocio
             objp1.SO = so;
             objp1.Imagen = imagen;
             objp1.Estado = estado;
+            objp1.Condicion = condicion;
             objp1.Descripcion = desc;
             objp1.Cod_Cat = cod_cat;
             objp1.Cod_Trabajador = cod_tra;
@@ -85,6 +87,11 @@ namespace CapaNegocio
             DProducto obj1 = new DProducto();
             obj1.TextoBuscar = texto;
             return obj1.Buscar_producto_serie(obj1);
+        }
+
+        public static DataTable Mostrar_Prod_Dispo()
+        { 
+            return new DProducto().Mostrar_Productos_disponibles();
         }
     }
 }

@@ -20,7 +20,9 @@ namespace CapaDatos
         private string _Ram;
         private string _SO;
         private byte[] _Imagen;
-        private int _Estado;
+        //private int _Estado;
+        private string _Estado;
+        private int _Condicion;
         private string _Descripcion;
         private int _Cod_Cat;
         private int _Cod_Trabajador;
@@ -87,12 +89,23 @@ namespace CapaDatos
             set { _Imagen = value; }
         }
         
-        public int Estado
+       /* public int Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }*/
+        public string Estado
         {
             get { return _Estado; }
             set { _Estado = value; }
         }
-        
+
+        public int Condicion
+        {
+            get { return _Condicion; }
+            set { _Condicion = value; }
+        }
+
         public string Descripcion
         {
             get { return _Descripcion; }
@@ -119,7 +132,7 @@ namespace CapaDatos
         //Constructores
         public DProducto() { }
         public DProducto(int cod_pro,string nom_pro,string marca,string modelo_placa, string serie,
-        string procesa, string dd, string ram, string so,byte[]  imagen,int estado,
+        string procesa, string dd, string ram, string so,byte[]  imagen,/*int estado*/string estado,int condicion,
         string descrip,int cod_cat,int cod_trab, string  textobuscar)
         {
             this.Cod_producto = cod_pro;
@@ -132,7 +145,9 @@ namespace CapaDatos
             this.Ram = ram;
             this.SO = so;
             this.Imagen = imagen;
+           // this.Estado = estado;
             this.Estado = estado;
+            this.Condicion = condicion;
             this.Descripcion = descrip;
             this.Cod_Cat = cod_cat;
             this.Cod_Trabajador = cod_trab;
@@ -224,28 +239,34 @@ namespace CapaDatos
 
                 SqlParameter par10 = new SqlParameter();
                 par10.ParameterName = "@estado";
-                par10.SqlDbType = SqlDbType.Int;
+                par10.SqlDbType = SqlDbType.VarChar;
                 par10.SqlValue = producto.Estado;
                 sqlcoma.Parameters.Add(par10);
 
                 SqlParameter par11 = new SqlParameter();
-                par11.ParameterName = "@descripcion";
-                par11.SqlDbType = SqlDbType.VarChar;
-                par11.Size = 50;
+                par11.ParameterName = "@condicion";
+                par11.SqlDbType = SqlDbType.Int;
                 par11.SqlValue = producto.Descripcion;
                 sqlcoma.Parameters.Add(par11);
 
                 SqlParameter par12 = new SqlParameter();
-                par12.ParameterName = "@cod_cat";
-                par12.SqlDbType = SqlDbType.Int;
-                par12.SqlValue = producto.Cod_Cat;
+                par12.ParameterName = "@descripcion";
+                par12.SqlDbType = SqlDbType.VarChar;
+                par12.Size = 50;
+                par12.SqlValue = producto.Descripcion;
                 sqlcoma.Parameters.Add(par12);
 
                 SqlParameter par13 = new SqlParameter();
-                par13.ParameterName = "@cod_trabajador";
+                par13.ParameterName = "@cod_cat";
                 par13.SqlDbType = SqlDbType.Int;
-                par13.SqlValue = producto.Cod_Trabajador;
+                par13.SqlValue = producto.Cod_Cat;
                 sqlcoma.Parameters.Add(par13);
+
+                SqlParameter par14 = new SqlParameter();
+                par14.ParameterName = "@cod_trabajador";
+                par14.SqlDbType = SqlDbType.Int;
+                par14.SqlValue = producto.Cod_Trabajador;
+                sqlcoma.Parameters.Add(par14);
 
                 sms = sqlcoma.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro";
             }
@@ -347,28 +368,34 @@ namespace CapaDatos
 
                 SqlParameter par10 = new SqlParameter();
                 par10.ParameterName = "@estado";
-                par10.SqlDbType = SqlDbType.Int;
+                par10.SqlDbType = SqlDbType.VarChar;
                 par10.SqlValue = producto.Estado;
                 sqlcoma.Parameters.Add(par10);
 
                 SqlParameter par11 = new SqlParameter();
-                par11.ParameterName = "@descripcion";
-                par11.SqlDbType = SqlDbType.VarChar;
-                par11.Size = 50;
+                par11.ParameterName = "@condicion";
+                par11.SqlDbType = SqlDbType.Int;
                 par11.SqlValue = producto.Descripcion;
                 sqlcoma.Parameters.Add(par11);
 
                 SqlParameter par12 = new SqlParameter();
-                par12.ParameterName = "@cod_cat";
-                par12.SqlDbType = SqlDbType.Int;
-                par12.SqlValue = producto.Cod_Cat;
+                par12.ParameterName = "@descripcion";
+                par12.SqlDbType = SqlDbType.VarChar;
+                par12.Size = 50;
+                par12.SqlValue = producto.Descripcion;
                 sqlcoma.Parameters.Add(par12);
 
                 SqlParameter par13 = new SqlParameter();
-                par13.ParameterName = "@cod_trabajador";
+                par13.ParameterName = "@cod_cat";
                 par13.SqlDbType = SqlDbType.Int;
-                par13.SqlValue = producto.Cod_Trabajador;
+                par13.SqlValue = producto.Cod_Cat;
                 sqlcoma.Parameters.Add(par13);
+
+                SqlParameter par14 = new SqlParameter();
+                par14.ParameterName = "@cod_trabajador";
+                par14.SqlDbType = SqlDbType.Int;
+                par14.SqlValue = producto.Cod_Trabajador;
+                sqlcoma.Parameters.Add(par14);
 
                 sms = sqlcoma.ExecuteNonQuery() == 1 ? "OK" : "No se Actualizó el Registro";
             }
@@ -436,6 +463,30 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
+                dt = null;
+            }
+            return dt;
+        }
+
+        public DataTable Mostrar_Productos_disponibles()
+        {
+            DataTable dt = new DataTable("PRODUCTOS");
+            SqlConnection sqlcon = new SqlConnection();
+
+            try
+            {
+                sqlcon.ConnectionString = Conexion.Cn;
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = sqlcon;
+                sql1.CommandText = "spmostrar_producto_disponibles";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter(sql1);
+                da.Fill(dt);
+            }
+            catch (Exception)
+            {
+
                 dt = null;
             }
             return dt;

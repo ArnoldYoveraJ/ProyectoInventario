@@ -59,7 +59,6 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvlistadomov = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.txtcondicion = new System.Windows.Forms.TextBox();
             this.btnbuscar_producto = new System.Windows.Forms.Button();
@@ -79,20 +78,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlistadomov)).BeginInit();
             this.SuspendLayout();
             // 
             // dtfecha
             // 
             this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtfecha.Location = new System.Drawing.Point(496, 124);
+            this.dtfecha.Location = new System.Drawing.Point(499, 129);
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(121, 20);
             this.dtfecha.TabIndex = 38;
             // 
             // btnbuscar_usuario
             // 
-            this.btnbuscar_usuario.Location = new System.Drawing.Point(158, 60);
+            this.btnbuscar_usuario.Location = new System.Drawing.Point(161, 71);
             this.btnbuscar_usuario.Name = "btnbuscar_usuario";
             this.btnbuscar_usuario.Size = new System.Drawing.Size(40, 23);
             this.btnbuscar_usuario.TabIndex = 37;
@@ -102,14 +100,16 @@
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(77, 88);
+            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtusuario.Location = new System.Drawing.Point(80, 99);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(121, 20);
             this.txtusuario.TabIndex = 35;
             // 
             // txtcod_usu
             // 
-            this.txtcod_usu.Location = new System.Drawing.Point(77, 62);
+            this.txtcod_usu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcod_usu.Location = new System.Drawing.Point(80, 73);
             this.txtcod_usu.Name = "txtcod_usu";
             this.txtcod_usu.Size = new System.Drawing.Size(75, 20);
             this.txtcod_usu.TabIndex = 34;
@@ -117,7 +117,7 @@
             // lblpro
             // 
             this.lblpro.AutoSize = true;
-            this.lblpro.Location = new System.Drawing.Point(12, 92);
+            this.lblpro.Location = new System.Drawing.Point(15, 101);
             this.lblpro.Name = "lblpro";
             this.lblpro.Size = new System.Drawing.Size(43, 13);
             this.lblpro.TabIndex = 33;
@@ -126,7 +126,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 65);
+            this.label13.Location = new System.Drawing.Point(18, 76);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 13);
             this.label13.TabIndex = 31;
@@ -134,7 +134,7 @@
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(421, 315);
+            this.btncancelar.Location = new System.Drawing.Point(437, 212);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 9;
@@ -144,7 +144,7 @@
             // 
             // btneditar
             // 
-            this.btneditar.Location = new System.Drawing.Point(322, 315);
+            this.btneditar.Location = new System.Drawing.Point(338, 212);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 23);
             this.btneditar.TabIndex = 8;
@@ -154,7 +154,7 @@
             // 
             // btnguardar
             // 
-            this.btnguardar.Location = new System.Drawing.Point(230, 315);
+            this.btnguardar.Location = new System.Drawing.Point(246, 212);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(75, 23);
             this.btnguardar.TabIndex = 7;
@@ -164,7 +164,7 @@
             // 
             // btnnuevo
             // 
-            this.btnnuevo.Location = new System.Drawing.Point(137, 315);
+            this.btnnuevo.Location = new System.Drawing.Point(153, 212);
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(75, 23);
             this.btnnuevo.TabIndex = 6;
@@ -175,15 +175,15 @@
             // txtcod_mov
             // 
             this.txtcod_mov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcod_mov.Location = new System.Drawing.Point(77, 30);
+            this.txtcod_mov.Location = new System.Drawing.Point(80, 41);
             this.txtcod_mov.Name = "txtcod_mov";
-            this.txtcod_mov.Size = new System.Drawing.Size(100, 20);
+            this.txtcod_mov.Size = new System.Drawing.Size(75, 20);
             this.txtcod_mov.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(431, 124);
+            this.label3.Location = new System.Drawing.Point(440, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 1;
@@ -192,7 +192,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 32);
+            this.label2.Location = new System.Drawing.Point(15, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 0;
@@ -220,7 +220,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(702, 412);
+            this.tabControl1.Size = new System.Drawing.Size(702, 316);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -238,7 +238,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(694, 386);
+            this.tabPage1.Size = new System.Drawing.Size(694, 290);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -281,7 +281,7 @@
             this.dgvlistado.Name = "dgvlistado";
             this.dgvlistado.ReadOnly = true;
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlistado.Size = new System.Drawing.Size(657, 286);
+            this.dgvlistado.Size = new System.Drawing.Size(657, 199);
             this.dgvlistado.TabIndex = 7;
             this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
             this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
@@ -356,14 +356,13 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(694, 386);
+            this.tabPage2.Size = new System.Drawing.Size(694, 290);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvlistadomov);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtcondicion);
             this.groupBox1.Controls.Add(this.btnbuscar_producto);
@@ -391,24 +390,15 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(17, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(644, 353);
+            this.groupBox1.Size = new System.Drawing.Size(644, 251);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Movientos";
-            // 
-            // dgvlistadomov
-            // 
-            this.dgvlistadomov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlistadomov.Location = new System.Drawing.Point(15, 181);
-            this.dgvlistadomov.Name = "dgvlistadomov";
-            this.dgvlistadomov.Size = new System.Drawing.Size(602, 128);
-            this.dgvlistadomov.TabIndex = 53;
-            this.dgvlistadomov.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistadomov_CellContentClick);
+            this.groupBox1.Text = "Movimientos";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 124);
+            this.label8.Location = new System.Drawing.Point(15, 135);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 52;
@@ -418,7 +408,7 @@
             // 
             this.txtcondicion.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.txtcondicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcondicion.Location = new System.Drawing.Point(77, 118);
+            this.txtcondicion.Location = new System.Drawing.Point(80, 129);
             this.txtcondicion.Multiline = true;
             this.txtcondicion.Name = "txtcondicion";
             this.txtcondicion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -427,7 +417,7 @@
             // 
             // btnbuscar_producto
             // 
-            this.btnbuscar_producto.Location = new System.Drawing.Point(577, 60);
+            this.btnbuscar_producto.Location = new System.Drawing.Point(580, 71);
             this.btnbuscar_producto.Name = "btnbuscar_producto";
             this.btnbuscar_producto.Size = new System.Drawing.Size(40, 23);
             this.btnbuscar_producto.TabIndex = 50;
@@ -437,14 +427,16 @@
             // 
             // txtproducto
             // 
-            this.txtproducto.Location = new System.Drawing.Point(496, 88);
+            this.txtproducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtproducto.Location = new System.Drawing.Point(499, 99);
             this.txtproducto.Name = "txtproducto";
             this.txtproducto.Size = new System.Drawing.Size(121, 20);
             this.txtproducto.TabIndex = 49;
             // 
             // txtcod_pro
             // 
-            this.txtcod_pro.Location = new System.Drawing.Point(496, 62);
+            this.txtcod_pro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcod_pro.Location = new System.Drawing.Point(499, 73);
             this.txtcod_pro.Name = "txtcod_pro";
             this.txtcod_pro.Size = new System.Drawing.Size(75, 20);
             this.txtcod_pro.TabIndex = 48;
@@ -452,7 +444,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(429, 92);
+            this.label6.Location = new System.Drawing.Point(427, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 47;
@@ -461,7 +453,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(431, 64);
+            this.label7.Location = new System.Drawing.Point(437, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 46;
@@ -469,7 +461,7 @@
             // 
             // btnbuscar_trabajador
             // 
-            this.btnbuscar_trabajador.Location = new System.Drawing.Point(367, 60);
+            this.btnbuscar_trabajador.Location = new System.Drawing.Point(370, 71);
             this.btnbuscar_trabajador.Name = "btnbuscar_trabajador";
             this.btnbuscar_trabajador.Size = new System.Drawing.Size(40, 23);
             this.btnbuscar_trabajador.TabIndex = 45;
@@ -479,14 +471,16 @@
             // 
             // txttrabajador
             // 
-            this.txttrabajador.Location = new System.Drawing.Point(286, 88);
+            this.txttrabajador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txttrabajador.Location = new System.Drawing.Point(289, 99);
             this.txttrabajador.Name = "txttrabajador";
             this.txttrabajador.Size = new System.Drawing.Size(121, 20);
             this.txttrabajador.TabIndex = 44;
             // 
             // txtcod_tra
             // 
-            this.txtcod_tra.Location = new System.Drawing.Point(286, 62);
+            this.txtcod_tra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcod_tra.Location = new System.Drawing.Point(289, 73);
             this.txtcod_tra.Name = "txtcod_tra";
             this.txtcod_tra.Size = new System.Drawing.Size(75, 20);
             this.txtcod_tra.TabIndex = 43;
@@ -494,7 +488,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(219, 92);
+            this.label4.Location = new System.Drawing.Point(215, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 42;
@@ -503,7 +497,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(221, 64);
+            this.label5.Location = new System.Drawing.Point(233, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 41;
@@ -517,7 +511,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 487);
+            this.ClientSize = new System.Drawing.Size(725, 371);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmMovimiento";
@@ -532,7 +526,6 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlistadomov)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,6 +576,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtcondicion;
-        private System.Windows.Forms.DataGridView dgvlistadomov;
     }
 }

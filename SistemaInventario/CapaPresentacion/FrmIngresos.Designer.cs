@@ -309,6 +309,7 @@
             // 
             // txtstock
             // 
+            this.txtstock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtstock.Location = new System.Drawing.Point(357, 49);
             this.txtstock.Name = "txtstock";
             this.txtstock.Size = new System.Drawing.Size(121, 20);
@@ -335,6 +336,7 @@
             // 
             // txtpro
             // 
+            this.txtpro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtpro.Location = new System.Drawing.Point(97, 49);
             this.txtpro.Name = "txtpro";
             this.txtpro.Size = new System.Drawing.Size(121, 20);
@@ -342,6 +344,7 @@
             // 
             // txtcod_pro
             // 
+            this.txtcod_pro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcod_pro.Location = new System.Drawing.Point(97, 23);
             this.txtcod_pro.Name = "txtcod_pro";
             this.txtcod_pro.Size = new System.Drawing.Size(75, 20);
@@ -376,6 +379,7 @@
             // 
             // txtproveedor
             // 
+            this.txtproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtproveedor.Location = new System.Drawing.Point(291, 45);
             this.txtproveedor.Name = "txtproveedor";
             this.txtproveedor.Size = new System.Drawing.Size(121, 20);
@@ -383,6 +387,7 @@
             // 
             // txtcod_prov
             // 
+            this.txtcod_prov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcod_prov.Location = new System.Drawing.Point(291, 19);
             this.txtcod_prov.Name = "txtcod_prov";
             this.txtcod_prov.Size = new System.Drawing.Size(75, 20);
