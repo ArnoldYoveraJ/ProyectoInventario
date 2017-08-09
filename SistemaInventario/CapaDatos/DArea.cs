@@ -12,6 +12,7 @@ namespace CapaDatos
     {
         private int _Cod_Area;
         private string _Nom_Area;
+        //ORUEBA
 
         private string texto_buscar;
 
