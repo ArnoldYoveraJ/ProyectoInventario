@@ -34,18 +34,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtusu = new System.Windows.Forms.TextBox();
             this.txtcon = new System.Windows.Forms.TextBox();
-            this.btningresar = new System.Windows.Forms.Button();
-            this.btnsalir = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnsalir = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -101,20 +101,43 @@
             this.txtcon.TabIndex = 5;
             this.txtcon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcon_KeyPress);
             // 
-            // btningresar
+            // groupBox1
             // 
-            this.btningresar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btningresar.Location = new System.Drawing.Point(107, 118);
-            this.btningresar.Name = "btningresar";
-            this.btningresar.Size = new System.Drawing.Size(75, 23);
-            this.btningresar.TabIndex = 7;
-            this.btningresar.Text = "Ingresar";
-            this.btningresar.UseVisualStyleBackColor = false;
-            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
+            this.groupBox1.Controls.Add(this.lblhora);
+            this.groupBox1.Controls.Add(this.txtusu);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnsalir);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btningresar);
+            this.groupBox1.Controls.Add(this.txtcon);
+            this.groupBox1.Location = new System.Drawing.Point(165, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(281, 147);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            // 
+            // lblhora
+            // 
+            this.lblhora.AutoSize = true;
+            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.Location = new System.Drawing.Point(93, 16);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(47, 15);
+            this.lblhora.TabIndex = 9;
+            this.lblhora.Text = "label4";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnsalir
             // 
-            this.btnsalir.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnsalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsalir.Image = global::CapaPresentacion.Properties.Resources.Salir1;
+            this.btnsalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsalir.Location = new System.Drawing.Point(188, 118);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +145,21 @@
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = false;
             this.btnsalir.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btningresar
+            // 
+            this.btningresar.BackColor = System.Drawing.Color.Transparent;
+            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Image = global::CapaPresentacion.Properties.Resources.entrar;
+            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningresar.Location = new System.Drawing.Point(107, 118);
+            this.btningresar.Name = "btningresar";
+            this.btningresar.Size = new System.Drawing.Size(75, 23);
+            this.btningresar.TabIndex = 7;
+            this.btningresar.Text = "Ingresar";
+            this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btningresar.UseVisualStyleBackColor = false;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
             // pictureBox3
             // 
@@ -156,37 +194,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblhora);
-            this.groupBox1.Controls.Add(this.txtusu);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnsalir);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btningresar);
-            this.groupBox1.Controls.Add(this.txtcon);
-            this.groupBox1.Location = new System.Drawing.Point(165, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(281, 147);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            // 
-            // lblhora
-            // 
-            this.lblhora.AutoSize = true;
-            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhora.Location = new System.Drawing.Point(93, 16);
-            this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(47, 15);
-            this.lblhora.TabIndex = 9;
-            this.lblhora.Text = "label4";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,11 +211,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

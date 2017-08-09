@@ -175,30 +175,42 @@
             // 
             // btnimprimir
             // 
+            this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnimprimir.Image = global::CapaPresentacion.Properties.Resources.imprimir1;
+            this.btnimprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnimprimir.Location = new System.Drawing.Point(693, 24);
             this.btnimprimir.Name = "btnimprimir";
             this.btnimprimir.Size = new System.Drawing.Size(75, 23);
             this.btnimprimir.TabIndex = 4;
             this.btnimprimir.Text = "&Imprimir";
+            this.btnimprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnimprimir.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.Eliminar2;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(612, 25);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnbuscar
             // 
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar11;
+            this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnbuscar.Location = new System.Drawing.Point(531, 25);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 2;
             this.btnbuscar.Text = "&Buscar";
+            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnbuscar.UseVisualStyleBackColor = true;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
@@ -222,41 +234,57 @@
             // 
             // btncancelar
             // 
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Image = global::CapaPresentacion.Properties.Resources.cancel;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncancelar.Location = new System.Drawing.Point(369, 217);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 9;
             this.btncancelar.Text = "&Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btneditar
             // 
+            this.btneditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneditar.Image = global::CapaPresentacion.Properties.Resources.Editar;
+            this.btneditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btneditar.Location = new System.Drawing.Point(270, 217);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 23);
             this.btneditar.TabIndex = 8;
             this.btneditar.Text = "E&ditar";
+            this.btneditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btneditar.UseVisualStyleBackColor = true;
             this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnguardar
             // 
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Image = global::CapaPresentacion.Properties.Resources.guardar11;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnguardar.Location = new System.Drawing.Point(178, 217);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(75, 23);
             this.btnguardar.TabIndex = 7;
             this.btnguardar.Text = "&Guardar";
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnguardar.UseVisualStyleBackColor = true;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnnuevo
             // 
+            this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnuevo.Image = global::CapaPresentacion.Properties.Resources.Nuevo;
+            this.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnnuevo.Location = new System.Drawing.Point(85, 217);
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(75, 23);
             this.btnnuevo.TabIndex = 6;
             this.btnnuevo.Text = "&Nuevo";
+            this.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnnuevo.UseVisualStyleBackColor = true;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
@@ -386,11 +414,12 @@
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(735, 184);
+            this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnagregar.Image = global::CapaPresentacion.Properties.Resources.icono_adicionar1;
+            this.btnagregar.Location = new System.Drawing.Point(739, 183);
             this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(40, 23);
+            this.btnagregar.Size = new System.Drawing.Size(36, 24);
             this.btnagregar.TabIndex = 37;
-            this.btnagregar.Text = "+";
             this.btnagregar.UseVisualStyleBackColor = true;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
@@ -598,21 +627,29 @@
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Image = global::CapaPresentacion.Properties.Resources.Eliminar_1___copia22;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.Location = new System.Drawing.Point(710, 140);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 12;
             this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCargar
             // 
+            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargar.Image = global::CapaPresentacion.Properties.Resources.Agregar_img;
+            this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCargar.Location = new System.Drawing.Point(629, 140);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 11;
             this.btnCargar.Text = "Cargar";
+            this.btnCargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
@@ -666,7 +703,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 385);
+            this.ClientSize = new System.Drawing.Size(887, 385);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "FrmProducto";

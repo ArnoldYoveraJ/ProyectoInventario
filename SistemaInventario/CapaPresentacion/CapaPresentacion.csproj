@@ -251,6 +251,42 @@
   <ItemGroup>
     <None Include="Resources\Cancelar.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-cancelar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar 1 - copia22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-adicionar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar-img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar11.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
