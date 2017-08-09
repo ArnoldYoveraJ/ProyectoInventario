@@ -16,6 +16,13 @@ namespace CapaDatos
         private int _Cod_usu;
         private int _Cod_trabajador;
         private int _Cod_producto;
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
 
         public int Cod_mov
         {
@@ -55,7 +62,7 @@ namespace CapaDatos
 
         public DMovimiento() { }
 
-        public DMovimiento(int cod_mov,DateTime fecha, string condicion, int cod_usu,int cod_trabajador,int cod_producto) 
+        public DMovimiento(int cod_mov,DateTime fecha, string condicion, int cod_usu,int cod_trabajador,int cod_producto,string estado) 
         {
             this.Cod_mov = cod_mov;
             this.Fecha = fecha;
@@ -63,6 +70,7 @@ namespace CapaDatos
             this.Cod_usu = cod_usu;
             this.Cod_trabajador = cod_trabajador;
             this.Cod_producto = Cod_producto;
+            this.Estado = estado;
         }
 
        public string insertar_movimiento( DMovimiento mov)
@@ -92,7 +100,8 @@ namespace CapaDatos
                 sql1.Parameters.AddWithValue("@COD_USU", mov.Cod_usu);
                 sql1.Parameters.AddWithValue("@COD_TRABAJADOR", mov.Cod_trabajador);
                 sql1.Parameters.AddWithValue("@COD_PRODUCTO", mov.Cod_producto);
-                rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro";
+                sql1.Parameters.AddWithValue("@ESTADO", mov.Estado);
+                rpta = sql1.ExecuteNonQuery() != 0 ? "OK" : "No se ingreso el Registro";
             }
             catch (Exception e)
             {
@@ -130,6 +139,7 @@ namespace CapaDatos
                sql1.Parameters.AddWithValue("@COD_USU", mov.Cod_usu);
                sql1.Parameters.AddWithValue("@COD_TRABAJADOR", mov.Cod_trabajador);
                sql1.Parameters.AddWithValue("@COD_PRODUCTO", mov.Cod_producto);
+               sql1.Parameters.AddWithValue("@ESTADO", mov.Estado);
                rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Editó el Registro";
            }
            catch (Exception e)
@@ -146,7 +156,7 @@ namespace CapaDatos
            return rpta;
        }
 
-       public string eliminar_movimiento(DMovimiento mov)
+       public string anular_movimiento(DMovimiento mov)
        {
            string rpta = "";
            SqlConnection sqlcon = new SqlConnection();
@@ -158,12 +168,13 @@ namespace CapaDatos
                //crear comando
                SqlCommand sql1 = new SqlCommand();
                sql1.Connection = sqlcon;
-               sql1.CommandText = "sp_eliminar_movimiento";
+               sql1.CommandText = "SPANULAR_MOVIMIENTO";
                sql1.CommandType = CommandType.StoredProcedure;
 
                //parametros
                sql1.Parameters.AddWithValue("@cod_mov", mov.Cod_mov);
-               rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Eliminó el Registro";
+               sql1.Parameters.AddWithValue("@cod_pro", mov.Cod_producto);
+               rpta = sql1.ExecuteNonQuery() !=1 ? "OK" : "No se Anuló el Registro";
            }
            catch (Exception e)
            {

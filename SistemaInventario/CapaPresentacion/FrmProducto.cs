@@ -70,6 +70,7 @@ namespace CapaPresentacion
             this.txtdesc.Text=string.Empty;
             //this.txtso.Text = string.Empty;
             this.txtserie.Text=string.Empty;
+            this.txttrabajador.Text = string.Empty;
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
         }
 
@@ -284,14 +285,14 @@ namespace CapaPresentacion
                     {
                         rpta = NProducto.Insertar(this.txtnom.Text.Trim(),this.txtmarca.Text.Trim(),this.txtmodeloplaca.Text.Trim(),this.txtserie.Text.Trim(),
                             this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen,this.cboestado.Text,
-                           Convert.ToInt16(this.cbocondicion.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));// borra espacios y convierte en mayuscula
+                           this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         rpta = NProducto.Editar(Convert.ToInt16(this.txtcod_pro.Text.Trim()), this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
                             this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen, this.cboestado.Text,
-                           Convert.ToInt16(this.cbocondicion.SelectedValue), this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));
+                          this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -402,7 +403,7 @@ namespace CapaPresentacion
             this.txtdd.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dd"].Value);
             this.txtram.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["ram"].Value);
             this.cboestado.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["estado"].Value);
-            this.cbocondicion.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["estado"].Value);//observar
+            this.cbocondicion.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["condicion"].Value);//observar
             this.txtdesc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["descripcion"].Value);
             this.cboso.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["so"].Value);
 

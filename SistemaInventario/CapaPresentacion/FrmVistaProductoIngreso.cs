@@ -83,10 +83,13 @@ namespace CapaPresentacion
                 buscar_producto_serie();
             }
 
-            if (chkprodispo.Checked)
+           /* if (chkprodispo.Checked)
             {
                 mostrar_productos_disponibles();
-            }
+            }else
+            {
+                mostrar();
+            }*/
         }
 
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
@@ -110,7 +113,30 @@ namespace CapaPresentacion
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            mostrar_productos_disponibles();
+            if (chkprodispo.Checked)
+            {
+                mostrar_productos_disponibles();
+            }
+            else
+            {
+                mostrar();
+            }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (cboelegir.Text.Equals("Nombre"))
+            {
+                buscar_nombre();
+            }
+            else if (cboelegir.Text.Equals("Marca"))
+            {
+                buscar_producto_marca();
+            }
+            else if (cboelegir.Text.Equals("Serie"))
+            {
+                buscar_producto_serie();
+            }
         }
     }
 }

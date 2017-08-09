@@ -129,7 +129,7 @@ namespace CapaPresentacion
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             GestionUsuario();
-            usu.Text = this.cod_usu;
+           // usu.Text = this.cod_usu;
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)

@@ -230,6 +230,27 @@
   <ItemGroup>
     <None Include="Resources\Buscar1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuevo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

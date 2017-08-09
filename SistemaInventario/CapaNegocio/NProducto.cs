@@ -11,7 +11,7 @@ namespace CapaNegocio
     public class NProducto
     {
         public static string Insertar(string nom_prod, string marca, string modelo, string serie, string procesador, string dd, 
-        string ram, string so, byte[] imagen, string estado,int condicion, string desc, int cod_cat,int cod_tra)
+        string ram, string so, byte[] imagen, string estado,string condicion, string desc, int cod_cat,int cod_tra)
         {
             DProducto objp = new DProducto();
             objp.Nom_Producto = nom_prod;
@@ -32,7 +32,7 @@ namespace CapaNegocio
         }
 
         public static string Editar(int cod, string nom_prod, string marca, string modelo, string serie, string procesador, string dd,
-     string ram, string so, byte[] imagen, string estado, int condicion, string desc, int cod_cat, int cod_tra)
+     string ram, string so, byte[] imagen, string estado, string condicion, string desc, int cod_cat, int cod_tra)
         {
             DProducto objp1 = new DProducto();
             objp1.Cod_producto = cod;

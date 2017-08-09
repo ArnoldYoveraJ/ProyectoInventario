@@ -234,13 +234,13 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         rpta = NMovimiento.insertar_movimiento(this.dtfecha.Value,this.txtcondicion.Text.Trim(),/*Convert.ToInt16(this.txtcod_usu.Text.Trim())*/cod_usu,
-                            Convert.ToInt16(this.txtcod_tra.Text.Trim()),Convert.ToInt16(this.txtcod_pro.Text.Trim()));// borra espacios y convierte en mayuscula
+                            Convert.ToInt16(this.txtcod_tra.Text.Trim()),Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO");// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         rpta = NMovimiento.editar_movimiento(Convert.ToInt16(this.txtcod_mov.Text),this.dtfecha.Value, this.txtcondicion.Text.Trim(), Convert.ToInt16(this.txtcod_usu.Text.Trim()),
-                            Convert.ToInt16(this.txtcod_tra.Text.Trim()), Convert.ToInt16(this.txtcod_pro.Text.Trim()));// borra espacios y convierte en mayuscula
+                            Convert.ToInt16(this.txtcod_tra.Text.Trim()), Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO");// borra espacios y convierte en mayuscula
                         MensajeOK("Se Editó Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -292,20 +292,23 @@ namespace CapaPresentacion
             try
             {
                 DialogResult opcion;
-                opcion = MessageBox.Show("Realmente desea Eliminar los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                opcion = MessageBox.Show("Realmente desea Anular los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (opcion == DialogResult.OK) //SI usuario dice OK
                 {
                     string cod, rpta = "";
+                    int cod_pro;//para el codigo de producto
                     foreach (DataGridViewRow row in dgvlistado.Rows)//Recorre todas las filas del DataGridView
                     {
                         if (Convert.ToBoolean(row.Cells[0].Value)) //Revisa si la fila está activada
                         {
                             cod = Convert.ToString(row.Cells[1].Value);
-                            rpta = NMovimiento.eliminar_movimiento(Convert.ToInt32(cod));
+                            //para traer el código de producto del movimiento que se a seleccionado
+                            cod_pro = Convert.ToInt16(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
+                            rpta = NMovimiento.anular_movimiento(Convert.ToInt32(cod),cod_pro);
 
                             if (rpta.Equals("OK"))
                             {
-                                this.MensajeOK("Se Eliminó correctamente el Registro");
+                                this.MensajeOK("Se Anuló correctamente el Registro");
                             }
                             else
                             {
