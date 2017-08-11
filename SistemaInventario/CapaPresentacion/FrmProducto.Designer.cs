@@ -405,7 +405,8 @@
             "Windows 8.1 (64 Bits)",
             "Windows 10(32 Bits)",
             "Windows 10 (64 Bits)",
-            "Windows Server"});
+            "Windows Server",
+            "No Tiene"});
             this.cboso.Location = new System.Drawing.Point(85, 175);
             this.cboso.Name = "cboso";
             this.cboso.Size = new System.Drawing.Size(178, 21);

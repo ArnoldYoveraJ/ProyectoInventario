@@ -375,7 +375,7 @@ namespace CapaDatos
                 SqlParameter par11 = new SqlParameter();
                 par11.ParameterName = "@condicion";
                 par11.SqlDbType = SqlDbType.VarChar;
-                par11.SqlValue = producto.Descripcion;
+                par11.SqlValue = producto.Condicion;
                 sqlcoma.Parameters.Add(par11);
 
                 SqlParameter par12 = new SqlParameter();

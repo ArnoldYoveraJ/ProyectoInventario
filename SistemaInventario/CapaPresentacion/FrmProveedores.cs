@@ -38,7 +38,7 @@ namespace CapaPresentacion
             this.txtcod_prov.Text = string.Empty;
             this.txtrazons.Text = string.Empty;
             this.txtsectorc.Text = string.Empty;
-            this.cbotipodoc.Text = string.Empty;
+           // this.cbotipodoc.Text = string.Empty;
             this.txtnum_doc.Text = string.Empty;
             this.txtdir.Text = string.Empty;
             this.txttel.Text = string.Empty;
@@ -218,7 +218,7 @@ namespace CapaPresentacion
             string rpta;
             try
             {
-                if (this.txtrazons.Text == string.Empty ||this.txtnum_doc.Text==string.Empty  ) //si la caja de texto está vacía--Se cambio la fila de enmedio
+                if (this.txtrazons.Text == string.Empty ||this.txtnum_doc.Text==string.Empty  ) //si la caja de texto está vacía
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(this.txtrazons, "Ingrese una Razón Social");
@@ -298,7 +298,7 @@ namespace CapaPresentacion
             this.txtrazons.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["razon_social"].Value);
             this.txtsectorc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["sector_comercial"].Value);
             //probar con selecttext en el combobox.. 
-            this.cbotipodoc.SelectedText = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
+            this.cbotipodoc.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
             this.txtnum_doc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["num_doc"].Value);
             this.txtdir.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["direccion"].Value);
             this.txttel.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["telefono"].Value);

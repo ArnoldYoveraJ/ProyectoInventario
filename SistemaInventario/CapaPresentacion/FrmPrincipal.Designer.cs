@@ -469,7 +469,7 @@
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button12.Location = new System.Drawing.Point(714, 138);
+            this.button12.Location = new System.Drawing.Point(1143, 132);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(107, 107);
             this.button12.TabIndex = 16;
@@ -484,7 +484,7 @@
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button11.Location = new System.Drawing.Point(341, 319);
+            this.button11.Location = new System.Drawing.Point(770, 313);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(107, 107);
             this.button11.TabIndex = 15;
@@ -499,7 +499,7 @@
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button10.Location = new System.Drawing.Point(827, 206);
+            this.button10.Location = new System.Drawing.Point(1256, 200);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(107, 107);
             this.button10.TabIndex = 14;
@@ -514,7 +514,7 @@
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button9.Location = new System.Drawing.Point(854, 319);
+            this.button9.Location = new System.Drawing.Point(1283, 313);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(107, 107);
             this.button9.TabIndex = 13;
@@ -528,7 +528,7 @@
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button8.Location = new System.Drawing.Point(827, 432);
+            this.button8.Location = new System.Drawing.Point(1256, 426);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(107, 107);
             this.button8.TabIndex = 12;
@@ -543,7 +543,7 @@
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button7.Location = new System.Drawing.Point(714, 488);
+            this.button7.Location = new System.Drawing.Point(1143, 482);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 107);
             this.button7.TabIndex = 11;
@@ -557,7 +557,7 @@
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button6.Location = new System.Drawing.Point(601, 539);
+            this.button6.Location = new System.Drawing.Point(1030, 533);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 107);
             this.button6.TabIndex = 10;
@@ -571,7 +571,7 @@
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button5.Location = new System.Drawing.Point(488, 488);
+            this.button5.Location = new System.Drawing.Point(917, 482);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 107);
             this.button5.TabIndex = 9;
@@ -586,7 +586,7 @@
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button4.Location = new System.Drawing.Point(375, 432);
+            this.button4.Location = new System.Drawing.Point(804, 426);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 107);
             this.button4.TabIndex = 8;
@@ -600,7 +600,7 @@
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button3.Location = new System.Drawing.Point(375, 206);
+            this.button3.Location = new System.Drawing.Point(804, 200);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 107);
             this.button3.TabIndex = 7;
@@ -615,7 +615,7 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button2.Location = new System.Drawing.Point(488, 138);
+            this.button2.Location = new System.Drawing.Point(917, 132);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 107);
             this.button2.TabIndex = 6;
@@ -630,7 +630,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button1.Location = new System.Drawing.Point(601, 93);
+            this.button1.Location = new System.Drawing.Point(1030, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 107);
             this.button1.TabIndex = 5;
