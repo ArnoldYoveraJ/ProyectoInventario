@@ -253,6 +253,40 @@ namespace CapaDatos
            return dt;
        }
 
+          public DataTable Buscar_Trabajador_dni(DTrabajador trabajador) //Modificar string textobuscar por DTrabajador trabajador
+       {
+           DataTable dt = new DataTable("TRABAJADOR");
+           SqlConnection con = new SqlConnection();
+
+           try
+           {
+               con.ConnectionString = Conexion.Cn;
+               con.Open();
+               SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = con;
+               sql1.CommandText = "spbuscar_trabajador_dni";
+               sql1.CommandType = CommandType.StoredProcedure;
+
+              // sql1.Parameters.AddWithValue("@textobuscar",trabajador.Textobuscar);
+               SqlParameter parTextobuscar = new SqlParameter();
+               parTextobuscar.ParameterName = "@textobuscar";
+               parTextobuscar.SqlDbType = SqlDbType.VarChar;
+               parTextobuscar.Size = 8;
+               parTextobuscar.Value = trabajador.Textobuscar;
+               sql1.Parameters.Add(parTextobuscar);
+
+               SqlDataAdapter da = new SqlDataAdapter(sql1);
+               da.Fill(dt);
+           }
+           catch (Exception e)
+           {
+               dt = null;
+           }
+           return dt;
+       }
+
+       
+
        public DataTable Mostrar_Empresa()
        {
            DataTable dt = new DataTable("empresa");

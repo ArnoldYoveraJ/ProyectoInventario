@@ -22,6 +22,7 @@ namespace CapaNegocio
             foreach(DataRow row in dtdet.Rows)
             {
                 DDetalle_Orden detalle = new DDetalle_Orden();
+                //falta agregar el iddetalle venta
                 detalle.Stock_Inicial = Convert.ToInt32(row["stock_ini"].ToString());
                 detalle.Stock_Actual = Convert.ToInt32(row["stock_ini"].ToString());
                 //detalle.Cod_Orden = Convert.ToInt32(row["cod_orden"].ToString());

@@ -93,6 +93,13 @@ namespace CapaPresentacion
             this.lbltotal.Text="Total: " + Convert.ToString(dgvlistado.Rows.Count);
         }
 
+        private void buscar_trabajador_dni()
+        {
+            this.dgvlistado.DataSource = NTrabajador.Buscar_Trabajador_dni(this.txtbuscar.Text);
+            this.ocultarcolumanas();
+            this.lbltotal.Text="Total: " + dgvlistado.Rows.Count;
+        }
+
         private void llenarComboArea()
         {
             cboarea.DataSource = NArea.Mostrar();
@@ -170,12 +177,26 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            this.buscar();
+            if(this.cbobuscar.Text.Equals("DNI"))
+            {
+                buscar_trabajador_dni();
+            }
+            else if (this.cbobuscar.Text.Equals("Apellidos"))
+            {
+                buscar();
+            }
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            this.buscar();
+            if (this.cbobuscar.Text.Equals("DNI"))
+            {
+                buscar_trabajador_dni();
+            }
+            else if (this.cbobuscar.Text.Equals("Apellidos"))
+            {
+                buscar();
+            }
         }
 
         private void btncancelar_Click(object sender, EventArgs e)

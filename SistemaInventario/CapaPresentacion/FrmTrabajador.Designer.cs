@@ -63,7 +63,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbobuscar = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -419,7 +419,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.cbobuscar);
             this.tabPage1.Controls.Add(this.dgvlistado);
             this.tabPage1.Controls.Add(this.lbltotal);
             this.tabPage1.Controls.Add(this.chkeliminar);
@@ -436,17 +436,17 @@
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbobuscar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbobuscar.FormattingEnabled = true;
+            this.cbobuscar.Items.AddRange(new object[] {
             "DNI",
             "Apellidos"});
-            this.comboBox1.Location = new System.Drawing.Point(86, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(84, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "DNI";
+            this.cbobuscar.Location = new System.Drawing.Point(86, 21);
+            this.cbobuscar.Name = "cbobuscar";
+            this.cbobuscar.Size = new System.Drawing.Size(84, 21);
+            this.cbobuscar.TabIndex = 8;
+            this.cbobuscar.Text = "DNI";
             // 
             // tabControl1
             // 
@@ -530,6 +530,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbobuscar;
     }
 }

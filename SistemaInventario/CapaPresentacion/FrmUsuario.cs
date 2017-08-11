@@ -232,15 +232,27 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                        int act=0;
+                        /*int act=0;
                         if (rbact.Checked)
                         {
                             act = 1;
-                        }
+                        }  
                         else if (rbdes.Checked)
                         {
                             act = 0;
-                        }
+                        }*/
+                    //probar código 
+                    int act=0;
+                       if (rbact.Checked)
+                       {
+                           act = 1;
+                       }  
+
+                       if (rbdes.Checked)
+                       {
+                           act = 0;
+                       }
+
                     if (this.IsNuevo)
                     {  
                         rpta = NUsuario.Insertar(this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), this.txtcon.Text.Trim(),

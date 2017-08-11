@@ -60,6 +60,13 @@ namespace CapaNegocio
             return objt.Buscar(objt);
         }
 
+        public static DataTable Buscar_Trabajador_dni(string texto)
+        {
+            DTrabajador objtra = new DTrabajador();
+            objtra.Textobuscar = texto;
+            return objtra.Buscar_Trabajador_dni(objtra);
+        }
+
         public static DataTable Mostar_empresa()
         {
             return new DTrabajador().Mostrar_Empresa();
