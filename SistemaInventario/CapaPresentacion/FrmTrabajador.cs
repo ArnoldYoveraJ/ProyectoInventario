@@ -177,11 +177,11 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            if(this.cbobuscar.Text.Equals("DNI"))
+            if(cbobuscar.Text.Equals("DNI"))
             {
                 buscar_trabajador_dni();
             }
-            else if (this.cbobuscar.Text.Equals("Apellidos"))
+            else if (cbobuscar.Text.Equals("Apellidos"))
             {
                 buscar();
             }
@@ -189,11 +189,11 @@ namespace CapaPresentacion
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            if (this.cbobuscar.Text.Equals("DNI"))
+            if (cbobuscar.Text.Equals("DNI"))
             {
                 buscar_trabajador_dni();
             }
-            else if (this.cbobuscar.Text.Equals("Apellidos"))
+            else if (cbobuscar.Text.Equals("Apellidos"))
             {
                 buscar();
             }
@@ -301,6 +301,16 @@ namespace CapaPresentacion
              {
 
              }*/
+        }
+
+        private void cbobuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

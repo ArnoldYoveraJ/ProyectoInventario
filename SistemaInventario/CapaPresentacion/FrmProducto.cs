@@ -424,5 +424,16 @@ namespace CapaPresentacion
         {
             _Instancia = null;// para corregir cuando se pierde la instancia
         }
+
+        private void cboelegir_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteArticulos obja = new FrmReporteArticulos();
+            obja.ShowDialog();
+        }
     }
 }

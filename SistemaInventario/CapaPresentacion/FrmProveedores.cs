@@ -19,7 +19,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             this.ttmensaje.SetToolTip(this.txtrazons, "Ingrese una Razon Social");
-            this.ttmensaje.SetToolTip(this.cbotipodoc, "Debe Seleccionar un Número de Documento");
+            this.ttmensaje.SetToolTip(this.cbotipodoc, "Debe Seleccionar un Tipo de Documento");
             this.ttmensaje.SetToolTip(this.txtnum_doc, "Ingrese un Número de Documento");
         }
         //Mostrar Mensaje de Confirmacion
@@ -116,9 +116,9 @@ namespace CapaPresentacion
         {
             this.Top = 0;
             this.Left = 0;
+            this.mostrar();
             this.Botones();
             this.habilitar(false);
-            this.mostrar();
             this.IsNuevo = false;
             this.IsEditar = false;
             this.txtcod_prov.Visible = false;
@@ -298,13 +298,12 @@ namespace CapaPresentacion
             this.txtrazons.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["razon_social"].Value);
             this.txtsectorc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["sector_comercial"].Value);
             //probar con selecttext en el combobox.. 
-            this.cbotipodoc.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
+            this.cbotipodoc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
             this.txtnum_doc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["num_doc"].Value);
             this.txtdir.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["direccion"].Value);
             this.txttel.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["telefono"].Value);
             this.txtemail.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["email"].Value);
             this.tabControl1.SelectedIndex = 1;
-
         }
 
         private void txtemail_TextChanged(object sender, EventArgs e)
