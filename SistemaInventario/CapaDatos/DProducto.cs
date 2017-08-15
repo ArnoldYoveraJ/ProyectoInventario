@@ -20,7 +20,6 @@ namespace CapaDatos
         private string _Ram;
         private string _SO;
         private byte[] _Imagen;
-        //private int _Estado;
         private string _Estado;
         private string _Condicion;
         private string _Descripcion;
@@ -89,11 +88,6 @@ namespace CapaDatos
             set { _Imagen = value; }
         }
         
-       /* public int Estado
-        {
-            get { return _Estado; }
-            set { _Estado = value; }
-        }*/
         public string Estado
         {
             get { return _Estado; }
@@ -132,7 +126,7 @@ namespace CapaDatos
         //Constructores
         public DProducto() { }
         public DProducto(int cod_pro,string nom_pro,string marca,string modelo_placa, string serie,
-        string procesa, string dd, string ram, string so,byte[]  imagen,/*int estado*/string estado,string condicion,
+        string procesa, string dd, string ram, string so,byte[]  imagen,string estado,string condicion,
         string descrip,int cod_cat,int cod_trab, string  textobuscar)
         {
             this.Cod_producto = cod_pro;
@@ -145,7 +139,6 @@ namespace CapaDatos
             this.Ram = ram;
             this.SO = so;
             this.Imagen = imagen;
-           // this.Estado = estado;
             this.Estado = estado;
             this.Condicion = condicion;
             this.Descripcion = descrip;
@@ -233,7 +226,6 @@ namespace CapaDatos
                 SqlParameter par9 = new SqlParameter();
                 par9.ParameterName = "@imagen";
                 par9.SqlDbType = SqlDbType.Image;
-               // par8.Size = 30;
                 par9.SqlValue = producto.Imagen;
                 sqlcoma.Parameters.Add(par9);
 
@@ -362,7 +354,6 @@ namespace CapaDatos
                 SqlParameter par9 = new SqlParameter();
                 par9.ParameterName = "@imagen";
                 par9.SqlDbType = SqlDbType.Image;
-                // par8.Size = 30;
                 par9.SqlValue = producto.Imagen;
                 sqlcoma.Parameters.Add(par9);
 

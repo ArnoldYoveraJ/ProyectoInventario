@@ -481,6 +481,7 @@
             // 
             this.txtdesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdesc.Location = new System.Drawing.Point(310, 125);
+            this.txtdesc.MaxLength = 70;
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -572,6 +573,7 @@
             // 
             this.txtserie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtserie.Location = new System.Drawing.Point(494, 56);
+            this.txtserie.MaxLength = 20;
             this.txtserie.Name = "txtserie";
             this.txtserie.Size = new System.Drawing.Size(100, 20);
             this.txtserie.TabIndex = 19;
@@ -681,7 +683,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 49);
+            this.tabControl1.Location = new System.Drawing.Point(12, 50);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(857, 336);
@@ -697,7 +699,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(7, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 25);
             this.label1.TabIndex = 2;
@@ -708,7 +710,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(887, 385);
+            this.ClientSize = new System.Drawing.Size(875, 385);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "FrmProducto";

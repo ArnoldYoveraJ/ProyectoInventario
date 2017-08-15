@@ -12,8 +12,6 @@ namespace CapaDatos
     {
         private int _Cod_Area;
         private string _Nom_Area;
-        //ORUEBA
-
         private string texto_buscar;
 
         public string Texto_buscar
@@ -202,8 +200,6 @@ namespace CapaDatos
 
                 SqlDataAdapter da = new SqlDataAdapter(sql1); //falta (SqlDataAdapter(sql1))
                 da.Fill(dt);
-                //DataColumn dc = dt.Columns.Add("cod_area", typeof(Int16));
-                //dt.Columns.Add("nom_area", typeof(string));
             }
             catch (Exception ex)
             {

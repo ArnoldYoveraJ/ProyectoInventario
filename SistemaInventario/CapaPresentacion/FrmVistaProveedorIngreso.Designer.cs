@@ -53,9 +53,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(7, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 25);
             this.label1.TabIndex = 6;
@@ -76,10 +77,10 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(12, 66);
+            this.tabControl1.Location = new System.Drawing.Point(12, 44);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(491, 271);
+            this.tabControl1.Size = new System.Drawing.Size(491, 265);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -92,7 +93,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(483, 245);
+            this.tabPage1.Size = new System.Drawing.Size(483, 239);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -117,12 +118,12 @@
             this.dgvlistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlistado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dgvlistado.Location = new System.Drawing.Point(18, 78);
+            this.dgvlistado.Location = new System.Drawing.Point(18, 67);
             this.dgvlistado.MultiSelect = false;
             this.dgvlistado.Name = "dgvlistado";
             this.dgvlistado.ReadOnly = true;
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlistado.Size = new System.Drawing.Size(443, 150);
+            this.dgvlistado.Size = new System.Drawing.Size(443, 161);
             this.dgvlistado.TabIndex = 7;
             this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
             // 
@@ -135,7 +136,7 @@
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(426, 51);
+            this.lbltotal.Location = new System.Drawing.Point(383, 51);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(35, 13);
             this.lbltotal.TabIndex = 6;
@@ -159,7 +160,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 362);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(509, 316);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

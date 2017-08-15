@@ -10,7 +10,7 @@ namespace CapaNegocio
 {
     public class NCategoria
     {
-        //llamamos al metodo insertar de la capa datos KKKK
+        //llamamos al metodo insertar de la capa datos
         public static string Insertar(string nombre)
         {
            DCategoria objc = new DCategoria();

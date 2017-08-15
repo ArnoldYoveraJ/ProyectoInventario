@@ -60,7 +60,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(471, 238);
+            this.tabPage1.Size = new System.Drawing.Size(471, 244);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -73,12 +73,12 @@
             this.dgvlistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlistado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dgvlistado.Location = new System.Drawing.Point(19, 85);
+            this.dgvlistado.Location = new System.Drawing.Point(19, 64);
             this.dgvlistado.MultiSelect = false;
             this.dgvlistado.Name = "dgvlistado";
             this.dgvlistado.ReadOnly = true;
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlistado.Size = new System.Drawing.Size(428, 134);
+            this.dgvlistado.Size = new System.Drawing.Size(428, 168);
             this.dgvlistado.TabIndex = 7;
             this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
             this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
@@ -94,7 +94,7 @@
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbuscar.Location = new System.Drawing.Point(66, 27);
+            this.txtbuscar.Location = new System.Drawing.Point(66, 15);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(132, 20);
             this.txtbuscar.TabIndex = 6;
@@ -105,7 +105,7 @@
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.buscar;
             this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscar.Location = new System.Drawing.Point(372, 24);
+            this.btnbuscar.Location = new System.Drawing.Point(372, 12);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 3;
@@ -117,7 +117,7 @@
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(400, 63);
+            this.lbltotal.Location = new System.Drawing.Point(369, 48);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(39, 13);
             this.lbltotal.TabIndex = 2;
@@ -126,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 29);
+            this.label1.Location = new System.Drawing.Point(16, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -135,9 +135,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 22);
+            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label4.Location = new System.Drawing.Point(7, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 25);
             this.label4.TabIndex = 3;
@@ -150,22 +151,23 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(22, 54);
+            this.tabControl1.Location = new System.Drawing.Point(12, 47);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(479, 264);
+            this.tabControl1.Size = new System.Drawing.Size(479, 270);
             this.tabControl1.TabIndex = 2;
             // 
             // FrmVistaTrabajador_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 336);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(494, 324);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmVistaTrabajador_Producto";
-            this.Text = "Lista de Trabajadores";
+            this.Text = "Seleccionar Trabajadores";
             this.Load += new System.EventHandler(this.FrmVistaTrabajador_Producto_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

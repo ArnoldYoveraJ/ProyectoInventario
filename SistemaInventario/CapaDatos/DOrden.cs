@@ -106,7 +106,6 @@ namespace CapaDatos
                         //Establecemos el codigo del ingreso que se autogenero
                         ord.Cod_Orden = this.Cod_Orden;
                         //llamar a metodo insertar de ddetalle_ingreso
-                        //rpta = Detalle. Insertar(ord,ref SqlCon,ref SqlTra);
                         rpta = ord.Insertar(ord, ref con, ref SqlTra);
                         if (!rpta.Equals("OK"))
                         {
@@ -169,7 +168,6 @@ namespace CapaDatos
             try
             {
                 con.ConnectionString = Conexion.Cn;
-                //con.Open();
                 SqlCommand sql1 = new SqlCommand();
                 sql1.Connection = con;
                 sql1.CommandText = "spmostrar_orden_ingreso";

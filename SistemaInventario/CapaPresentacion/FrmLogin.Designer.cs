@@ -36,9 +36,9 @@
             this.txtcon = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblhora = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnsalir = new System.Windows.Forms.Button();
             this.btningresar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -95,6 +95,7 @@
             this.txtcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcon.Location = new System.Drawing.Point(96, 80);
+            this.txtcon.MaxLength = 12;
             this.txtcon.Name = "txtcon";
             this.txtcon.PasswordChar = '*';
             this.txtcon.Size = new System.Drawing.Size(167, 21);
@@ -126,12 +127,6 @@
             this.lblhora.TabIndex = 9;
             this.lblhora.Text = "label4";
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // btnsalir
             // 
             this.btnsalir.BackColor = System.Drawing.Color.Transparent;
@@ -160,6 +155,12 @@
             this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox3
             // 

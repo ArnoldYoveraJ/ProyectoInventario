@@ -61,28 +61,25 @@ namespace CapaNegocio
         }
 
         public static DataTable Mostrar()
-        { //agregar static
-           /* DProducto obj1= new DProducto();
-            return obj1.Mostrar();
-            */
+        { 
             return new DProducto().Mostrar();
         }
 
-        public static DataTable Buscar_Nombre(string texto)//agregar static
+        public static DataTable Buscar_Nombre(string texto)
         {
             DProducto obj1 = new DProducto();
             obj1.TextoBuscar = texto;
             return obj1.Buscar(obj1);
         }
 
-        public static DataTable Buscar_Producto_Marca(string texto)//agregar static
+        public static DataTable Buscar_Producto_Marca(string texto)
         {
             DProducto obj1 = new DProducto();
             obj1.TextoBuscar = texto;
             return obj1.Buscar_producto_marca(obj1);
         }
 
-        public static DataTable Buscar_Producto_Serie(string texto)//agregar static
+        public static DataTable Buscar_Producto_Serie(string texto)
         {
             DProducto obj1 = new DProducto();
             obj1.TextoBuscar = texto;

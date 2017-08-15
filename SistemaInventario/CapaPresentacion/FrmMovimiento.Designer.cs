@@ -151,8 +151,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 25);
@@ -371,6 +372,7 @@
             this.txtcondicion.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.txtcondicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcondicion.Location = new System.Drawing.Point(80, 129);
+            this.txtcondicion.MaxLength = 70;
             this.txtcondicion.Multiline = true;
             this.txtcondicion.Name = "txtcondicion";
             this.txtcondicion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -542,7 +544,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 371);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(718, 371);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmMovimiento";

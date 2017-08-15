@@ -242,12 +242,8 @@ namespace CapaPresentacion
             this.txtanexo.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["anexo"].Value);
             this.cboarea.SelectedValue=Convert.ToString(dgvlistado.CurrentRow.Cells["cod_area"].Value);
             this.cboempresa.SelectedValue = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_empresa"].Value);
+            this.txtcod_tra.ReadOnly = false;
             this.tabControl1.SelectedIndex=1;
-
-            /*this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);//Current ROw: fila actual
-            this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual
-            this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
-            this.tabControl1.SelectedIndex = 1;*/
         }
 
         private void chkeliminar_CheckedChanged(object sender, EventArgs e)
@@ -297,10 +293,6 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message, ex.StackTrace);
             }
 
-            /* if(this.dgvlistado.CurrentRow()
-             {
-
-             }*/
         }
 
         private void cbobuscar_SelectedIndexChanged(object sender, EventArgs e)

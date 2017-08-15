@@ -299,6 +299,7 @@
             // 
             this.txtanexo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtanexo.Location = new System.Drawing.Point(84, 115);
+            this.txtanexo.MaxLength = 4;
             this.txtanexo.Name = "txtanexo";
             this.txtanexo.Size = new System.Drawing.Size(100, 20);
             this.txtanexo.TabIndex = 20;
@@ -349,6 +350,7 @@
             // 
             this.txtdni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdni.Location = new System.Drawing.Point(84, 88);
+            this.txtdni.MaxLength = 8;
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(100, 20);
             this.txtdni.TabIndex = 14;
@@ -408,7 +410,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(614, 304);
+            this.tabPage2.Size = new System.Drawing.Size(614, 290);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -465,6 +467,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 25);

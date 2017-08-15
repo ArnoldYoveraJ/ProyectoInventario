@@ -56,7 +56,7 @@ namespace CapaPresentacion
             this.txtcod_orden.Text = string.Empty;
             this.txtcod_prov.Text = string.Empty;
             this.txtproveedor.Text = string.Empty;
-            this.agregar_detalle();//para cuando limpiemos todos los botones creemos una nueva tabla
+            this.agregar_detalle();//Cuando limpiemos todos los botones creemos una nueva tabla
         }
 
         private void LimpiarDetalle()
@@ -150,7 +150,6 @@ namespace CapaPresentacion
             this.Botones();
             this.agregar_detalle();
             this.txtcod_orden.Visible = false;
-            //this.label16.Text = Convert.ToString(cod_usu);
         }
 
         private void FrmIngresos_FormClosing(object sender, FormClosingEventArgs e)
@@ -354,6 +353,7 @@ namespace CapaPresentacion
             /*this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_prod"].Value);
             this.txtpro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["producto"].Value);*/
             this.txtstock.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["stock_inicial"].Value);
+            this.txtcod_orden.ReadOnly = false;
             this.Mostrar_Detalle();
             this.tabControl1.SelectedIndex = 1;
         }
