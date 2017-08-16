@@ -80,7 +80,6 @@ namespace CapaPresentacion
             this.txtcod_pro.Text = string.Empty;
             this.txtproducto.Text = string.Empty;
             this.txtcondicion.Text = string.Empty;
-            //this.dtfecha.Text = string.Empty;
         }
 
         //Activar botones
@@ -129,7 +128,6 @@ namespace CapaPresentacion
             this.dgvlistado.Columns[1].Visible = false;
             /* this.dgvlistado.Columns[12].Visible = false;
              this.dgvlistado.Columns[14].Visible = false;*/
-            //corregir el procedimiento almacenado para traer el nombre la categoria y el nombre del trabajador. 
         }
 
         //Mostrar
@@ -233,12 +231,13 @@ namespace CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = NMovimiento.insertar_movimiento(this.dtfecha.Value,this.txtcondicion.Text.Trim(),/*Convert.ToInt16(this.txtcod_usu.Text.Trim())*/cod_usu,
+                        rpta = NMovimiento.insertar_movimiento(this.dtfecha.Value,this.txtcondicion.Text.Trim(),cod_usu,
                             Convert.ToInt16(this.txtcod_tra.Text.Trim()),Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO");// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
+                        //Falta el campo: cod_usu en editar. 
                         rpta = NMovimiento.editar_movimiento(Convert.ToInt16(this.txtcod_mov.Text),this.dtfecha.Value, this.txtcondicion.Text.Trim(), Convert.ToInt16(this.txtcod_usu.Text.Trim()),
                             Convert.ToInt16(this.txtcod_tra.Text.Trim()), Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO");// borra espacios y convierte en mayuscula
                         MensajeOK("Se Editó Correctamente");
@@ -284,6 +283,7 @@ namespace CapaPresentacion
             this.txtproducto.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
             this.txtcondicion.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["condicion"].Value);
             this.dtfecha.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["fecha"].Value);
+            this.txtcod_mov.ReadOnly = false;
             tabControl1.SelectedIndex = 1;
         }
 
@@ -302,7 +302,7 @@ namespace CapaPresentacion
                         if (Convert.ToBoolean(row.Cells[0].Value)) //Revisa si la fila está activada
                         {
                             cod = Convert.ToString(row.Cells[1].Value);
-                            //para traer el código de producto del movimiento que se a seleccionado
+                            //Para traer el código de producto del movimiento que se a seleccionado en el DataGridView
                             cod_pro = Convert.ToInt16(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
                             rpta = NMovimiento.anular_movimiento(Convert.ToInt32(cod),cod_pro);
 

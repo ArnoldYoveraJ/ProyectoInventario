@@ -77,7 +77,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 62);
+            this.tabControl1.Location = new System.Drawing.Point(12, 51);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(650, 332);
@@ -279,6 +279,7 @@
             // 
             this.txttel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txttel.Location = new System.Drawing.Point(271, 107);
+            this.txttel.MaxLength = 9;
             this.txttel.Name = "txttel";
             this.txttel.Size = new System.Drawing.Size(120, 20);
             this.txttel.TabIndex = 23;
@@ -313,6 +314,7 @@
             // 
             this.txtnum_doc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnum_doc.Location = new System.Drawing.Point(471, 82);
+            this.txtnum_doc.MaxLength = 11;
             this.txtnum_doc.Name = "txtnum_doc";
             this.txtnum_doc.Size = new System.Drawing.Size(126, 20);
             this.txtnum_doc.TabIndex = 19;
@@ -454,9 +456,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(7, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 25);
             this.label1.TabIndex = 4;
@@ -474,7 +477,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 406);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(666, 386);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "FrmProveedores";

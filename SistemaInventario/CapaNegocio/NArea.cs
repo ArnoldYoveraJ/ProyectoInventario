@@ -38,7 +38,7 @@ namespace CapaNegocio
             return obja.Mostrar();
         }
 
-        public static DataTable Buscar(string texto_b) //static
+        public static DataTable Buscar(string texto_b)
         {
             DArea obja = new DArea();
             obja.Texto_buscar = texto_b;

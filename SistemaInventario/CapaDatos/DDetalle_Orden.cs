@@ -68,7 +68,6 @@ namespace CapaDatos
                 sql1.CommandText = "spingresar_detalle_orden";
                 sql1.CommandType = CommandType.StoredProcedure;
 
-                //modificar el BD el campo cod_detord como campo de salida.
                 SqlParameter parcod_det= new SqlParameter();
                 parcod_det.ParameterName = "@cod_detord";
                 parcod_det.SqlDbType = SqlDbType.Int;

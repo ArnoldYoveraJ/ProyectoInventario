@@ -18,7 +18,6 @@ namespace CapaPresentacion
 
         private static FrmProducto _Instancia;
 
-
         //código Nuevo
         public static FrmProducto GetInstancia()
         { 
@@ -68,7 +67,6 @@ namespace CapaPresentacion
             this.txtdd.Text=string.Empty;
             this.txtram.Text=string.Empty;
             this.txtdesc.Text=string.Empty;
-            //this.txtso.Text = string.Empty;
             this.txtserie.Text=string.Empty;
             this.txttrabajador.Text = string.Empty;
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
@@ -90,7 +88,6 @@ namespace CapaPresentacion
             this.txtserie.ReadOnly = !valor;
             this.cbocondicion.Enabled = valor;
             this.cboestado.Enabled = valor;
-            //this.txtso.ReadOnly = !valor;
             this.cboso.Enabled = valor;
             this.txttrabajador.ReadOnly = !valor;
             this.txtcodtra.ReadOnly = !valor;
@@ -209,7 +206,7 @@ namespace CapaPresentacion
             if(result== DialogResult.OK)
             {
                 this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//Adecua el Tamaño de la imagen al picturebox
-                this.pxImagen.Image = Image.FromFile(dialog.FileName);//obtiene un archivo de FRomfile. yu lo envia al dialog 
+                this.pxImagen.Image = Image.FromFile(dialog.FileName);//obtiene un archivo de FRomfile y lo envia al dialog 
             }
         }
 
@@ -410,6 +407,7 @@ namespace CapaPresentacion
             this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);//Current ROw: fila actual
             this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual
             this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
+            this.txtcod_pro.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;
         }
 
@@ -422,7 +420,7 @@ namespace CapaPresentacion
 
         private void FrmProducto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _Instancia = null;// para corregir cuando se pierde la instancia
+            _Instancia = null; //Cuando Cierre el Formulario se termine la instancia y posteriormente se vuelve a crear otra. 
         }
 
         private void cboelegir_SelectedIndexChanged(object sender, EventArgs e)

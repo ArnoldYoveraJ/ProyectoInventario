@@ -86,11 +86,6 @@ namespace CapaDatos
            this.Textobuscar = texto;
        }
 
-      /* public DTrabajador(int cod)
-       {
-           this.Cod_Trabajador = cod;
-       }*/
-
        public string Insertar_Trabajador(DTrabajador Trabajador)
         {
             string rpta = "";
@@ -109,7 +104,6 @@ namespace CapaDatos
                 parcod_tra.Direction = ParameterDirection.Output;
                 sql1.Parameters.Add(parcod_tra);
 
-               /* sql1.Parameters.AddWithValue("@cod_tra", Cod_Trabajador);*/
                 sql1.Parameters.AddWithValue("@nom",Trabajador.Nombres);
                 sql1.Parameters.AddWithValue("@ape", Trabajador.Apellidos);
                 sql1.Parameters.AddWithValue("@dni", Trabajador.DNI);
@@ -143,7 +137,6 @@ namespace CapaDatos
                sql1.CommandText = "speditar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
-              // SqlParameter par = new SqlParameter();
                sql1.Parameters.AddWithValue("@cod_tra", Trab._Cod_Trabajador);
                sql1.Parameters.AddWithValue("@nom", Trab.Nombres);
                sql1.Parameters.AddWithValue("@ape", Trab.Apellidos);
@@ -181,7 +174,6 @@ namespace CapaDatos
                sql1.CommandText = "speliminar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
-               // SqlParameter par = new SqlParameter();
                sql1.Parameters.AddWithValue("@cod", Cod_Trabajador);
 
                respuesta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Elimino el Registro";
@@ -221,7 +213,7 @@ namespace CapaDatos
            return dt;
        }
 
-       public DataTable Buscar(DTrabajador trabajador) //Modificar string textobuscar por DTrabajador trabajador
+       public DataTable Buscar(DTrabajador trabajador) 
        {
            DataTable dt = new DataTable("TRABAJADOR");
            SqlConnection con = new SqlConnection();
@@ -235,7 +227,6 @@ namespace CapaDatos
                sql1.CommandText = "spbuscar_trabajador";
                sql1.CommandType = CommandType.StoredProcedure;
 
-              // sql1.Parameters.AddWithValue("@textobuscar",trabajador.Textobuscar);
                SqlParameter parTextobuscar = new SqlParameter();
                parTextobuscar.ParameterName = "@textobuscar";
                parTextobuscar.SqlDbType = SqlDbType.VarChar;
@@ -253,7 +244,7 @@ namespace CapaDatos
            return dt;
        }
 
-          public DataTable Buscar_Trabajador_dni(DTrabajador trabajador) //Modificar string textobuscar por DTrabajador trabajador
+          public DataTable Buscar_Trabajador_dni(DTrabajador trabajador)
        {
            DataTable dt = new DataTable("TRABAJADOR");
            SqlConnection con = new SqlConnection();

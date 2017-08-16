@@ -153,7 +153,6 @@ namespace CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            //deshabiulitar isnuevo y iseditar
             this.IsNuevo = true;
             this.IsEditar = false;
             this.Habilitar(true);
@@ -201,9 +200,9 @@ namespace CapaPresentacion
 
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
-           // this.txtcod.Text=Convert.ToString(this.dgvlistado.CurrentRow.Selected);
             this.txtcod.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_area"].Value);
             this.txtnom.Text= Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_area"].Value);
+            this.txtcod.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;
         }
 

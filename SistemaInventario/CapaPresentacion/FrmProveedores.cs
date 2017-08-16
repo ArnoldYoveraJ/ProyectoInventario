@@ -38,7 +38,6 @@ namespace CapaPresentacion
             this.txtcod_prov.Text = string.Empty;
             this.txtrazons.Text = string.Empty;
             this.txtsectorc.Text = string.Empty;
-           // this.cbotipodoc.Text = string.Empty;
             this.txtnum_doc.Text = string.Empty;
             this.txtdir.Text = string.Empty;
             this.txttel.Text = string.Empty;
@@ -46,7 +45,6 @@ namespace CapaPresentacion
         }
 
         //Activar botones
-
         private void habilitar(bool valor)
         {
             this.txtcod_prov.ReadOnly = !valor;
@@ -56,7 +54,7 @@ namespace CapaPresentacion
             this.txtnum_doc.ReadOnly = !valor;
             this.txtdir.ReadOnly = !valor;
             this.txttel.ReadOnly = !valor;
-            this.txtemail.ReadOnly = !valor;//ReadOnly:para hacerla de solo lectura
+            this.txtemail.ReadOnly = !valor;
         }
 
         //Desactivar botones
@@ -98,8 +96,6 @@ namespace CapaPresentacion
         //Buscar Categoria por nombre
         private void buscar_razon_social()
         {
-            //Video 18: modificar en caso error
-
                 this.dgvlistado.DataSource = NProveedor.Buscar_razon_social(this.txtbuscar.Text);
                 this.ocultarcolumnas();
                 lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
@@ -297,12 +293,12 @@ namespace CapaPresentacion
             this.txtcod_prov.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_prov"].Value);
             this.txtrazons.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["razon_social"].Value);
             this.txtsectorc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["sector_comercial"].Value);
-            //probar con selecttext en el combobox.. 
             this.cbotipodoc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
             this.txtnum_doc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["num_doc"].Value);
             this.txtdir.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["direccion"].Value);
             this.txttel.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["telefono"].Value);
             this.txtemail.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["email"].Value);
+            this.txtcod_prov.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;
         }
 

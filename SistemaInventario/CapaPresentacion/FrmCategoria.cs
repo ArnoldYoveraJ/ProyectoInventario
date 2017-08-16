@@ -164,9 +164,7 @@ namespace CapaPresentacion
                 this.IsEditar = false;
                 this.Botones();
                 this.LimpiarBotones();
-                this.mostrar();
-               // this.tabControl1.SelectedIndex = 0;
-                
+                this.mostrar();        
             }
             catch (Exception ex)
             {
@@ -180,7 +178,6 @@ namespace CapaPresentacion
            this.txtcod_cat.Visible = false;//deshabilitar el código cuando edite
            this.txtnom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_cat"].Value);
            this.tabControl1.SelectedIndex = 1;
-          // Botones();
         }
 
         private void btneditar_Click(object sender, EventArgs e)

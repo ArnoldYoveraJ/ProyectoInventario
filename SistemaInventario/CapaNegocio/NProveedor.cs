@@ -12,7 +12,6 @@ namespace CapaNegocio
     {
         public static string Insertar(string raz_soc,string sect_com,string tip_doc ,string num_doc ,string dir,string tel,string email){
             DProveedor objp = new DProveedor();
-           // objp.Cod_prov = cod_prov;
             objp.Razon_social = raz_soc;
             objp.Sector_comercial = sect_com;
             objp.Tipo_doc = tip_doc;
