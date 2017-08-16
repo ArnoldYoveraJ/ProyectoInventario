@@ -39,6 +39,7 @@ namespace CapaPresentacion
             }
             else
             {
+                MessageBox.Show("Bienvenido al Sistema " + "'" + datos.Rows[0][1].ToString() + "'", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmPrincipal frm = new FrmPrincipal();
                 frm.cod_usu = datos.Rows[0][0].ToString();
                 frm.nom_com = datos.Rows[0][1].ToString();

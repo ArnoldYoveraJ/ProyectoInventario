@@ -68,7 +68,7 @@ namespace CapaPresentacion
             this.txtram.Text=string.Empty;
             this.txtdesc.Text=string.Empty;
             this.txtserie.Text=string.Empty;
-            this.txttrabajador.Text = string.Empty;
+           // this.txttrabajador.Text = string.Empty;
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
         }
 
@@ -89,8 +89,8 @@ namespace CapaPresentacion
             this.cbocondicion.Enabled = valor;
             this.cboestado.Enabled = valor;
             this.cboso.Enabled = valor;
-            this.txttrabajador.ReadOnly = !valor;
-            this.txtcodtra.ReadOnly = !valor;
+           // this.txttrabajador.ReadOnly = !valor;
+           // this.txtcodtra.ReadOnly = !valor;
             this.cbocategoria.Enabled = valor;
             this.btnagregar.Enabled = valor;
 
@@ -282,14 +282,14 @@ namespace CapaPresentacion
                     {
                         rpta = NProducto.Insertar(this.txtnom.Text.Trim(),this.txtmarca.Text.Trim(),this.txtmodeloplaca.Text.Trim(),this.txtserie.Text.Trim(),
                             this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen,this.cboestado.Text,
-                           this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));// borra espacios y convierte en mayuscula
+                           this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         rpta = NProducto.Editar(Convert.ToInt16(this.txtcod_pro.Text.Trim()), this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
                             this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen, this.cboestado.Text,
-                          this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), Convert.ToInt16(this.txtcodtra.Text.Trim()));
+                          this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -404,8 +404,8 @@ namespace CapaPresentacion
             this.txtdesc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["descripcion"].Value);
             this.cboso.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["so"].Value);
 
-            this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);//Current ROw: fila actual
-            this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual
+            /*this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);//Current ROw: fila actual
+            this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual*/
             this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
             this.txtcod_pro.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;

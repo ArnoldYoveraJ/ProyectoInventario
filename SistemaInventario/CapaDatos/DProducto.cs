@@ -24,7 +24,7 @@ namespace CapaDatos
         private string _Condicion;
         private string _Descripcion;
         private int _Cod_Cat;
-        private int _Cod_Trabajador;
+        //private int _Cod_Trabajador;
         private string _TextoBuscar;
 
         public int Cod_producto
@@ -112,12 +112,6 @@ namespace CapaDatos
             set { _Cod_Cat = value; }
         }
 
-        public int Cod_Trabajador
-        {
-            get { return _Cod_Trabajador; }
-            set { _Cod_Trabajador = value; }
-        }
-
         public string TextoBuscar
         {
             get { return _TextoBuscar; }
@@ -127,7 +121,7 @@ namespace CapaDatos
         public DProducto() { }
         public DProducto(int cod_pro,string nom_pro,string marca,string modelo_placa, string serie,
         string procesa, string dd, string ram, string so,byte[]  imagen,string estado,string condicion,
-        string descrip,int cod_cat,int cod_trab, string  textobuscar)
+        string descrip,int cod_cat, string  textobuscar)
         {
             this.Cod_producto = cod_pro;
             this.Nom_Producto = nom_pro;
@@ -143,7 +137,6 @@ namespace CapaDatos
             this.Condicion = condicion;
             this.Descripcion = descrip;
             this.Cod_Cat = cod_cat;
-            this.Cod_Trabajador = cod_trab;
             this.TextoBuscar = textobuscar;
         }
  
@@ -254,11 +247,11 @@ namespace CapaDatos
                 par13.SqlValue = producto.Cod_Cat;
                 sqlcoma.Parameters.Add(par13);
 
-                SqlParameter par14 = new SqlParameter();
+                /*SqlParameter par14 = new SqlParameter();
                 par14.ParameterName = "@cod_trabajador";
                 par14.SqlDbType = SqlDbType.Int;
                 par14.SqlValue = producto.Cod_Trabajador;
-                sqlcoma.Parameters.Add(par14);
+                sqlcoma.Parameters.Add(par14);*/
 
                 sms = sqlcoma.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro";
             }
@@ -382,11 +375,11 @@ namespace CapaDatos
                 par13.SqlValue = producto.Cod_Cat;
                 sqlcoma.Parameters.Add(par13);
 
-                SqlParameter par14 = new SqlParameter();
+             /*   SqlParameter par14 = new SqlParameter();
                 par14.ParameterName = "@cod_trabajador";
                 par14.SqlDbType = SqlDbType.Int;
                 par14.SqlValue = producto.Cod_Trabajador;
-                sqlcoma.Parameters.Add(par14);
+                sqlcoma.Parameters.Add(par14);*/
 
                 sms = sqlcoma.ExecuteNonQuery() == 1 ? "OK" : "No se Actualizó el Registro";
             }
@@ -419,7 +412,7 @@ namespace CapaDatos
                 SqlParameter par = new SqlParameter();
                 par.ParameterName = "@COD_PROD";
                 par.SqlDbType = SqlDbType.Int;
-                par.SqlValue = producto._Cod_producto;
+                par.SqlValue = producto.Cod_producto;
                 sqlcoma.Parameters.Add(par);
 
                 sms = sqlcoma.ExecuteNonQuery() == 1 ? "OK" : "No se Eliminó el Registro";
