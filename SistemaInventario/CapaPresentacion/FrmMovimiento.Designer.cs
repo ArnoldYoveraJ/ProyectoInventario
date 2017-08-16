@@ -274,6 +274,7 @@
             this.btnimprimir.Text = "&Imprimir";
             this.btnimprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnimprimir.UseVisualStyleBackColor = true;
+            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
             // 
             // btnEliminar
             // 

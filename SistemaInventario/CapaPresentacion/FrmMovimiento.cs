@@ -330,5 +330,11 @@ namespace CapaPresentacion
         {
             _Instancia = null;
         }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteMovimientos objrm = new FrmReporteMovimientos();
+            objrm.ShowDialog();
+        }
     }
 }

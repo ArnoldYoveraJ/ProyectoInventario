@@ -146,6 +146,12 @@
     <Compile Include="Reportes\FrmReporteArticulos.Designer.cs">
       <DependentUpon>FrmReporteArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReporteMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteMovimientos.Designer.cs">
+      <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
@@ -200,6 +206,10 @@
     <EmbeddedResource Include="Reportes\FrmReporteArticulos.resx">
       <DependentUpon>FrmReporteArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteMovimientos.resx">
+      <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptMovimientos.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductos.rdlc" />
   </ItemGroup>
   <ItemGroup>
