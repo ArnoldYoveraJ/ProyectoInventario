@@ -22,8 +22,8 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
-            this.dgvlistado.Columns[12].Visible = false;
-            this.dgvlistado.Columns[14].Visible = false;
+            //this.dgvlistado.Columns[12].Visible = false;
+            //this.dgvlistado.Columns[14].Visible = false;
             //corregir el procedimiento almacenado para traer el nombre la categoria y el nombre del trabajador. 
         }
 
@@ -109,6 +109,14 @@ namespace CapaPresentacion
             a2 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
             frmmov.setProducto(a1, a2);
             this.Hide();
+
+            //Muestra en Formulario FrmBaja_Productos
+            FrmBajaProducto frmbaja = FrmBajaProducto.GetInstancia();
+            string p1, p2;
+            p1 = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
+            p2 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
+            frmbaja.setProducto(p1, p2);
+            this.Hide();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -137,6 +145,11 @@ namespace CapaPresentacion
             {
                 buscar_producto_serie();
             }
+        }
+
+        private void dgvlistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

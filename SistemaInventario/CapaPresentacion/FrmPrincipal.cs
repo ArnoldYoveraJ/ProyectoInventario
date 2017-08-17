@@ -305,5 +305,13 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void bajaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBajaProducto objbaja = FrmBajaProducto.GetInstancia();
+            objbaja.MdiParent = this;
+            objbaja.Show();
+
+        }
     }
 }

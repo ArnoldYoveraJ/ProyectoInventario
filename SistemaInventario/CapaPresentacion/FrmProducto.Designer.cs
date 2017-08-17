@@ -493,7 +493,8 @@
             this.cbocondicion.FormattingEnabled = true;
             this.cbocondicion.Items.AddRange(new object[] {
             "Bueno",
-            "Malo"});
+            "Malo",
+            "De Baja"});
             this.cbocondicion.Location = new System.Drawing.Point(85, 117);
             this.cbocondicion.Name = "cbocondicion";
             this.cbocondicion.Size = new System.Drawing.Size(102, 21);
