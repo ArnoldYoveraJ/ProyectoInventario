@@ -14,6 +14,7 @@ namespace CapaPresentacion
     {
         private bool IsNuevo = false;
         private bool IsEditar = false;
+        Validar v = new Validar(); // Instanciar la clase Validar
         public FrmArea()
         {
             InitializeComponent();
@@ -247,6 +248,11 @@ namespace CapaPresentacion
                 DataGridViewCheckBoxCell chkEliminar = (DataGridViewCheckBoxCell)dgvlistado.Rows[e.RowIndex].Cells["Eliminar"];
                 chkEliminar.Value = !Convert.ToBoolean(chkEliminar.Value);
             }
+        }
+
+        private void txtnom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
         }
     }
 }

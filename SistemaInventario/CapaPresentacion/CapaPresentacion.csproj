@@ -158,6 +158,7 @@
     <Compile Include="Reportes\FrmReporteMovimientos.Designer.cs">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validar.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
