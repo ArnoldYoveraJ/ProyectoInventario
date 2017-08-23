@@ -57,12 +57,12 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pxImagen = new System.Windows.Forms.PictureBox();
             this.btnbuscar_producto = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnnuevo = new System.Windows.Forms.Button();
-            this.pxImagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -259,7 +259,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(668, 289);
+            this.tabControl1.Size = new System.Drawing.Size(694, 310);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage1
@@ -277,7 +277,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(660, 263);
+            this.tabPage1.Size = new System.Drawing.Size(686, 284);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -368,6 +368,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Movimientos";
             // 
+            // pxImagen
+            // 
+            this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
+            this.pxImagen.Location = new System.Drawing.Point(498, 34);
+            this.pxImagen.Name = "pxImagen";
+            this.pxImagen.Size = new System.Drawing.Size(113, 115);
+            this.pxImagen.TabIndex = 11;
+            this.pxImagen.TabStop = false;
+            // 
             // btnbuscar_producto
             // 
             this.btnbuscar_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -435,20 +444,11 @@
             this.btnnuevo.UseVisualStyleBackColor = true;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
-            // pxImagen
-            // 
-            this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
-            this.pxImagen.Location = new System.Drawing.Point(498, 34);
-            this.pxImagen.Name = "pxImagen";
-            this.pxImagen.Size = new System.Drawing.Size(113, 115);
-            this.pxImagen.TabIndex = 11;
-            this.pxImagen.TabStop = false;
-            // 
             // FrmBajaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 345);
+            this.ClientSize = new System.Drawing.Size(711, 361);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmBajaProducto";

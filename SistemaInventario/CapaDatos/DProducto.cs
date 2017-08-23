@@ -20,8 +20,8 @@ namespace CapaDatos
         private string _Ram;
         private string _SO;
         private byte[] _Imagen;
-        private string _Estado;
-        private string _Condicion;
+        private string _Tipo_Estado;
+        private int _Estado;
         private string _Descripcion;
         private int _Cod_Cat;
         //private int _Cod_Trabajador;
@@ -87,17 +87,17 @@ namespace CapaDatos
             get { return _Imagen; }
             set { _Imagen = value; }
         }
-        
-        public string Estado
+
+        public string Tipo_Estado
+        {
+            get { return _Tipo_Estado; }
+            set { _Tipo_Estado = value; }
+        }
+
+        public int Estado
         {
             get { return _Estado; }
             set { _Estado = value; }
-        }
-
-        public string Condicion
-        {
-            get { return _Condicion; }
-            set { _Condicion = value; }
         }
 
         public string Descripcion
@@ -120,7 +120,7 @@ namespace CapaDatos
         //Constructores
         public DProducto() { }
         public DProducto(int cod_pro,string nom_pro,string marca,string modelo_placa, string serie,
-        string procesa, string dd, string ram, string so,byte[]  imagen,string estado,string condicion,
+        string procesa, string dd, string ram, string so, byte[] imagen, string tipo_estado, int estado,
         string descrip,int cod_cat, string  textobuscar)
         {
             this.Cod_producto = cod_pro;
@@ -133,8 +133,8 @@ namespace CapaDatos
             this.Ram = ram;
             this.SO = so;
             this.Imagen = imagen;
+            this.Tipo_Estado = tipo_estado;
             this.Estado = estado;
-            this.Condicion = condicion;
             this.Descripcion = descrip;
             this.Cod_Cat = cod_cat;
             this.TextoBuscar = textobuscar;
@@ -223,15 +223,15 @@ namespace CapaDatos
                 sqlcoma.Parameters.Add(par9);
 
                 SqlParameter par10 = new SqlParameter();
-                par10.ParameterName = "@estado";
+                par10.ParameterName = "@tipo_estado";
                 par10.SqlDbType = SqlDbType.VarChar;
-                par10.SqlValue = producto.Estado;
+                par10.SqlValue = producto.Tipo_Estado;
                 sqlcoma.Parameters.Add(par10);
 
                 SqlParameter par11 = new SqlParameter();
-                par11.ParameterName = "@condicion";
-                par11.SqlDbType = SqlDbType.VarChar;
-                par11.SqlValue = producto.Condicion;
+                par11.ParameterName = "@estado";
+                par11.SqlDbType = SqlDbType.Int;
+                par11.SqlValue = producto.Estado;
                 sqlcoma.Parameters.Add(par11);
 
                 SqlParameter par12 = new SqlParameter();
@@ -351,15 +351,15 @@ namespace CapaDatos
                 sqlcoma.Parameters.Add(par9);
 
                 SqlParameter par10 = new SqlParameter();
-                par10.ParameterName = "@estado";
+                par10.ParameterName = "@tipo_estado";
                 par10.SqlDbType = SqlDbType.VarChar;
-                par10.SqlValue = producto.Estado;
+                par10.SqlValue = producto.Tipo_Estado;
                 sqlcoma.Parameters.Add(par10);
 
                 SqlParameter par11 = new SqlParameter();
-                par11.ParameterName = "@condicion";
-                par11.SqlDbType = SqlDbType.VarChar;
-                par11.SqlValue = producto.Condicion;
+                par11.ParameterName = "@estado";
+                par11.SqlDbType = SqlDbType.Int;
+                par11.SqlValue = producto.Estado;
                 sqlcoma.Parameters.Add(par11);
 
                 SqlParameter par12 = new SqlParameter();

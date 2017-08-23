@@ -58,8 +58,7 @@
               <Mapping SourceColumn="ram" DataSetColumn="ram" />
               <Mapping SourceColumn="so" DataSetColumn="so" />
               <Mapping SourceColumn="imagen" DataSetColumn="imagen" />
-              <Mapping SourceColumn="estado" DataSetColumn="estado" />
-              <Mapping SourceColumn="condicion" DataSetColumn="condicion" />
+              <Mapping SourceColumn="tipo_estado" DataSetColumn="tipo_estado" />
               <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
               <Mapping SourceColumn="cod_cat" DataSetColumn="cod_cat" />
               <Mapping SourceColumn="nom_cat" DataSetColumn="nom_cat" />
@@ -74,7 +73,7 @@
   <xs:element name="dsPrincipal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPrincipal" msprop:Generator_UserDSName="dsPrincipal">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_MOSTRAR_MOVIMIENTO" msprop:Generator_TableClassName="SP_MOSTRAR_MOVIMIENTODataTable" msprop:Generator_TableVarName="tableSP_MOSTRAR_MOVIMIENTO" msprop:Generator_RowChangedName="SP_MOSTRAR_MOVIMIENTORowChanged" msprop:Generator_TablePropName="SP_MOSTRAR_MOVIMIENTO" msprop:Generator_RowDeletingName="SP_MOSTRAR_MOVIMIENTORowDeleting" msprop:Generator_RowChangingName="SP_MOSTRAR_MOVIMIENTORowChanging" msprop:Generator_RowEvHandlerName="SP_MOSTRAR_MOVIMIENTORowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MOSTRAR_MOVIMIENTORowDeleted" msprop:Generator_RowClassName="SP_MOSTRAR_MOVIMIENTORow" msprop:Generator_UserTableName="SP_MOSTRAR_MOVIMIENTO" msprop:Generator_RowEvArgName="SP_MOSTRAR_MOVIMIENTORowChangeEvent">
+        <xs:element name="SP_MOSTRAR_MOVIMIENTO" msprop:Generator_TableClassName="SP_MOSTRAR_MOVIMIENTODataTable" msprop:Generator_TableVarName="tableSP_MOSTRAR_MOVIMIENTO" msprop:Generator_TablePropName="SP_MOSTRAR_MOVIMIENTO" msprop:Generator_RowDeletingName="SP_MOSTRAR_MOVIMIENTORowDeleting" msprop:Generator_RowChangingName="SP_MOSTRAR_MOVIMIENTORowChanging" msprop:Generator_RowEvHandlerName="SP_MOSTRAR_MOVIMIENTORowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MOSTRAR_MOVIMIENTORowDeleted" msprop:Generator_UserTableName="SP_MOSTRAR_MOVIMIENTO" msprop:Generator_RowChangedName="SP_MOSTRAR_MOVIMIENTORowChanged" msprop:Generator_RowEvArgName="SP_MOSTRAR_MOVIMIENTORowChangeEvent" msprop:Generator_RowClassName="SP_MOSTRAR_MOVIMIENTORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="COD_MOV" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnCOD_MOV" msprop:Generator_ColumnPropNameInRow="COD_MOV" msprop:Generator_ColumnPropNameInTable="COD_MOVColumn" msprop:Generator_UserColumnName="COD_MOV" type="xs:int" />
@@ -181,14 +180,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="imagen" msprop:Generator_ColumnVarNameInTable="columnimagen" msprop:Generator_ColumnPropNameInRow="imagen" msprop:Generator_ColumnPropNameInTable="imagenColumn" msprop:Generator_UserColumnName="imagen" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="condicion" msprop:Generator_ColumnVarNameInTable="columncondicion" msprop:Generator_ColumnPropNameInRow="condicion" msprop:Generator_ColumnPropNameInTable="condicionColumn" msprop:Generator_UserColumnName="condicion" minOccurs="0">
+              <xs:element name="tipo_estado" msprop:Generator_ColumnVarNameInTable="columntipo_estado" msprop:Generator_ColumnPropNameInRow="tipo_estado" msprop:Generator_ColumnPropNameInTable="tipo_estadoColumn" msprop:Generator_UserColumnName="tipo_estado">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />

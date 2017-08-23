@@ -744,9 +744,7 @@ namespace CapaPresentacion {
             
             private global::System.Data.DataColumn columnimagen;
             
-            private global::System.Data.DataColumn columnestado;
-            
-            private global::System.Data.DataColumn columncondicion;
+            private global::System.Data.DataColumn columntipo_estado;
             
             private global::System.Data.DataColumn columndescripcion;
             
@@ -869,17 +867,9 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn estadoColumn {
+            public global::System.Data.DataColumn tipo_estadoColumn {
                 get {
-                    return this.columnestado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn condicionColumn {
-                get {
-                    return this.columncondicion;
+                    return this.columntipo_estado;
                 }
             }
             
@@ -944,7 +934,7 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spmostrar_productoRow Addspmostrar_productoRow(string nom_producto, string marca, string modelo_placa, string serie, string procesador, string dd, string ram, string so, byte[] imagen, string estado, string condicion, string descripcion, string nom_cat) {
+            public spmostrar_productoRow Addspmostrar_productoRow(string nom_producto, string marca, string modelo_placa, string serie, string procesador, string dd, string ram, string so, byte[] imagen, string tipo_estado, string descripcion, string nom_cat) {
                 spmostrar_productoRow rowspmostrar_productoRow = ((spmostrar_productoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -957,8 +947,7 @@ namespace CapaPresentacion {
                         ram,
                         so,
                         imagen,
-                        estado,
-                        condicion,
+                        tipo_estado,
                         descripcion,
                         null,
                         nom_cat};
@@ -1002,8 +991,7 @@ namespace CapaPresentacion {
                 this.columnram = base.Columns["ram"];
                 this.columnso = base.Columns["so"];
                 this.columnimagen = base.Columns["imagen"];
-                this.columnestado = base.Columns["estado"];
-                this.columncondicion = base.Columns["condicion"];
+                this.columntipo_estado = base.Columns["tipo_estado"];
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columncod_cat = base.Columns["cod_cat"];
                 this.columnnom_cat = base.Columns["nom_cat"];
@@ -1032,10 +1020,8 @@ namespace CapaPresentacion {
                 base.Columns.Add(this.columnso);
                 this.columnimagen = new global::System.Data.DataColumn("imagen", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimagen);
-                this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestado);
-                this.columncondicion = new global::System.Data.DataColumn("condicion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncondicion);
+                this.columntipo_estado = new global::System.Data.DataColumn("tipo_estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_estado);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
                 this.columncod_cat = new global::System.Data.DataColumn("cod_cat", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1059,9 +1045,8 @@ namespace CapaPresentacion {
                 this.columndd.MaxLength = 20;
                 this.columnram.MaxLength = 20;
                 this.columnso.MaxLength = 20;
-                this.columnestado.AllowDBNull = false;
-                this.columnestado.MaxLength = 15;
-                this.columncondicion.MaxLength = 15;
+                this.columntipo_estado.AllowDBNull = false;
+                this.columntipo_estado.MaxLength = 15;
                 this.columndescripcion.MaxLength = 50;
                 this.columncod_cat.AutoIncrement = true;
                 this.columncod_cat.AllowDBNull = false;
@@ -1511,28 +1496,12 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string estado {
+            public string tipo_estado {
                 get {
-                    return ((string)(this[this.tablespmostrar_producto.estadoColumn]));
+                    return ((string)(this[this.tablespmostrar_producto.tipo_estadoColumn]));
                 }
                 set {
-                    this[this.tablespmostrar_producto.estadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string condicion {
-                get {
-                    try {
-                        return ((string)(this[this.tablespmostrar_producto.condicionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'condicion\' de la tabla \'spmostrar_producto\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespmostrar_producto.condicionColumn] = value;
+                    this[this.tablespmostrar_producto.tipo_estadoColumn] = value;
                 }
             }
             
@@ -1644,18 +1613,6 @@ namespace CapaPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetimagenNull() {
                 this[this.tablespmostrar_producto.imagenColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscondicionNull() {
-                return this.IsNull(this.tablespmostrar_producto.condicionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcondicionNull() {
-                this[this.tablespmostrar_producto.condicionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2051,8 +2008,7 @@ namespace CapaPresentacion.dsPrincipalTableAdapters {
             tableMapping.ColumnMappings.Add("ram", "ram");
             tableMapping.ColumnMappings.Add("so", "so");
             tableMapping.ColumnMappings.Add("imagen", "imagen");
-            tableMapping.ColumnMappings.Add("estado", "estado");
-            tableMapping.ColumnMappings.Add("condicion", "condicion");
+            tableMapping.ColumnMappings.Add("tipo_estado", "tipo_estado");
             tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             tableMapping.ColumnMappings.Add("cod_cat", "cod_cat");
             tableMapping.ColumnMappings.Add("nom_cat", "nom_cat");

@@ -301,7 +301,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Estado</Value>
+                              <Value>Tipo_Estado</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -337,7 +337,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Condición</Value>
+                              <Value>Descripción</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -652,14 +652,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="estado">
+                    <Textbox Name="tipo_estado1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!estado.Value</Value>
+                              <Value>=Fields!tipo_estado.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <Color>Gray</Color>
@@ -671,7 +671,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>estado</rd:DefaultName>
+                      <rd:DefaultName>tipo_estado1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -687,14 +687,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="condicion">
+                    <Textbox Name="descripcion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!condicion.Value</Value>
+                              <Value>=Fields!descripcion.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <Color>Gray</Color>
@@ -706,7 +706,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>condicion</rd:DefaultName>
+                      <rd:DefaultName>descripcion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1041,12 +1041,8 @@
           <DataField>imagen</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
-        <Field Name="estado">
-          <DataField>estado</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="condicion">
-          <DataField>condicion</DataField>
+        <Field Name="tipo_estado">
+          <DataField>tipo_estado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="descripcion">
@@ -1059,14 +1055,6 @@
         </Field>
         <Field Name="nom_cat">
           <DataField>nom_cat</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="cod_trabajador">
-          <DataField>cod_trabajador</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Trabajador">
-          <DataField>Trabajador</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

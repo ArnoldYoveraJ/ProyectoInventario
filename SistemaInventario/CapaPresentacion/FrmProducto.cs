@@ -40,7 +40,6 @@ namespace CapaPresentacion
             this.ttmensaje.SetToolTip(this.txtnom, "Ingrese el Nombre del Producto");
             this.ttmensaje.SetToolTip(this.pxImagen, "Seleccione la Imagen del Producto");
             this.ttmensaje.SetToolTip(this.cbocategoria, "Seleccione el Trabajador");
-            this.ttmensaje.SetToolTip(this.cbocondicion, "Seleccione el estado del Producto");
             this.txtcod_pro.Visible = false;
             this.txttrabajador.ReadOnly = true;
             this.LlenarComboCategoria();
@@ -86,7 +85,6 @@ namespace CapaPresentacion
             this.txtram.ReadOnly = !valor;
             this.txtdesc.ReadOnly = !valor;
             this.txtserie.ReadOnly = !valor;
-            this.cbocondicion.Enabled = valor;
             this.cboestado.Enabled = valor;
             this.cboso.Enabled = valor;
            // this.txttrabajador.ReadOnly = !valor;
@@ -124,8 +122,8 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
-           /* this.dgvlistado.Columns[12].Visible = false;
-            this.dgvlistado.Columns[14].Visible = false;*/
+           this.dgvlistado.Columns[13].Visible = false;
+            /*this.dgvlistado.Columns[14].Visible = false;*/
             //corregir el procedimiento almacenado para traer el nombre la categoria y el nombre del trabajador. 
         }
 
@@ -280,16 +278,16 @@ namespace CapaPresentacion
 
                     if (this.IsNuevo)
                     {
-                        rpta = NProducto.Insertar(this.txtnom.Text.Trim(),this.txtmarca.Text.Trim(),this.txtmodeloplaca.Text.Trim(),this.txtserie.Text.Trim(),
-                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen,this.cboestado.Text,
-                           this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));// borra espacios y convierte en mayuscula
+                        rpta = NProducto.Insertar(this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
+                            this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen, this.cboestado.Text,
+                           1, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         rpta = NProducto.Editar(Convert.ToInt16(this.txtcod_pro.Text.Trim()), this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
                             this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.txtram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen, this.cboestado.Text,
-                          this.cbocondicion.Text, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));
+                          1, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -388,7 +386,7 @@ namespace CapaPresentacion
         {
             this.txtcod_pro.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_producto"].Value);//Current ROw: fila actual
             this.txtnom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_producto"].Value);
-            this.txtmarca.Text=Convert.ToString(this.dgvlistado.CurrentRow.Cells["marca"].Value);
+            this.txtmarca.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["marca"].Value);
             this.txtmodeloplaca.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["modelo_placa"].Value);
             this.txtserie.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["serie"].Value);
             byte[] imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
@@ -399,8 +397,8 @@ namespace CapaPresentacion
             this.txtprocesador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["procesador"].Value);
             this.txtdd.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dd"].Value);
             this.txtram.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["ram"].Value);
-            this.cboestado.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["estado"].Value);
-            this.cbocondicion.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["condicion"].Value);//observar
+            this.cboestado.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_estado"].Value);
+            // this.cbocondicion.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["condicion"].Value);//observar
             this.txtdesc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["descripcion"].Value);
             this.cboso.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["so"].Value);
 

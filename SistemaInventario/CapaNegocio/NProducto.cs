@@ -10,8 +10,8 @@ namespace CapaNegocio
 {
     public class NProducto
     {
-        public static string Insertar(string nom_prod, string marca, string modelo, string serie, string procesador, string dd, 
-        string ram, string so, byte[] imagen, string estado,string condicion, string desc, int cod_cat)
+        public static string Insertar(string nom_prod, string marca, string modelo, string serie, string procesador, string dd,
+        string ram, string so, byte[] imagen, string tipo_estado, int estado, string desc, int cod_cat)
         {
             DProducto objp = new DProducto();
             objp.Nom_Producto = nom_prod;
@@ -23,15 +23,15 @@ namespace CapaNegocio
             objp.Ram = ram;
             objp.SO = so;
             objp.Imagen = imagen;
+            objp.Tipo_Estado = tipo_estado;
             objp.Estado = estado;
-            objp.Condicion = condicion;
             objp.Descripcion = desc;
             objp.Cod_Cat = cod_cat;
             return objp.Insertar(objp);
         }
 
         public static string Editar(int cod, string nom_prod, string marca, string modelo, string serie, string procesador, string dd,
-     string ram, string so, byte[] imagen, string estado, string condicion, string desc, int cod_cat)
+     string ram, string so, byte[] imagen, string tipo_estado, int estado, string desc, int cod_cat)
         {
             DProducto objp1 = new DProducto();
             objp1.Cod_producto = cod;
@@ -44,8 +44,8 @@ namespace CapaNegocio
             objp1.Ram = ram;
             objp1.SO = so;
             objp1.Imagen = imagen;
+            objp1.Tipo_Estado = tipo_estado;
             objp1.Estado = estado;
-            objp1.Condicion = condicion;
             objp1.Descripcion = desc;
             objp1.Cod_Cat = cod_cat;
             return objp1.Editar(objp1);
