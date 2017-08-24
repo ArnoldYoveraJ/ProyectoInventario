@@ -219,6 +219,7 @@
     <EmbeddedResource Include="Reportes\FrmReporteMovimientos.resx">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptBajaProductos.rdlc" />
     <EmbeddedResource Include="Reportes\rptMovimientos.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductos.rdlc" />
   </ItemGroup>
