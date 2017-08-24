@@ -20,7 +20,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             this.ttmensaje.SetToolTip(this.txtnom,"Ingrese un Nombre de Trabajador");
-            this.ttmensaje.SetToolTip(this.txtdni,"Ingrese un DNI de Trabajador");
+            this.ttmensaje.SetToolTip(this.mktdni,"Ingrese un DNI de Trabajador");
             this.ttmensaje.SetToolTip(this.cboarea,"Selecione un Area");
             this.ttmensaje.SetToolTip(this.cboempresa,"Seleccione una Empresa");
             this.txtcod_tra.Visible=false;
@@ -42,18 +42,18 @@ namespace CapaPresentacion
             this.txtcod_tra.Text=string.Empty;
             this.txtnom.Text=string.Empty;
             this.txtape.Text=string.Empty;
-            this.txtdni.Text=string.Empty;
+            this.mktdni.Text=string.Empty;
             this.txtemail.Text=string.Empty;
-            this.txtanexo.Text=string.Empty;
+            this.mktanexo.Text=string.Empty;
         }
 
         private void habilitar(bool valor){
             this.txtcod_tra.ReadOnly=!valor;
             this.txtnom.ReadOnly=!valor;
             this.txtape.ReadOnly=!valor;
-            this.txtdni.ReadOnly=!valor;
+            this.mktdni.ReadOnly=!valor;
             this.txtemail.ReadOnly=!valor;
-            this.txtanexo.ReadOnly=!valor;
+            this.mktanexo.ReadOnly=!valor;
             this.cboarea.Enabled = valor;
             this.cboempresa.Enabled = valor;
         }
@@ -141,23 +141,23 @@ namespace CapaPresentacion
             string rpta;
             try
             {
-                if(this.txtnom.Text==string.Empty || this.txtdni.Text==string.Empty) //si la caja de texto está vacía
+                if(this.txtnom.Text==string.Empty || this.mktdni.Text==string.Empty) //si la caja de texto está vacía
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(txtnom, "Ingrese un Nombre");
-                    erroricono.SetError(txtdni,"Ingrese un DNI");
+                    erroricono.SetError(mktdni,"Ingrese un DNI");
                 }else
                 {
                     if(this.isnuevo)
                     {
-                        rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text,this.txtemail.Text.Trim(),
-                        this.txtanexo.Text, Convert.ToInt32(this.cboarea.SelectedValue), Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
+                        rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.mktdni.Text.Trim(),this.txtemail.Text.Trim(),
+                        this.mktanexo.Text.Trim(), Convert.ToInt32(this.cboarea.SelectedValue), Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
                         MensajeOK("Se inserto Correctamente");
                     }
                     else
                     {
-                        rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text.Trim()),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.txtdni.Text.Trim(),this.txtemail.Text.Trim(),
-                        this.txtanexo.Text.Trim(), Convert.ToInt16(this.cboarea.SelectedValue), Convert.ToInt16(this.cboempresa.SelectedValue));
+                        rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text.Trim()),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.mktdni.Text.Trim(),this.txtemail.Text.Trim(),
+                        this.mktanexo.Text.Trim(), Convert.ToInt16(this.cboarea.SelectedValue), Convert.ToInt16(this.cboempresa.SelectedValue));
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -237,9 +237,9 @@ namespace CapaPresentacion
             this.txtcod_tra.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);
             this.txtnom.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["nombres"].Value);
             this.txtape.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["apellidos"].Value);
-            this.txtdni.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["dni"].Value);
+            this.mktdni.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["dni"].Value);
             this.txtemail.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["email"].Value);
-            this.txtanexo.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["anexo"].Value);
+            this.mktanexo.Text= Convert.ToString(dgvlistado.CurrentRow.Cells["anexo"].Value);
             this.cboarea.SelectedValue=Convert.ToString(dgvlistado.CurrentRow.Cells["cod_area"].Value);
             this.cboempresa.SelectedValue = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_empresa"].Value);
             this.txtcod_tra.ReadOnly = false;

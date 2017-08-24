@@ -294,5 +294,11 @@ namespace CapaPresentacion
 
             this.tabControl1.SelectedIndex = 1;
         }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteBajaProductos objbp = new FrmReporteBajaProductos();
+            objbp.ShowDialog();
+        }
     }
 }

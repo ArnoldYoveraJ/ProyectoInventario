@@ -66,9 +66,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label2.Location = new System.Drawing.Point(4, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 15);
+            this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Usuario";
+            this.label2.Text = "Usuario:";
             // 
             // label3
             // 
@@ -77,9 +77,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label3.Location = new System.Drawing.Point(4, 81);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 15);
+            this.label3.Size = new System.Drawing.Size(76, 15);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Contraseña";
+            this.label3.Text = "Contraseña:";
             // 
             // txtusu
             // 

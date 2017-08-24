@@ -77,9 +77,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(233, 63);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.Size = new System.Drawing.Size(64, 13);
             this.label8.TabIndex = 52;
-            this.label8.Text = "Explicación";
+            this.label8.Text = "Explicación:";
             // 
             // txtexplicacion
             // 
@@ -92,7 +92,7 @@
             this.txtexplicacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtexplicacion.Size = new System.Drawing.Size(252, 70);
             this.txtexplicacion.TabIndex = 51;
-            this.txtexplicacion.Text = "Explicación:";
+            this.txtexplicacion.Text = "Explicación...";
             // 
             // txtproducto
             // 
@@ -115,18 +115,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(32, 103);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 47;
-            this.label6.Text = "Producto";
+            this.label6.Text = "Producto:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(42, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 46;
-            this.label7.Text = "Código";
+            this.label7.Text = "Código:";
             // 
             // label16
             // 
@@ -222,9 +222,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(45, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Fecha";
+            this.label3.Text = "Fecha:";
             // 
             // label2
             // 
@@ -233,7 +233,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Codigo Baja.";
+            this.label2.Text = "Codigo Baja:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -294,6 +294,7 @@
             this.btnimprimir.Text = "&Imprimir";
             this.btnimprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnimprimir.UseVisualStyleBackColor = true;
+            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
             // 
             // btnEliminar
             // 
@@ -338,7 +339,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(660, 263);
+            this.tabPage2.Size = new System.Drawing.Size(686, 284);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;

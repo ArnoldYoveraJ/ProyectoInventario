@@ -74,5 +74,15 @@ namespace CapaPresentacion
             form.setProveedor(par1, par2);
             this.Hide();
         }
+
+        private void cboelegir_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

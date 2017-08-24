@@ -152,6 +152,12 @@
     <Compile Include="Reportes\FrmReporteArticulos.Designer.cs">
       <DependentUpon>FrmReporteArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReporteBajaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteBajaProductos.Designer.cs">
+      <DependentUpon>FrmReporteBajaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmReporteMovimientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteArticulos.resx">
       <DependentUpon>FrmReporteArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteBajaProductos.resx">
+      <DependentUpon>FrmReporteBajaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteMovimientos.resx">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>

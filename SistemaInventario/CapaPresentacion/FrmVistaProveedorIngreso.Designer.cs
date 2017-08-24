@@ -40,6 +40,7 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lbltotal = new System.Windows.Forms.Label();
             this.btnbuscar = new System.Windows.Forms.Button();
+            this.Nombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -69,10 +70,11 @@
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbuscar.Location = new System.Drawing.Point(112, 23);
+            this.txtbuscar.Location = new System.Drawing.Point(183, 25);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(146, 20);
             this.txtbuscar.TabIndex = 1;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // tabControl1
             // 
@@ -85,6 +87,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.Nombre);
             this.tabPage1.Controls.Add(this.cboelegir);
             this.tabPage1.Controls.Add(this.dgvlistado);
             this.tabPage1.Controls.Add(this.lbltotal);
@@ -104,11 +107,12 @@
             this.cboelegir.Items.AddRange(new object[] {
             "Documento",
             "Numero"});
-            this.cboelegir.Location = new System.Drawing.Point(18, 23);
+            this.cboelegir.Location = new System.Drawing.Point(89, 25);
             this.cboelegir.Name = "cboelegir";
             this.cboelegir.Size = new System.Drawing.Size(88, 21);
             this.cboelegir.TabIndex = 8;
             this.cboelegir.Text = "Documento";
+            this.cboelegir.SelectedIndexChanged += new System.EventHandler(this.cboelegir_SelectedIndexChanged);
             // 
             // dgvlistado
             // 
@@ -156,6 +160,15 @@
             this.btnbuscar.UseVisualStyleBackColor = true;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
+            // Nombre
+            // 
+            this.Nombre.AutoSize = true;
+            this.Nombre.Location = new System.Drawing.Point(15, 27);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(61, 13);
+            this.Nombre.TabIndex = 9;
+            this.Nombre.Text = "Buscar por:";
+            // 
             // FrmVistaProveedorIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,5 +205,6 @@
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.ToolTip ttmensaje;
+        private System.Windows.Forms.Label Nombre;
     }
 }

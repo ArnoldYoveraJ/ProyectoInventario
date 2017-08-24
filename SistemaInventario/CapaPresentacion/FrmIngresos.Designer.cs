@@ -304,7 +304,7 @@
             this.btnquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnquitar.Image = global::CapaPresentacion.Properties.Resources.boton_cancelar;
             this.btnquitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnquitar.Location = new System.Drawing.Point(498, 48);
+            this.btnquitar.Location = new System.Drawing.Point(473, 46);
             this.btnquitar.Name = "btnquitar";
             this.btnquitar.Size = new System.Drawing.Size(75, 23);
             this.btnquitar.TabIndex = 46;
@@ -317,7 +317,7 @@
             // 
             this.btnagre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnagre.Location = new System.Drawing.Point(498, 21);
+            this.btnagre.Location = new System.Drawing.Point(473, 19);
             this.btnagre.Name = "btnagre";
             this.btnagre.Size = new System.Drawing.Size(75, 23);
             this.btnagre.TabIndex = 45;
@@ -329,7 +329,7 @@
             // txtstock
             // 
             this.txtstock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtstock.Location = new System.Drawing.Point(357, 49);
+            this.txtstock.Location = new System.Drawing.Point(296, 41);
             this.txtstock.Name = "txtstock";
             this.txtstock.Size = new System.Drawing.Size(121, 20);
             this.txtstock.TabIndex = 44;
@@ -337,17 +337,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(263, 53);
+            this.label5.Location = new System.Drawing.Point(212, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Stock Inicial";
+            this.label5.Text = "Stock Inicial:";
             // 
             // btnbuscar_producto
             // 
             this.btnbuscar_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar_producto.Image = global::CapaPresentacion.Properties.Resources.icono_adicionar1;
-            this.btnbuscar_producto.Location = new System.Drawing.Point(182, 20);
+            this.btnbuscar_producto.Location = new System.Drawing.Point(154, 17);
             this.btnbuscar_producto.Name = "btnbuscar_producto";
             this.btnbuscar_producto.Size = new System.Drawing.Size(36, 22);
             this.btnbuscar_producto.TabIndex = 42;
@@ -357,7 +357,7 @@
             // txtpro
             // 
             this.txtpro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtpro.Location = new System.Drawing.Point(97, 49);
+            this.txtpro.Location = new System.Drawing.Point(69, 46);
             this.txtpro.Name = "txtpro";
             this.txtpro.Size = new System.Drawing.Size(121, 20);
             this.txtpro.TabIndex = 41;
@@ -365,7 +365,7 @@
             // txtcod_pro
             // 
             this.txtcod_pro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcod_pro.Location = new System.Drawing.Point(97, 23);
+            this.txtcod_pro.Location = new System.Drawing.Point(69, 20);
             this.txtcod_pro.Name = "txtcod_pro";
             this.txtcod_pro.Size = new System.Drawing.Size(75, 20);
             this.txtcod_pro.TabIndex = 40;
@@ -373,16 +373,16 @@
             // Producto
             // 
             this.Producto.AutoSize = true;
-            this.Producto.Location = new System.Drawing.Point(15, 53);
+            this.Producto.Location = new System.Drawing.Point(6, 48);
             this.Producto.Name = "Producto";
-            this.Producto.Size = new System.Drawing.Size(50, 13);
+            this.Producto.Size = new System.Drawing.Size(53, 13);
             this.Producto.TabIndex = 39;
-            this.Producto.Text = "Producto";
+            this.Producto.Text = "Producto:";
             // 
             // dtfecha
             // 
             this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtfecha.Location = new System.Drawing.Point(513, 26);
+            this.dtfecha.Location = new System.Drawing.Point(513, 19);
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(94, 20);
             this.dtfecha.TabIndex = 38;
@@ -391,7 +391,7 @@
             // 
             this.btnbuscar_pro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar_pro.Image = global::CapaPresentacion.Properties.Resources.icono_adicionar1;
-            this.btnbuscar_pro.Location = new System.Drawing.Point(376, 17);
+            this.btnbuscar_pro.Location = new System.Drawing.Point(396, 17);
             this.btnbuscar_pro.Name = "btnbuscar_pro";
             this.btnbuscar_pro.Size = new System.Drawing.Size(36, 22);
             this.btnbuscar_pro.TabIndex = 37;
@@ -401,7 +401,7 @@
             // txtproveedor
             // 
             this.txtproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtproveedor.Location = new System.Drawing.Point(291, 45);
+            this.txtproveedor.Location = new System.Drawing.Point(311, 45);
             this.txtproveedor.Name = "txtproveedor";
             this.txtproveedor.Size = new System.Drawing.Size(121, 20);
             this.txtproveedor.TabIndex = 35;
@@ -409,7 +409,7 @@
             // txtcod_prov
             // 
             this.txtcod_prov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcod_prov.Location = new System.Drawing.Point(291, 19);
+            this.txtcod_prov.Location = new System.Drawing.Point(311, 19);
             this.txtcod_prov.Name = "txtcod_prov";
             this.txtcod_prov.Size = new System.Drawing.Size(75, 20);
             this.txtcod_prov.TabIndex = 34;
@@ -417,20 +417,20 @@
             // lblpro
             // 
             this.lblpro.AutoSize = true;
-            this.lblpro.Location = new System.Drawing.Point(209, 49);
+            this.lblpro.Location = new System.Drawing.Point(236, 49);
             this.lblpro.Name = "lblpro";
-            this.lblpro.Size = new System.Drawing.Size(56, 13);
+            this.lblpro.Size = new System.Drawing.Size(59, 13);
             this.lblpro.TabIndex = 33;
-            this.lblpro.Text = "Proveedor";
+            this.lblpro.Text = "Proveedor:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(227, 22);
+            this.label13.Location = new System.Drawing.Point(252, 22);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 31;
-            this.label13.Text = "Código";
+            this.label13.Text = "Código:";
             // 
             // cbotipo_compro
             // 
@@ -439,7 +439,7 @@
             "Boleta",
             "Factura",
             "Ticket"});
-            this.cbotipo_compro.Location = new System.Drawing.Point(86, 72);
+            this.cbotipo_compro.Location = new System.Drawing.Point(84, 72);
             this.cbotipo_compro.Name = "cbotipo_compro";
             this.cbotipo_compro.Size = new System.Drawing.Size(102, 21);
             this.cbotipo_compro.TabIndex = 29;
@@ -457,11 +457,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 75);
+            this.label4.Location = new System.Drawing.Point(2, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(73, 13);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Comprobante";
+            this.label4.Text = "Comprobante:";
             // 
             // btncancelar
             // 
@@ -530,20 +530,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(457, 26);
+            this.label3.Location = new System.Drawing.Point(457, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Fecha";
+            this.label3.Text = "Fecha:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Codigo";
+            this.label2.Text = "Codigo:";
             // 
             // label1
             // 

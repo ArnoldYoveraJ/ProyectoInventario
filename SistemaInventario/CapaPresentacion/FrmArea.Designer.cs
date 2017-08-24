@@ -131,7 +131,7 @@
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbuscar.Location = new System.Drawing.Point(66, 27);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(132, 20);
+            this.txtbuscar.Size = new System.Drawing.Size(100, 20);
             this.txtbuscar.TabIndex = 6;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
@@ -309,7 +309,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 39);
+            this.label2.Location = new System.Drawing.Point(37, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 0;

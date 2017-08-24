@@ -40,7 +40,7 @@ namespace CapaPresentacion
             this.txtsectorc.Text = string.Empty;
             this.txtnum_doc.Text = string.Empty;
             this.txtdir.Text = string.Empty;
-            this.txttel.Text = string.Empty;
+            this.mkttel.Text = string.Empty;
             this.txtemail.Text = string.Empty;
         }
 
@@ -53,7 +53,7 @@ namespace CapaPresentacion
             this.cbotipodoc.Enabled = valor;
             this.txtnum_doc.ReadOnly = !valor;
             this.txtdir.ReadOnly = !valor;
-            this.txttel.ReadOnly = !valor;
+            this.mkttel.ReadOnly = !valor;
             this.txtemail.ReadOnly = !valor;
         }
 
@@ -226,13 +226,13 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         rpta = NProveedor.Insertar(this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), Convert.ToString(this.cbotipodoc.Text),
-                            this.txtnum_doc.Text.Trim(), this.txtdir.Text.Trim(), this.txttel.Text.Trim(), this.txtemail.Text.Trim());// borra espacios 
+                            this.txtnum_doc.Text.Trim(), this.txtdir.Text.Trim(), this.mkttel.Text.Trim(), this.txtemail.Text.Trim());// borra espacios 
                         MensajeOK("Se inserto Correctamente el Registro");
                     }
                     else
                     {
                         rpta = NProveedor.Editar(Convert.ToInt16(this.txtcod_prov.Text.Trim()),this.txtrazons.Text.Trim(), this.txtsectorc.Text.Trim(), this.cbotipodoc.Text,
-                             this.txtnum_doc.Text.Trim(), this.txtdir.Text.Trim(), this.txttel.Text.Trim(), this.txtemail.Text.Trim());// borra espacios 
+                             this.txtnum_doc.Text.Trim(), this.txtdir.Text.Trim(), this.mkttel.Text.Trim(), this.txtemail.Text.Trim());// borra espacios 
                         MensajeOK("Se edito Correctamente el Registro");
                     }
                     this.MensajeError(rpta);
@@ -296,7 +296,7 @@ namespace CapaPresentacion
             this.cbotipodoc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_doc"].Value);
             this.txtnum_doc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["num_doc"].Value);
             this.txtdir.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["direccion"].Value);
-            this.txttel.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["telefono"].Value);
+            this.mkttel.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["telefono"].Value);
             this.txtemail.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["email"].Value);
             this.txtcod_prov.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;
