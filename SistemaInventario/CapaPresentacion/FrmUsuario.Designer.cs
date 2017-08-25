@@ -55,6 +55,7 @@
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Nombre = new System.Windows.Forms.Label();
             this.cboelegir = new System.Windows.Forms.ComboBox();
             this.dgvlistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -63,7 +64,6 @@
             this.btnimprimir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
-            this.Nombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -178,9 +178,11 @@
             // 
             this.txtusu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtusu.Location = new System.Drawing.Point(95, 19);
+            this.txtusu.MaxLength = 20;
             this.txtusu.Name = "txtusu";
             this.txtusu.Size = new System.Drawing.Size(123, 20);
             this.txtusu.TabIndex = 17;
+            this.txtusu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusu_KeyPress);
             // 
             // label4
             // 
@@ -195,6 +197,7 @@
             // 
             this.txtcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcon.Location = new System.Drawing.Point(359, 19);
+            this.txtcon.MaxLength = 15;
             this.txtcon.Name = "txtcon";
             this.txtcon.Size = new System.Drawing.Size(122, 20);
             this.txtcon.TabIndex = 20;
@@ -277,9 +280,11 @@
             // 
             this.txtnomcom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnomcom.Location = new System.Drawing.Point(112, 45);
+            this.txtnomcom.MaxLength = 70;
             this.txtnomcom.Name = "txtnomcom";
             this.txtnomcom.Size = new System.Drawing.Size(284, 20);
             this.txtnomcom.TabIndex = 4;
+            this.txtnomcom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnomcom_KeyPress);
             // 
             // txtcod_usu
             // 
@@ -351,10 +356,19 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(601, 239);
+            this.tabPage1.Size = new System.Drawing.Size(601, 248);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSize = true;
+            this.Nombre.Location = new System.Drawing.Point(19, 24);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(61, 13);
+            this.Nombre.TabIndex = 9;
+            this.Nombre.Text = "Buscar por:";
             // 
             // cboelegir
             // 
@@ -452,15 +466,6 @@
             this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnbuscar.UseVisualStyleBackColor = true;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(19, 24);
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(61, 13);
-            this.Nombre.TabIndex = 9;
-            this.Nombre.Text = "Buscar por:";
             // 
             // FrmUsuario
             // 

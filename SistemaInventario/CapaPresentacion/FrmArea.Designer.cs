@@ -130,6 +130,7 @@
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbuscar.Location = new System.Drawing.Point(66, 27);
+            this.txtbuscar.MaxLength = 30;
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(100, 20);
             this.txtbuscar.TabIndex = 6;
@@ -284,6 +285,7 @@
             // 
             this.txtnom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnom.Location = new System.Drawing.Point(97, 71);
+            this.txtnom.MaxLength = 30;
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(100, 20);
             this.txtnom.TabIndex = 3;

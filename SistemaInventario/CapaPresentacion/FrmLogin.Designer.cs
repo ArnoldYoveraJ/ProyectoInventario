@@ -86,9 +86,11 @@
             this.txtusu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtusu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusu.Location = new System.Drawing.Point(96, 50);
+            this.txtusu.MaxLength = 30;
             this.txtusu.Name = "txtusu";
             this.txtusu.Size = new System.Drawing.Size(167, 21);
             this.txtusu.TabIndex = 4;
+            this.txtusu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusu_KeyPress);
             // 
             // txtcon
             // 

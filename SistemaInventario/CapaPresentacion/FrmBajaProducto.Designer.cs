@@ -101,6 +101,7 @@
             this.txtproducto.Name = "txtproducto";
             this.txtproducto.Size = new System.Drawing.Size(121, 20);
             this.txtproducto.TabIndex = 49;
+            this.txtproducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtproducto_KeyPress);
             // 
             // txtcod_pro
             // 

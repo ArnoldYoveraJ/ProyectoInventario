@@ -292,9 +292,11 @@
             // 
             this.txtnom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnom.Location = new System.Drawing.Point(310, 28);
+            this.txtnom.MaxLength = 30;
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(284, 20);
             this.txtnom.TabIndex = 4;
+            this.txtnom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnom_KeyPress);
             // 
             // txtcod_pro
             // 
@@ -485,7 +487,7 @@
             // 
             this.txtdesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdesc.Location = new System.Drawing.Point(310, 125);
-            this.txtdesc.MaxLength = 70;
+            this.txtdesc.MaxLength = 50;
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -514,6 +516,7 @@
             // 
             this.txtdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdd.Location = new System.Drawing.Point(310, 88);
+            this.txtdd.MaxLength = 6;
             this.txtdd.Name = "txtdd";
             this.txtdd.Size = new System.Drawing.Size(58, 20);
             this.txtdd.TabIndex = 23;
@@ -540,6 +543,7 @@
             // 
             this.txtprocesador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtprocesador.Location = new System.Drawing.Point(85, 88);
+            this.txtprocesador.MaxLength = 10;
             this.txtprocesador.Name = "txtprocesador";
             this.txtprocesador.Size = new System.Drawing.Size(100, 20);
             this.txtprocesador.TabIndex = 20;
@@ -548,7 +552,7 @@
             // 
             this.txtserie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtserie.Location = new System.Drawing.Point(494, 56);
-            this.txtserie.MaxLength = 20;
+            this.txtserie.MaxLength = 30;
             this.txtserie.Name = "txtserie";
             this.txtserie.Size = new System.Drawing.Size(100, 20);
             this.txtserie.TabIndex = 19;
@@ -557,6 +561,7 @@
             // 
             this.txtmodeloplaca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtmodeloplaca.Location = new System.Drawing.Point(310, 56);
+            this.txtmodeloplaca.MaxLength = 30;
             this.txtmodeloplaca.Name = "txtmodeloplaca";
             this.txtmodeloplaca.Size = new System.Drawing.Size(100, 20);
             this.txtmodeloplaca.TabIndex = 18;
@@ -565,9 +570,11 @@
             // 
             this.txtmarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtmarca.Location = new System.Drawing.Point(85, 56);
+            this.txtmarca.MaxLength = 30;
             this.txtmarca.Name = "txtmarca";
             this.txtmarca.Size = new System.Drawing.Size(100, 20);
             this.txtmarca.TabIndex = 17;
+            this.txtmarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmarca_KeyPress);
             // 
             // label7
             // 

@@ -17,6 +17,8 @@ namespace CapaPresentacion
         private bool IsNuevo;
         private DataTable dtDetalle; //para almacenar todos los detalles del ingreso
 
+        Validar v = new Validar(); // Instanciar la clase Validar
+
         private static FrmIngresos _instancia;
         public static FrmIngresos GetInstancia()
         {
@@ -361,6 +363,11 @@ namespace CapaPresentacion
         private void dgvlistadodetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Numeros(e);   
         }
     }
 }

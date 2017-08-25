@@ -330,9 +330,11 @@
             // 
             this.txtstock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtstock.Location = new System.Drawing.Point(296, 41);
+            this.txtstock.MaxLength = 3;
             this.txtstock.Name = "txtstock";
             this.txtstock.Size = new System.Drawing.Size(121, 20);
             this.txtstock.TabIndex = 44;
+            this.txtstock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstock_KeyPress);
             // 
             // label5
             // 

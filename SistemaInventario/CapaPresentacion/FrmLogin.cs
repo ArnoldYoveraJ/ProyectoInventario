@@ -12,6 +12,7 @@ namespace CapaPresentacion
 {
     public partial class FrmLogin : Form
     {
+        Validar v = new Validar(); // Instanciar la clase Validar
         public FrmLogin()
         {
             InitializeComponent();
@@ -67,6 +68,11 @@ namespace CapaPresentacion
                 e.Handled = true;
                 btningresar.PerformClick();
             }
+        }
+
+        private void txtusu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
         }
 
     }

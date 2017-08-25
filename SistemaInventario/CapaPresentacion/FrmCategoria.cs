@@ -15,7 +15,7 @@ namespace CapaPresentacion
     {
         private bool IsNuevo = false;
         private bool IsEditar = false;
-
+        Validar v = new Validar(); // Instanciar la clase Validar
         public FrmCategoria()
         {
             InitializeComponent();
@@ -265,6 +265,11 @@ namespace CapaPresentacion
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtnom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
         }
 
 

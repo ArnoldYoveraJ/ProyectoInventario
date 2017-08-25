@@ -127,6 +127,7 @@
             this.txtcod_tra.Name = "txtcod_tra";
             this.txtcod_tra.Size = new System.Drawing.Size(100, 20);
             this.txtcod_tra.TabIndex = 3;
+            this.txtcod_tra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcod_tra_KeyPress);
             // 
             // lbltotal
             // 
@@ -244,6 +245,7 @@
             // 
             this.txtnom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnom.Location = new System.Drawing.Point(84, 61);
+            this.txtnom.MaxLength = 50;
             this.txtnom.Name = "txtnom";
             this.txtnom.Size = new System.Drawing.Size(160, 20);
             this.txtnom.TabIndex = 4;
@@ -293,6 +295,7 @@
             this.mktanexo.Name = "mktanexo";
             this.mktanexo.Size = new System.Drawing.Size(100, 20);
             this.mktanexo.TabIndex = 23;
+            this.mktanexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mktanexo_KeyPress);
             // 
             // mktdni
             // 
@@ -301,6 +304,7 @@
             this.mktdni.Name = "mktdni";
             this.mktdni.Size = new System.Drawing.Size(100, 20);
             this.mktdni.TabIndex = 22;
+            this.mktdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mktdni_KeyPress);
             // 
             // label9
             // 
@@ -349,6 +353,7 @@
             // 
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtemail.Location = new System.Drawing.Point(315, 85);
+            this.txtemail.MaxLength = 60;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(189, 20);
             this.txtemail.TabIndex = 15;
@@ -357,9 +362,11 @@
             // 
             this.txtape.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtape.Location = new System.Drawing.Point(315, 56);
+            this.txtape.MaxLength = 50;
             this.txtape.Name = "txtape";
             this.txtape.Size = new System.Drawing.Size(189, 20);
             this.txtape.TabIndex = 13;
+            this.txtape.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtape_KeyPress);
             // 
             // label6
             // 

@@ -15,6 +15,7 @@ namespace CapaPresentacion
     {
         private bool isnuevo=false;
         private bool iseditar=false;
+        Validar v = new Validar(); // Instanciar la clase Validar
 
         public FrmTrabajador()
         {
@@ -303,6 +304,26 @@ namespace CapaPresentacion
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcod_tra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
+        }
+
+        private void txtape_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
+        }
+
+        private void mktdni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Numeros(e);
+        }
+
+        private void mktanexo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Numeros(e);
         }
     }
 }

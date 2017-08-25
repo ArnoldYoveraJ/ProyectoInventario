@@ -15,6 +15,8 @@ namespace CapaPresentacion
     {
         private bool IsNuevo = false;
         private bool IsEditar = false;
+        Validar v = new Validar(); // Instanciar la clase Validar
+
         public FrmProveedores()
         {
             InitializeComponent();
@@ -305,6 +307,21 @@ namespace CapaPresentacion
         private void txtemail_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtrazons_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
+        }
+
+        private void txtsectorc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
+        }
+
+        private void txtnum_doc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Numeros(e);
         }
     }
 }

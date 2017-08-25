@@ -19,7 +19,6 @@ namespace CapaPresentacion
 
         private static FrmMovimiento _Instancia;
 
-
         //código Nuevo
         public static FrmMovimiento GetInstancia()
         {

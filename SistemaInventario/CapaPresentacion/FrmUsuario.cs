@@ -15,6 +15,7 @@ namespace CapaPresentacion
     {
         private bool IsNuevo = false;
         private bool IsEditar = false;
+        Validar v = new Validar(); // Instanciar la clase Validar
         public FrmUsuario()
         {
             InitializeComponent();
@@ -319,6 +320,16 @@ namespace CapaPresentacion
                 this.dgvlistado.Columns[0].Visible = false;
             }
 
+        }
+
+        private void txtnomcom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
+        }
+
+        private void txtusu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
         }
     }
 }

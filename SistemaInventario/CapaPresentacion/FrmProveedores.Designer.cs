@@ -289,6 +289,7 @@
             // 
             this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtemail.Location = new System.Drawing.Point(85, 133);
+            this.txtemail.MaxLength = 60;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(307, 20);
             this.txtemail.TabIndex = 24;
@@ -316,6 +317,7 @@
             // 
             this.txtdir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdir.Location = new System.Drawing.Point(85, 107);
+            this.txtdir.MaxLength = 60;
             this.txtdir.Name = "txtdir";
             this.txtdir.Size = new System.Drawing.Size(122, 20);
             this.txtdir.TabIndex = 20;
@@ -328,14 +330,17 @@
             this.txtnum_doc.Name = "txtnum_doc";
             this.txtnum_doc.Size = new System.Drawing.Size(126, 20);
             this.txtnum_doc.TabIndex = 19;
+            this.txtnum_doc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnum_doc_KeyPress);
             // 
             // txtsectorc
             // 
             this.txtsectorc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtsectorc.Location = new System.Drawing.Point(85, 82);
+            this.txtsectorc.MaxLength = 50;
             this.txtsectorc.Name = "txtsectorc";
             this.txtsectorc.Size = new System.Drawing.Size(123, 20);
             this.txtsectorc.TabIndex = 17;
+            this.txtsectorc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsectorc_KeyPress);
             // 
             // label7
             // 
@@ -433,9 +438,11 @@
             // 
             this.txtrazons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtrazons.Location = new System.Drawing.Point(85, 54);
+            this.txtrazons.MaxLength = 50;
             this.txtrazons.Name = "txtrazons";
             this.txtrazons.Size = new System.Drawing.Size(284, 20);
             this.txtrazons.TabIndex = 4;
+            this.txtrazons.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrazons_KeyPress);
             // 
             // txtcod_prov
             // 

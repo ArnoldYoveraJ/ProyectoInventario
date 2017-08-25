@@ -16,7 +16,7 @@ namespace CapaPresentacion
         private bool IsEditar = false;
 
         private static FrmBajaProducto _Instancia;
-
+        Validar v = new Validar(); // Instanciar la clase Validar
 
         //código Nuevo
         public static FrmBajaProducto GetInstancia()
@@ -299,6 +299,11 @@ namespace CapaPresentacion
         {
             FrmReporteBajaProductos objbp = new FrmReporteBajaProductos();
             objbp.ShowDialog();
+        }
+
+        private void txtproducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
         }
     }
 }
