@@ -11,7 +11,7 @@ namespace CapaNegocio
     public class NMovimiento
     {
         public static string insertar_movimiento(DateTime fecha,string condicion,int cod_usu,
-            int cod_trabajador,int cod_producto,string estado)
+            int cod_trabajador,int cod_producto,string estado,string motivo,DateTime fecha_dev)
         {
             DMovimiento objmov = new DMovimiento();
             objmov.Fecha = fecha;
@@ -20,10 +20,13 @@ namespace CapaNegocio
             objmov.Cod_trabajador = cod_trabajador;
             objmov.Cod_producto = cod_producto;
             objmov.Estado = estado;
+            objmov.Motivo = motivo;
+            objmov.Fecha_dev = fecha_dev;
             return objmov.insertar_movimiento(objmov);
         }
 
-        public static string editar_movimiento(int cod_mov,DateTime fecha, string condicion, int cod_usu, int cod_trabajador, int cod_producto,string estado)
+        public static string editar_movimiento(int cod_mov,DateTime fecha, string condicion, int cod_usu,
+            int cod_trabajador, int cod_producto, string estado, string motivo, DateTime fecha_dev)
         {
             DMovimiento objmov = new DMovimiento();
             objmov.Cod_mov = cod_mov;
@@ -33,6 +36,8 @@ namespace CapaNegocio
             objmov.Cod_trabajador = cod_trabajador;
             objmov.Cod_producto = cod_producto;
             objmov.Estado = estado;
+            objmov.Motivo = motivo;
+            objmov.Fecha_dev = fecha_dev;
             return objmov.editar_movimiento(objmov);
         }
 

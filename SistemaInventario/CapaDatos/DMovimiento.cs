@@ -17,6 +17,20 @@ namespace CapaDatos
         private int _Cod_trabajador;
         private int _Cod_producto;
         private string _Estado;
+        private string _Motivo;
+        private DateTime _Fecha_dev;
+
+        public DateTime Fecha_dev
+        {
+            get { return _Fecha_dev; }
+            set { _Fecha_dev = value; }
+        }
+
+        public string Motivo
+        {
+            get { return _Motivo; }
+            set { _Motivo = value; }
+        }
 
         public string Estado
         {
@@ -62,7 +76,8 @@ namespace CapaDatos
 
         public DMovimiento() { }
 
-        public DMovimiento(int cod_mov,DateTime fecha, string condicion, int cod_usu,int cod_trabajador,int cod_producto,string estado) 
+        public DMovimiento(int cod_mov,DateTime fecha, string condicion, int cod_usu,int cod_trabajador,int cod_producto,
+                           string estado,string motivo,DateTime fecha_dev) 
         {
             this.Cod_mov = cod_mov;
             this.Fecha = fecha;
@@ -71,6 +86,8 @@ namespace CapaDatos
             this.Cod_trabajador = cod_trabajador;
             this.Cod_producto = Cod_producto;
             this.Estado = estado;
+            this.Motivo = motivo;
+            this.Fecha_dev = fecha_dev;
         }
 
        public string insertar_movimiento( DMovimiento mov)
@@ -101,6 +118,8 @@ namespace CapaDatos
                 sql1.Parameters.AddWithValue("@COD_TRABAJADOR", mov.Cod_trabajador);
                 sql1.Parameters.AddWithValue("@COD_PRODUCTO", mov.Cod_producto);
                 sql1.Parameters.AddWithValue("@ESTADO", mov.Estado);
+                sql1.Parameters.AddWithValue("@MOTIVO", mov.Motivo);
+                sql1.Parameters.AddWithValue("@FECHA_DEV", mov.Fecha_dev);
                 rpta = sql1.ExecuteNonQuery() != 0 ? "OK" : "No se ingreso el Registro";
             }
             catch (Exception e)
@@ -140,6 +159,8 @@ namespace CapaDatos
                sql1.Parameters.AddWithValue("@COD_TRABAJADOR", mov.Cod_trabajador);
                sql1.Parameters.AddWithValue("@COD_PRODUCTO", mov.Cod_producto);
                sql1.Parameters.AddWithValue("@ESTADO", mov.Estado);
+               sql1.Parameters.AddWithValue("@MOTIVO", mov.Motivo);
+               sql1.Parameters.AddWithValue("@FECHA_DEV", mov.Fecha_dev);
                rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Editó el Registro";
            }
            catch (Exception e)

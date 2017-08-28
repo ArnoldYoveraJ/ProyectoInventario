@@ -177,7 +177,7 @@
             this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnimprimir.Image = global::CapaPresentacion.Properties.Resources.imprimir1;
             this.btnimprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnimprimir.Location = new System.Drawing.Point(693, 24);
+            this.btnimprimir.Location = new System.Drawing.Point(757, 24);
             this.btnimprimir.Name = "btnimprimir";
             this.btnimprimir.Size = new System.Drawing.Size(75, 23);
             this.btnimprimir.TabIndex = 4;
@@ -191,7 +191,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.Eliminar2;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(612, 25);
+            this.btnEliminar.Location = new System.Drawing.Point(676, 25);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -205,7 +205,7 @@
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar11;
             this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscar.Location = new System.Drawing.Point(531, 25);
+            this.btnbuscar.Location = new System.Drawing.Point(595, 25);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 2;
@@ -382,7 +382,8 @@
             this.cboestado.FormattingEnabled = true;
             this.cboestado.Items.AddRange(new object[] {
             "Ocupado",
-            "Disponible"});
+            "Disponible",
+            "De Baja"});
             this.cboestado.Location = new System.Drawing.Point(85, 148);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(103, 21);

@@ -16,8 +16,8 @@ namespace CapaPresentacion
         public int cod_usu;//para enviar el codigo de usuario al frmprincipal
         private bool IsNuevo = false;
         private bool IsEditar = false;
-
         private static FrmMovimiento _Instancia;
+        Validar v = new Validar();//instanciar la clase validar
 
         //código Nuevo
         public static FrmMovimiento GetInstancia()
@@ -36,7 +36,8 @@ namespace CapaPresentacion
             this.ttmensaje.SetToolTip(txtusuario, "Seleccione un Usuario");
             this.ttmensaje.SetToolTip(txttrabajador, "Seleccione un Trabajador");
             this.ttmensaje.SetToolTip(txtproducto, "Seleccione un Producto");
-            this.ttmensaje.SetToolTip(txtcondicion, "Explique la condición");
+            this.ttmensaje.SetToolTip(txtcondicion, "Explique las condiciones en que se entrega el Equipo");
+            this.ttmensaje.SetToolTip(txtmot, "Explique el motivo");
             this.txtusuario.ReadOnly = true;
             this.txtcod_mov.Visible = false;
 
@@ -79,6 +80,7 @@ namespace CapaPresentacion
             this.txtcod_pro.Text = string.Empty;
             this.txtproducto.Text = string.Empty;
             this.txtcondicion.Text = string.Empty;
+            this.txtmot.Text = string.Empty;
         }
 
         //Activar botones
@@ -93,6 +95,7 @@ namespace CapaPresentacion
             this.txtcod_pro.ReadOnly = !valor;
             this.txtproducto.ReadOnly = !valor;
             this.txtcondicion.ReadOnly = !valor;
+            this.txtmot.ReadOnly = !valor;
             this.btnbuscar_usuario.Enabled = valor;
             this.btnbuscar_producto.Enabled = valor;
             this.btnbuscar_trabajador.Enabled = valor;
@@ -231,14 +234,16 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         rpta = NMovimiento.insertar_movimiento(this.dtfecha.Value,this.txtcondicion.Text.Trim(),cod_usu,
-                            Convert.ToInt16(this.txtcod_tra.Text.Trim()),Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO");// borra espacios y convierte en mayuscula
+                            Convert.ToInt16(this.txtcod_tra.Text.Trim()),Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO",
+                            this.txtmot.Text.Trim(),DateTime.Today);// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         //Falta el campo: cod_usu en editar. 
                         rpta = NMovimiento.editar_movimiento(Convert.ToInt16(this.txtcod_mov.Text),this.dtfecha.Value, this.txtcondicion.Text.Trim(), Convert.ToInt16(this.txtcod_usu.Text.Trim()),
-                            Convert.ToInt16(this.txtcod_tra.Text.Trim()), Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO");// borra espacios y convierte en mayuscula
+                            Convert.ToInt16(this.txtcod_tra.Text.Trim()), Convert.ToInt16(this.txtcod_pro.Text.Trim()), "EMITIDO",
+                            this.txtmot.Text.Trim(), DateTime.Today);// borra espacios y convierte en mayuscula
                         MensajeOK("Se Editó Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -281,6 +286,7 @@ namespace CapaPresentacion
             this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
             this.txtproducto.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
             this.txtcondicion.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["condicion"].Value);
+            this.txtmot.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["motivo"].Value);
             this.dtfecha.Value = Convert.ToDateTime(dgvlistado.CurrentRow.Cells["fecha"].Value);
             this.txtcod_mov.ReadOnly = false;
             tabControl1.SelectedIndex = 1;
@@ -334,6 +340,11 @@ namespace CapaPresentacion
         {
             FrmReporteMovimientos objrm = new FrmReporteMovimientos();
             objrm.ShowDialog();
+        }
+
+        private void txtmot_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.Letras(e);
         }
     }
 }

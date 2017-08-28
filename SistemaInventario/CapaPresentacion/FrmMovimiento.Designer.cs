@@ -54,6 +54,8 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtmot = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtcondicion = new System.Windows.Forms.TextBox();
             this.btnbuscar_producto = new System.Windows.Forms.Button();
@@ -246,7 +248,7 @@
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(528, 51);
+            this.lbltotal.Location = new System.Drawing.Point(528, 59);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(35, 13);
             this.lbltotal.TabIndex = 6;
@@ -268,7 +270,7 @@
             this.btnimprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnimprimir.Image = global::CapaPresentacion.Properties.Resources.imprimir1;
             this.btnimprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnimprimir.Location = new System.Drawing.Point(531, 25);
+            this.btnimprimir.Location = new System.Drawing.Point(600, 29);
             this.btnimprimir.Name = "btnimprimir";
             this.btnimprimir.Size = new System.Drawing.Size(75, 23);
             this.btnimprimir.TabIndex = 4;
@@ -282,7 +284,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.Eliminar2;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(450, 26);
+            this.btnEliminar.Location = new System.Drawing.Point(519, 30);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -296,7 +298,7 @@
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.Buscar11;
             this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscar.Location = new System.Drawing.Point(369, 26);
+            this.btnbuscar.Location = new System.Drawing.Point(438, 30);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 2;
@@ -327,6 +329,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtmot);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtcondicion);
             this.groupBox1.Controls.Add(this.btnbuscar_producto);
@@ -354,10 +358,29 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(17, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(644, 251);
+            this.groupBox1.Size = new System.Drawing.Size(644, 266);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Movimientos";
+            // 
+            // txtmot
+            // 
+            this.txtmot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtmot.Location = new System.Drawing.Point(80, 199);
+            this.txtmot.MaxLength = 30;
+            this.txtmot.Name = "txtmot";
+            this.txtmot.Size = new System.Drawing.Size(330, 20);
+            this.txtmot.TabIndex = 54;
+            this.txtmot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmot_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 202);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "Motivo:";
             // 
             // label8
             // 
@@ -486,7 +509,7 @@
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Image = global::CapaPresentacion.Properties.Resources.cancel;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(437, 212);
+            this.btncancelar.Location = new System.Drawing.Point(441, 237);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 9;
@@ -500,7 +523,7 @@
             this.btneditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneditar.Image = global::CapaPresentacion.Properties.Resources.Editar;
             this.btneditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneditar.Location = new System.Drawing.Point(338, 212);
+            this.btneditar.Location = new System.Drawing.Point(342, 237);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 23);
             this.btneditar.TabIndex = 8;
@@ -514,7 +537,7 @@
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.Image = global::CapaPresentacion.Properties.Resources.guardar11;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(246, 212);
+            this.btnguardar.Location = new System.Drawing.Point(250, 237);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(75, 23);
             this.btnguardar.TabIndex = 7;
@@ -528,7 +551,7 @@
             this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnnuevo.Image = global::CapaPresentacion.Properties.Resources.Nuevo;
             this.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnnuevo.Location = new System.Drawing.Point(153, 212);
+            this.btnnuevo.Location = new System.Drawing.Point(157, 237);
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(75, 23);
             this.btnnuevo.TabIndex = 6;
@@ -611,5 +634,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtcondicion;
+        private System.Windows.Forms.TextBox txtmot;
+        private System.Windows.Forms.Label label9;
     }
 }
