@@ -15,6 +15,7 @@ namespace CapaPresentacion
         public FrmReporteBajaProductos()
         {
             InitializeComponent();
+            //comentario
         }
 
         private void FrmReporteBajaProductos_Load(object sender, EventArgs e)
