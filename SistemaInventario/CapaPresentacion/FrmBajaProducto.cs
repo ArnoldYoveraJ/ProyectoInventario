@@ -297,8 +297,8 @@ namespace CapaPresentacion
 
         private void btnimprimir_Click(object sender, EventArgs e)
         {
-            FrmReporteBajaProductos objbp = new FrmReporteBajaProductos();
-            objbp.ShowDialog();
+            //FrmReporteBajaProductos objbp = new FrmReporteBajaProductos();
+            //objbp.ShowDialog();
         }
 
         private void txtproducto_KeyPress(object sender, KeyPressEventArgs e)
