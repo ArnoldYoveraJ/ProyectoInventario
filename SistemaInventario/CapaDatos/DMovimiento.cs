@@ -19,7 +19,13 @@ namespace CapaDatos
         private string _Estado;
         private string _Motivo;
         private DateTime _Fecha_dev;
+        private string _Condicion_recibido;
 
+        public string Condicion_recibido
+        {
+            get { return _Condicion_recibido; }
+            set { _Condicion_recibido = value; }
+        }
         public DateTime Fecha_dev
         {
             get { return _Fecha_dev; }
@@ -76,8 +82,8 @@ namespace CapaDatos
 
         public DMovimiento() { }
 
-        public DMovimiento(int cod_mov,DateTime fecha, string condicion, int cod_usu,int cod_trabajador,int cod_producto,
-                           string estado,string motivo,DateTime fecha_dev) 
+        public DMovimiento(int cod_mov, DateTime fecha, string condicion, int cod_usu, int cod_trabajador, int cod_producto,
+                         string estado, string motivo, DateTime fecha_dev, string condicion_rec)
         {
             this.Cod_mov = cod_mov;
             this.Fecha = fecha;
@@ -88,6 +94,7 @@ namespace CapaDatos
             this.Estado = estado;
             this.Motivo = motivo;
             this.Fecha_dev = fecha_dev;
+            this.Condicion_recibido = condicion_rec;
         }
 
        public string insertar_movimiento( DMovimiento mov)
@@ -120,6 +127,7 @@ namespace CapaDatos
                 sql1.Parameters.AddWithValue("@ESTADO", mov.Estado);
                 sql1.Parameters.AddWithValue("@MOTIVO", mov.Motivo);
                 sql1.Parameters.AddWithValue("@FECHA_DEV", mov.Fecha_dev);
+                sql1.Parameters.AddWithValue("@CONDICION_RECIB", mov.Condicion_recibido);
                 rpta = sql1.ExecuteNonQuery() != 0 ? "OK" : "No se ingreso el Registro";
             }
             catch (Exception e)
@@ -161,6 +169,7 @@ namespace CapaDatos
                sql1.Parameters.AddWithValue("@ESTADO", mov.Estado);
                sql1.Parameters.AddWithValue("@MOTIVO", mov.Motivo);
                sql1.Parameters.AddWithValue("@FECHA_DEV", mov.Fecha_dev);
+               sql1.Parameters.AddWithValue("@CONDICION_RECIB", mov.Condicion_recibido);
                rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Editó el Registro";
            }
            catch (Exception e)
@@ -195,6 +204,7 @@ namespace CapaDatos
                //parametros
                sql1.Parameters.AddWithValue("@cod_mov", mov.Cod_mov);
                sql1.Parameters.AddWithValue("@cod_pro", mov.Cod_producto);
+               sql1.Parameters.AddWithValue("@CONDICION_REC", mov.Condicion_recibido);
                rpta = sql1.ExecuteNonQuery() !=1 ? "OK" : "No se Anuló el Registro";
            }
            catch (Exception e)

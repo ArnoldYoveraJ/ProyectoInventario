@@ -233,17 +233,17 @@ namespace CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = NMovimiento.insertar_movimiento(this.dtfecha.Value,this.txtcondicion.Text.Trim(),cod_usu,
-                            Convert.ToInt16(this.txtcod_tra.Text.Trim()),Convert.ToInt16(this.txtcod_pro.Text.Trim()),"EMITIDO",
-                            this.txtmot.Text.Trim(),DateTime.Today);// borra espacios y convierte en mayuscula
+                        rpta = NMovimiento.insertar_movimiento(this.dtfecha.Value, this.txtcondicion.Text.Trim(), cod_usu,
+                            Convert.ToInt16(this.txtcod_tra.Text.Trim()), Convert.ToInt16(this.txtcod_pro.Text.Trim()), "EMITIDO",
+                            this.txtmot.Text.Trim(), DateTime.Today, "No tiene");// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         //Falta el campo: cod_usu en editar. 
-                        rpta = NMovimiento.editar_movimiento(Convert.ToInt16(this.txtcod_mov.Text),this.dtfecha.Value, this.txtcondicion.Text.Trim(), Convert.ToInt16(this.txtcod_usu.Text.Trim()),
+                        rpta = NMovimiento.editar_movimiento(Convert.ToInt16(this.txtcod_mov.Text), this.dtfecha.Value, this.txtcondicion.Text.Trim(), Convert.ToInt16(this.txtcod_usu.Text.Trim()),
                             Convert.ToInt16(this.txtcod_tra.Text.Trim()), Convert.ToInt16(this.txtcod_pro.Text.Trim()), "EMITIDO",
-                            this.txtmot.Text.Trim(), DateTime.Today);// borra espacios y convierte en mayuscula
+                            this.txtmot.Text.Trim(), DateTime.Today, "No tiene");// borra espacios y convierte en mayuscula
                         MensajeOK("Se Editó Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -294,6 +294,22 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //Para enviar los datos a FrmDevolver_Artículo
+            FrmDevolver_Articulo form1 = FrmDevolver_Articulo.GetInstancia();
+            form1.Show();
+            string p1, p2, p3, p4, p5;
+            int p7;
+            DateTime p6;
+            p1 = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_mov"].Value);
+            p2 = Convert.ToString(dgvlistado.CurrentRow.Cells["usuario"].Value);
+            p3 = Convert.ToString(dgvlistado.CurrentRow.Cells["trabajador"].Value);
+            p4 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
+            p5 = Convert.ToString(dgvlistado.CurrentRow.Cells["condicion"].Value);
+            p6 = Convert.ToDateTime(dgvlistado.CurrentRow.Cells["fecha"].Value);
+            p7 = Convert.ToInt32(dgvlistado.CurrentRow.Cells["COD_PRODUCTO"].Value);
+            form1.setMovimiento(p1, p2, p3, p4, p5, p6,p7);
+
+            /*
             try
             {
                 DialogResult opcion;
@@ -329,6 +345,7 @@ namespace CapaPresentacion
 
                 MessageBox.Show(ex.Message, ex.StackTrace);
             }
+              */
         }
 
         private void FrmMovimiento_FormClosing(object sender, FormClosingEventArgs e)

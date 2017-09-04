@@ -69,6 +69,12 @@
     <Compile Include="FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDevolver_Articulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDevolver_Articulo.Designer.cs">
+      <DependentUpon>FrmDevolver_Articulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIngresos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,12 +158,6 @@
     <Compile Include="Reportes\FrmReporteArticulos.Designer.cs">
       <DependentUpon>FrmReporteArticulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\FrmReporteBajaProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\FrmReporteBajaProductos.Designer.cs">
-      <DependentUpon>FrmReporteBajaProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\FrmReporteMovimientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDevolver_Articulo.resx">
+      <DependentUpon>FrmDevolver_Articulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresos.resx">
       <DependentUpon>FrmIngresos.cs</DependentUpon>
@@ -221,9 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteArticulos.resx">
       <DependentUpon>FrmReporteArticulos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\FrmReporteBajaProductos.resx">
-      <DependentUpon>FrmReporteBajaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteMovimientos.resx">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
