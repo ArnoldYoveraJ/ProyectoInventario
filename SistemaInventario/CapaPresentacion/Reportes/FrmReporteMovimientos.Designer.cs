@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
             this.SP_MOSTRAR_MOVIMIENTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrincipal = new CapaPresentacion.dsPrincipal();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_MOSTRAR_MOVIMIENTOTableAdapter = new CapaPresentacion.dsPrincipalTableAdapters.SP_MOSTRAR_MOVIMIENTOTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_MOSTRAR_MOVIMIENTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SP_MOSTRAR_MOVIMIENTOBindingSource
+            // 
+            this.SP_MOSTRAR_MOVIMIENTOBindingSource.DataMember = "SP_MOSTRAR_MOVIMIENTO";
+            this.SP_MOSTRAR_MOVIMIENTOBindingSource.DataSource = this.dsPrincipal;
+            // 
+            // dsPrincipal
+            // 
+            this.dsPrincipal.DataSetName = "dsPrincipal";
+            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,18 +57,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rptMovimientos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(784, 440);
+            this.reportViewer1.Size = new System.Drawing.Size(1056, 440);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dsPrincipal
-            // 
-            this.dsPrincipal.DataSetName = "dsPrincipal";
-            this.dsPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SP_MOSTRAR_MOVIMIENTOBindingSource
-            // 
-            this.SP_MOSTRAR_MOVIMIENTOBindingSource.DataMember = "SP_MOSTRAR_MOVIMIENTO";
-            this.SP_MOSTRAR_MOVIMIENTOBindingSource.DataSource = this.dsPrincipal;
             // 
             // SP_MOSTRAR_MOVIMIENTOTableAdapter
             // 
@@ -68,13 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 440);
+            this.ClientSize = new System.Drawing.Size(1056, 440);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteMovimientos";
             this.Text = "Reporte de Movimiento de Artículos";
             this.Load += new System.EventHandler(this.FrmReporteMovimientos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_MOSTRAR_MOVIMIENTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }

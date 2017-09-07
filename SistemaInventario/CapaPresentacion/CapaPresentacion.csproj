@@ -164,6 +164,18 @@
     <Compile Include="Reportes\FrmReporteMovimientos.Designer.cs">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReporteTrabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteTrabajadores.Designer.cs">
+      <DependentUpon>FrmReporteTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporte_BajaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporte_BajaProducto.Designer.cs">
+      <DependentUpon>FrmReporte_BajaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Validar.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,9 +240,16 @@
     <EmbeddedResource Include="Reportes\FrmReporteMovimientos.resx">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteTrabajadores.resx">
+      <DependentUpon>FrmReporteTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporte_BajaProducto.resx">
+      <DependentUpon>FrmReporte_BajaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptBajaProductos.rdlc" />
     <EmbeddedResource Include="Reportes\rptMovimientos.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\rptTrabajador.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

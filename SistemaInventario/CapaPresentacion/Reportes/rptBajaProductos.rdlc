@@ -57,7 +57,7 @@
               <Width>5.76761cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.6989cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -300,7 +300,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cod_baja</rd:DefaultName>
@@ -364,7 +366,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>categoria</rd:DefaultName>
@@ -396,7 +400,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>fecha</rd:DefaultName>
@@ -460,7 +466,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>estado</rd:DefaultName>
@@ -505,7 +513,7 @@
         <Top>1.84891cm</Top>
         <Left>0.93927cm</Left>
         <Height>1.38521cm</Height>
-        <Width>19.04952cm</Width>
+        <Width>19.24841cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -593,9 +601,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>0.98343cm</Top>
-          <Left>15.2006cm</Left>
+          <Left>13.63956cm</Left>
           <Height>0.6cm</Height>
-          <Width>4.98708cm</Width>
+          <Width>6.54812cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>

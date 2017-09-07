@@ -325,5 +325,11 @@ namespace CapaPresentacion
         {
             v.Numeros(e);
         }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteTrabajadores frmtra = new FrmReporteTrabajadores();
+            frmtra.ShowDialog();
+        }
     }
 }

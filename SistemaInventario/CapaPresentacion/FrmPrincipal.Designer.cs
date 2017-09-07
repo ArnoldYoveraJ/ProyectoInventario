@@ -37,6 +37,7 @@
             this.stockDeArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnumantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,7 +90,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.usu = new System.Windows.Forms.Label();
-            this.bajaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -159,6 +159,13 @@
             this.registroDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.registroDeMovimientosToolStripMenuItem.Text = "Registro de Movimientos";
             this.registroDeMovimientosToolStripMenuItem.Click += new System.EventHandler(this.registroDeMovimientosToolStripMenuItem_Click);
+            // 
+            // bajaDeProductosToolStripMenuItem
+            // 
+            this.bajaDeProductosToolStripMenuItem.Name = "bajaDeProductosToolStripMenuItem";
+            this.bajaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.bajaDeProductosToolStripMenuItem.Text = "Baja de Productos";
+            this.bajaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.bajaDeProductosToolStripMenuItem_Click);
             // 
             // mnumantenimiento
             // 
@@ -450,6 +457,7 @@
             // 
             // statusStrip
             // 
+            this.statusStrip.BackColor = System.Drawing.Color.White;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 719);
@@ -661,13 +669,6 @@
             this.usu.Size = new System.Drawing.Size(35, 13);
             this.usu.TabIndex = 19;
             this.usu.Text = "label2";
-            // 
-            // bajaDeProductosToolStripMenuItem
-            // 
-            this.bajaDeProductosToolStripMenuItem.Name = "bajaDeProductosToolStripMenuItem";
-            this.bajaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.bajaDeProductosToolStripMenuItem.Text = "Baja de Productos";
-            this.bajaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.bajaDeProductosToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
