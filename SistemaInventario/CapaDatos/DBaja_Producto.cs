@@ -179,7 +179,7 @@ namespace CapaDatos
             return dt;
         }
 
-        public DataTable Buscar_Baja_Productos(string fecha_ini,string fecha_fin)
+        public DataTable Buscar_Baja_Productos(DateTime fecha_ini, DateTime fecha_fin)
         {
             DataTable dt = new DataTable("baja_productos");
             SqlConnection con = new SqlConnection();

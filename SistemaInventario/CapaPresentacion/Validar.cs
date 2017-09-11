@@ -30,7 +30,7 @@ namespace CapaPresentacion
 
         public void Numeros(KeyPressEventArgs e)
         {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
+            if (Char.IsNumber(e.KeyChar)) //Al pulsar una letra
             {
                 e.Handled = false; //Se acepta (todo OK)
             }

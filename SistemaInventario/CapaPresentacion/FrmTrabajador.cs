@@ -318,12 +318,12 @@ namespace CapaPresentacion
 
         private void mktdni_KeyPress(object sender, KeyPressEventArgs e)
         {
-            v.Numeros(e);
+            //v.Numeros(e);
         }
 
         private void mktanexo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            v.Numeros(e);
+            //v.Numeros(e);
         }
 
         private void btnimprimir_Click(object sender, EventArgs e)

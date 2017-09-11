@@ -143,7 +143,7 @@ namespace CapaPresentacion
         //Buscar Categoria por nombre
         private void buscar()
         {
-            this.dgvlistado.DataSource = NMovimiento.buscar_movimiento(this.dtfecha1.Text, this.dtfecha2.Text);
+            this.dgvlistado.DataSource = NMovimiento.buscar_movimiento(Convert.ToDateTime(this.dtfecha1.Text), Convert.ToDateTime(this.dtfecha2.Text));
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }

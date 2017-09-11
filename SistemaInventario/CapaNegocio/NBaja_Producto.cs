@@ -44,7 +44,7 @@ namespace CapaNegocio
             return new DBaja_Producto().Mostrar();
         }
 
-        public static DataTable Buscar_Baja_Productos(string fecha_ini,string fecha_fin)
+        public static DataTable Buscar_Baja_Productos(DateTime fecha_ini, DateTime fecha_fin)
         {
             return new DBaja_Producto().Buscar_Baja_Productos(fecha_ini, fecha_fin);
         }

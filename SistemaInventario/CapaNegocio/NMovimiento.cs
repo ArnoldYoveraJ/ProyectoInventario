@@ -59,7 +59,7 @@ namespace CapaNegocio
             return new DMovimiento().Mostrar();
         }
 
-        public static DataTable buscar_movimiento(string fecha_ini,string fecha_fin)
+        public static DataTable buscar_movimiento(DateTime fecha_ini, DateTime fecha_fin)
         {
             return new DMovimiento().Buscar_por_fechas(fecha_ini,fecha_fin);
         }

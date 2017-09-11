@@ -248,7 +248,7 @@ namespace CapaDatos
            return dt;
        }
 
-       public DataTable Buscar_por_fechas(string fecha_ini,string fecha_fin)
+       public DataTable Buscar_por_fechas(DateTime fecha_ini, DateTime fecha_fin)
        {
            DataTable dt = new DataTable("movimiento");
            SqlConnection con = new SqlConnection();

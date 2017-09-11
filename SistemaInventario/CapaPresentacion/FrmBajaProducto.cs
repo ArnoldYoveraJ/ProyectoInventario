@@ -104,7 +104,7 @@ namespace CapaPresentacion
         //Buscar Categoria por nombre
         private void buscar()
         {
-            this.dgvlistado.DataSource = NBaja_Producto.Buscar_Baja_Productos(this.dtfecha1.Text, this.dtfecha2.Text);
+            this.dgvlistado.DataSource = NBaja_Producto.Buscar_Baja_Productos(Convert.ToDateTime(this.dtfecha1.Text), Convert.ToDateTime(this.dtfecha2.Text));
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }
