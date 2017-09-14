@@ -30,7 +30,7 @@ namespace CapaNegocio
             obju.Contra = contra;
             obju.Tipo = tipo;
             obju.Estado = est;
-            return obju.Insertar(obju);
+            return obju.Editar(obju);
         }
 
         public static string Eliminar(int cod)

@@ -34,9 +34,6 @@
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.cbotipousu = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbdes = new System.Windows.Forms.RadioButton();
-            this.rbact = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtusu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,7 +63,6 @@
             this.btnbuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -108,7 +104,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.cbotipousu);
             this.groupBox1.Controls.Add(this.label5);
@@ -127,39 +122,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuarios";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbdes);
-            this.groupBox3.Controls.Add(this.rbact);
-            this.groupBox3.Location = new System.Drawing.Point(254, 123);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(274, 39);
-            this.groupBox3.TabIndex = 27;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Estado";
-            // 
-            // rbdes
-            // 
-            this.rbdes.AutoSize = true;
-            this.rbdes.Location = new System.Drawing.Point(159, 16);
-            this.rbdes.Name = "rbdes";
-            this.rbdes.Size = new System.Drawing.Size(85, 17);
-            this.rbdes.TabIndex = 1;
-            this.rbdes.Text = "Desactivado";
-            this.rbdes.UseVisualStyleBackColor = true;
-            // 
-            // rbact
-            // 
-            this.rbact.AutoSize = true;
-            this.rbact.Checked = true;
-            this.rbact.Location = new System.Drawing.Point(47, 16);
-            this.rbact.Name = "rbact";
-            this.rbact.Size = new System.Drawing.Size(67, 17);
-            this.rbact.TabIndex = 0;
-            this.rbact.TabStop = true;
-            this.rbact.Text = "Activado";
-            this.rbact.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -199,6 +161,7 @@
             this.txtcon.Location = new System.Drawing.Point(359, 19);
             this.txtcon.MaxLength = 15;
             this.txtcon.Name = "txtcon";
+            this.txtcon.PasswordChar = '*';
             this.txtcon.Size = new System.Drawing.Size(122, 20);
             this.txtcon.TabIndex = 20;
             // 
@@ -481,8 +444,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -527,9 +488,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip ttmensaje;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rbdes;
-        private System.Windows.Forms.RadioButton rbact;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label Nombre;
     }

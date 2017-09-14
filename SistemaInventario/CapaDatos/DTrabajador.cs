@@ -299,7 +299,35 @@ namespace CapaDatos
                dt = null;
            }
            return dt;
+       }
 
+       public DataTable Buscar_Productos_por_Trabajador(String apellidos)
+       {
+           DataTable dt = new DataTable("trabajador");
+           SqlConnection con = new SqlConnection();
+           try
+           {
+               con.ConnectionString = Conexion.Cn;
+               con.Open();
+               SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = con;
+               sql1.CommandText = "sp_buscar_productosAsignador_trabajador";//modificar
+               sql1.CommandType = CommandType.StoredProcedure;
+
+               sql1.Parameters.AddWithValue("@texto", apellidos);
+
+               SqlDataAdapter da = new SqlDataAdapter(sql1);
+               da.Fill(dt);
+           }
+           catch (Exception e)
+           {
+               dt = null;
+           }
+           finally
+           {
+               if (con.State == ConnectionState.Open) { con.Close(); }
+           }
+           return dt;
        }
 
     }

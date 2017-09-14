@@ -313,5 +313,12 @@ namespace CapaPresentacion
             objbaja.Show();
 
         }
+
+        private void stockDeArtículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBuscarProductos_Trabajador objbus = new FrmBuscarProductos_Trabajador();
+            objbus.MdiParent = this;
+            objbus.Show();
+        }
     }
 }

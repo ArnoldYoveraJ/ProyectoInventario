@@ -42,8 +42,6 @@ namespace CapaPresentacion
             this.txtnomcom.Text = string.Empty;
             this.txtusu.Text = string.Empty;
             this.txtcon.Text = string.Empty;
-            this.rbact.Text = string.Empty;
-            this.rbdes.Text = string.Empty;
         }
 
         //Activar botones
@@ -55,8 +53,6 @@ namespace CapaPresentacion
             this.txtusu.ReadOnly = !valor;
             this.txtcon.ReadOnly = !valor;
             this.cbotipousu.Enabled = valor;
-            this.rbact.Enabled = valor;
-            this.rbdes.Enabled = valor;
         }
 
         //Desactivar botones
@@ -198,10 +194,8 @@ namespace CapaPresentacion
             this.txtnomcom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nombre_completo"].Value);
             this.txtusu.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["usuario"].Value);
             this.txtcon.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["contra"].Value);
-            this.cbotipousu.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo"].Value);
+            this.cbotipousu.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo"].Value);
             //modificar 
-            this.rbact.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["estado"].Value);
-            this.rbdes.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["estado"].Value);
             this.txtcod_usu.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;
         }
@@ -231,37 +225,16 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                        /*int act=0;
-                        if (rbact.Checked)
-                        {
-                            act = 1;
-                        }  
-                        else if (rbdes.Checked)
-                        {
-                            act = 0;
-                        }*/
-                    //probar código 
-                    int act=0;
-                       if (rbact.Checked)
-                       {
-                           act = 1;
-                       }  
-
-                       if (rbdes.Checked)
-                       {
-                           act = 0;
-                       }
-
                     if (this.IsNuevo)
                     {  
                         rpta = NUsuario.Insertar(this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), this.txtcon.Text.Trim(),
-                            this.cbotipousu.Text,Convert.ToInt32(act));
+                            this.cbotipousu.Text,1);
                         MensajeOK("Se inserto Correctamente el Registro");
                     }
                     else
                     {
                         rpta = NUsuario.Editar(Convert.ToInt32(this.txtcod_usu.Text.Trim()),this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), 
-                            this.txtcon.Text.Trim(),this.cbotipousu.Text, Convert.ToInt32(act));
+                            this.txtcon.Text.Trim(),this.cbotipousu.Text, 1);
                         MensajeOK("Se edito Correctamente el Registro");
                     }
                     this.MensajeError(rpta);

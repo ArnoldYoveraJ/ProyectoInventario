@@ -195,34 +195,43 @@ namespace CapaPresentacion
         {
             try
             {
-                DialogResult opcion;
-                opcion = MessageBox.Show("Realmente desea Anular los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (opcion == DialogResult.OK) //SI usuario dice OK
-                {
-                    string cod, rpta = "";
-                    int cod_pro;//para el codigo de producto
-                    foreach (DataGridViewRow row in dgvlistado.Rows)//Recorre todas las filas del DataGridView
-                    {
-                        if (Convert.ToBoolean(row.Cells[0].Value)) //Revisa si la fila está activada
-                        {
-                            cod = Convert.ToString(row.Cells[1].Value);
-                            //Para traer el código de producto del movimiento que se a seleccionado en el DataGridView
-                            cod_pro = Convert.ToInt16(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
+               string est;
+               est = Convert.ToString(dgvlistado.CurrentRow.Cells["estado"].Value);
+               if (est.Equals("ANULADO"))
+               {
+                   MensajeError("La Baja del Producto ya está anulado");
+               }
+               else
+               {
+                   DialogResult opcion;
+                   opcion = MessageBox.Show("Realmente desea Anular los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                   if (opcion == DialogResult.OK) //SI usuario dice OK
+                   {
+                       string cod, rpta = "";
+                       int cod_pro;//para el codigo de producto
+                       foreach (DataGridViewRow row in dgvlistado.Rows)//Recorre todas las filas del DataGridView
+                       {
+                           if (Convert.ToBoolean(row.Cells[0].Value)) //Revisa si la fila está activada
+                           {
+                               cod = Convert.ToString(row.Cells[1].Value);
+                               //Para traer el código de producto del movimiento que se a seleccionado en el DataGridView
+                               cod_pro = Convert.ToInt16(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
 
-                            rpta = NBaja_Producto.Eliminar(Convert.ToInt32(cod), cod_pro);
+                               rpta = NBaja_Producto.Eliminar(Convert.ToInt32(cod), cod_pro);
 
-                            if (rpta.Equals("OK"))
-                            {
-                                this.MensajeOK("Se Anuló correctamente el Registro");
-                            }
-                            else
-                            {
-                                this.MensajeError(rpta);
-                            }
-                        }
-                    }
-                    this.mostrar();
-                }
+                               if (rpta.Equals("OK"))
+                               {
+                                   this.MensajeOK("Se Anuló correctamente el Registro");
+                               }
+                               else
+                               {
+                                   this.MensajeError(rpta);
+                               }
+                           }
+                       }
+                       this.mostrar();
+                   }
+               }
             }
             catch (Exception ex)
             {

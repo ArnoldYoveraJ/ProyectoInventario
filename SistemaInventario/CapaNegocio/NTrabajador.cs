@@ -68,5 +68,9 @@ namespace CapaNegocio
         {
             return new DTrabajador().Mostrar_Empresa();
         }
+        public static DataTable buscar_productos_por_trabajador(string texto)
+        {
+            return new DTrabajador().Buscar_Productos_por_Trabajador(texto);
+        }
     }
 }

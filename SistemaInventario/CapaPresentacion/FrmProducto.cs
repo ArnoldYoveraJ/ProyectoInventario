@@ -399,7 +399,7 @@ namespace CapaPresentacion
             this.txtprocesador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["procesador"].Value);
             this.txtdd.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dd"].Value);
             this.mtbram.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["ram"].Value);
-            this.cboestado.SelectedValue = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_estado"].Value);
+            this.cboestado.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["tipo_estado"].Value);
             this.txtdesc.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["descripcion"].Value);
             this.cboso.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["so"].Value);
 

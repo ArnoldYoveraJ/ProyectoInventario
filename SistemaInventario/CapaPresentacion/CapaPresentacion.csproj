@@ -63,6 +63,12 @@
     <Compile Include="FrmBajaProducto.Designer.cs">
       <DependentUpon>FrmBajaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarProductos_Trabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarProductos_Trabajador.Designer.cs">
+      <DependentUpon>FrmBuscarProductos_Trabajador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBajaProducto.resx">
       <DependentUpon>FrmBajaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarProductos_Trabajador.resx">
+      <DependentUpon>FrmBuscarProductos_Trabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>

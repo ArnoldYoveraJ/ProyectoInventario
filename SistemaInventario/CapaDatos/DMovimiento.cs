@@ -248,6 +248,33 @@ namespace CapaDatos
            return dt;
        }
 
+       public DataTable Mostrar_productos_por_trabajador() //Muestra los productos asignados por trabajador
+       {
+           DataTable dt = new DataTable("movimiento");
+           SqlConnection con = new SqlConnection();
+           try
+           {
+               con.ConnectionString = Conexion.Cn;
+               con.Open();
+               SqlCommand sql1 = new SqlCommand();
+               sql1.Connection = con;
+               sql1.CommandText = "sp_mostrar_productosAsignador_trabajador";
+               sql1.CommandType = CommandType.StoredProcedure;
+
+               SqlDataAdapter da = new SqlDataAdapter(sql1);
+               da.Fill(dt);
+           }
+           catch (Exception e)
+           {
+               dt = null;
+           }
+           finally
+           {
+               if (con.State == ConnectionState.Open) { con.Close(); }
+           }
+           return dt;
+       }
+
        public DataTable Buscar_por_fechas(DateTime fecha_ini, DateTime fecha_fin)
        {
            DataTable dt = new DataTable("movimiento");

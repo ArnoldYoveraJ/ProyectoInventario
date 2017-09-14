@@ -59,6 +59,11 @@ namespace CapaNegocio
             return new DMovimiento().Mostrar();
         }
 
+        public static DataTable mostrar_productos_por_trabajador()//Muestra los productos asignados por trabajador
+        {
+            return new DMovimiento().Mostrar_productos_por_trabajador();
+        }
+
         public static DataTable buscar_movimiento(DateTime fecha_ini, DateTime fecha_fin)
         {
             return new DMovimiento().Buscar_por_fechas(fecha_ini,fecha_fin);
