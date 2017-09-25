@@ -79,9 +79,9 @@
             this.chkprodispo.AutoSize = true;
             this.chkprodispo.Location = new System.Drawing.Point(18, 62);
             this.chkprodispo.Name = "chkprodispo";
-            this.chkprodispo.Size = new System.Drawing.Size(131, 17);
+            this.chkprodispo.Size = new System.Drawing.Size(121, 17);
             this.chkprodispo.TabIndex = 9;
-            this.chkprodispo.Text = "Productos Disponibles";
+            this.chkprodispo.Text = "Equipos Disponibles";
             this.chkprodispo.UseVisualStyleBackColor = true;
             this.chkprodispo.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -171,9 +171,9 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(7, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 25);
+            this.label1.Size = new System.Drawing.Size(97, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Productos";
+            this.label1.Text = "Equipos";
             // 
             // ttmensaje
             // 
@@ -194,7 +194,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmVistaProductoIngreso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Seleccionar Producto";
+            this.Text = "Seleccionar Equipo";
             this.Load += new System.EventHandler(this.FrmVistaProductoIngreso_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

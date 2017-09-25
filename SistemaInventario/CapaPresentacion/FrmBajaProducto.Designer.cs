@@ -113,11 +113,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 103);
+            this.label6.Location = new System.Drawing.Point(31, 103);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 47;
-            this.label6.Text = "Producto:";
+            this.label6.Text = "Equipo:";
             // 
             // label7
             // 
@@ -244,9 +244,9 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 25);
+            this.label1.Size = new System.Drawing.Size(184, 25);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Baja de Productos";
+            this.label1.Text = "Baja de Equipos";
             // 
             // erroricono
             // 
@@ -367,7 +367,7 @@
             this.groupBox1.Size = new System.Drawing.Size(641, 229);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Movimientos";
+            this.groupBox1.Text = "Baja_Equipos";
             // 
             // pxImagen
             // 
@@ -453,7 +453,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmBajaProducto";
-            this.Text = "FrmBajaProducto";
+            this.Text = "Mantenimiento de Baja de Equipos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmBajaProducto_FormClosing);
             this.Load += new System.EventHandler(this.FrmBajaProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).EndInit();

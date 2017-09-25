@@ -77,7 +77,7 @@
             this.groupBox1.Size = new System.Drawing.Size(349, 228);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Información del Artículo";
+            this.groupBox1.Text = "Información del Equipo";
             // 
             // txtcod_prod
             // 
@@ -181,9 +181,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(49, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Producto:";
+            this.label5.Text = "Equipo:";
             // 
             // btncancelar
             // 
@@ -223,9 +223,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 247);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 13);
+            this.label1.Size = new System.Drawing.Size(144, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Condición de Prod Recibido:";
+            this.label1.Text = "Condición de Equi. Recibido:";
             // 
             // FrmDevolver_Articulo
             // 
@@ -238,7 +238,7 @@
             this.Controls.Add(this.txtconrec);
             this.Controls.Add(this.label1);
             this.Name = "FrmDevolver_Articulo";
-            this.Text = "FrmDevolver_Artíiculo";
+            this.Text = "Devolver Equipo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDevolver_Articulo_FormClosing);
             this.Load += new System.EventHandler(this.FrmDevolver_Artíiculo_Load);
             this.groupBox1.ResumeLayout(false);

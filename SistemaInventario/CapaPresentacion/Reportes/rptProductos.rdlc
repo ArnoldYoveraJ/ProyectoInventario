@@ -85,7 +85,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Artículo</Value>
+                              <Value>Equipo</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -801,7 +801,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reporte de Artículos</Value>
+                <Value>Reporte de Equipos</Value>
                 <Style>
                   <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>

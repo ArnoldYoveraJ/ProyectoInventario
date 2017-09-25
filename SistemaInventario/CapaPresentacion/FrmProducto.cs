@@ -29,20 +29,13 @@ namespace CapaPresentacion
             return _Instancia;
         }
         //código Nuevo
-        public void setTrabajador(string cod_tra,string nom_tra)
-        {
-            this.txtcodtra.Text = cod_tra;
-            this.txttrabajador.Text = nom_tra;
-        }
 
         public FrmProducto()
         {
             InitializeComponent();
-            this.ttmensaje.SetToolTip(this.txtnom, "Ingrese el Nombre del Producto");
-            this.ttmensaje.SetToolTip(this.pxImagen, "Seleccione la Imagen del Producto");
-            this.ttmensaje.SetToolTip(this.cbocategoria, "Seleccione el Trabajador");
+            this.ttmensaje.SetToolTip(this.txtnom, "Ingrese el Nombre del Equipo");
+            this.ttmensaje.SetToolTip(this.pxImagen, "Seleccione la Imagen del Equipo");
             this.txtcod_pro.Visible = false;
-            this.txttrabajador.ReadOnly = true;
             this.LlenarComboCategoria();
         }
         //Mostrar Mensaje de Confirmacion
@@ -53,7 +46,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Inventsario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         //Limpiar botones
         private void LimpiarBotones()
@@ -89,10 +82,7 @@ namespace CapaPresentacion
             this.txtserie.ReadOnly = !valor;
             this.cboestado.Enabled = valor;
             this.cboso.Enabled = valor;
-           // this.txttrabajador.ReadOnly = !valor;
-           // this.txtcodtra.ReadOnly = !valor;
             this.cbocategoria.Enabled = valor;
-            this.btnagregar.Enabled = valor;
 
             btnCargar.Enabled = valor;
             btnLimpiar.Enabled = valor;
@@ -196,7 +186,6 @@ namespace CapaPresentacion
             this.habilitar(false);
             this.IsNuevo = false;
             this.IsEditar = false;
-            this.txtcodtra.Visible = false;
         }
 
         private void btnCargar_Click(object sender, EventArgs e)

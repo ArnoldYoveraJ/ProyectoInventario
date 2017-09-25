@@ -54,13 +54,8 @@
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cboso = new System.Windows.Forms.ComboBox();
-            this.btnagregar = new System.Windows.Forms.Button();
             this.cbocategoria = new System.Windows.Forms.ComboBox();
-            this.txttrabajador = new System.Windows.Forms.TextBox();
-            this.txtcodtra = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -330,13 +325,8 @@
             this.groupBox1.Controls.Add(this.cboestado);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.cboso);
-            this.groupBox1.Controls.Add(this.btnagregar);
             this.groupBox1.Controls.Add(this.cbocategoria);
-            this.groupBox1.Controls.Add(this.txttrabajador);
-            this.groupBox1.Controls.Add(this.txtcodtra);
-            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtdesc);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label10);
@@ -367,7 +357,7 @@
             this.groupBox1.Size = new System.Drawing.Size(797, 275);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Productos";
+            this.groupBox1.Text = "Equipos";
             // 
             // mtbram
             // 
@@ -422,67 +412,22 @@
             this.cboso.TabIndex = 38;
             this.cboso.Text = "Windows 7 (64 Bits)";
             // 
-            // btnagregar
-            // 
-            this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnagregar.Image = global::CapaPresentacion.Properties.Resources.icono_adicionar1;
-            this.btnagregar.Location = new System.Drawing.Point(739, 183);
-            this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(36, 24);
-            this.btnagregar.TabIndex = 37;
-            this.btnagregar.UseVisualStyleBackColor = true;
-            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
-            // 
             // cbocategoria
             // 
             this.cbocategoria.FormattingEnabled = true;
-            this.cbocategoria.Location = new System.Drawing.Point(654, 239);
+            this.cbocategoria.Location = new System.Drawing.Point(629, 219);
             this.cbocategoria.Name = "cbocategoria";
-            this.cbocategoria.Size = new System.Drawing.Size(121, 21);
+            this.cbocategoria.Size = new System.Drawing.Size(138, 21);
             this.cbocategoria.TabIndex = 36;
-            // 
-            // txttrabajador
-            // 
-            this.txttrabajador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttrabajador.Location = new System.Drawing.Point(654, 213);
-            this.txttrabajador.Name = "txttrabajador";
-            this.txttrabajador.Size = new System.Drawing.Size(121, 20);
-            this.txttrabajador.TabIndex = 35;
-            // 
-            // txtcodtra
-            // 
-            this.txtcodtra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcodtra.Location = new System.Drawing.Point(654, 187);
-            this.txtcodtra.Name = "txtcodtra";
-            this.txtcodtra.Size = new System.Drawing.Size(75, 20);
-            this.txtcodtra.TabIndex = 34;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(572, 219);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 13);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Trabajador";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(578, 244);
+            this.label14.Location = new System.Drawing.Point(626, 199);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 13);
             this.label14.TabIndex = 32;
             this.label14.Text = "Categoria:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(590, 189);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Código";
             // 
             // txtdesc
             // 
@@ -684,9 +629,9 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(7, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 25);
+            this.label1.Size = new System.Drawing.Size(97, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Productos";
+            this.label1.Text = "Equipos";
             // 
             // FrmProducto
             // 
@@ -697,7 +642,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "FrmProducto";
-            this.Text = "Mantenimiento de Productos";
+            this.Text = "Mantenimiento de Equipos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmProducto_FormClosing);
             this.Load += new System.EventHandler(this.FrmProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
@@ -757,13 +702,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtdesc;
-        private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.ComboBox cbocategoria;
-        private System.Windows.Forms.TextBox txttrabajador;
-        private System.Windows.Forms.TextBox txtcodtra;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cboelegir;
         private System.Windows.Forms.ComboBox cboso;
         private System.Windows.Forms.ComboBox cboestado;

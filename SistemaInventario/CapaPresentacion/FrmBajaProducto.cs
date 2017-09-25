@@ -32,6 +32,7 @@ namespace CapaPresentacion
             InitializeComponent();
             this.ttmensaje.SetToolTip(this.txtcod_pro, "Seleccione un Producto");
             this.ttmensaje.SetToolTip(this.txtexplicacion, "Registre una explicación");
+            this.txtcod_baja.Visible = false;
         }
 
         //Mostrar Mensaje de Confirmacion
@@ -91,6 +92,7 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
+            this.dgvlistado.Columns[7].Visible = false;
         }
 
         //Mostrar
@@ -127,6 +129,7 @@ namespace CapaPresentacion
             this.LimpiarBotones();
             this.habilitar(true);
             this.txtcod_baja.Focus();
+            this.txtcod_pro.Enabled = false; //deshabilitar el código de producto
            // this.txtcod_usu.Text = Convert.ToString(cod_usu);//revisar línea para envíar el código de usuario
         }
 
@@ -148,6 +151,7 @@ namespace CapaPresentacion
                 this.IsEditar = true;
                 this.Botones();
                 this.habilitar(true);
+                this.txtcod_pro.Enabled = false;//deshabilitar el código de producto
             }
             else
             {

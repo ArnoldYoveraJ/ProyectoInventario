@@ -158,9 +158,9 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(272, 25);
+            this.label1.Size = new System.Drawing.Size(269, 25);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Registro de Movimientos";
+            this.label1.Text = "Movimientos de Equipos";
             // 
             // erroricono
             // 
@@ -435,9 +435,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(438, 99);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 47;
-            this.label6.Text = "Producto:";
+            this.label6.Text = "Equipo:";
             // 
             // label7
             // 
@@ -573,7 +573,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmMovimiento";
-            this.Text = "FrmMovimiento";
+            this.Text = "Mantenimiento de Movimiento de Equipos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMovimiento_FormClosing);
             this.Load += new System.EventHandler(this.FrmMovimiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();

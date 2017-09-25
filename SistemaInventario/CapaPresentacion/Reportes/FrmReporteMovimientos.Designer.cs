@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(1056, 440);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteMovimientos";
-            this.Text = "Reporte de Movimiento de Artículos";
+            this.Text = "Reporte de Movimiento de Equipos";
             this.Load += new System.EventHandler(this.FrmReporteMovimientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SP_MOSTRAR_MOVIMIENTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();

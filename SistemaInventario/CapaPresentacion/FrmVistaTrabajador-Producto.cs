@@ -70,7 +70,7 @@ namespace CapaPresentacion
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
             //codigo Nuevo
-           FrmProducto frm = FrmProducto.GetInstancia();
+            FrmMovimiento frm = FrmMovimiento.GetInstancia();
             string p1, p2;
 
             p1 = Convert.ToString(this.dgvlistado.CurrentRow.Cells["COD_TRABAJADOR"].Value);

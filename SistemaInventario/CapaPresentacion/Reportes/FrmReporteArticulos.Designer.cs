@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(928, 392);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteArticulos";
-            this.Text = "Reporte de Artículos";
+            this.Text = "Reporte de Equipos";
             this.Load += new System.EventHandler(this.FrmReporteArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spmostrar_productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
