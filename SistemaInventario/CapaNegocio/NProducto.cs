@@ -11,7 +11,8 @@ namespace CapaNegocio
     public class NProducto
     {
         public static string Insertar(string nom_prod, string marca, string modelo, string serie, string procesador, string dd,
-        string ram, string so, byte[] imagen, string tipo_estado, int estado, string desc, int cod_cat)
+        string ram, string so, byte[] imagen, string tipo_estado, int estado, string desc, int cod_cat,string nom_equi,string mac,
+            string dom, string licencia_win,string licencia_of,string licencia_aut)
         {
             DProducto objp = new DProducto();
             objp.Nom_Producto = nom_prod;
@@ -27,11 +28,20 @@ namespace CapaNegocio
             objp.Estado = estado;
             objp.Descripcion = desc;
             objp.Cod_Cat = cod_cat;
+
+            objp.Nombre_Equi = nom_equi;
+            objp.Mac = mac;
+            objp.Dominio = dom;
+            objp.Licencia_Win = licencia_win;
+            objp.Licencia_Of = licencia_of;
+            objp.Licencia_Aut = licencia_aut;
+
             return objp.Insertar(objp);
         }
 
         public static string Editar(int cod, string nom_prod, string marca, string modelo, string serie, string procesador, string dd,
-     string ram, string so, byte[] imagen, string tipo_estado, int estado, string desc, int cod_cat)
+     string ram, string so, byte[] imagen, string tipo_estado, int estado, string desc, int cod_cat, string nom_equi, string mac,
+            string dom, string licencia_win, string licencia_of, string licencia_aut)
         {
             DProducto objp1 = new DProducto();
             objp1.Cod_producto = cod;
@@ -48,6 +58,13 @@ namespace CapaNegocio
             objp1.Estado = estado;
             objp1.Descripcion = desc;
             objp1.Cod_Cat = cod_cat;
+
+            objp1.Nombre_Equi = nom_equi;
+            objp1.Mac = mac;
+            objp1.Dominio = dom;
+            objp1.Licencia_Win = licencia_win;
+            objp1.Licencia_Of = licencia_of;
+            objp1.Licencia_Aut = licencia_aut;
             return objp1.Editar(objp1);
         }
 

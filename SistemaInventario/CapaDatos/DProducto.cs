@@ -24,6 +24,51 @@ namespace CapaDatos
         private int _Estado;
         private string _Descripcion;
         private int _Cod_Cat;
+
+        private string _Nombre_Equi;
+        private string _Mac;
+        private string _Dominio;
+        private string _Licencia_Win;
+        private string _Licencia_Of;
+        private string _Licencia_Aut;
+
+        public string Nombre_Equi
+        {
+            get { return _Nombre_Equi; }
+            set { _Nombre_Equi = value; }
+        }
+
+        public string Mac
+        {
+            get { return _Mac; }
+            set { _Mac = value; }
+        }
+
+        public string Dominio
+        {
+            get { return _Dominio; }
+            set { _Dominio = value; }
+        }
+
+        public string Licencia_Win
+        {
+            get { return _Licencia_Win; }
+            set { _Licencia_Win = value; }
+        }
+
+        public string Licencia_Of
+        {
+            get { return _Licencia_Of; }
+            set { _Licencia_Of = value; }
+        }
+
+        public string Licencia_Aut
+        {
+            get { return _Licencia_Aut; }
+            set { _Licencia_Aut = value; }
+        }
+
+
         //private int _Cod_Trabajador;
         private string _TextoBuscar;
 
@@ -121,7 +166,8 @@ namespace CapaDatos
         public DProducto() { }
         public DProducto(int cod_pro,string nom_pro,string marca,string modelo_placa, string serie,
         string procesa, string dd, string ram, string so, byte[] imagen, string tipo_estado, int estado,
-        string descrip,int cod_cat, string  textobuscar)
+        string descrip,int cod_cat,string nom_equi,string mac,string domi,string lic_win,string lic_of,
+        string lic_aut,string  textobuscar)
         {
             this.Cod_producto = cod_pro;
             this.Nom_Producto = nom_pro;
@@ -137,6 +183,14 @@ namespace CapaDatos
             this.Estado = estado;
             this.Descripcion = descrip;
             this.Cod_Cat = cod_cat;
+
+            this.Nombre_Equi = nom_equi;
+            this.Mac = mac;
+            this.Dominio = domi;
+            this.Licencia_Of = lic_of;
+            this.Licencia_Win = lic_win;
+            this.Licencia_Aut = lic_aut;
+
             this.TextoBuscar = textobuscar;
         }
  
@@ -246,6 +300,42 @@ namespace CapaDatos
                 par13.SqlDbType = SqlDbType.Int;
                 par13.SqlValue = producto.Cod_Cat;
                 sqlcoma.Parameters.Add(par13);
+
+                SqlParameter par14 = new SqlParameter();
+                par14.ParameterName = "@nom_equi";
+                par14.SqlDbType = SqlDbType.VarChar;
+                par14.SqlValue = producto.Nombre_Equi;
+                sqlcoma.Parameters.Add(par14);
+
+                SqlParameter par15 = new SqlParameter();
+                par15.ParameterName = "@mac";
+                par15.SqlDbType = SqlDbType.VarChar;
+                par15.SqlValue = producto.Mac;
+                sqlcoma.Parameters.Add(par15);
+
+                SqlParameter par16 = new SqlParameter();
+                par16.ParameterName = "@dominio";
+                par16.SqlDbType = SqlDbType.VarChar;
+                par16.SqlValue = producto.Dominio;
+                sqlcoma.Parameters.Add(par16);
+
+                SqlParameter par17 = new SqlParameter();
+                par17.ParameterName = "@licencia_of";
+                par17.SqlDbType = SqlDbType.VarChar;
+                par17.SqlValue = producto.Licencia_Of;
+                sqlcoma.Parameters.Add(par17);
+
+                SqlParameter par18 = new SqlParameter();
+                par18.ParameterName = "@licencia_win";
+                par18.SqlDbType = SqlDbType.VarChar;
+                par18.SqlValue = producto.Licencia_Win;
+                sqlcoma.Parameters.Add(par18);
+
+                SqlParameter par19 = new SqlParameter();
+                par19.ParameterName = "@licencia_aut";
+                par19.SqlDbType = SqlDbType.VarChar;
+                par19.SqlValue = producto.Licencia_Aut;
+                sqlcoma.Parameters.Add(par19);
 
                 /*SqlParameter par14 = new SqlParameter();
                 par14.ParameterName = "@cod_trabajador";
@@ -374,6 +464,42 @@ namespace CapaDatos
                 par13.SqlDbType = SqlDbType.Int;
                 par13.SqlValue = producto.Cod_Cat;
                 sqlcoma.Parameters.Add(par13);
+
+                SqlParameter par14 = new SqlParameter();
+                par14.ParameterName = "@nom_equi";
+                par14.SqlDbType = SqlDbType.VarChar;
+                par14.SqlValue = producto.Nombre_Equi;
+                sqlcoma.Parameters.Add(par14);
+
+                SqlParameter par15 = new SqlParameter();
+                par15.ParameterName = "@mac";
+                par15.SqlDbType = SqlDbType.VarChar;
+                par15.SqlValue = producto.Mac;
+                sqlcoma.Parameters.Add(par15);
+
+                SqlParameter par16 = new SqlParameter();
+                par16.ParameterName = "@dominio";
+                par16.SqlDbType = SqlDbType.VarChar;
+                par16.SqlValue = producto.Dominio;
+                sqlcoma.Parameters.Add(par16);
+
+                SqlParameter par17 = new SqlParameter();
+                par17.ParameterName = "@licencia_of";
+                par17.SqlDbType = SqlDbType.VarChar;
+                par17.SqlValue = producto.Licencia_Of;
+                sqlcoma.Parameters.Add(par17);
+
+                SqlParameter par18 = new SqlParameter();
+                par18.ParameterName = "@licencia_win";
+                par18.SqlDbType = SqlDbType.VarChar;
+                par18.SqlValue = producto.Licencia_Win;
+                sqlcoma.Parameters.Add(par18);
+
+                SqlParameter par19 = new SqlParameter();
+                par19.ParameterName = "@licencia_aut";
+                par19.SqlDbType = SqlDbType.VarChar;
+                par19.SqlValue = producto.Licencia_Aut;
+                sqlcoma.Parameters.Add(par19);
 
              /*   SqlParameter par14 = new SqlParameter();
                 par14.ParameterName = "@cod_trabajador";

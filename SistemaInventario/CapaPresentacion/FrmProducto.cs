@@ -61,6 +61,11 @@ namespace CapaPresentacion
             this.txtdd.Text=string.Empty;
             this.txtdesc.Text=string.Empty;
             this.txtserie.Text=string.Empty;
+
+            this.txtnom_equi.Text = string.Empty;
+            this.mtmac.Text = string.Empty;
+            this.txtdom.Text = string.Empty;
+
            // this.txttrabajador.Text = string.Empty;
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
         }
@@ -83,6 +88,21 @@ namespace CapaPresentacion
             this.cboestado.Enabled = valor;
             this.cboso.Enabled = valor;
             this.cbocategoria.Enabled = valor;
+
+            this.txtnom_equi.ReadOnly = !valor;
+            this.mtmac.ReadOnly = !valor;
+            this.txtdom.ReadOnly = !valor;
+            this.rbof10.Enabled = valor;
+            this.rbof13.Enabled = valor;
+            this.rbof16.Enabled = valor;
+
+            this.rbwin7.Enabled = valor;
+            this.rbwin8.Enabled = valor;
+            this.rbwin10.Enabled = valor;
+
+            //this.chkaut13.Enabled = valor;
+           // this.chkaut15.Enabled = valor;
+
 
             btnCargar.Enabled = valor;
             btnLimpiar.Enabled = valor;
@@ -267,18 +287,67 @@ namespace CapaPresentacion
 
                     byte[] imagen= ms.GetBuffer();
 
+
+                    //licencia office
+                    string lic_ofi = "", lic_win = "", lic_aut = "";
+
+                    if (rbof10.Checked)
+                    {
+                        lic_ofi = "Office 2010";
+                    }
+                    else if (rbof13.Checked)
+                    {
+                        lic_ofi = "Office 2013";
+                    }
+                    else if (rbof16.Checked)
+                    {
+                        lic_ofi = "Office 2016";
+                    }
+
+                    //licencia windows
+                    if (rbwin7.Checked)
+                    {
+                        lic_win = "Windows 7";
+                    }
+                    else if (rbwin8.Checked)
+                    {
+                        lic_win = "Windows 8.1";
+                    }
+                    else if (rbwin10.Checked)
+                    {
+                        lic_win = "Windows 10";
+                    }
+
+                    //licencia autocad
+
+
+                    if ((chkaut13.Checked == true) && (chkaut15.Checked == true))
+                    {
+                        lic_aut = "Autocad 2013 - Autocad 2015";
+                    }
+                    else if (chkaut13.Checked)
+                    {
+                        lic_aut = "Autocad 2013";
+                    }
+                    else if (chkaut15.Checked)
+                    {
+                        lic_aut = "Autocad 2015";
+                    }
+
                     if (this.IsNuevo)
                     {
                         rpta = NProducto.Insertar(this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
                             this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.mtbram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen, this.cboestado.Text,
-                           1, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));// borra espacios y convierte en mayuscula
+                           1, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), this.txtnom_equi.Text.Trim(), this.mtmac.Text.Trim(),this.txtdom.Text.Trim(),
+                           lic_win, lic_ofi, lic_aut);// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         rpta = NProducto.Editar(Convert.ToInt16(this.txtcod_pro.Text.Trim()), this.txtnom.Text.Trim(), this.txtmarca.Text.Trim(), this.txtmodeloplaca.Text.Trim(), this.txtserie.Text.Trim(),
                             this.txtprocesador.Text.Trim(), this.txtdd.Text.Trim(), this.mtbram.Text.Trim(), Convert.ToString(this.cboso.Text), imagen, this.cboestado.Text,
-                          1, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue));
+                          1, this.txtdesc.Text.Trim(), Convert.ToInt16(this.cbocategoria.SelectedValue), this.txtnom_equi.Text.Trim(), this.mtmac.Text.Trim(), this.txtdom.Text.Trim(),
+                           lic_win, lic_ofi, lic_aut);
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -292,7 +361,6 @@ namespace CapaPresentacion
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -395,6 +463,58 @@ namespace CapaPresentacion
             /*this.txtcodtra.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_trabajador"].Value);//Current ROw: fila actual
             this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual*/
             this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
+
+           /* this.txtnom_equi.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_equi"].Value);
+            this.mtmac.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["mac"].Value);
+            this.txtdom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dominio"].Value);*/
+
+            /*string lic_win=(Convert.ToString(this.dgvlistado.CurrentRow.Cells["LICENCIA_WIN"].Value));
+
+            if (lic_win == "Windows 7")
+            {
+                this.rbwin7.Checked = true ;
+            }
+            else if (lic_win == "Windows 8.1")
+            {
+                this.rbwin8.Checked = true;
+            }
+            else if (lic_win == "Windows 10")
+            {
+                this.rbwin10.Checked = true;
+            }
+
+            string lic_ofi = (Convert.ToString(this.dgvlistado.CurrentRow.Cells["LICENCIA_OFI"].Value));
+
+            if (lic_ofi == "Office 2010")
+            {
+                this.rbof10.Checked = true;
+            }
+            else if (lic_ofi == "Office 2013")
+            {
+                this.rbof13.Checked = true;
+            }
+            else if (lic_ofi == "Office 2016")
+            {
+                this.rbof16.Checked = true;
+            }
+
+            string lic_aut = (Convert.ToString(this.dgvlistado.CurrentRow.Cells["LICENCIA_AUT"].Value));
+
+            if (lic_aut == "Autocad 2013")
+            {
+                this.chkaut13.Checked = true;
+            }
+            else if (lic_aut == "Autocad 2015")
+            {
+                this.chkaut15.Checked = true;
+            }
+            else if (lic_aut == "Autocad 2013 - Autocad 2015")
+            {
+                this.chkaut13.Checked = true;
+                this.chkaut15.Checked = true;
+            }*/
+
+
             this.txtcod_pro.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;
         }
@@ -430,6 +550,16 @@ namespace CapaPresentacion
         private void txtmarca_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.Letras(e);
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboestado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
