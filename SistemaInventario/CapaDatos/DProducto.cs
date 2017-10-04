@@ -245,21 +245,21 @@ namespace CapaDatos
                 SqlParameter par5 = new SqlParameter();
                 par5.ParameterName = "@procesador";
                 par5.SqlDbType = SqlDbType.VarChar;
-                par5.Size = 20;
+                par5.Size = 50;
                 par5.SqlValue = producto.Procesador;
                 sqlcoma.Parameters.Add(par5);
 
                 SqlParameter par6 = new SqlParameter();
                 par6.ParameterName = "@dd";
                 par6.SqlDbType = SqlDbType.VarChar;
-                par6.Size = 20;
+                par6.Size = 10;
                 par6.SqlValue = producto.DD;
                 sqlcoma.Parameters.Add(par6);
 
                 SqlParameter par7 = new SqlParameter();
                 par7.ParameterName = "@ram";
                 par7.SqlDbType = SqlDbType.VarChar;
-                par7.Size = 20;
+                par7.Size = 10;
                 par7.SqlValue = producto.Ram;
                 sqlcoma.Parameters.Add(par7);
 
@@ -291,7 +291,7 @@ namespace CapaDatos
                 SqlParameter par12 = new SqlParameter();
                 par12.ParameterName = "@descripcion";
                 par12.SqlDbType = SqlDbType.VarChar;
-                par12.Size = 50;
+                par12.Size = 80;
                 par12.SqlValue = producto.Descripcion;
                 sqlcoma.Parameters.Add(par12);
 
@@ -409,21 +409,21 @@ namespace CapaDatos
                 SqlParameter par5 = new SqlParameter();
                 par5.ParameterName = "@procesador";
                 par5.SqlDbType = SqlDbType.VarChar;
-                par5.Size = 20;
+                par5.Size = 50;
                 par5.SqlValue = producto.Procesador;
                 sqlcoma.Parameters.Add(par5);
 
                 SqlParameter par6 = new SqlParameter();
                 par6.ParameterName = "@dd";
                 par6.SqlDbType = SqlDbType.VarChar;
-                par6.Size = 20;
+                par6.Size = 10;
                 par6.SqlValue = producto.DD;
                 sqlcoma.Parameters.Add(par6);
 
                 SqlParameter par7 = new SqlParameter();
                 par7.ParameterName = "@ram";
                 par7.SqlDbType = SqlDbType.VarChar;
-                par7.Size = 20;
+                par7.Size = 10;
                 par7.SqlValue = producto.Ram;
                 sqlcoma.Parameters.Add(par7);
 
