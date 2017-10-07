@@ -448,10 +448,10 @@ namespace CapaPresentacion
             this.txtmarca.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["marca"].Value);
             this.txtmodeloplaca.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["modelo_placa"].Value);
             this.txtserie.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["serie"].Value);
-            byte[] imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
+           /* byte[] imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
             System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
             this.pxImagen.Image = Image.FromStream(ms);
-            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//para que la img se adeque al tamaño de toda la pantalla
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//para que la img se adeque al tamaño de toda la pantalla*/
 
             this.txtprocesador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["procesador"].Value);
             this.txtdd.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dd"].Value);
@@ -464,11 +464,11 @@ namespace CapaPresentacion
             this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual*/
             this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
 
-           /* this.txtnom_equi.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_equi"].Value);
+            this.txtnom_equi.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nombre_equi"].Value);
             this.mtmac.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["mac"].Value);
-            this.txtdom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dominio"].Value);*/
+            this.txtdom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dominio"].Value);
 
-            /*string lic_win=(Convert.ToString(this.dgvlistado.CurrentRow.Cells["LICENCIA_WIN"].Value));
+            string lic_win=(Convert.ToString(this.dgvlistado.CurrentRow.Cells["LICENCIA_WIN"].Value));
 
             if (lic_win == "Windows 7")
             {
@@ -512,7 +512,7 @@ namespace CapaPresentacion
             {
                 this.chkaut13.Checked = true;
                 this.chkaut15.Checked = true;
-            }*/
+            }
 
 
             this.txtcod_pro.ReadOnly = false;

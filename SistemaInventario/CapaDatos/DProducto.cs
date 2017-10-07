@@ -320,7 +320,7 @@ namespace CapaDatos
                 sqlcoma.Parameters.Add(par16);
 
                 SqlParameter par17 = new SqlParameter();
-                par17.ParameterName = "@licencia_of";
+                par17.ParameterName = "@licencia_ofi";
                 par17.SqlDbType = SqlDbType.VarChar;
                 par17.SqlValue = producto.Licencia_Of;
                 sqlcoma.Parameters.Add(par17);
@@ -484,7 +484,7 @@ namespace CapaDatos
                 sqlcoma.Parameters.Add(par16);
 
                 SqlParameter par17 = new SqlParameter();
-                par17.ParameterName = "@licencia_of";
+                par17.ParameterName = "@licencia_ofi";
                 par17.SqlDbType = SqlDbType.VarChar;
                 par17.SqlValue = producto.Licencia_Of;
                 sqlcoma.Parameters.Add(par17);
