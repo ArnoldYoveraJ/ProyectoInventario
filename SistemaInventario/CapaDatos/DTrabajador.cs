@@ -209,7 +209,8 @@ namespace CapaDatos
            catch (Exception e)
            {
                dt = null;
-           }
+               string rpta = e.Message;
+            }
            return dt;
        }
 
@@ -240,7 +241,8 @@ namespace CapaDatos
            catch (Exception e)
            {
                dt = null;
-           }
+                string rpta = e.Message;
+            }
            return dt;
        }
 
@@ -272,7 +274,8 @@ namespace CapaDatos
            catch (Exception e)
            {
                dt = null;
-           }
+                string rpta = e.Message;
+            }
            return dt;
        }
 
@@ -297,7 +300,8 @@ namespace CapaDatos
            catch (Exception e)
            {
                dt = null;
-           }
+                string rpta = e.Message;
+            }
            return dt;
        }
 
@@ -322,7 +326,8 @@ namespace CapaDatos
            catch (Exception e)
            {
                dt = null;
-           }
+                string rpta = e.Message;
+            }
            finally
            {
                if (con.State == ConnectionState.Open) { con.Close(); }

@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="dsPrincipal.cs">
+      <DependentUpon>dsPrincipal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsPrincipal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

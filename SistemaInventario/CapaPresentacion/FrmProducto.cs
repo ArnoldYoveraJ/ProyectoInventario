@@ -359,9 +359,9 @@ namespace CapaPresentacion
                 this.tabControl1.SelectedIndex = 0;
                 this.mostrar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Error: " + ex.Message.ToString(),"Sistema de Inventario",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

@@ -179,6 +179,7 @@ namespace CapaDatos
             catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             finally
             {
@@ -208,6 +209,7 @@ namespace CapaDatos
             catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             finally
             {
@@ -236,6 +238,7 @@ namespace CapaDatos
             catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             finally
             {

@@ -31,10 +31,6 @@ namespace CapaDatos
             get { return _TextoBuscar; }
             set { _TextoBuscar = value; }
         }
-        SqlConnection sqlcon;
-        SqlCommand sql1;
-        SqlDataAdapter da;
-        DataTable dt;
         //constructor
         public DCategoria() { }
 
@@ -174,7 +170,8 @@ namespace CapaDatos
 	        catch (Exception ex)
 	        {
                 dt=null;
-	        }
+                string rpta = ex.Message;
+            }
             return dt;
           }
 
@@ -201,9 +198,10 @@ namespace CapaDatos
                 SqlDataAdapter sqldat = new SqlDataAdapter(sql1);
                 sqldat.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             return dt;
         }

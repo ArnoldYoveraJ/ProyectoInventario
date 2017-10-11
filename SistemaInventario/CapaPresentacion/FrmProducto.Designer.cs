@@ -397,7 +397,6 @@
             // mtmac
             // 
             this.mtmac.Location = new System.Drawing.Point(99, 117);
-            this.mtmac.Mask = "00-00-00-00-00-00";
             this.mtmac.Name = "mtmac";
             this.mtmac.Size = new System.Drawing.Size(116, 20);
             this.mtmac.TabIndex = 55;
@@ -605,7 +604,6 @@
             // mtbram
             // 
             this.mtbram.Location = new System.Drawing.Point(508, 86);
-            this.mtbram.Mask = "99GB";
             this.mtbram.Name = "mtbram";
             this.mtbram.Size = new System.Drawing.Size(56, 20);
             this.mtbram.TabIndex = 41;
@@ -753,7 +751,7 @@
             this.txtmodeloplaca.Location = new System.Drawing.Point(324, 57);
             this.txtmodeloplaca.MaxLength = 30;
             this.txtmodeloplaca.Name = "txtmodeloplaca";
-            this.txtmodeloplaca.Size = new System.Drawing.Size(100, 20);
+            this.txtmodeloplaca.Size = new System.Drawing.Size(141, 20);
             this.txtmodeloplaca.TabIndex = 18;
             // 
             // txtmarca

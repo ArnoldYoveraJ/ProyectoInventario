@@ -216,7 +216,7 @@ namespace CapaPresentacion
             
             try
             {
-                if (this.txtnomcom.Text == string.Empty || this.cbotipousu.SelectedValue == string.Empty || this.txtcon.Text == string.Empty) //si la caja de texto está vacía--Se cambio la fila de enmedio
+                if (this.txtnomcom.Text == string.Empty || this.txtcon.Text == string.Empty) //si la caja de texto está vacía--Se cambio la fila de enmedio
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(this.txtnomcom, "Ingrese un Nombre Completo");

@@ -172,6 +172,7 @@ namespace CapaDatos
             catch (Exception e)
             {
                 dt = null;
+                string rpta=e.Message;
             }
             return dt;
 
@@ -201,9 +202,10 @@ namespace CapaDatos
                 SqlDataAdapter da = new SqlDataAdapter(sql1); //falta (SqlDataAdapter(sql1))
                 da.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             finally
             {

@@ -7,9 +7,9 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="33" ViewPortY="61" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:SP_MOSTRAR_MOVIMIENTO" ZOrder="4" X="360" Y="71" Height="305" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="254" />
-    <Shape ID="DesignTable:spmostrar_producto" ZOrder="3" X="43" Y="77" Height="400" Width="267" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="332" />
-    <Shape ID="DesignTable:spmostrar_baja_producto" ZOrder="2" X="613" Y="376" Height="229" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:spmostrar_trabajador" ZOrder="1" X="364" Y="395" Height="267" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:spmostrar_baja_producto" ZOrder="3" X="613" Y="376" Height="229" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:spmostrar_trabajador" ZOrder="2" X="364" Y="395" Height="267" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:spmostrar_producto" ZOrder="1" X="51" Y="77" Height="438" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="370" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

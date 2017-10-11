@@ -474,6 +474,7 @@ namespace CapaDatos
                 SqlParameter par15 = new SqlParameter();
                 par15.ParameterName = "@mac";
                 par15.SqlDbType = SqlDbType.VarChar;
+                par12.Size = 18;
                 par15.SqlValue = producto.Mac;
                 sqlcoma.Parameters.Add(par15);
 
@@ -571,9 +572,10 @@ namespace CapaDatos
                 SqlDataAdapter sqldat = new SqlDataAdapter(sql1);
                 sqldat.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             return dt;
         }
@@ -626,9 +628,10 @@ namespace CapaDatos
                 SqlDataAdapter sqldat = new SqlDataAdapter(sql1);
                 sqldat.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             return dt;
         }
@@ -655,9 +658,10 @@ namespace CapaDatos
                 SqlDataAdapter sqldat = new SqlDataAdapter(sql1);
                 sqldat.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             return dt;
         }
@@ -684,9 +688,10 @@ namespace CapaDatos
                 SqlDataAdapter sqldat = new SqlDataAdapter(sql1);
                 sqldat.Fill(dt);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 dt = null;
+                string rpta = e.Message;
             }
             return dt;
         }
