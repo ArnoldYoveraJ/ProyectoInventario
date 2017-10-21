@@ -57,13 +57,16 @@
               <Width>2.68475cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.4785cm</Width>
+              <Width>2.14313cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.36893cm</Width>
+              <Width>2.68475cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.4525cm</Width>
+              <Width>2.02497cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.73813cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.76459cm</Width>
@@ -258,6 +261,42 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>AREA</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Teal</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox15">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -301,7 +340,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Uuario</Value>
+                              <Value>Usuario</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -618,6 +657,41 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="AREA">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!AREA.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>Gray</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>AREA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="NOM_PRODUCTO">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -801,6 +875,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -817,7 +892,7 @@
         <Top>3.06599cm</Top>
         <Left>0.635cm</Left>
         <Height>1.70271cm</Height>
-        <Width>26.14064cm</Width>
+        <Width>26.43169cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -999,6 +1074,14 @@
           <DataField>COD_MOV</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="NOM_PRODUCTO">
+          <DataField>NOM_PRODUCTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TRABAJADOR">
+          <DataField>TRABAJADOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="FECHA">
           <DataField>FECHA</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
@@ -1009,30 +1092,6 @@
         </Field>
         <Field Name="ESTADO">
           <DataField>ESTADO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="COD_USU">
-          <DataField>COD_USU</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="USUARIO">
-          <DataField>USUARIO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="COD_TRABAJADOR">
-          <DataField>COD_TRABAJADOR</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TRABAJADOR">
-          <DataField>TRABAJADOR</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="COD_PRODUCTO">
-          <DataField>COD_PRODUCTO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NOM_PRODUCTO">
-          <DataField>NOM_PRODUCTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="MOTIVO">
@@ -1047,10 +1106,30 @@
           <DataField>CONDICION_RECIBIDO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="COD_USU">
+          <DataField>COD_USU</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="USUARIO">
+          <DataField>USUARIO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COD_TRABAJADOR">
+          <DataField>COD_TRABAJADOR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="COD_PRODUCTO">
+          <DataField>COD_PRODUCTO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AREA">
+          <DataField>AREA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsPrincipal</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Arnold Yovera Jibaja\ProyectoInventario\SistemaInventario\CapaPresentacion\dsPrincipal.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\arnold.yovera\Source\Repos\ProyectoInventario\SistemaInventario\CapaPresentacion\dsPrincipal.xsd</rd:SchemaPath>
         <rd:TableName>SP_MOSTRAR_MOVIMIENTO</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

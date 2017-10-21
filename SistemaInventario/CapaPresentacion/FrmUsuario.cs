@@ -16,6 +16,7 @@ namespace CapaPresentacion
         private bool IsNuevo = false;
         private bool IsEditar = false;
         Validar v = new Validar(); // Instanciar la clase Validar
+        //private string cad;
         public FrmUsuario()
         {
             InitializeComponent();
@@ -81,6 +82,7 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
+            this.dgvlistado.Columns[4].Visible = false;
         }
 
         //Mostrar
@@ -225,16 +227,18 @@ namespace CapaPresentacion
                 }
                 else
                 {
+                    string cad;
+                    cad = Seguridad.Encriptar(txtcon.Text);
                     if (this.IsNuevo)
                     {  
-                        rpta = NUsuario.Insertar(this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), this.txtcon.Text.Trim(),
-                            this.cbotipousu.Text,1);
+                        rpta = NUsuario.Insertar(this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), cad/* this.txtcon.Text.Trim()*/,
+                        this.cbotipousu.Text,1);
                         MensajeOK("Se inserto Correctamente el Registro");
                     }
                     else
                     {
                         rpta = NUsuario.Editar(Convert.ToInt32(this.txtcod_usu.Text.Trim()),this.txtnomcom.Text.Trim(), this.txtusu.Text.Trim(), 
-                            this.txtcon.Text.Trim(),this.cbotipousu.Text, 1);
+                            cad/*this.txtcon.Text.Trim()*/,this.cbotipousu.Text, 1);
                         MensajeOK("Se edito Correctamente el Registro");
                     }
                     this.MensajeError(rpta);
@@ -303,6 +307,12 @@ namespace CapaPresentacion
         private void txtusu_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.Letras(e);
+        }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            FrmReporteUsuarios reUsu = new FrmReporteUsuarios();
+            reUsu.ShowDialog();
         }
     }
 }

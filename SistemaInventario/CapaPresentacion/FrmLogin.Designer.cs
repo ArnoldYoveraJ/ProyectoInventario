@@ -97,7 +97,7 @@
             this.txtcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcon.Location = new System.Drawing.Point(96, 80);
-            this.txtcon.MaxLength = 12;
+            this.txtcon.MaxLength = 20;
             this.txtcon.Name = "txtcon";
             this.txtcon.PasswordChar = '*';
             this.txtcon.Size = new System.Drawing.Size(167, 21);

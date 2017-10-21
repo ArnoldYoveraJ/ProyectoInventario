@@ -283,5 +283,35 @@ namespace CapaDatos
             }
             return dt;
         }
+
+        public DataTable ObtenerContrasena(DUsuario usuario)
+        {
+            DataTable dt = new DataTable("usuario");
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = Conexion.Cn;
+                con.Open();
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = con;
+                sql1.CommandText = "spobtener_contraseña_por_Usuario";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                sql1.Parameters.AddWithValue("@usuario", usuario.Usuario);
+
+                SqlDataAdapter da = new SqlDataAdapter(sql1);
+                da.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                dt = null;
+                string rpta = e.Message;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+            return dt;
+        }
     }
 }

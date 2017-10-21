@@ -329,7 +329,7 @@
             this.cboarea.FormattingEnabled = true;
             this.cboarea.Location = new System.Drawing.Point(84, 141);
             this.cboarea.Name = "cboarea";
-            this.cboarea.Size = new System.Drawing.Size(121, 21);
+            this.cboarea.Size = new System.Drawing.Size(160, 21);
             this.cboarea.TabIndex = 18;
             // 
             // label8

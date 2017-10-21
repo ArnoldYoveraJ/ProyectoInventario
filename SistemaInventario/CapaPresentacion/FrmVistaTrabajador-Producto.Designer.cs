@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.cbobuscar = new System.Windows.Forms.ComboBox();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
@@ -52,6 +53,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbobuscar);
             this.tabPage1.Controls.Add(this.dgvlistado);
             this.tabPage1.Controls.Add(this.txtbuscar);
             this.tabPage1.Controls.Add(this.btnbuscar);
@@ -94,7 +96,7 @@
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbuscar.Location = new System.Drawing.Point(66, 15);
+            this.txtbuscar.Location = new System.Drawing.Point(65, 38);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(132, 20);
             this.txtbuscar.TabIndex = 6;
@@ -157,6 +159,18 @@
             this.tabControl1.Size = new System.Drawing.Size(479, 270);
             this.tabControl1.TabIndex = 2;
             // 
+            // cbobuscar
+            // 
+            this.cbobuscar.FormattingEnabled = true;
+            this.cbobuscar.Items.AddRange(new object[] {
+            "DNI",
+            "Apellidos"});
+            this.cbobuscar.Location = new System.Drawing.Point(65, 14);
+            this.cbobuscar.Name = "cbobuscar";
+            this.cbobuscar.Size = new System.Drawing.Size(84, 21);
+            this.cbobuscar.TabIndex = 10;
+            this.cbobuscar.Text = "DNI";
+            // 
             // FrmVistaTrabajador_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,5 +206,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider erroricono;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.ComboBox cbobuscar;
     }
 }

@@ -173,11 +173,23 @@
     <Compile Include="Reportes\FrmReporteMovimientos.Designer.cs">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReporteProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteProveedores.Designer.cs">
+      <DependentUpon>FrmReporteProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmReporteTrabajadores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\FrmReporteTrabajadores.Designer.cs">
       <DependentUpon>FrmReporteTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteUsuarios.Designer.cs">
+      <DependentUpon>FrmReporteUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmReporte_BajaProducto.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,7 @@
     <Compile Include="Reportes\FrmReporte_BajaProducto.Designer.cs">
       <DependentUpon>FrmReporte_BajaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad.cs" />
     <Compile Include="Validar.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -252,16 +265,25 @@
     <EmbeddedResource Include="Reportes\FrmReporteMovimientos.resx">
       <DependentUpon>FrmReporteMovimientos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteProveedores.resx">
+      <DependentUpon>FrmReporteProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteTrabajadores.resx">
       <DependentUpon>FrmReporteTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteUsuarios.resx">
+      <DependentUpon>FrmReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporte_BajaProducto.resx">
       <DependentUpon>FrmReporte_BajaProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\rptBajaProductos.rdlc" />
     <EmbeddedResource Include="Reportes\rptMovimientos.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\rptProveedores.rdlc" />
     <EmbeddedResource Include="Reportes\rptTrabajador.rdlc" />
+    <EmbeddedResource Include="Reportes\rptUsuarios.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

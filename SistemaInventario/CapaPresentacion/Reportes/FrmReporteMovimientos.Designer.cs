@@ -72,6 +72,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteMovimientos";
             this.Text = "Reporte de Movimiento de Equipos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmReporteMovimientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SP_MOSTRAR_MOVIMIENTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();

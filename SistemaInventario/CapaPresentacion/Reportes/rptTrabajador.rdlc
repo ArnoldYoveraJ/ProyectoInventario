@@ -60,10 +60,10 @@
               <Width>1.83854cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.81775cm</Width>
+              <Width>2.98192cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60583cm</Width>
+              <Width>1.75916cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -659,7 +659,7 @@
         <Top>2.16641cm</Top>
         <Left>0.87975cm</Left>
         <Height>1.80854cm</Height>
-        <Width>18.07983cm</Width>
+        <Width>18.39733cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -880,7 +880,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsPrincipal</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Arnold Yovera Jibaja\ProyectoInventario\SistemaInventario\CapaPresentacion\dsPrincipal.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\arnold.yovera\Source\Repos\ProyectoInventario\SistemaInventario\CapaPresentacion\dsPrincipal.xsd</rd:SchemaPath>
         <rd:TableName>spmostrar_trabajador</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

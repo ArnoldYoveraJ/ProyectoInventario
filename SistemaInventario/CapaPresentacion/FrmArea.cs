@@ -202,7 +202,14 @@ namespace CapaPresentacion
         private void dgvlistado_DoubleClick(object sender, EventArgs e)
         {
             this.txtcod.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["cod_area"].Value);
-            this.txtnom.Text= Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_area"].Value);
+            if(this.txtnom.Text==string.Empty)
+            {
+                this.txtnom.Text = "-";
+            }
+            else
+            {
+                this.txtnom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nom_area"].Value);
+            }
             this.txtcod.ReadOnly = false;
             this.tabControl1.SelectedIndex = 1;
         }

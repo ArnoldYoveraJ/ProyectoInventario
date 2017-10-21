@@ -109,7 +109,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1184, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1354, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
@@ -184,42 +184,42 @@
             // productosToolStripMenuItem1
             // 
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
-            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.productosToolStripMenuItem1.Text = "Equipos";
             this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
             // trabajadoresToolStripMenuItem
             // 
             this.trabajadoresToolStripMenuItem.Name = "trabajadoresToolStripMenuItem";
-            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.trabajadoresToolStripMenuItem.Text = "Trabajadores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // areasToolStripMenuItem
             // 
             this.areasToolStripMenuItem.Name = "areasToolStripMenuItem";
-            this.areasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.areasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.areasToolStripMenuItem.Text = "Areas";
             this.areasToolStripMenuItem.Click += new System.EventHandler(this.areasToolStripMenuItem_Click);
             // 
@@ -234,7 +234,7 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.productosToolStripMenuItem.Text = "Equipos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
@@ -386,7 +386,7 @@
             this.helpToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1184, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1354, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -461,9 +461,9 @@
             this.statusStrip.BackColor = System.Drawing.Color.White;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 719);
+            this.statusStrip.Location = new System.Drawing.Point(0, 711);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1184, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1354, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -480,7 +480,7 @@
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button12.Location = new System.Drawing.Point(1143, 132);
+            this.button12.Location = new System.Drawing.Point(460, 588);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(107, 107);
             this.button12.TabIndex = 16;
@@ -495,7 +495,7 @@
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button11.Location = new System.Drawing.Point(770, 313);
+            this.button11.Location = new System.Drawing.Point(347, 588);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(107, 107);
             this.button11.TabIndex = 15;
@@ -510,7 +510,7 @@
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button10.Location = new System.Drawing.Point(1256, 200);
+            this.button10.Location = new System.Drawing.Point(573, 588);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(107, 107);
             this.button10.TabIndex = 14;
@@ -525,7 +525,7 @@
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button9.Location = new System.Drawing.Point(1283, 313);
+            this.button9.Location = new System.Drawing.Point(798, 588);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(107, 107);
             this.button9.TabIndex = 13;
@@ -539,7 +539,7 @@
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button8.Location = new System.Drawing.Point(1256, 426);
+            this.button8.Location = new System.Drawing.Point(1246, 588);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(107, 107);
             this.button8.TabIndex = 12;
@@ -554,7 +554,7 @@
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button7.Location = new System.Drawing.Point(1143, 482);
+            this.button7.Location = new System.Drawing.Point(1134, 588);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 107);
             this.button7.TabIndex = 11;
@@ -568,7 +568,7 @@
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button6.Location = new System.Drawing.Point(1030, 533);
+            this.button6.Location = new System.Drawing.Point(910, 588);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 107);
             this.button6.TabIndex = 10;
@@ -582,7 +582,7 @@
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button5.Location = new System.Drawing.Point(917, 482);
+            this.button5.Location = new System.Drawing.Point(686, 588);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 107);
             this.button5.TabIndex = 9;
@@ -597,7 +597,7 @@
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button4.Location = new System.Drawing.Point(804, 426);
+            this.button4.Location = new System.Drawing.Point(1022, 588);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 107);
             this.button4.TabIndex = 8;
@@ -611,7 +611,7 @@
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button3.Location = new System.Drawing.Point(804, 200);
+            this.button3.Location = new System.Drawing.Point(234, 588);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 107);
             this.button3.TabIndex = 7;
@@ -626,7 +626,7 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button2.Location = new System.Drawing.Point(917, 132);
+            this.button2.Location = new System.Drawing.Point(121, 588);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 107);
             this.button2.TabIndex = 6;
@@ -641,7 +641,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.button1.Location = new System.Drawing.Point(1030, 87);
+            this.button1.Location = new System.Drawing.Point(8, 588);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 107);
             this.button1.TabIndex = 5;
@@ -654,7 +654,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(1003, 71);
+            this.label1.Location = new System.Drawing.Point(1217, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 18;
@@ -665,7 +665,7 @@
             this.usu.AutoSize = true;
             this.usu.BackColor = System.Drawing.Color.Transparent;
             this.usu.ForeColor = System.Drawing.Color.DarkRed;
-            this.usu.Location = new System.Drawing.Point(1075, 71);
+            this.usu.Location = new System.Drawing.Point(1289, 65);
             this.usu.Name = "usu";
             this.usu.Size = new System.Drawing.Size(35, 13);
             this.usu.TabIndex = 19;
@@ -676,7 +676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1184, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.usu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button12);

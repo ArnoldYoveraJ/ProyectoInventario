@@ -28,13 +28,37 @@ namespace CapaPresentacion
         {
 
         }
+        
 
         private void btningresar_Click(object sender, EventArgs e)
         {
-            DataTable datos = CapaNegocio.NUsuario.Login(this.txtusu.Text, this.txtcon.Text);
-            //validar di esxiste el usuario
+            if (txtusu.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese un Usuario", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }else if(txtcon.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese una Contraseña", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            if(datos.Rows.Count==0)
+            //obtener contraseña a través del Usuario
+            DataTable datos1 = CapaNegocio.NUsuario.ObtenerContrasena(txtusu.Text);
+
+            string contra,contraIng;
+            contra = datos1.Rows[0][0].ToString(); //contraseña de BD
+            contraIng = Seguridad.Encriptar(txtcon.Text);//Encriptar contraseña ingresada
+
+            if(contraIng!= contra) //si contra encriptada es igual a la obtenida en la BD
+            {
+                MessageBox.Show("Error al autenticarse", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //obtener Usuario a traves del usuario y la contraseña encriptada ingresada. 
+            DataTable datos = CapaNegocio.NUsuario.Login(this.txtusu.Text, contraIng);
+            //validar si esxiste el usuario
+            if (datos.Rows.Count == 0)
             {
                 MessageBox.Show("No tiene acceso al Sistema", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

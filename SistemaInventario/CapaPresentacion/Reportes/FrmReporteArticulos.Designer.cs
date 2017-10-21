@@ -72,6 +72,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteArticulos";
             this.Text = "Reporte de Equipos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmReporteArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spmostrar_productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();

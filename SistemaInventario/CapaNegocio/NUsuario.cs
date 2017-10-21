@@ -66,5 +66,12 @@ namespace CapaNegocio
             obj.Contra = contra;
             return obj.Login(obj);
         }
+
+        public static DataTable ObtenerContrasena(string usu)
+        {
+            DUsuario obju = new DUsuario();
+            obju.Usuario = usu;
+            return obju.ObtenerContrasena(obju);
+        }
     }
 }

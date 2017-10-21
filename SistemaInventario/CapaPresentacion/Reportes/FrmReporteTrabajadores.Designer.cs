@@ -72,6 +72,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteTrabajadores";
             this.Text = "Reporte de Trabajadores";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmReporteTrabajadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spmostrar_trabajadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();

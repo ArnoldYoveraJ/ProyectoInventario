@@ -48,14 +48,43 @@ namespace CapaPresentacion
             mostrar();
         }
 
+        private void buscar()
+        {
+            this.dgvlistado.DataSource = NTrabajador.Buscar(this.txtbuscar.Text);
+            this.ocultarcolumnas(); 
+            this.lbltotal.Text = "Total: " + Convert.ToString(dgvlistado.Rows.Count);
+        }
+
+        private void buscar_trabajador_dni()
+        {
+            this.dgvlistado.DataSource = NTrabajador.Buscar_Trabajador_dni(this.txtbuscar.Text);
+            this.ocultarcolumnas();
+            this.lbltotal.Text = "Total: " + dgvlistado.Rows.Count;
+        }
+
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            buscar_nombre();
+            if (cbobuscar.Text.Equals("DNI"))
+            {
+                buscar_trabajador_dni();
+            }
+            else if (cbobuscar.Text.Equals("Apellidos"))
+            {
+                buscar();
+            }
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            buscar_nombre();
+            //buscar_nombre();
+            if (cbobuscar.Text.Equals("DNI"))
+            {
+                buscar_trabajador_dni();
+            }
+            else if (cbobuscar.Text.Equals("Apellidos"))
+            {
+                buscar();
+            }
         }
 
         private void dgvlistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
