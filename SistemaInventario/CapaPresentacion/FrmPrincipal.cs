@@ -13,6 +13,7 @@ namespace CapaPresentacion
     public partial class FrmPrincipal : Form
     {
         private int childFormNumber = 0;
+        public string Nom_usu = "";
         public string cod_usu="";
         public string nom_com = "";
         public string tipo = "";
@@ -129,7 +130,8 @@ namespace CapaPresentacion
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             GestionUsuario();
-           // usu.Text = this.cod_usu;
+            usu.Text = FrmLogin.Nombre_Usuario;
+            lbltipo.Text = FrmLogin.Tipo_Usuario;
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)

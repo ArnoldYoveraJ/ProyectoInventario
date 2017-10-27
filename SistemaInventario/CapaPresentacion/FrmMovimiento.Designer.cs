@@ -103,7 +103,7 @@
             this.txtcod_usu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcod_usu.Location = new System.Drawing.Point(80, 73);
             this.txtcod_usu.Name = "txtcod_usu";
-            this.txtcod_usu.Size = new System.Drawing.Size(75, 20);
+            this.txtcod_usu.Size = new System.Drawing.Size(48, 20);
             this.txtcod_usu.TabIndex = 34;
             // 
             // lblpro
@@ -358,7 +358,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(17, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(644, 266);
+            this.groupBox1.Size = new System.Drawing.Size(661, 266);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Movimientos";
@@ -407,7 +407,7 @@
             // 
             this.btnbuscar_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar_producto.Image = global::CapaPresentacion.Properties.Resources.icono_adicionar1;
-            this.btnbuscar_producto.Location = new System.Drawing.Point(580, 71);
+            this.btnbuscar_producto.Location = new System.Drawing.Point(607, 71);
             this.btnbuscar_producto.Name = "btnbuscar_producto";
             this.btnbuscar_producto.Size = new System.Drawing.Size(36, 24);
             this.btnbuscar_producto.TabIndex = 50;
@@ -417,23 +417,23 @@
             // txtproducto
             // 
             this.txtproducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtproducto.Location = new System.Drawing.Point(499, 99);
+            this.txtproducto.Location = new System.Drawing.Point(487, 99);
             this.txtproducto.Name = "txtproducto";
-            this.txtproducto.Size = new System.Drawing.Size(121, 20);
+            this.txtproducto.Size = new System.Drawing.Size(156, 20);
             this.txtproducto.TabIndex = 49;
             // 
             // txtcod_pro
             // 
             this.txtcod_pro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcod_pro.Location = new System.Drawing.Point(499, 73);
+            this.txtcod_pro.Location = new System.Drawing.Point(487, 73);
             this.txtcod_pro.Name = "txtcod_pro";
-            this.txtcod_pro.Size = new System.Drawing.Size(75, 20);
+            this.txtcod_pro.Size = new System.Drawing.Size(48, 20);
             this.txtcod_pro.TabIndex = 48;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(438, 99);
+            this.label6.Location = new System.Drawing.Point(428, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 47;
@@ -442,7 +442,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(448, 73);
+            this.label7.Location = new System.Drawing.Point(438, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 46;
@@ -472,7 +472,7 @@
             this.txtcod_tra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcod_tra.Location = new System.Drawing.Point(289, 73);
             this.txtcod_tra.Name = "txtcod_tra";
-            this.txtcod_tra.Size = new System.Drawing.Size(75, 20);
+            this.txtcod_tra.Size = new System.Drawing.Size(48, 20);
             this.txtcod_tra.TabIndex = 43;
             // 
             // label4

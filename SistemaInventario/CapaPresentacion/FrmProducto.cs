@@ -100,9 +100,11 @@ namespace CapaPresentacion
             this.rbwin8.Enabled = valor;
             this.rbwin10.Enabled = valor;
 
+            this.chkaut13.Enabled = valor;
+            this.chkaut15.Enabled = valor;
+
             //this.chkaut13.Enabled = valor;
            // this.chkaut15.Enabled = valor;
-
 
             btnCargar.Enabled = valor;
             btnLimpiar.Enabled = valor;
@@ -449,10 +451,10 @@ namespace CapaPresentacion
             this.txtmodeloplaca.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["modelo_placa"].Value);
             this.txtserie.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["serie"].Value);
 
-             byte[] imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
+             /*byte[] imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
              System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
              this.pxImagen.Image = Image.FromStream(ms);
-             this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//para que la img se adeque al tamaño de toda la pantalla
+             this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//para que la img se adeque al tamaño de toda la pantalla*/
 
             this.txtprocesador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["procesador"].Value);
             this.txtdd.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dd"].Value);

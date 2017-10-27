@@ -80,6 +80,8 @@ namespace CapaPresentacion
         private void ocultarcolumanas(){
             this.dgvlistado.Columns[0].Visible=false;
             this.dgvlistado.Columns[1].Visible=false;
+            this.dgvlistado.Columns[7].Visible = false;
+            this.dgvlistado.Columns[9].Visible = false;
         }
 
         private void mostrar(){

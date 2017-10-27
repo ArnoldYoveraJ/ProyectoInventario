@@ -12,6 +12,8 @@ namespace CapaPresentacion
 {
     public partial class FrmLogin : Form
     {
+        public static string Nombre_Usuario;//para enviar el Nombre de usuario al frmprincipal
+        public static string Tipo_Usuario;//para enviar el Tipo de usuario al frmprincipal
         Validar v = new Validar(); // Instanciar la clase Validar
         public FrmLogin()
         {
@@ -49,7 +51,7 @@ namespace CapaPresentacion
             contra = datos1.Rows[0][0].ToString(); //contraseña de BD
             contraIng = Seguridad.Encriptar(txtcon.Text);//Encriptar contraseña ingresada
 
-            if(contraIng!= contra) //si contra encriptada es igual a la obtenida en la BD
+           if(contraIng!= contra) //si contra encriptada es igual a la obtenida en la BD
             {
                 MessageBox.Show("Error al autenticarse", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -58,6 +60,7 @@ namespace CapaPresentacion
             //obtener Usuario a traves del usuario y la contraseña encriptada ingresada. 
             DataTable datos = CapaNegocio.NUsuario.Login(this.txtusu.Text, contraIng);
             //validar si esxiste el usuario
+
             if (datos.Rows.Count == 0)
             {
                 MessageBox.Show("No tiene acceso al Sistema", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,6 +72,8 @@ namespace CapaPresentacion
                 frm.cod_usu = datos.Rows[0][0].ToString();
                 frm.nom_com = datos.Rows[0][1].ToString();
                 frm.tipo = datos.Rows[0][2].ToString();
+                Nombre_Usuario= datos.Rows[0][1].ToString();//Obtenemos el Nombre de usuario para pasarlo a FrmPrincipal
+                Tipo_Usuario = frm.tipo;//Obtenemos el Tipo de usuario para pasarlo a FrmPrincipal
                 frm.Show();
                 this.Hide();
             }

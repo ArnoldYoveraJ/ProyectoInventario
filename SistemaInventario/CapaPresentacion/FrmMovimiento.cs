@@ -128,9 +128,9 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
-            this.dgvlistado.Columns[10].Visible = false;
-            this.dgvlistado.Columns[12].Visible = false;
+            this.dgvlistado.Columns[11].Visible = false;
             this.dgvlistado.Columns[13].Visible = false;
+            this.dgvlistado.Columns[14].Visible = false;
         }
 
         //Mostrar
