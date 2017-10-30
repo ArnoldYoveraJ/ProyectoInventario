@@ -67,7 +67,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Inventsario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         //Limpiar botones
         private void LimpiarBotones()
@@ -131,6 +131,7 @@ namespace CapaPresentacion
             this.dgvlistado.Columns[11].Visible = false;
             this.dgvlistado.Columns[13].Visible = false;
             this.dgvlistado.Columns[14].Visible = false;
+            this.dgvlistado.Columns[15].Visible = false;
         }
 
         //Mostrar
@@ -163,8 +164,11 @@ namespace CapaPresentacion
 
         private void btnbuscar_producto_Click(object sender, EventArgs e)
         {
-            FrmVistaProductoIngreso objmov = new FrmVistaProductoIngreso();
-            objmov.ShowDialog();
+            /* FrmVistaProductoIngreso objmov = new FrmVistaProductoIngreso();
+             objmov.ShowDialog();*/
+
+            FrmVistaProductoMovimiento objProMov = new FrmVistaProductoMovimiento();
+            objProMov.ShowDialog();
         }
 
         private void btnbuscar_trabajador_Click(object sender, EventArgs e)
@@ -232,6 +236,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
+
                     if (this.IsNuevo)
                     {
                         rpta = NMovimiento.insertar_movimiento(this.dtfecha.Value, this.txtcondicion.Text.Trim(), cod_usu,
@@ -305,19 +310,24 @@ namespace CapaPresentacion
             else
             {
                 //Para enviar los datos a FrmDevolver_Artículo
-                FrmDevolver_Articulo form1 = FrmDevolver_Articulo.GetInstancia();
-                form1.Show();
-                string p1, p2, p3, p4, p5;
-                int p7;
-                DateTime p6;
-                p1 = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_mov"].Value);
-                p2 = Convert.ToString(dgvlistado.CurrentRow.Cells["usuario"].Value);
-                p3 = Convert.ToString(dgvlistado.CurrentRow.Cells["trabajador"].Value);
-                p4 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
-                p5 = Convert.ToString(dgvlistado.CurrentRow.Cells["condicion"].Value);
-                p6 = Convert.ToDateTime(dgvlistado.CurrentRow.Cells["fecha"].Value);
-                p7 = Convert.ToInt32(dgvlistado.CurrentRow.Cells["COD_PRODUCTO"].Value);
-                form1.setMovimiento(p1, p2, p3, p4, p5, p6, p7);
+                    FrmDevolver_Articulo form1 = FrmDevolver_Articulo.GetInstancia();
+                    form1.Show();
+                    string p1, p2, p3, p4, p5;
+                    DateTime p6;
+                    int p7;
+                    byte[] imagenBuffer;
+
+                    p1 = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_mov"].Value);
+                    p2 = Convert.ToString(dgvlistado.CurrentRow.Cells["usuario"].Value);
+                    p3 = Convert.ToString(dgvlistado.CurrentRow.Cells["trabajador"].Value);
+                    p4 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
+                    p5 = Convert.ToString(dgvlistado.CurrentRow.Cells["condicion"].Value);
+                    p6 = Convert.ToDateTime(dgvlistado.CurrentRow.Cells["fecha"].Value);
+                    p7 = Convert.ToInt32(dgvlistado.CurrentRow.Cells["COD_PRODUCTO"].Value);
+
+                    imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
+                    form1.setMovimiento(p1, p2, p3, p4, p5, p6, p7,imagenBuffer);
             }
             /*
             try

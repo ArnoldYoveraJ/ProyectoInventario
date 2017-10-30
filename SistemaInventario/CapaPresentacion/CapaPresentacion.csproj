@@ -138,6 +138,12 @@
     <Compile Include="FrmVistaProductoIngreso.Designer.cs">
       <DependentUpon>FrmVistaProductoIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVistaProductoMovimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVistaProductoMovimiento.Designer.cs">
+      <DependentUpon>FrmVistaProductoMovimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVistaProveedorIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVistaProductoIngreso.resx">
       <DependentUpon>FrmVistaProductoIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVistaProductoMovimiento.resx">
+      <DependentUpon>FrmVistaProductoMovimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVistaProveedorIngreso.resx">
       <DependentUpon>FrmVistaProveedorIngreso.cs</DependentUpon>

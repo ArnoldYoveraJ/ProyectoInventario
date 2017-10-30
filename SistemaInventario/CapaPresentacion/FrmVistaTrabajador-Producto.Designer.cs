@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbobuscar = new System.Windows.Forms.ComboBox();
             this.dgvlistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtbuscar = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.cbobuscar = new System.Windows.Forms.ComboBox();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
@@ -62,10 +62,22 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(471, 244);
+            this.tabPage1.Size = new System.Drawing.Size(521, 244);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cbobuscar
+            // 
+            this.cbobuscar.FormattingEnabled = true;
+            this.cbobuscar.Items.AddRange(new object[] {
+            "DNI",
+            "Apellidos"});
+            this.cbobuscar.Location = new System.Drawing.Point(65, 14);
+            this.cbobuscar.Name = "cbobuscar";
+            this.cbobuscar.Size = new System.Drawing.Size(84, 21);
+            this.cbobuscar.TabIndex = 10;
+            this.cbobuscar.Text = "DNI";
             // 
             // dgvlistado
             // 
@@ -80,7 +92,7 @@
             this.dgvlistado.Name = "dgvlistado";
             this.dgvlistado.ReadOnly = true;
             this.dgvlistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlistado.Size = new System.Drawing.Size(428, 168);
+            this.dgvlistado.Size = new System.Drawing.Size(496, 168);
             this.dgvlistado.TabIndex = 7;
             this.dgvlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlistado_CellContentClick);
             this.dgvlistado.DoubleClick += new System.EventHandler(this.dgvlistado_DoubleClick);
@@ -107,7 +119,7 @@
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.buscar;
             this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscar.Location = new System.Drawing.Point(372, 12);
+            this.btnbuscar.Location = new System.Drawing.Point(440, 12);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 3;
@@ -119,7 +131,7 @@
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(369, 48);
+            this.lbltotal.Location = new System.Drawing.Point(424, 48);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(39, 13);
             this.lbltotal.TabIndex = 2;
@@ -156,27 +168,15 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 47);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(479, 270);
+            this.tabControl1.Size = new System.Drawing.Size(529, 270);
             this.tabControl1.TabIndex = 2;
-            // 
-            // cbobuscar
-            // 
-            this.cbobuscar.FormattingEnabled = true;
-            this.cbobuscar.Items.AddRange(new object[] {
-            "DNI",
-            "Apellidos"});
-            this.cbobuscar.Location = new System.Drawing.Point(65, 14);
-            this.cbobuscar.Name = "cbobuscar";
-            this.cbobuscar.Size = new System.Drawing.Size(84, 21);
-            this.cbobuscar.TabIndex = 10;
-            this.cbobuscar.Text = "DNI";
             // 
             // FrmVistaTrabajador_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(494, 324);
+            this.ClientSize = new System.Drawing.Size(543, 324);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

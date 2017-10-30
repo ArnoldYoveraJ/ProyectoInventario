@@ -49,8 +49,10 @@
             this.txtconrec = new System.Windows.Forms.TextBox();
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.pxImagen = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // ttmensaje
@@ -59,6 +61,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pxImagen);
             this.groupBox1.Controls.Add(this.txtcod_prod);
             this.groupBox1.Controls.Add(this.txtcon);
             this.groupBox1.Controls.Add(this.label2);
@@ -74,16 +77,16 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(12, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(349, 228);
+            this.groupBox1.Size = new System.Drawing.Size(501, 228);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del Equipo";
             // 
             // txtcod_prod
             // 
-            this.txtcod_prod.Location = new System.Drawing.Point(295, 111);
+            this.txtcod_prod.Location = new System.Drawing.Point(339, 111);
             this.txtcod_prod.Name = "txtcod_prod";
-            this.txtcod_prod.Size = new System.Drawing.Size(48, 20);
+            this.txtcod_prod.Size = new System.Drawing.Size(33, 20);
             this.txtcod_prod.TabIndex = 15;
             // 
             // txtcon
@@ -134,21 +137,21 @@
             // 
             this.txtcod_mov.Location = new System.Drawing.Point(119, 25);
             this.txtcod_mov.Name = "txtcod_mov";
-            this.txtcod_mov.Size = new System.Drawing.Size(100, 20);
+            this.txtcod_mov.Size = new System.Drawing.Size(59, 20);
             this.txtcod_mov.TabIndex = 5;
             // 
             // txtpro
             // 
             this.txtpro.Location = new System.Drawing.Point(119, 111);
             this.txtpro.Name = "txtpro";
-            this.txtpro.Size = new System.Drawing.Size(170, 20);
+            this.txtpro.Size = new System.Drawing.Size(214, 20);
             this.txtpro.TabIndex = 11;
             // 
             // txtusu
             // 
             this.txtusu.Location = new System.Drawing.Point(119, 52);
             this.txtusu.Name = "txtusu";
-            this.txtusu.Size = new System.Drawing.Size(100, 20);
+            this.txtusu.Size = new System.Drawing.Size(59, 20);
             this.txtusu.TabIndex = 6;
             // 
             // label7
@@ -164,7 +167,7 @@
             // 
             this.txttra.Location = new System.Drawing.Point(119, 82);
             this.txttra.Name = "txttra";
-            this.txttra.Size = new System.Drawing.Size(170, 20);
+            this.txttra.Size = new System.Drawing.Size(214, 20);
             this.txttra.TabIndex = 7;
             // 
             // label6
@@ -227,11 +230,20 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Condición de Equi. Recibido:";
             // 
+            // pxImagen
+            // 
+            this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
+            this.pxImagen.Location = new System.Drawing.Point(378, 52);
+            this.pxImagen.Name = "pxImagen";
+            this.pxImagen.Size = new System.Drawing.Size(117, 123);
+            this.pxImagen.TabIndex = 16;
+            this.pxImagen.TabStop = false;
+            // 
             // FrmDevolver_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 377);
+            this.ClientSize = new System.Drawing.Size(519, 377);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnguardar);
@@ -244,6 +256,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,6 +284,6 @@
         private System.Windows.Forms.ErrorProvider erroricono;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtcod_prod;
-
+        private System.Windows.Forms.PictureBox pxImagen;
     }
 }

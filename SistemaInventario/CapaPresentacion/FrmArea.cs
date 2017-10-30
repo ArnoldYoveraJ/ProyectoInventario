@@ -25,13 +25,13 @@ namespace CapaPresentacion
         //Mostrar mensajes de Confirmación
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //Mostrar mensajes de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         //Limpiar Cajas de Texto

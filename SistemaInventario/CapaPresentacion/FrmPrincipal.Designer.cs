@@ -710,7 +710,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 18);
             this.label2.TabIndex = 23;
-            this.label2.Text = "PRODUCTOS";
+            this.label2.Text = "EQUIPOS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3

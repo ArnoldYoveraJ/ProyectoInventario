@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -31,7 +32,7 @@ namespace CapaPresentacion
             return _instancia;
         }
 
-        public void setMovimiento(string cod_mov, string usu, string trab, string prod, string con, DateTime fecha,int cod_prod)
+        public void setMovimiento(string cod_mov, string usu, string trab, string prod, string con, DateTime fecha,int cod_prod,byte[] imagen)
         {
             this.txtcod_mov.Text = cod_mov;
             this.txtusu.Text = usu;
@@ -40,7 +41,20 @@ namespace CapaPresentacion
             this.txtcon.Text = con;
             this.dtpfec.Value = fecha;
             this.txtcod_prod.Text = Convert.ToString(cod_prod);
+            this.pxImagen.Image = Bytes_A_Imagen(imagen);
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//para que la img se adeque al tamaño de toda la pantalla
         }
+
+        //FUNCION PARA CONVERTIR DE BYTES A IMAGEN
+        public Image Bytes_A_Imagen(Byte[] ImgBytes)
+        {
+            Bitmap imagen = null;
+            Byte[] bytes = (Byte[])(ImgBytes);
+            MemoryStream ms = new MemoryStream(bytes);
+            imagen = new Bitmap(ms);
+            return imagen;
+        }
+
         private void FrmDevolver_Artíiculo_Load(object sender, EventArgs e)
         {
             this.txtcod_prod.Visible = false;
@@ -111,9 +125,14 @@ namespace CapaPresentacion
                 {
                     rpta = NMovimiento.anular_movimiento(Convert.ToInt32(this.txtcod_mov.Text.Trim()), Convert.ToInt32(this.txtcod_prod.Text), this.txtconrec.Text);// borra espacios y convierte en mayuscula
                     MensajeOK("Se Inserto Correctamente");
-                    this.MensajeError(rpta);
-                    this.Botones();
+                    //MessageBox.Show("Se Inserto Correctamente", "Sistema de Inventario");
+                    //this.Botones();
+                    //this.MensajeError(rpta);
+                    _instancia = null;
+                    Hide();
+                    this.DialogResult = DialogResult.OK;
                 }
+                
             }
             catch (Exception)
             {
