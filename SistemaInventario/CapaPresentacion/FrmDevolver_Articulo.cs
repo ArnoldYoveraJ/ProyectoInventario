@@ -55,6 +55,17 @@ namespace CapaPresentacion
             return imagen;
         }
 
+       /* //FUNCION PARA CONVERTIR DE BYTES A IMAGEN
+        public Image Bytes_A_Imagen(Byte[] ImgBytes)
+        {
+            Bitmap imagen = null;
+            Byte[] bytes = (Byte[])(ImgBytes);
+            MemoryStream ms = new MemoryStream(bytes);
+            imagen = new Bitmap(ms);
+            return imagen;
+        }*/
+
+
         private void FrmDevolver_Artíiculo_Load(object sender, EventArgs e)
         {
             this.txtcod_prod.Visible = false;
