@@ -77,7 +77,7 @@
             this.cbobuscar.Name = "cbobuscar";
             this.cbobuscar.Size = new System.Drawing.Size(84, 21);
             this.cbobuscar.TabIndex = 10;
-            this.cbobuscar.Text = "DNI";
+            this.cbobuscar.Text = "Apellidos";
             // 
             // dgvlistado
             // 

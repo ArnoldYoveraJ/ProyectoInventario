@@ -135,7 +135,7 @@ namespace CapaPresentacion
                 else
                 {
                     rpta = NMovimiento.anular_movimiento(Convert.ToInt32(this.txtcod_mov.Text.Trim()), Convert.ToInt32(this.txtcod_prod.Text), this.txtconrec.Text);// borra espacios y convierte en mayuscula
-                    MensajeOK("Se Inserto Correctamente");
+                    MensajeOK("Se Anuló Correctamente el Registro");
                     //MessageBox.Show("Se Inserto Correctamente", "Sistema de Inventario");
                     //this.Botones();
                     //this.MensajeError(rpta);

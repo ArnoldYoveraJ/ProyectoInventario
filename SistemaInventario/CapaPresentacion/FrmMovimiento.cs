@@ -38,7 +38,16 @@ namespace CapaPresentacion
             this.ttmensaje.SetToolTip(txtproducto, "Seleccione un Producto");
             this.ttmensaje.SetToolTip(txtcondicion, "Explique las condiciones en que se entrega el Equipo");
             this.ttmensaje.SetToolTip(txtmot, "Explique el motivo");
+
+            //Solo Lectura
             this.txtusuario.ReadOnly = true;
+
+            this.txtcod_usu.ReadOnly = true; //ReadOnly:para hacerla de solo lectura
+            this.txtcod_tra.ReadOnly = true;
+            this.txttrabajador.ReadOnly = true;
+            this.txtcod_pro.ReadOnly = true;
+            this.txtproducto.ReadOnly = true;
+
             this.txtcod_mov.Visible = false;
 
         }
@@ -88,12 +97,12 @@ namespace CapaPresentacion
         private void habilitar(bool valor)
         {
             this.txtcod_mov.ReadOnly = !valor;
-            this.txtcod_usu.ReadOnly = !valor; //ReadOnly:para hacerla de solo lectura
+            /*this.txtcod_usu.ReadOnly = !valor; //ReadOnly:para hacerla de solo lectura
             this.txtusuario.ReadOnly = !valor;
             this.txtcod_tra.ReadOnly = !valor;
             this.txttrabajador.ReadOnly = !valor;
             this.txtcod_pro.ReadOnly = !valor;
-            this.txtproducto.ReadOnly = !valor;
+            this.txtproducto.ReadOnly = !valor;*/
             this.txtcondicion.ReadOnly = !valor;
             this.txtmot.ReadOnly = !valor;
             this.btnbuscar_usuario.Enabled = valor;

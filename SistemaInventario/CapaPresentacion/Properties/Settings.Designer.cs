@@ -37,7 +37,7 @@ namespace CapaPresentacion.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SRVDBDESA;Initial Catalog=BDINVENTARIO;User ID=arnold.yovera;Password" +
-            "=@rnold2017")]
+            "=2017@rnold")]
         public string BDINVENTARIOConnectionString1 {
             get {
                 return ((string)(this["BDINVENTARIOConnectionString1"]));
