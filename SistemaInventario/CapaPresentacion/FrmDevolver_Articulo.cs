@@ -55,6 +55,17 @@ namespace CapaPresentacion
             return imagen;
         }
 
+       /* //FUNCION PARA CONVERTIR DE BYTES A IMAGEN
+        public Image Bytes_A_Imagen(Byte[] ImgBytes)
+        {
+            Bitmap imagen = null;
+            Byte[] bytes = (Byte[])(ImgBytes);
+            MemoryStream ms = new MemoryStream(bytes);
+            imagen = new Bitmap(ms);
+            return imagen;
+        }*/
+
+
         private void FrmDevolver_Artíiculo_Load(object sender, EventArgs e)
         {
             this.txtcod_prod.Visible = false;
@@ -124,7 +135,7 @@ namespace CapaPresentacion
                 else
                 {
                     rpta = NMovimiento.anular_movimiento(Convert.ToInt32(this.txtcod_mov.Text.Trim()), Convert.ToInt32(this.txtcod_prod.Text), this.txtconrec.Text);// borra espacios y convierte en mayuscula
-                    MensajeOK("Se Inserto Correctamente");
+                    MensajeOK("Se Anuló Correctamente el Registro");
                     //MessageBox.Show("Se Inserto Correctamente", "Sistema de Inventario");
                     //this.Botones();
                     //this.MensajeError(rpta);

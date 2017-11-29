@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pxImagen = new System.Windows.Forms.PictureBox();
             this.txtcod_prod = new System.Windows.Forms.TextBox();
             this.txtcon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,10 +50,9 @@
             this.txtconrec = new System.Windows.Forms.TextBox();
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.pxImagen = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.SuspendLayout();
             // 
             // ttmensaje
@@ -81,6 +81,15 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del Equipo";
+            // 
+            // pxImagen
+            // 
+            this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
+            this.pxImagen.Location = new System.Drawing.Point(378, 52);
+            this.pxImagen.Name = "pxImagen";
+            this.pxImagen.Size = new System.Drawing.Size(117, 123);
+            this.pxImagen.TabIndex = 16;
+            this.pxImagen.TabStop = false;
             // 
             // txtcod_prod
             // 
@@ -204,7 +213,7 @@
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(75, 23);
             this.btnguardar.TabIndex = 19;
-            this.btnguardar.Text = "&Guardar";
+            this.btnguardar.Text = "&Aceptar";
             this.btnguardar.UseVisualStyleBackColor = true;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
@@ -230,15 +239,6 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Condición de Equi. Recibido:";
             // 
-            // pxImagen
-            // 
-            this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
-            this.pxImagen.Location = new System.Drawing.Point(378, 52);
-            this.pxImagen.Name = "pxImagen";
-            this.pxImagen.Size = new System.Drawing.Size(117, 123);
-            this.pxImagen.TabIndex = 16;
-            this.pxImagen.TabStop = false;
-            // 
             // FrmDevolver_Articulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,8 +255,8 @@
             this.Load += new System.EventHandler(this.FrmDevolver_Artíiculo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erroricono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

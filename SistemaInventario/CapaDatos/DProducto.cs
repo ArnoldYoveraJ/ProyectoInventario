@@ -291,7 +291,7 @@ namespace CapaDatos
                 SqlParameter par12 = new SqlParameter();
                 par12.ParameterName = "@descripcion";
                 par12.SqlDbType = SqlDbType.VarChar;
-                par12.Size = 80;
+                par12.Size = 150;
                 par12.SqlValue = producto.Descripcion;
                 sqlcoma.Parameters.Add(par12);
 
@@ -455,7 +455,7 @@ namespace CapaDatos
                 SqlParameter par12 = new SqlParameter();
                 par12.ParameterName = "@descripcion";
                 par12.SqlDbType = SqlDbType.VarChar;
-                par12.Size = 50;
+                par12.Size = 150;
                 par12.SqlValue = producto.Descripcion;
                 sqlcoma.Parameters.Add(par12);
 
@@ -474,7 +474,7 @@ namespace CapaDatos
                 SqlParameter par15 = new SqlParameter();
                 par15.ParameterName = "@mac";
                 par15.SqlDbType = SqlDbType.VarChar;
-                par12.Size = 18;
+                par15.Size = 18;
                 par15.SqlValue = producto.Mac;
                 sqlcoma.Parameters.Add(par15);
 

@@ -675,7 +675,7 @@
             // 
             this.txtdesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdesc.Location = new System.Drawing.Point(323, 148);
-            this.txtdesc.MaxLength = 50;
+            this.txtdesc.MaxLength = 150;
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -731,10 +731,10 @@
             // 
             this.txtprocesador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtprocesador.Location = new System.Drawing.Point(99, 87);
-            this.txtprocesador.MaxLength = 10;
+            this.txtprocesador.MaxLength = 50;
             this.txtprocesador.Name = "txtprocesador";
             this.txtprocesador.Size = new System.Drawing.Size(116, 20);
-            this.txtprocesador.TabIndex = 20;
+            this.txtprocesador.TabIndex = 50;
             // 
             // txtserie
             // 
@@ -833,7 +833,7 @@
             this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
             this.pxImagen.Location = new System.Drawing.Point(673, 18);
             this.pxImagen.Name = "pxImagen";
-            this.pxImagen.Size = new System.Drawing.Size(113, 115);
+            this.pxImagen.Size = new System.Drawing.Size(115, 115);
             this.pxImagen.TabIndex = 10;
             this.pxImagen.TabStop = false;
             this.pxImagen.Click += new System.EventHandler(this.pxImagen_Click);

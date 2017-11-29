@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -53,7 +54,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(27, 61);
+            this.tabControl1.Location = new System.Drawing.Point(7, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(746, 336);
@@ -61,6 +62,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.cboelegir);
             this.tabPage1.Controls.Add(this.dgvlistado);
             this.tabPage1.Controls.Add(this.lbltotal);
@@ -84,7 +86,7 @@
             this.cboelegir.Items.AddRange(new object[] {
             "Apellidos",
             "DNI"});
-            this.cboelegir.Location = new System.Drawing.Point(127, 48);
+            this.cboelegir.Location = new System.Drawing.Point(105, 22);
             this.cboelegir.Name = "cboelegir";
             this.cboelegir.Size = new System.Drawing.Size(121, 21);
             this.cboelegir.TabIndex = 8;
@@ -174,7 +176,7 @@
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbuscar.Location = new System.Drawing.Point(127, 22);
+            this.txtbuscar.Location = new System.Drawing.Point(105, 49);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(183, 20);
             this.txtbuscar.TabIndex = 1;
@@ -183,11 +185,11 @@
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(15, 24);
+            this.Nombre.Location = new System.Drawing.Point(19, 24);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(106, 13);
+            this.Nombre.Size = new System.Drawing.Size(61, 13);
             this.Nombre.TabIndex = 0;
-            this.Nombre.Text = "Buscar por Apellidos:";
+            this.Nombre.Text = "Buscar por:";
             // 
             // label1
             // 
@@ -195,7 +197,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(22, 28);
+            this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(280, 25);
             this.label1.TabIndex = 6;
@@ -209,14 +211,28 @@
             // 
             this.erroricono.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.Buscar11;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(396, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Ver Detalle";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmBuscarProductos_Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 425);
+            this.ClientSize = new System.Drawing.Size(761, 385);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "FrmBuscarProductos_Trabajador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Listado de Productos asignados por Trabajador";
             this.Load += new System.EventHandler(this.FrmBuscarProductos_Trabajador_Load);
             this.tabControl1.ResumeLayout(false);
@@ -246,5 +262,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip ttmensaje;
         private System.Windows.Forms.ErrorProvider erroricono;
+        private System.Windows.Forms.Button button1;
     }
 }

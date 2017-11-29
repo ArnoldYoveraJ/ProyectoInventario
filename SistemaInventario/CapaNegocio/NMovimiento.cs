@@ -68,5 +68,10 @@ namespace CapaNegocio
         {
             return new DMovimiento().Buscar_por_fechas(fecha_ini,fecha_fin);
         }
+
+        public static DataTable buscar_movimientos_por_trabajador(string texto)
+        {
+            return new DMovimiento().Buscar_Movimientos_por_Trabajador(texto);
+        }
     }
 }

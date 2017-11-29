@@ -35,12 +35,12 @@
             this.dgvlistado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lbltotal = new System.Windows.Forms.Label();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.erroricono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnbuscar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -83,7 +83,7 @@
             this.cboelegir.Name = "cboelegir";
             this.cboelegir.Size = new System.Drawing.Size(121, 21);
             this.cboelegir.TabIndex = 8;
-            this.cboelegir.Text = "Nombre";
+            this.cboelegir.Text = "Serie";
             // 
             // dgvlistado
             // 
@@ -116,6 +116,20 @@
             this.lbltotal.Size = new System.Drawing.Size(35, 13);
             this.lbltotal.TabIndex = 6;
             this.lbltotal.Text = "label2";
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.buscar;
+            this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbuscar.Location = new System.Drawing.Point(510, 24);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnbuscar.TabIndex = 2;
+            this.btnbuscar.Text = "&Buscar";
+            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtbuscar
             // 
@@ -154,20 +168,6 @@
             // erroricono
             // 
             this.erroricono.ContainerControl = this;
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.Image = global::CapaPresentacion.Properties.Resources.buscar;
-            this.btnbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscar.Location = new System.Drawing.Point(510, 24);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnbuscar.TabIndex = 2;
-            this.btnbuscar.Text = "&Buscar";
-            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscar.UseVisualStyleBackColor = true;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // FrmVistaProductoMovimiento
             // 
