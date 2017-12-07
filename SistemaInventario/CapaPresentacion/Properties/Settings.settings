@@ -13,10 +13,10 @@
     <Setting Name="BDINVENTARIOConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=SRVDBDESA;Initial Catalog=BDINVENTARIO;User ID=arnold.yovera;Password=2017@rnold&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SRVDBDESA;Initial Catalog=BDINVENTARIO;User ID=arnold.yovera;Password=P@ssw0rd&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=SRVDBDESA;Initial Catalog=BDINVENTARIO;User ID=arnold.yovera;Password=2017@rnold</Value>
+      <Value Profile="(Default)">Data Source=SRVDBDESA;Initial Catalog=BDINVENTARIO;User ID=arnold.yovera;Password=P@ssw0rd</Value>
     </Setting>
   </Settings>
 </SettingsFile>

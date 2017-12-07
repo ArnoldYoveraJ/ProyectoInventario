@@ -335,5 +335,35 @@ namespace CapaDatos
            return dt;
        }
 
+        public DataTable Validar_existe_Trabajador(DTrabajador trabajador)
+        {
+            DataTable dt = new DataTable("trabajador");
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = Conexion.Cn;
+                con.Open();
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = con;
+                sql1.CommandText = "spvalidar_dni_trabajador";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                sql1.Parameters.AddWithValue("@dni",trabajador.DNI);
+
+                SqlDataAdapter da = new SqlDataAdapter(sql1);
+                da.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                dt = null;
+                string rpta = e.Message;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+            return dt;
+        }
+
     }
 }

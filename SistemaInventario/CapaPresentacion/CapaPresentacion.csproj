@@ -167,6 +167,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReporteActaEntregaEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteActaEntregaEquipo.Designer.cs">
+      <DependentUpon>FrmReporteActaEntregaEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmReporteArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteActaEntregaEquipo.resx">
+      <DependentUpon>FrmReporteActaEntregaEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReporteArticulos.resx">
       <DependentUpon>FrmReporteArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +296,7 @@
       <DependentUpon>FrmReporte_BajaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\rptActaEntregaEquipo.rdlc" />
     <EmbeddedResource Include="Reportes\rptBajaProductos.rdlc" />
     <EmbeddedResource Include="Reportes\rptMovimientos.rdlc" />
     <EmbeddedResource Include="Reportes\rptProductos.rdlc" />
@@ -417,6 +427,38 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guardar11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

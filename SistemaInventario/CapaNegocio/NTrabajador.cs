@@ -72,5 +72,20 @@ namespace CapaNegocio
         {
             return new DTrabajador().Buscar_Productos_por_Trabajador(texto);
         }
+
+        public static DataTable validar_existe_trabajador(string dni)
+        {
+            DTrabajador objt = new DTrabajador();
+            objt.DNI = dni;
+            return objt.Validar_existe_Trabajador(objt);
+        }
+
+
+        public static DataTable ObtenerContrasena(string usu)
+        {
+            DUsuario obju = new DUsuario();
+            obju.Usuario = usu;
+            return obju.ObtenerContrasena(obju);
+        }
     }
 }

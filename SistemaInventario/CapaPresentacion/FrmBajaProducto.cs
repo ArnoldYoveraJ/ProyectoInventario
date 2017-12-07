@@ -270,13 +270,14 @@ namespace CapaPresentacion
                         MensajeOK("Se Editó Correctamente");
                     }
                     this.MensajeError(rpta);
+
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.LimpiarBotones();
+                    this.Botones();
+                    this.tabControl1.SelectedIndex = 0;
+                    this.mostrar();
                 }
-                this.IsNuevo = false;
-                this.IsEditar = false;
-                this.LimpiarBotones();
-                this.Botones();
-                this.tabControl1.SelectedIndex = 0;
-                this.mostrar();
             }
             catch (Exception)
             {

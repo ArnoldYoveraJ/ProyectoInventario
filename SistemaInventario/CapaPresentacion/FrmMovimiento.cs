@@ -262,13 +262,15 @@ namespace CapaPresentacion
                         MensajeOK("Se Editó Correctamente");
                     }
                     this.MensajeError(rpta);
+
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.LimpiarBotones();
+                    this.Botones();
+                    this.tabControl1.SelectedIndex = 0;
+                    this.mostrar();
                 }
-                this.IsNuevo = false;
-                this.IsEditar = false;
-                this.LimpiarBotones();
-                this.Botones();
-                this.tabControl1.SelectedIndex = 0;
-                this.mostrar();
+
             }
             catch (Exception)
             {
@@ -391,6 +393,25 @@ namespace CapaPresentacion
         private void txtmot_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.Letras(e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Le enviamos el código al formulario FrmReporteActaEntregaEquipo
+            int codigo=-1;
+            if (txtcod_mov.Text == string.Empty)
+            {
+                MensajeError("No se a seleccionado ningún Registro");
+                tabControl1.SelectedIndex = 1;
+                return;
+            }
+            else
+            {
+                codigo = Convert.ToInt32(txtcod_mov.Text);
+            }
+
+            FrmReporteActaEntregaEquipo objreacta = new FrmReporteActaEntregaEquipo(codigo);
+            objreacta.ShowDialog();
         }
     }
 }

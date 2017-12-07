@@ -1,0 +1,66 @@
+NIKE+
+
+--el campo estado de la tabla producto puede contener:estado en reparación, 
+
+-si tengo un movimiento de un producto (estado=emitido), y luego le doy de baja,
+el estado de movimiento sigue en emitido, deberia cambiar a anulado. y 
+-si tengo un movimiento de un producto y luego le doy de baja, el estado de la tabla baja está
+emitido, ahora si quiero anular ese 
+
+los productos no tengo que ingresarlos con cantidad, porque cada uno tiene su serie diferente
+en caso quiera dar de bajo uno. 
+
+verificar el mostrar producto muestre a la hora de listar solo productos DISPONIBLES
+Y OCUPADOS. Y cuando emita el reporte emita todos disponibles, ocupados y de baja. 
+
+Cuando elimine o anule un movimiento, el campo fecha_dev debe almacenar la fecha actual(fecha_dev), es decir
+el día y hora en que se está devolviendo ese equipo y además se puede agregar un campo que
+almacene el estado o condición en que se devuelve el equipo prestado. 
+
+adicional puede que cuando intente anular el movimiento, se muestre el formulario mostrando los datos del producto
+y explicando la condición en que se está devolviendo el producto, puede ser un combo que cuando todo 
+este correcto se seleccione la opción: "Conforme" y cuando algo está mal se seleccione opción
+"disconforme" y aparesca una caja adicional para explicar los motivos. 
+
+Corregir el buscar movimiento en formulario Movimiento. 
+
+No permitir datos repetidos. 
+
+
+CREATE PROC [dbo].[spinsertar_baja_producto]
+@COD_BAJA INT OUTPUT,
+@FECHA DATE,
+@EXPLICACION VARCHAR(70),
+@ESTADO VARCHAR(7),
+@COD_PRODUCTO INT
+AS
+INSERT INTO BAJA_PRODUCTOS(FECHA,EXPLICACION,ESTADO,COD_PRODUCTO) VALUES(@FECHA,@EXPLICACION,@ESTADO,@COD_PRODUCTO);
+update productos set TIPO_ESTADO='De baja',estado=0 where cod_producto=@cod_producto;
+
+update MOVIMIENTO set ESTADO='ANULADO' WHERE cod_producto=@cod_producto;
+
+
+
+
+CREATE proc [dbo].[speliminar_baja_producto]
+@cod_baja int,
+@cod_pro int
+as
+--delete from baja_productos where cod_baja=@cod_baja;
+update baja_productos set estado='ANULADO' where cod_baja=@cod_baja;
+UPDATE PRODUCTOS SET TIPO_ESTADO='Disponible', estado=1 where cod_producto=@cod_pro
+
+update MOVIMIENTO set ESTADO='EMITIDO' WHERE cod_producto=@cod_producto;
+
+
+
+
+
+
+create trigger Cambiar_estado_producto
+on movimiento
+for Insert
+as
+update p set p.TIPO_ESTADO='Ocupado' 
+from PRODUCTOS as p inner join 
+INSERTED as d on d.COD_PRODUCTO=p.COD_PRODUCTO;

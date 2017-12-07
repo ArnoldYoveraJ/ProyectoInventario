@@ -314,5 +314,6 @@ namespace CapaPresentacion
             FrmReporteUsuarios reUsu = new FrmReporteUsuarios();
             reUsu.ShowDialog();
         }
+
     }
 }

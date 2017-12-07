@@ -98,6 +98,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ttmensaje = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.btnGenerar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
@@ -346,6 +347,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnGenerar);
             this.groupBox1.Controls.Add(this.mtmac);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -875,6 +877,20 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Equipos";
             // 
+            // btnGenerar
+            // 
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Image = global::CapaPresentacion.Properties.Resources.Nuevo;
+            this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerar.Location = new System.Drawing.Point(729, 317);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerar.TabIndex = 56;
+            this.btnGenerar.Text = "&Generar";
+            this.btnGenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -980,5 +996,6 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.MaskedTextBox mtmac;
+        private System.Windows.Forms.Button btnGenerar;
     }
 }

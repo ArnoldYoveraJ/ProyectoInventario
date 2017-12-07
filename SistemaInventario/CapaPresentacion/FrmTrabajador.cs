@@ -141,41 +141,74 @@ namespace CapaPresentacion
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            string rpta;
+            string rpta="";
             try
             {
-                if(this.txtnom.Text==string.Empty || this.mktdni.Text==string.Empty) //si la caja de texto está vacía
+                if (this.txtnom.Text==string.Empty || this.mktdni.Text==string.Empty) //si la caja de texto está vacía
                 {
                     MensajeError("Faltan Ingresar Datos");
                     erroricono.SetError(txtnom, "Ingrese un Nombre");
                     erroricono.SetError(mktdni,"Ingrese un DNI");
-                }else
-                {
-                    if(this.isnuevo)
-                    {
-                        rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.mktdni.Text.Trim(),this.txtemail.Text.Trim(),
-                        this.mktanexo.Text.Trim(), Convert.ToInt32(this.cboarea.SelectedValue), Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
-                        MensajeOK("Se inserto Correctamente");
-                    }
-                    else
-                    {
-                        rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text.Trim()),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.mktdni.Text.Trim(),this.txtemail.Text.Trim(),
-                        this.mktanexo.Text.Trim(), Convert.ToInt16(this.cboarea.SelectedValue), Convert.ToInt16(this.cboempresa.SelectedValue));
-                        MensajeOK("Se Edito Correctamente");
-                    }
-                    this.MensajeError(rpta);
                 }
-                this.isnuevo = false;
-                this.iseditar = false;
-                this.limpiar();
-                this.Activar_botones();
-                this.tabControl1.SelectedIndex = 0;
-                this.mostrar();
+                //else{
+                   // DataTable Trabajador = NTrabajador.validar_existe_trabajador(this.mktdni.Text);
+
+                  /*  if (Trabajador != null)
+                    {
+                        MensajeOK("El DNI ya se encuentra Registrado");
+                        //rpta = "El DNI ya se encuentra Registrado";
+                        erroricono.SetError(mktdni, "El DNI ya se encuentra Registrado");
+                        this.mktdni.Focus();
+                        //return;
+                    }*/
+
+                    if (this.isnuevo)
+                       {
+
+                           DataTable Trabajador = NTrabajador.validar_existe_trabajador(this.mktdni.Text);
+
+                            if (mktdni.Text.Equals(Trabajador.Rows[0][0].ToString())/*Trabajador != null*/)
+                            {
+                               // MensajeOK("El DNI ya se encuentra Registrado");
+                                rpta = "El DNI ya se encuentra Registrado";
+                                erroricono.SetError(mktdni, "El DNI ya se encuentra Registrado");
+                                this.mktdni.Focus();
+                        //return;
+                            }
+                            else
+                            { 
+                                rpta = NTrabajador.Insertar(this.txtnom.Text.Trim(), this.txtape.Text.Trim(), this.mktdni.Text.Trim(), this.txtemail.Text.Trim(),
+                                this.mktanexo.Text.Trim(), Convert.ToInt32(this.cboarea.SelectedValue), Convert.ToInt32(this.cboempresa.SelectedValue));// borra espacios y convierte en mayuscula
+                                MensajeOK("Se inserto Correctamente");
+                                UtilGuardar();
+                            }
+
+                       }else
+                       {
+                            rpta = NTrabajador.Editar(Convert.ToInt32(this.txtcod_tra.Text.Trim()),this.txtnom.Text.Trim(),this.txtape.Text.Trim(),this.mktdni.Text.Trim(),this.txtemail.Text.Trim(),
+                            this.mktanexo.Text.Trim(), Convert.ToInt16(this.cboarea.SelectedValue), Convert.ToInt16(this.cboempresa.SelectedValue));
+                            MensajeOK("Se Edito Correctamente");
+                            UtilGuardar();
+                       }
+                        this.MensajeError(rpta);
+
+                //}
+                
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+
+        private void UtilGuardar()
+        {
+            this.isnuevo = false;
+            this.iseditar = false;
+            this.limpiar();
+            this.Activar_botones();
+            this.tabControl1.SelectedIndex = 0;
+            this.mostrar();
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)

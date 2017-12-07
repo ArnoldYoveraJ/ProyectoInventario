@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using word= Microsoft.Office.Interop.Word;
 
 namespace CapaPresentacion
 {
@@ -170,6 +171,33 @@ namespace CapaPresentacion
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }
+
+        public void GenerarActaEntregaEquipo()
+        {
+            //Generar  el documento Word
+            /*object ObjMiss = System.Reflection.Missing.Value;
+            word.Application ObjWord = new word.Application();
+            word.Document objDoc = ObjWord.Documents.Add(ref ObjMiss, ref ObjMiss, ref ObjMiss, ref ObjMiss);
+            objDoc.Activate();
+            ObjWord.Selection.Font.Color = word.WdColor.wdColorBlue;
+            ObjWord.Selection.TypeText(txtmarca.Text);
+            ObjWord.Visible = true;*/
+
+            object ObjMiss = System.Reflection.Missing.Value;
+            word.Application ObjWord = new word.Application();
+            //string ruta = Application.StartupPath + @"\ActaEntregaEquipo.docx";
+            //object parametro = ruta;
+            
+            word.Document ObjDoc = ObjWord.Documents.Open(@"\ActaEntregaEquipo.docx");
+            object trabajador = "Trabajador";
+            word.Range trab = ObjDoc.Bookmarks.get_Item(ref trabajador).Range;
+            trab.Text = txtmarca.Text;
+            object rango1 = trab;
+            ObjDoc.Bookmarks.Add("Trabajador", ref rango1);
+            ObjWord.Visible = true;
+        }
+
+
         private void FrmCategoria_Load(object sender, EventArgs e)
         {
             this.Top = 0;
@@ -353,13 +381,15 @@ namespace CapaPresentacion
                         MensajeOK("Se Edito Correctamente");
                     }
                     this.MensajeError(rpta);
+
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.LimpiarBotones();
+                    this.Botones();
+                    this.tabControl1.SelectedIndex = 0;
+                    this.mostrar();
                 }
-                this.IsNuevo = false;
-                this.IsEditar = false;
-                this.LimpiarBotones();
-                this.Botones();
-                this.tabControl1.SelectedIndex = 0;
-                this.mostrar();
+
             }
             catch (Exception ex)
             {
@@ -534,6 +564,8 @@ namespace CapaPresentacion
             _Instancia = null; //Cuando Cierre el Formulario se termine la instancia y posteriormente se vuelve a crear otra. 
         }
 
+
+
         private void cboelegir_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -563,6 +595,11 @@ namespace CapaPresentacion
         private void cboestado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            GenerarActaEntregaEquipo();
         }
     }
 }
