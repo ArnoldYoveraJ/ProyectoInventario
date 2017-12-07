@@ -497,13 +497,13 @@ namespace CapaPresentacion
             this.txttrabajador.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["Trabajador"].Value);//Current ROw: fila actual*/
             this.cbocategoria.SelectedValue = this.dgvlistado.CurrentRow.Cells["cod_cat"].Value;
 
-            this.txtnom_equi.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nombre_equi"].Value);
+           /* this.txtnom_equi.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["nombre_equi"].Value);
             this.mtmac.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["mac"].Value);
-            this.txtdom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dominio"].Value);
+            this.txtdom.Text = Convert.ToString(this.dgvlistado.CurrentRow.Cells["dominio"].Value);*/
 
-            string lic_win=(Convert.ToString(this.dgvlistado.CurrentRow.Cells["LICENCIA_WIN"].Value));
+            //string lic_win=(Convert.ToString(this.dgvlistado.CurrentRow.Cells["LICENCIA_WIN"].Value));
 
-            if (lic_win == "Windows 7")
+            /*if (lic_win == "Windows 7")
             {
                 this.rbwin7.Checked = true ;
             }
@@ -545,7 +545,7 @@ namespace CapaPresentacion
             {
                 this.chkaut13.Checked = true;
                 this.chkaut15.Checked = true;
-            }
+            }*/
 
 
             this.txtcod_pro.ReadOnly = false;
