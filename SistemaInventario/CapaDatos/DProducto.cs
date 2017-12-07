@@ -310,6 +310,7 @@ namespace CapaDatos
                 SqlParameter par15 = new SqlParameter();
                 par15.ParameterName = "@mac";
                 par15.SqlDbType = SqlDbType.VarChar;
+                par15.Size = 18;
                 par15.SqlValue = producto.Mac;
                 sqlcoma.Parameters.Add(par15);
 
