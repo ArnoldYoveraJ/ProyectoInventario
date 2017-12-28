@@ -7,22 +7,17 @@ el estado de movimiento sigue en emitido, deberia cambiar a anulado. y
 -si tengo un movimiento de un producto y luego le doy de baja, el estado de la tabla baja está
 emitido, ahora si quiero anular ese 
 
-los productos no tengo que ingresarlos con cantidad, porque cada uno tiene su serie diferente
-en caso quiera dar de bajo uno. 
-
 verificar el mostrar producto muestre a la hora de listar solo productos DISPONIBLES
 Y OCUPADOS. Y cuando emita el reporte emita todos disponibles, ocupados y de baja. 
 
 Cuando elimine o anule un movimiento, el campo fecha_dev debe almacenar la fecha actual(fecha_dev), es decir
-el día y hora en que se está devolviendo ese equipo y además se puede agregar un campo que
+la fecha y hora en que se está devolviendo ese equipo y además se puede agregar un campo que
 almacene el estado o condición en que se devuelve el equipo prestado. 
 
 adicional puede que cuando intente anular el movimiento, se muestre el formulario mostrando los datos del producto
 y explicando la condición en que se está devolviendo el producto, puede ser un combo que cuando todo 
 este correcto se seleccione la opción: "Conforme" y cuando algo está mal se seleccione opción
 "disconforme" y aparesca una caja adicional para explicar los motivos. 
-
-Corregir el buscar movimiento en formulario Movimiento. 
 
 No permitir datos repetidos. 
 

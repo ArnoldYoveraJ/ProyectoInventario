@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.IO;
+
 namespace CapaPresentacion
 {
     public partial class FrmBajaProducto : Form
@@ -33,6 +35,13 @@ namespace CapaPresentacion
             this.ttmensaje.SetToolTip(this.txtcod_pro, "Seleccione un Producto");
             this.ttmensaje.SetToolTip(this.txtexplicacion, "Registre una explicación");
             this.txtcod_baja.Visible = false;
+            this.txtcod_mov.Visible = false;
+
+            //Solo Lectura
+            this.txtcod_pro.ReadOnly = true; 
+            this.txtproducto.ReadOnly = true;
+            this.txtmarca.ReadOnly = true;
+            this.txtserie.ReadOnly = true;
         }
 
         //Mostrar Mensaje de Confirmacion
@@ -50,6 +59,8 @@ namespace CapaPresentacion
         {
             this.txtcod_baja.Text = string.Empty;
             this.txtcod_pro.Text = string.Empty;
+            this.txtmarca.Text = string.Empty;
+            this.txtserie.Text = string.Empty;
             this.txtproducto.Text = string.Empty;
             this.txtexplicacion.Text = string.Empty;
         }
@@ -59,8 +70,6 @@ namespace CapaPresentacion
         private void habilitar(bool valor)
         {
             this.txtcod_baja.ReadOnly = !valor;
-            this.txtcod_pro.ReadOnly = !valor; //ReadOnly:para hacerla de solo lectura
-            this.txtproducto.ReadOnly = !valor;
             this.txtexplicacion.ReadOnly = !valor;
             this.btnbuscar_producto.Enabled = valor;
             this.dtfecha.Enabled = valor;
@@ -92,7 +101,8 @@ namespace CapaPresentacion
         {
             this.dgvlistado.Columns[0].Visible = false;
             this.dgvlistado.Columns[1].Visible = false;
-            this.dgvlistado.Columns[7].Visible = false;
+            this.dgvlistado.Columns[2].Visible = false;
+            this.dgvlistado.Columns[10].Visible = false;
         }
 
         //Mostrar
@@ -116,6 +126,28 @@ namespace CapaPresentacion
             this.txtcod_pro.Text = cod_pro;
             this.txtproducto.Text = nombre;
         }
+
+        public void setMovimientosEquipos(string cod_mov, string cod_pro, string nom_producto, string marca, string serie, byte[] imagen)
+        {
+            txtcod_mov.Text = cod_mov;
+            txtcod_pro.Text = cod_pro;
+            txtproducto.Text = nom_producto;
+            txtmarca.Text = marca;
+            txtserie.Text = serie;
+
+            this.pxImagen.Image = Bytes_A_Imagen(imagen);
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;//para que la img se adeque al tamaño de toda la pantalla
+        }
+        //FUNCION PARA CONVERTIR DE BYTES A IMAGEN
+        public Image Bytes_A_Imagen(Byte[] ImgBytes)
+        {
+            Bitmap imagen = null;
+            Byte[] bytes = (Byte[])(ImgBytes);
+            MemoryStream ms = new MemoryStream(bytes);
+            imagen = new Bitmap(ms);
+            return imagen;
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -129,7 +161,6 @@ namespace CapaPresentacion
             this.LimpiarBotones();
             this.habilitar(true);
             this.txtcod_baja.Focus();
-            this.txtcod_pro.Enabled = false; //deshabilitar el código de producto
            // this.txtcod_usu.Text = Convert.ToString(cod_usu);//revisar línea para envíar el código de usuario
         }
 
@@ -207,22 +238,22 @@ namespace CapaPresentacion
                }
                else
                {
-                   DialogResult opcion;
-                   opcion = MessageBox.Show("Realmente desea Anular los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                   if (opcion == DialogResult.OK) //SI usuario dice OK
-                   {
                        string cod, rpta = "";
                        int cod_pro;//para el codigo de producto
                        foreach (DataGridViewRow row in dgvlistado.Rows)//Recorre todas las filas del DataGridView
                        {
                            if (Convert.ToBoolean(row.Cells[0].Value)) //Revisa si la fila está activada
                            {
+                               DialogResult opcion;
+                               opcion = MessageBox.Show("Realmente desea Anular los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                               if (opcion == DialogResult.OK) //SI usuario dice OK
+                               {}
+
                                cod = Convert.ToString(row.Cells[1].Value);
                                //Para traer el código de producto del movimiento que se a seleccionado en el DataGridView
                                cod_pro = Convert.ToInt16(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
 
                                rpta = NBaja_Producto.Eliminar(Convert.ToInt32(cod), cod_pro);
-
                                if (rpta.Equals("OK"))
                                {
                                    this.MensajeOK("Se Anuló correctamente el Registro");
@@ -232,9 +263,13 @@ namespace CapaPresentacion
                                    this.MensajeError(rpta);
                                }
                            }
+                           else
+                           {
+                                MensajeError("No se ha marcado ningún Registro a Eliminar");
+                                //break;
+                           }
                        }
                        this.mostrar();
-                   }
                }
             }
             catch (Exception ex)
@@ -259,14 +294,14 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         rpta = NBaja_Producto.Insertar(this.dtfecha.Value, this.txtexplicacion.Text.Trim(),"EMITIDO",
-                               Convert.ToInt16(this.txtcod_pro.Text.Trim()));// borra espacios y convierte en mayuscula
+                               Convert.ToInt16(this.txtcod_mov.Text.Trim()),Convert.ToInt16(this.txtcod_pro.Text));// borra espacios y convierte en mayuscula
                         MensajeOK("Se Inserto Correctamente");
                     }
                     else
                     {
                         //Falta el campo: cod_usu en editar. 
                         rpta = NBaja_Producto.Editar(Convert.ToInt32(this.txtcod_baja.Text),this.dtfecha.Value, this.txtexplicacion.Text.Trim(), "EMITIDO",
-                                Convert.ToInt16(this.txtcod_pro.Text.Trim()));// borra espacios y convierte en mayuscula
+                                Convert.ToInt16(this.txtcod_mov.Text.Trim()));// borra espacios y convierte en mayuscula
                         MensajeOK("Se Editó Correctamente");
                     }
                     this.MensajeError(rpta);
@@ -281,14 +316,16 @@ namespace CapaPresentacion
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
         private void btnbuscar_producto_Click(object sender, EventArgs e)
         {
-            FrmVistaProductoIngreso objbaja = new FrmVistaProductoIngreso();
+            /* FrmVistaProductoIngreso objbaja = new FrmVistaProductoIngreso();
+             objbaja.ShowDialog();*/
+
+            FrmVistaBajaProductoMovimiento objbaja = new FrmVistaBajaProductoMovimiento();
             objbaja.ShowDialog();
         }
 
@@ -297,7 +334,10 @@ namespace CapaPresentacion
             this.txtcod_baja.Text =Convert.ToString(dgvlistado.CurrentRow.Cells["cod_baja"].Value);
             this.txtcod_baja.Visible = false;//deshabilitar el código cuando edite
             this.txtcod_pro.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_producto"].Value);
-            this.txtproducto.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["producto"].Value);
+            this.txtproducto.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
+            this.txtmarca.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["marca"].Value);
+            this.txtcod_mov.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_mov"].Value);
+            this.txtserie.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["serie"].Value);
             this.txtexplicacion.Text = Convert.ToString(dgvlistado.CurrentRow.Cells["explicacion"].Value);
             this.dtfecha.Value = Convert.ToDateTime(dgvlistado.CurrentRow.Cells["fecha"].Value);
 

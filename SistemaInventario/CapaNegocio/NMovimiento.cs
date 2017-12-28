@@ -73,5 +73,10 @@ namespace CapaNegocio
         {
             return new DMovimiento().Buscar_Movimientos_por_Trabajador(texto);
         }
+
+        public static DataTable Mostrar_Movimiento_Vista()
+        {
+            return new DMovimiento().Mostrar_Movimientos_Vista();
+        }
     }
 }

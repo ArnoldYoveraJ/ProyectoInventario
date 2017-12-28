@@ -38,6 +38,15 @@ namespace CapaDatos
             get { return _Estado; }
             set { _Estado = value; }
         }
+
+        private int _Cod_Mov;
+
+        public int Cod_Mov
+        {
+            get { return _Cod_Mov; }
+            set { _Cod_Mov = value; }
+        }
+
         private int _Cod_Producto;
 
         public int Cod_Producto
@@ -46,14 +55,16 @@ namespace CapaDatos
             set { _Cod_Producto = value; }
         }
 
+
         public DBaja_Producto() { }
 
-        public DBaja_Producto(int cod_baja,DateTime fecha, string explicacion,string est,int cod_pro) 
+        public DBaja_Producto(int cod_baja,DateTime fecha, string explicacion,string est,int cod_mov,int cod_pro) 
         {
             this.Cod_Baja = cod_baja;
             this.Fecha = fecha;
             this.Explicacion = explicacion;
             this.Estado = est;
+            this.Cod_Mov = cod_mov;
             this.Cod_Producto = cod_pro;
         }
 
@@ -79,6 +90,7 @@ namespace CapaDatos
                 sql1.Parameters.AddWithValue("@FECHA", baja_producto.Fecha);
                 sql1.Parameters.AddWithValue("@EXPLICACION", baja_producto.Explicacion);
                 sql1.Parameters.AddWithValue("@ESTADO", baja_producto.Estado);
+                sql1.Parameters.AddWithValue("@COD_MOV", baja_producto.Cod_Mov);
                 sql1.Parameters.AddWithValue("@COD_PRODUCTO", baja_producto.Cod_Producto);
                 rpta = sql1.ExecuteNonQuery() != 0 ? "OK" : "No se ingreso el Registro";
             }
@@ -110,7 +122,7 @@ namespace CapaDatos
                 sql1.Parameters.AddWithValue("@FECHA", baja_producto.Fecha);
                 sql1.Parameters.AddWithValue("@EXPLICACION", baja_producto.Explicacion);
                 sql1.Parameters.AddWithValue("@ESTADO", baja_producto.Estado);
-                sql1.Parameters.AddWithValue("@COD_PRODUCTO", baja_producto.Cod_Producto);
+                sql1.Parameters.AddWithValue("@COD_MOV", baja_producto.Cod_Mov);
                 rpta = sql1.ExecuteNonQuery() == 1 ? "OK" : "No se Edito el Registro";
             }
             catch (Exception e)

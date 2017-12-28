@@ -10,24 +10,25 @@ namespace CapaNegocio
 {
    public  class NBaja_Producto
     {
-        public static string Insertar(DateTime fecha, string explicacion, string estado, int cod_producto)
+        public static string Insertar(DateTime fecha, string explicacion, string estado, int cod_mov,int cod_producto)
         {
             DBaja_Producto objbp = new DBaja_Producto();
             objbp.Fecha = fecha;
             objbp.Explicacion = explicacion;
             objbp.Estado = estado;
+            objbp.Cod_Mov = cod_mov;
             objbp.Cod_Producto = cod_producto;
             return objbp.Insertar(objbp);
         }
 
-        public static string Editar(int cod_baja,DateTime fecha, string explicacion, string estado, int cod_producto)
+        public static string Editar(int cod_baja,DateTime fecha, string explicacion, string estado, int cod_mov)
         {
             DBaja_Producto objbp = new DBaja_Producto();
             objbp.Cod_Baja = cod_baja;
             objbp.Fecha = fecha;
             objbp.Explicacion = explicacion;
             objbp.Estado = estado;
-            objbp.Cod_Producto = cod_producto;
+            objbp.Cod_Mov = cod_mov;
             return objbp.Editar(objbp);
         }
 

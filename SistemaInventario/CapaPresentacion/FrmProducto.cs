@@ -65,7 +65,7 @@ namespace CapaPresentacion
 
             this.txtnom_equi.Text = string.Empty;
             this.mtmac.Text = string.Empty;
-            this.txtdom.Text = string.Empty;
+            //this.txtdom.Text = string.Empty;
 
            // this.txttrabajador.Text = string.Empty;
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.img_transpa;
@@ -170,31 +170,6 @@ namespace CapaPresentacion
             this.dgvlistado.DataSource = NProducto.Buscar_Producto_Serie(this.txtbuscar.Text);
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
-        }
-
-        public void GenerarActaEntregaEquipo()
-        {
-            //Generar  el documento Word
-            /*object ObjMiss = System.Reflection.Missing.Value;
-            word.Application ObjWord = new word.Application();
-            word.Document objDoc = ObjWord.Documents.Add(ref ObjMiss, ref ObjMiss, ref ObjMiss, ref ObjMiss);
-            objDoc.Activate();
-            ObjWord.Selection.Font.Color = word.WdColor.wdColorBlue;
-            ObjWord.Selection.TypeText(txtmarca.Text);
-            ObjWord.Visible = true;*/
-
-            object ObjMiss = System.Reflection.Missing.Value;
-            word.Application ObjWord = new word.Application();
-            //string ruta = Application.StartupPath + @"\ActaEntregaEquipo.docx";
-            //object parametro = ruta;
-            
-            word.Document ObjDoc = ObjWord.Documents.Open(@"\ActaEntregaEquipo.docx");
-            object trabajador = "Trabajador";
-            word.Range trab = ObjDoc.Bookmarks.get_Item(ref trabajador).Range;
-            trab.Text = txtmarca.Text;
-            object rango1 = trab;
-            ObjDoc.Bookmarks.Add("Trabajador", ref rango1);
-            ObjWord.Visible = true;
         }
 
 
@@ -597,9 +572,5 @@ namespace CapaPresentacion
 
         }
 
-        private void btnGenerar_Click(object sender, EventArgs e)
-        {
-            GenerarActaEntregaEquipo();
-        }
     }
 }

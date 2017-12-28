@@ -340,5 +340,34 @@ namespace CapaDatos
             return dt;
         }
 
+        //Vista Baja Producto Movimiento
+        public DataTable Mostrar_Movimientos_Vista()
+        {
+            DataTable dt = new DataTable("movimiento");
+            SqlConnection con = new SqlConnection();
+            try
+            {
+                con.ConnectionString = Conexion.Cn;
+                con.Open();
+                SqlCommand sql1 = new SqlCommand();
+                sql1.Connection = con;
+                sql1.CommandText = "SP_MOSTRAR_MOVIMIENTO_VISTA";
+                sql1.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter(sql1);
+                da.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                dt = null;
+                string rpta = e.Message;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open) { con.Close(); }
+            }
+            return dt;
+        }
+
     }
 }

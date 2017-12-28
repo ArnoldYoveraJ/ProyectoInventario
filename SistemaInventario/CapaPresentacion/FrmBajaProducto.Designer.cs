@@ -57,12 +57,18 @@
             this.Nombre = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtserie = new System.Windows.Forms.TextBox();
+            this.lblserie = new System.Windows.Forms.Label();
+            this.txtmarca = new System.Windows.Forms.TextBox();
+            this.lblmarca = new System.Windows.Forms.Label();
+            this.txtcod_mov = new System.Windows.Forms.TextBox();
             this.pxImagen = new System.Windows.Forms.PictureBox();
             this.btnbuscar_producto = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnnuevo = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erroricono)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -70,12 +76,13 @@
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(249, 63);
+            this.label8.Location = new System.Drawing.Point(33, 189);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 52;
@@ -85,27 +92,27 @@
             // 
             this.txtexplicacion.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.txtexplicacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtexplicacion.Location = new System.Drawing.Point(252, 79);
+            this.txtexplicacion.Location = new System.Drawing.Point(36, 205);
             this.txtexplicacion.MaxLength = 70;
             this.txtexplicacion.Multiline = true;
             this.txtexplicacion.Name = "txtexplicacion";
             this.txtexplicacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtexplicacion.Size = new System.Drawing.Size(260, 70);
+            this.txtexplicacion.Size = new System.Drawing.Size(303, 58);
             this.txtexplicacion.TabIndex = 51;
             // 
             // txtproducto
             // 
             this.txtproducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtproducto.Location = new System.Drawing.Point(91, 101);
+            this.txtproducto.Location = new System.Drawing.Point(63, 55);
             this.txtproducto.Name = "txtproducto";
-            this.txtproducto.Size = new System.Drawing.Size(152, 20);
+            this.txtproducto.Size = new System.Drawing.Size(121, 20);
             this.txtproducto.TabIndex = 49;
             this.txtproducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtproducto_KeyPress);
             // 
             // txtcod_pro
             // 
             this.txtcod_pro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcod_pro.Location = new System.Drawing.Point(91, 71);
+            this.txtcod_pro.Location = new System.Drawing.Point(63, 25);
             this.txtcod_pro.Name = "txtcod_pro";
             this.txtcod_pro.Size = new System.Drawing.Size(53, 20);
             this.txtcod_pro.TabIndex = 48;
@@ -113,7 +120,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 103);
+            this.label6.Location = new System.Drawing.Point(14, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 47;
@@ -122,7 +129,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 73);
+            this.label7.Location = new System.Drawing.Point(14, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 46;
@@ -204,15 +211,15 @@
             // dtfecha
             // 
             this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtfecha.Location = new System.Drawing.Point(91, 129);
+            this.dtfecha.Location = new System.Drawing.Point(420, 243);
             this.dtfecha.Name = "dtfecha";
-            this.dtfecha.Size = new System.Drawing.Size(152, 20);
+            this.dtfecha.Size = new System.Drawing.Size(115, 20);
             this.dtfecha.TabIndex = 38;
             // 
             // txtcod_baja
             // 
             this.txtcod_baja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcod_baja.Location = new System.Drawing.Point(91, 43);
+            this.txtcod_baja.Location = new System.Drawing.Point(82, 28);
             this.txtcod_baja.Name = "txtcod_baja";
             this.txtcod_baja.Size = new System.Drawing.Size(53, 20);
             this.txtcod_baja.TabIndex = 3;
@@ -220,7 +227,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 129);
+            this.label3.Location = new System.Drawing.Point(356, 249);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 1;
@@ -229,11 +236,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 43);
+            this.label2.Location = new System.Drawing.Point(28, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Codigo Baja:";
+            this.label2.Text = "Cod. Baja:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -259,7 +266,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(694, 310);
+            this.tabControl1.Size = new System.Drawing.Size(694, 331);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage1
@@ -277,7 +284,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(686, 284);
+            this.tabPage1.Size = new System.Drawing.Size(686, 305);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -339,21 +346,17 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(686, 284);
+            this.tabPage2.Size = new System.Drawing.Size(686, 305);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.pxImagen);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtexplicacion);
-            this.groupBox1.Controls.Add(this.btnbuscar_producto);
-            this.groupBox1.Controls.Add(this.txtproducto);
-            this.groupBox1.Controls.Add(this.txtcod_pro);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.dtfecha);
             this.groupBox1.Controls.Add(this.btncancelar);
             this.groupBox1.Controls.Add(this.btneditar);
@@ -362,19 +365,61 @@
             this.groupBox1.Controls.Add(this.txtcod_baja);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(17, 18);
+            this.groupBox1.Location = new System.Drawing.Point(6, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(641, 229);
+            this.groupBox1.Size = new System.Drawing.Size(674, 277);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Baja_Equipos";
             // 
+            // txtserie
+            // 
+            this.txtserie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtserie.Location = new System.Drawing.Point(256, 81);
+            this.txtserie.Name = "txtserie";
+            this.txtserie.Size = new System.Drawing.Size(121, 20);
+            this.txtserie.TabIndex = 57;
+            // 
+            // lblserie
+            // 
+            this.lblserie.AutoSize = true;
+            this.lblserie.Location = new System.Drawing.Point(213, 83);
+            this.lblserie.Name = "lblserie";
+            this.lblserie.Size = new System.Drawing.Size(34, 13);
+            this.lblserie.TabIndex = 56;
+            this.lblserie.Text = "Serie:";
+            // 
+            // txtmarca
+            // 
+            this.txtmarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtmarca.Location = new System.Drawing.Point(63, 81);
+            this.txtmarca.Name = "txtmarca";
+            this.txtmarca.Size = new System.Drawing.Size(121, 20);
+            this.txtmarca.TabIndex = 55;
+            // 
+            // lblmarca
+            // 
+            this.lblmarca.AutoSize = true;
+            this.lblmarca.Location = new System.Drawing.Point(14, 83);
+            this.lblmarca.Name = "lblmarca";
+            this.lblmarca.Size = new System.Drawing.Size(40, 13);
+            this.lblmarca.TabIndex = 54;
+            this.lblmarca.Text = "Marca:";
+            // 
+            // txtcod_mov
+            // 
+            this.txtcod_mov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcod_mov.Location = new System.Drawing.Point(324, 19);
+            this.txtcod_mov.Name = "txtcod_mov";
+            this.txtcod_mov.Size = new System.Drawing.Size(53, 20);
+            this.txtcod_mov.TabIndex = 53;
+            // 
             // pxImagen
             // 
             this.pxImagen.BackgroundImage = global::CapaPresentacion.Properties.Resources.img_transpa;
-            this.pxImagen.Location = new System.Drawing.Point(522, 34);
+            this.pxImagen.Location = new System.Drawing.Point(420, 57);
             this.pxImagen.Name = "pxImagen";
-            this.pxImagen.Size = new System.Drawing.Size(113, 115);
+            this.pxImagen.Size = new System.Drawing.Size(115, 115);
             this.pxImagen.TabIndex = 11;
             this.pxImagen.TabStop = false;
             // 
@@ -382,7 +427,7 @@
             // 
             this.btnbuscar_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar_producto.Image = global::CapaPresentacion.Properties.Resources.icono_adicionar1;
-            this.btnbuscar_producto.Location = new System.Drawing.Point(207, 71);
+            this.btnbuscar_producto.Location = new System.Drawing.Point(148, 21);
             this.btnbuscar_producto.Name = "btnbuscar_producto";
             this.btnbuscar_producto.Size = new System.Drawing.Size(36, 24);
             this.btnbuscar_producto.TabIndex = 50;
@@ -394,7 +439,7 @@
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelar.Image = global::CapaPresentacion.Properties.Resources.cancel;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(400, 180);
+            this.btncancelar.Location = new System.Drawing.Point(574, 115);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 9;
@@ -408,7 +453,7 @@
             this.btneditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneditar.Image = global::CapaPresentacion.Properties.Resources.Editar;
             this.btneditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneditar.Location = new System.Drawing.Point(301, 180);
+            this.btneditar.Location = new System.Drawing.Point(574, 86);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 23);
             this.btneditar.TabIndex = 8;
@@ -422,7 +467,7 @@
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.Image = global::CapaPresentacion.Properties.Resources.guardar11;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(209, 180);
+            this.btnguardar.Location = new System.Drawing.Point(574, 57);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(75, 23);
             this.btnguardar.TabIndex = 7;
@@ -436,7 +481,7 @@
             this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnnuevo.Image = global::CapaPresentacion.Properties.Resources.Nuevo;
             this.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnnuevo.Location = new System.Drawing.Point(116, 180);
+            this.btnnuevo.Location = new System.Drawing.Point(574, 28);
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(75, 23);
             this.btnnuevo.TabIndex = 6;
@@ -445,11 +490,30 @@
             this.btnnuevo.UseVisualStyleBackColor = true;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnbuscar_producto);
+            this.groupBox2.Controls.Add(this.txtcod_mov);
+            this.groupBox2.Controls.Add(this.txtserie);
+            this.groupBox2.Controls.Add(this.txtproducto);
+            this.groupBox2.Controls.Add(this.lblserie);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtcod_pro);
+            this.groupBox2.Controls.Add(this.txtmarca);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lblmarca);
+            this.groupBox2.Location = new System.Drawing.Point(19, 57);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(383, 115);
+            this.groupBox2.TabIndex = 58;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalle de Equipo";
+            // 
             // FrmBajaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 361);
+            this.ClientSize = new System.Drawing.Size(711, 382);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmBajaProducto";
@@ -465,6 +529,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pxImagen)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,5 +572,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pxImagen;
+        private System.Windows.Forms.TextBox txtcod_mov;
+        private System.Windows.Forms.TextBox txtserie;
+        private System.Windows.Forms.Label lblserie;
+        private System.Windows.Forms.TextBox txtmarca;
+        private System.Windows.Forms.Label lblmarca;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

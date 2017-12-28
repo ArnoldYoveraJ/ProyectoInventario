@@ -132,6 +132,12 @@
     <Compile Include="FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVistaBajaProductoMovimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVistaBajaProductoMovimiento.Designer.cs">
+      <DependentUpon>FrmVistaBajaProductoMovimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVistaProductoIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVistaBajaProductoMovimiento.resx">
+      <DependentUpon>FrmVistaBajaProductoMovimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVistaProductoIngreso.resx">
       <DependentUpon>FrmVistaProductoIngreso.cs</DependentUpon>

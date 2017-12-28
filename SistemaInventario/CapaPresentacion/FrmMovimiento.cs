@@ -49,7 +49,7 @@ namespace CapaPresentacion
             this.txtproducto.ReadOnly = true;
 
             this.txtcod_mov.Visible = false;
-
+            
         }
 
         private void btnbuscar_usuario_Click(object sender, EventArgs e)
@@ -66,6 +66,10 @@ namespace CapaPresentacion
             this.habilitar(false);
             this.IsNuevo = false;
             this.IsEditar = false;
+
+            //Desactivamos elementos de búsquedad
+            this.activar_cajas();
+            this.txtApe.Visible = false;
         }
 
         //Mostrar Mensaje de Confirmacion
@@ -121,6 +125,7 @@ namespace CapaPresentacion
                 this.btnguardar.Enabled = true;
                 this.btneditar.Enabled = false;
                 this.btncancelar.Enabled = true;
+                this.button1.Enabled = false;
             }
             else
             {
@@ -129,6 +134,7 @@ namespace CapaPresentacion
                 this.btnguardar.Enabled = false;
                 this.btneditar.Enabled = true;
                 this.btncancelar.Enabled = false;
+                this.button1.Enabled = true;
             }
         }
 
@@ -155,6 +161,13 @@ namespace CapaPresentacion
         private void buscar()
         {
             this.dgvlistado.DataSource = NMovimiento.buscar_movimiento(Convert.ToDateTime(this.dtfecha1.Text), Convert.ToDateTime(this.dtfecha2.Text));
+            this.ocultarcolumnas();
+            lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
+        }
+
+        private void buscar_movimientos_Apellidos()
+        {
+            this.dgvlistado.DataSource = NMovimiento.buscar_movimientos_por_trabajador(this.txtApe.Text);
             this.ocultarcolumnas();
             lbltotal.Text = "Total de Registros: " + Convert.ToString(dgvlistado.Rows.Count);
         }
@@ -281,7 +294,15 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            this.buscar();
+            //Buscar Por Apellidos y Fechas
+            if (cboElegir.Text.Equals("Apellidos"))
+            {
+                buscar_movimientos_Apellidos();
+            }
+            else if (cboElegir.Text.Equals("Fechas"))
+            {
+                buscar();
+            }
         }
 
         private void dgvlistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -327,7 +348,7 @@ namespace CapaPresentacion
                     DateTime p6;
                     int p7;
                     byte[] imagenBuffer;
-
+                    
                     p1 = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_mov"].Value);
                     p2 = Convert.ToString(dgvlistado.CurrentRow.Cells["usuario"].Value);
                     p3 = Convert.ToString(dgvlistado.CurrentRow.Cells["trabajador"].Value);
@@ -340,6 +361,64 @@ namespace CapaPresentacion
                     System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
                     form1.setMovimiento(p1, p2, p3, p4, p5, p6, p7,imagenBuffer);
             }
+            
+
+
+            /*try
+            { 
+                string cod, rpta = "";
+                int cod_pro;//para el codigo de producto
+
+                foreach (DataGridViewRow row in dgvlistado.Rows)//Recorre todas las filas del DataGridView
+                {
+                        if (Convert.ToBoolean(row.Cells[0].Value)) //Revisa si la fila está activada
+                        {
+                            DialogResult opcion;
+                            opcion = MessageBox.Show("Realmente desea Anular los Registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (opcion == DialogResult.OK) //SI usuario dice OK
+                            { }
+
+                            //Para enviar los datos a FrmDevolver_Artículo
+                            FrmDevolver_Articulo form1 = FrmDevolver_Articulo.GetInstancia();
+                            form1.Show();
+                            string p1, p2, p3, p4, p5;
+                            DateTime p6;
+                            int p7;
+                            byte[] imagenBuffer;
+
+                            p1 = Convert.ToString(dgvlistado.CurrentRow.Cells["cod_mov"].Value);
+                            p2 = Convert.ToString(dgvlistado.CurrentRow.Cells["usuario"].Value);
+                            p3 = Convert.ToString(dgvlistado.CurrentRow.Cells["trabajador"].Value);
+                            p4 = Convert.ToString(dgvlistado.CurrentRow.Cells["nom_producto"].Value);
+                            p5 = Convert.ToString(dgvlistado.CurrentRow.Cells["condicion"].Value);
+                            p6 = Convert.ToDateTime(dgvlistado.CurrentRow.Cells["fecha"].Value);
+                            p7 = Convert.ToInt32(dgvlistado.CurrentRow.Cells["COD_PRODUCTO"].Value);
+
+                            imagenBuffer = (byte[])this.dgvlistado.CurrentRow.Cells["imagen"].Value;
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
+                            form1.setMovimiento(p1, p2, p3, p4, p5, p6, p7, imagenBuffer);
+                            //MensajeOK("OK");
+                        }
+                        else
+                        {
+                           MensajeError("No se ha marcado ningún Registro a Eliminar");
+                           break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.StackTrace);
+            }
+            
+            */
+
+
+
+
+
+
             /*
             try
             {
@@ -412,6 +491,47 @@ namespace CapaPresentacion
 
             FrmReporteActaEntregaEquipo objreacta = new FrmReporteActaEntregaEquipo(codigo);
             objreacta.ShowDialog();
+        }
+
+        private void txtApe_TextChanged(object sender, EventArgs e)
+        {
+            if (cboElegir.Text.Equals("Trabajador"))
+            {
+                buscar_movimientos_Apellidos();
+            }
+            else if (cboElegir.Text.Equals("Fechas"))
+            {
+                buscar();
+            }
+        }
+
+        private void activar_cajas()
+        {
+            this.txtApe.Visible = true;
+            this.lblfechafin.Visible = false;
+            this.lblfechaini.Visible = false;
+            this.dtfecha1.Visible = false;
+            this.dtfecha2.Visible = false;
+        }
+
+        private void desactivar_cajas() {
+            this.txtApe.Visible = false;
+            this.lblfechafin.Visible = true;
+            this.lblfechaini.Visible = true;
+            this.dtfecha1.Visible = true;
+            this.dtfecha2.Visible = true;
+        }
+
+
+        private void cboElegir_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboElegir.Text.Equals("Trabajador"))
+            {
+                activar_cajas();
+            }else if(cboElegir.Text.Equals("Fechas"))
+            {
+                desactivar_cajas();
+            }
         }
     }
 }
